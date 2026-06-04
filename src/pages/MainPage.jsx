@@ -1,5 +1,11 @@
-﻿function MainPage() {
-  return <div>말모임 메인</div>
+﻿
+
+const MainPage = () =>{
+
+  return (<>
+    <p>메인</p>
+  </>)
 }
+
 
 export default MainPage
