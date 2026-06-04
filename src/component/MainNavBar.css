@@ -55,6 +55,7 @@
     background-color: #90653E;
     border-radius: 10px;
     color: white;
+    font-weight: 600;
 }
 
 /* 로그인 박스 */
@@ -67,6 +68,7 @@
 /* 로그인의 텍스트 컬러 */
 .div-login a {
     color: black;
+    font-weight: 600;
 }
 
 /* 전체 Link 태그의 밑줄 삭제 */
