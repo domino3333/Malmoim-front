@@ -1,9 +1,10 @@
-﻿
+﻿import MainNavBar from "../component/MainNavBar"
+
 
 const MainPage = () =>{
 
   return (<>
-    <p>메인</p>
+    <MainNavBar/>
   </>)
 }
 
