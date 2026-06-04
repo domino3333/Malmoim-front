@@ -2,7 +2,7 @@
 
 import "./MainNavBar.css"
 import { Link } from "react-router-dom"
-
+import logo from "../assets/logo.png";
 
 const MainNavBar = () => {
 
@@ -10,7 +10,7 @@ const MainNavBar = () => {
     return (<>
         <header className="navbar-header">
             <div className="navbar-logo">
-                <Link to="/">말모임로고</Link>
+                <Link to="/"><img src={logo}/></Link>
             </div>
 
             <nav className="navbar-menu">
