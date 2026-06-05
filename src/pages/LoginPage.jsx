@@ -29,7 +29,7 @@ const LoginPage = () => {
                     <button type="button">로그인</button>
                 </div>
                 <div className="div-login-text2">
-                    아직 계정이 없으신가요? 회원가입
+                    <p>아직 계정이 없으신가요? <span>회원가입</span></p>
                 </div>
 
             </div>
