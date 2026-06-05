@@ -1,8 +1,28 @@
 import MainNavBar from "../component/MainNavBar"
 import logo from "../assets/logo.png"
 import "./LoginPage.css"
+import { useState } from "react"
 
 const LoginPage = () => {
+
+
+    const [input,setInput] = useState({
+        email:"",
+        password:""
+    });
+
+    
+    const observeInput = (e)=>{
+        setInput({...input,
+            [e.target.name]:e.target.value
+        })
+
+    }
+
+
+
+
+
 
 
     return (<>
@@ -17,13 +37,13 @@ const LoginPage = () => {
                     <label htmlFor="email">
                         이메일
                     </label>
-                    <input type="email" id="email" name="email" />
+                    <input type="email" onChange={observeInput} id="email" name="email" />
                 </div>
                 <div className="div-login-password">
                     <label htmlFor="password">
                         비밀번호
                     </label>
-                    <input type="password" id="password" name="password" />
+                    <input type="password" onChange={observeInput} id="password" name="password" />
                 </div>
                 <div className="div-login-button">
                     <button type="button">로그인</button>
