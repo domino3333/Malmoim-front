@@ -2,6 +2,7 @@ import MainNavBar from "../component/MainNavBar"
 import logo from "../assets/logo.png"
 import "./LoginPage.css"
 import { useState } from "react"
+import { login } from "../api/auth/authApi"
 
 const LoginPage = () => {
 
@@ -18,11 +19,6 @@ const LoginPage = () => {
         })
 
     }
-
-
-
-
-
 
 
     return (<>
@@ -46,7 +42,7 @@ const LoginPage = () => {
                     <input type="password" onChange={observeInput} id="password" name="password" />
                 </div>
                 <div className="div-login-button">
-                    <button type="button">로그인</button>
+                    <button type="button" onClick={()=>login(input)} >로그인</button>
                 </div>
                 <div className="div-login-text2">
                     <p>아직 계정이 없으신가요? <span>회원가입</span></p>

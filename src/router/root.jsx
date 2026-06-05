@@ -2,6 +2,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Loading from '../pages/Loading'
 import LoginPage from '../pages/LoginPage'
+import SignUpPage from '../pages/SignUpPage'
 
 const MainPage = lazy(() => import('../pages/MainPage'))
 
@@ -19,6 +20,14 @@ const root = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <LoginPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/signUp',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <SignUpPage />
       </Suspense>
     ),
   },

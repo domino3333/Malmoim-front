@@ -1,0 +1,131 @@
+.div-SignUpPage-main {
+    background-color: rgb(243, 239, 233);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+/*회원가입 전체를 감싸는 메인 div*/
+.div-signUp-mainbox {
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    width: 35%;
+    height:  90vh;
+    text-align: center;
+    border: 1px solid #90653E;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 50px;
+    margin-bottom: 40px;
+}
+
+/* "가입하기" < 텍스트 자체*/
+.div-signUp-text .p-signUp-text {
+    font-weight: 900;
+    font-size: 2.5em;
+}
+
+/* "말모임 계정으로 시작하세요" < 텍스트 자체*/
+.div-signUp-text .p-start-text {
+    color: grey;
+}
+
+/* 이메일 + input 박스를 감싸는 div*/
+.div-signUp-email {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width:80%;
+    margin:0 auto;
+    gap: 5px;
+}
+
+/* 이름 + input 박스를 감싸는 div*/
+.div-signUp-name {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width:80%;
+    margin:0 auto;
+    gap: 5px;
+}
+
+/* "이름" 텍스트 */
+.div-signUp-name label{
+    font-weight: 600;
+}
+
+/*이름 input*/
+.div-signUp-name input {
+    margin: 0 auto;
+    width:100%;
+    height:40px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 167, 167);
+}
+
+/* "이메일" 텍스트 */
+.div-signUp-email label{
+    font-weight: 600;
+}
+
+/* "비밀번호" 텍스트 */
+.div-signUp-password label{
+    font-weight: 600;
+}
+
+/*이메일 input*/
+.div-signUp-email input {
+    margin: 0 auto;
+    width:100%;
+    height:40px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 167, 167);
+}
+
+/* 패스워드 + input 박스를 감싸는 div*/
+.div-signUp-password {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width:80%;
+    margin:0 auto;
+    gap: 5px;
+}
+
+/*패스워드 input*/
+.div-signUp-password input {
+    margin: 0 auto;
+    padding:10px;
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 167, 167);
+}
+
+/*가입하기 버튼*/
+.div-signUp-button button {
+    width: 80%;
+    margin: 0 auto;
+    height:50px;
+    border-radius: 5px;
+    border: 1px solid #90653E;
+    background-color: #90653E;
+    color: white;
+    font-weight: 600;
+}
+
+.div-signUp-text2 p {
+    color:rgb(150, 144, 144);
+}
+
+.div-signUp-text2 p span {
+    color:#90653E;
+    font-weight:  600;
+}
