@@ -1,0 +1,97 @@
+.div-LoginPage-main {
+    background-color: rgb(243, 239, 233);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+/*로그인 전체를 감싸는 메인 div*/
+.div-login-mainbox {
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    width: 35%;
+    height: 70vh;
+    text-align: center;
+    border: 1px solid #90653E;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 50px;
+    margin-bottom: 40px;
+}
+
+/* "로그인" < 텍스트 자체*/
+.div-login-text .p-login-text {
+    font-weight: 800;
+    font-size: 2.0em;
+}
+
+/* "말모임 계정으로 시작하세요" < 텍스트 자체*/
+.div-login-text .p-start-text {
+    color: grey;
+}
+
+/* 이메일 + input 박스를 감싸는 div*/
+.div-login-email {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width:80%;
+    margin:0 auto;
+    gap: 5px;
+}
+
+/* "이메일" 텍스트 */
+.div-login-email label{
+    font-weight: 600;
+}
+
+/* "비밀번호" 텍스트 */
+.div-login-password label{
+    font-weight: 600;
+}
+
+/*이메일 input*/
+.div-login-email input {
+    margin: 0 auto;
+    width:100%;
+    height:40px;
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 167, 167);
+}
+
+/* 패스워드 + input 박스를 감싸는 div*/
+.div-login-password {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width:80%;
+    margin:0 auto;
+    gap: 5px;
+}
+
+/*패스워드 input*/
+.div-login-password input {
+    margin: 0 auto;
+    padding:10px;
+    width:100%;
+    height:40px;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 167, 167);
+}
+
+/*로그인 버튼*/
+.div-login-button button {
+    width: 80%;
+    margin: 0 auto;
+    height:40px;
+    border-radius: 5px;
+    border: 1px solid #90653E;
+    background-color: #90653E;
+    color: white;
+    font-weight: 600;
+}
