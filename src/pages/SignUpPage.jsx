@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MainNavBar from "../component/MainNavBar";
+import MainNavBar from "../components/MainNavBar";
 import "./SignUpPage.css";
 import { signUp } from "../api/auth/authApi";
 

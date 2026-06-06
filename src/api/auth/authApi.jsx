@@ -9,7 +9,7 @@ export const login = async (data)=>{
     const result = await axios.post(`${ApiHost}${prefix}/login`,data,null);
 
     //로그인 시 액세스토큰 저장
-    sessionStorage.setItem('accessToken',result.data);
+    sessionStorage.setItem('accessToken',result.data.accessToken);
 }
 
 

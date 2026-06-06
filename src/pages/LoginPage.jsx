@@ -1,9 +1,9 @@
-import MainNavBar from "../component/MainNavBar"
+import MainNavBar from "../components/MainNavBar"
 import logo from "../assets/logo.png"
 import "./LoginPage.css"
 import { useState } from "react"
 import { login } from "../api/auth/authApi"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const LoginPage = () => {
 
@@ -12,6 +12,8 @@ const LoginPage = () => {
         email:"",
         password:""
     });
+
+    const nav = useNavigate();
 
     
     const observeInput = (e)=>{
@@ -43,7 +45,10 @@ const LoginPage = () => {
                     <input type="password" onChange={observeInput} id="password" name="password" />
                 </div>
                 <div className="div-login-button">
-                    <button type="button" onClick={async ()=>await login(input)} >로그인</button>
+                    <button type="button" onClick={async ()=>{
+                     await login(input)
+                     nav("/dashboard")
+                    }} >로그인</button>
                 </div>
                 <div className="div-login-text2">
                     <p>아직 계정이 없으신가요? <Link to="/signUp">회원가입</Link></p>
