@@ -1,13 +1,13 @@
 ﻿import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import Loading from '../pages/Loading'
-import LoginPage from '../pages/LoginPage'
-import SignUpPage from '../pages/SignUpPage'
-import HostDashboardPage from '../pages/HostDashboardPage'
+import Loading from '../pages/home/Loading'
+import LoginPage from '../pages/home/LoginPage'
+import SignUpPage from '../pages/home/SignUpPage'
+import HostDashboardPage from '../pages/dashboard/HostDashboardPage'
 import CreatePage from '../pages/dashboard/CreatePage'
 import MyContentPage from '../pages/dashboard/MyContentPage'
 
-const MainPage = lazy(() => import('../pages/MainPage'))
+const MainPage = lazy(() => import('../pages/home/MainPage'))
 
 const root = createBrowserRouter([
   {
@@ -61,3 +61,4 @@ const root = createBrowserRouter([
 ])
 
 export default root
+

@@ -2,8 +2,8 @@
 import "./HostDashboardPage.css"
 
 
-import DashBoardHeader from "../components/dashboard/DashBoardHeader"
-import DashBoardSideBar from "../components/dashboard/DashBoardSideBar"
+import DashBoardHeader from "../../components/dashboard/DashBoardHeader"
+import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar"
 import { useNavigate } from "react-router-dom"
 
 
