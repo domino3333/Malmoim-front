@@ -1,17 +1,4 @@
-/*헤더 로고 이미지*/
-.header-HostDashboardPage img {
 
-    width: 180px;
-    height: 70px;
-    border-radius: 10px;
-}
-
-
-/*헤더*/
-.header-HostDashboardPage {
-    display: flex;
-    justify-content: space-between;
-}
 
 
 /*바디 전체*/
@@ -19,12 +6,6 @@
     margin-top: 30px;
     display: flex;
 
-}
-
-/*sidebar 전체 div*/
-.div-dashboard-sidebar {
-
-    width: 200px;
 }
 
 
@@ -38,57 +19,4 @@
     height: 100vh;
     margin-left: 20px;
 
-}
-
-/*내 말모임 탭 버튼*/
-.button-dashboard-my-malmoim {
-    padding: 10px;
-    padding-left: 20px;
-    width: 100%;
-    color: black;
-    background: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
-    border: none;
-    
-}
-
-/* 내 말모임 < 텍스트*/
-.button-dashboard-my-malmoim span{
-    font-weight: 600;
-    font-size: 0.95em;
-}
-
-/*말모임 만들기 < 텍스트*/
-.button-dashboard-create-malmoim span{
-    font-weight: 600;
-    font-size: 0.95em;
-}
-
-/*plusIcon 이미지*/
-.button-dashboard-create-malmoim img {
-    width: 20px;
-    height: 20px;
-}
-
-/*personIcon 이미지*/
-.button-dashboard-my-malmoim img {
-    width: 20px;
-    height: 20px;
-}
-
-/*말모임 만들기 탭 버튼*/
-.button-dashboard-create-malmoim {
-    width: 100%;
-    padding: 10px;
-    padding-left: 20px;
-    color: black;
-    background: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
-    border: none;
 }

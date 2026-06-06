@@ -1,0 +1,14 @@
+/*헤더 로고 이미지*/
+.header-HostDashboardPage img {
+
+    width: 180px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+
+/*헤더*/
+.header-HostDashboardPage {
+    display: flex;
+    justify-content: space-between;
+}
