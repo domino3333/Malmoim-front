@@ -14,9 +14,9 @@ const CreatePage = ()=>{
         <DashBoardHeader />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
-        <div className="div-dashboard-body">
+        <div className="div-CreatePage-body">
             <DashBoardSideBar clickTab={clickTab} />
-            <div className="div-dashboard-content-list">
+            <div className="div-CreatePage-content-list">
                 <p>만들기</p>
             </div>
         </div>
