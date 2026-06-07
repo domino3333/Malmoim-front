@@ -6,9 +6,9 @@ const DashBoardHeader = () => {
 
     return (<>
         <header className="header-HostDashboardPage">
-            <img src={logo} alt="濡쒓퀬" />
+            <img src={logo} alt="로고" />
             <div>
-                ?ъ슜???뺣낫 踰꾪듉
+                내 정보버튼
             </div>
         </header>
 
