@@ -1,14 +1,14 @@
-
+﻿
 import logo from "../../assets/logo.png"
-import "./DashBoardHeader.css"
+import "../../css/dashboard/DashBoardHeader.css"
 
 const DashBoardHeader = () => {
 
     return (<>
         <header className="header-HostDashboardPage">
-            <img src={logo} alt="로고" />
+            <img src={logo} alt="濡쒓퀬" />
             <div>
-                사용자 정보 버튼
+                ?ъ슜???뺣낫 踰꾪듉
             </div>
         </header>
 

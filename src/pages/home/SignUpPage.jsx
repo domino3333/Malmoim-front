@@ -1,6 +1,6 @@
 ﻿import { useState } from 'react'
 import MainNavBar from '../../components/home/MainNavBar'
-import './SignUpPage.css'
+import '../../css/home/SignUpPage.css'
 import { signUp } from '../../api/auth/authApi'
 
 const SignUpPage = () => {
@@ -48,3 +48,4 @@ const SignUpPage = () => {
 }
 
 export default SignUpPage
+

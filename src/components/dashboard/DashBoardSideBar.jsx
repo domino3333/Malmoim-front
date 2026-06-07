@@ -1,4 +1,4 @@
-﻿import './DashBoardSideBar.css'
+﻿import '../../css/dashboard/DashBoardSideBar.css'
 import personIcon from '../../assets/person.png'
 import plusIcon from '../../assets/plus.png'
 
@@ -20,3 +20,4 @@ const DashBoardSideBar = ({ clickTab }) => {
 }
 
 export default DashBoardSideBar
+

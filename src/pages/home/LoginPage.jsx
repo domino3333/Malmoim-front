@@ -1,5 +1,5 @@
 ﻿import MainNavBar from '../../components/home/MainNavBar'
-import './LoginPage.css'
+import '../../css/home/LoginPage.css'
 import { useState } from 'react'
 import { login } from '../../api/auth/authApi'
 import { Link, useNavigate } from 'react-router-dom'
@@ -57,3 +57,4 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+

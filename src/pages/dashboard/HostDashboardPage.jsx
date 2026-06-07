@@ -1,5 +1,5 @@
-
-import "./HostDashboardPage.css"
+﻿
+import "../../css/dashboard/HostDashboardPage.css"
 
 
 import DashBoardHeader from "../../components/dashboard/DashBoardHeader"
@@ -23,19 +23,19 @@ const HostDashboardPage = () => {
 
         <DashBoardHeader />
 
-        {/*헤더 아래의 메인 전체를 감싸는 body div*/}
+        {/*?ㅻ뜑 ?꾨옒??硫붿씤 ?꾩껜瑜?媛먯떥??body div*/}
         <div className="div-dashboard-body">
             <DashBoardSideBar clickTab={clickTab} />
             <div className="div-dashboard-content-list">
                 <table>
                     <tr>
-                        <td>임시1</td>
+                        <td>?꾩떆1</td>
                     </tr>
                     <tr>
-                        <td>임시2</td>
+                        <td>?꾩떆2</td>
                     </tr>
                     <tr>
-                        <td>임시3</td>
+                        <td>?꾩떆3</td>
                     </tr>
                 </table>
             </div>

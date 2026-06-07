@@ -1,4 +1,4 @@
-﻿import './MainNavBar.css'
+﻿import '../../css/home/MainNavBar.css'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 
@@ -31,3 +31,4 @@ const MainNavBar = () => {
 }
 
 export default MainNavBar
+
