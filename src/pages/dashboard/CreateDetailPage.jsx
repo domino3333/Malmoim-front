@@ -38,7 +38,7 @@ const CreateDetailPage = () => {
             </div>
         </div>
 
-        <CreateModal show={show} setShow={setShow}/>
+        <CreateModal show={show} setShow={setShow} title={"청중QnA"}/>
 
         
 
