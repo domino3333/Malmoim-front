@@ -5,9 +5,9 @@ import "../../css/dashboard/CreateDetailPage.css";
 import audience from "../../assets/audience.png"
 
 
-const CreateDetailPage = ()=>{
+const CreateDetailPage = () => {
 
-     const nav = useNavigate();
+    const nav = useNavigate();
 
     const clickTab = (destination) => {
         nav(`/${destination}`);
@@ -20,12 +20,15 @@ const CreateDetailPage = ()=>{
         <div className="div-CreateDetailPage-body">
             <DashBoardSideBar clickTab={clickTab} />
             <div className="div-CreateDetailPage-content-list">
-                <button className="btn1">
-                    <img src={audience} alt="임시이미지" />
-                    <div className="div-qna">
-                        청중 QnA
-                    </div>
-                </button>
+                <div className="btn-box">
+                    <button className="btn1">
+                        <img src={audience} alt="임시이미지" />
+                        <div className="div-qna">
+                            청중 QnA
+                        </div>
+                    </button>
+
+                </div>
             </div>
         </div>
 

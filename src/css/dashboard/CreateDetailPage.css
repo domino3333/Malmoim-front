@@ -1,5 +1,3 @@
-
-
 /*바디 전체*/
 .div-CreateDetailPage-body {
     margin-top: 30px;
@@ -18,25 +16,33 @@
     height: 100vh;
     margin-left: 20px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 30px;
 }
 
 
-.btn1{
-    border: 1px solid gray;
-    padding:0;
+/* audience이미지와 텍스트를 감싸는 버튼*/
+.btn1 {
+    border: none;
+    padding: 0;
 }
 
-.btn1 img{
-    width:100%;
+/*audience 이미지*/
+.btn1 img {
+    width: 100%;
     height: 220px;
 
 }
 
+/*그리드 버튼들을 감싸는 div*/
+.btn-box {
+    margin: 30px;
 
-.div-qna{
+}
+
+/*청중 QnA 텍스트*/
+.div-qna {
     display: flex;
     justify-content: center;
     align-items: center;
