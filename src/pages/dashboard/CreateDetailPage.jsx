@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import DashBoardHeader from "../../components/dashboard/DashBoardHeader";
 import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar";
-import "../../css/dashboard/CreatePage.css";
+import "../../css/dashboard/CreateDetailPage.css";
 
-const CreatePage = () => {
 
-    const nav = useNavigate();
+const CreateDetailPage = ()=>{
+
+     const nav = useNavigate();
 
     const clickTab = (destination) => {
         nav(`/${destination}`);
@@ -15,14 +16,14 @@ const CreatePage = () => {
         <DashBoardHeader />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
-        <div className="div-CreatePage-body">
+        <div className="div-CreateDetailPage-body">
             <DashBoardSideBar clickTab={clickTab} />
-            <div className="div-CreatePage-content-list">
-                <button className="button-create" onClick={()=>clickTab("createDetail")}>만들기</button>
+            <div className="div-CreateDetailPage-content-list">
+                <p>카드 그리드 여러개</p>
             </div>
         </div>
 
     </>)
 }
 
-export default CreatePage;
+export default CreateDetailPage;

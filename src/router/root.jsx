@@ -6,6 +6,7 @@ import SignUpPage from '../pages/home/SignUpPage'
 import HostDashboardPage from '../pages/dashboard/HostDashboardPage'
 import CreatePage from '../pages/dashboard/CreatePage'
 import MyContentPage from '../pages/dashboard/MyContentPage'
+import CreateDetailPage from '../pages/dashboard/CreateDetailPage'
 
 const MainPage = lazy(() => import('../pages/home/MainPage'))
 
@@ -55,6 +56,14 @@ const root = createBrowserRouter([
     element: (
       <Suspense fallback={<Loading />}>
         <MyContentPage/>
+      </Suspense>
+    ),
+  },
+  {
+    path: '/createDetail',
+    element: (
+      <Suspense fallback={<Loading />}>
+        <CreateDetailPage/>
       </Suspense>
     ),
   },
