@@ -3,6 +3,9 @@ import DashBoardHeader from "../../components/dashboard/DashBoardHeader";
 import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar";
 import "../../css/dashboard/CreateDetailPage.css";
 import audience from "../../assets/audience.png"
+import { useState } from "react";
+import CreateModal from "../../components/modal/CreateModal";
+
 
 
 const CreateDetailPage = () => {
@@ -13,6 +16,9 @@ const CreateDetailPage = () => {
         nav(`/${destination}`);
     }
 
+
+    const [show, setShow] = useState(false);
+
     return (<>
         <DashBoardHeader />
 
@@ -21,8 +27,8 @@ const CreateDetailPage = () => {
             <DashBoardSideBar clickTab={clickTab} />
             <div className="div-CreateDetailPage-content-list">
                 <div className="btn-box">
-                    <button className="btn1">
-                        <img src={audience} alt="임시이미지" />
+                    <button className="btn1" onClick={() => setShow(true)}>
+                        <img src={audience} alt="청중이미지" />
                         <div className="div-qna">
                             청중 QnA
                         </div>
@@ -31,6 +37,10 @@ const CreateDetailPage = () => {
                 </div>
             </div>
         </div>
+
+        <CreateModal show={show} setShow={setShow}/>
+
+        
 
     </>)
 }
