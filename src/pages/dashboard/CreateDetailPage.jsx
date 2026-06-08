@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import DashBoardHeader from "../../components/dashboard/DashBoardHeader";
 import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar";
 import "../../css/dashboard/CreateDetailPage.css";
+import audience from "../../assets/audience.png"
 
 
 const CreateDetailPage = ()=>{
@@ -19,7 +20,12 @@ const CreateDetailPage = ()=>{
         <div className="div-CreateDetailPage-body">
             <DashBoardSideBar clickTab={clickTab} />
             <div className="div-CreateDetailPage-content-list">
-                <p>카드 그리드 여러개</p>
+                <button className="btn1">
+                    <img src={audience} alt="임시이미지" />
+                    <div className="div-qna">
+                        청중 QnA
+                    </div>
+                </button>
             </div>
         </div>
 
