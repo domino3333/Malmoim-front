@@ -1,9 +1,13 @@
 
+import { useNavigate } from "react-router-dom";
 import DashBoardHeader from "../../components/dashboard/DashBoardHeader";
 import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar";
 import "../../css/dashboard/MyContentPage.css";
 
 const MyContentPage = ()=>{
+
+
+    const nav = useNavigate();
 
     const clickTab = (destination) => {
         nav(`/${destination}`);

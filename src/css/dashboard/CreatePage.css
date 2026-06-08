@@ -18,5 +18,10 @@
     border-radius: 10px;
     height: 100vh;
     margin-left: 20px;
+}
 
+.button-create{
+    background-color:#90653E;
+    border: none;
+    padding:20px;
 }
