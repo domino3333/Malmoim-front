@@ -6,6 +6,10 @@ const prefix = "/api/room"
 
 
 export const createQnARoom = async (input) => {
+
+    const token = sessionStorage.getItem('accessToken')
+    console.log(token);
+
     const result = await axios.post(`${ApiHost}${prefix}/create`, input, {
         headers: {
             Authorization: `Bearer ${token}`
