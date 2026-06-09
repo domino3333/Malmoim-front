@@ -23,6 +23,7 @@
     background-color: rgb(242, 237, 237);
 }
 
+/* 모달창 닫기 X 버튼*/
 .button-modal-close{
     border-radius: 10px;
     width: 10%;

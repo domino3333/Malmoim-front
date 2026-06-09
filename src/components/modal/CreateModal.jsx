@@ -29,7 +29,9 @@ const CreateModal = ({ show, setShow, onHide ,title }) => {
 
     const createRoom = async ()=>{
         
-        await createQnARoom(input);
+        await createQnARoom({...input,
+            isChecked:isChecked
+        });
 
     }
 
@@ -37,7 +39,10 @@ const CreateModal = ({ show, setShow, onHide ,title }) => {
     return (<>
         <Modal show={show} contentClassName="my-modal">
             <div className="modal-body">
-                <button onClick={onHide} className="button-modal-close">
+                <button onClick={()=>{
+                    onHide()
+                    setIsChecked(false)
+                }} className="button-modal-close">
                     X
                 </button>
                 <h4 className="h4-title">{title}</h4>
