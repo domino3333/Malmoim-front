@@ -1,0 +1,83 @@
+
+
+
+.my-modal{
+    border:none;
+    border: 3px solid #90653E;
+    border-radius: 20px;
+}
+
+
+.h4-title{
+    text-align: center;
+    font-weight: 600;
+    color: black;
+}
+
+
+/*모달 전체를 감싸는 body*/
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: rgb(242, 237, 237);
+}
+
+
+
+
+
+/* 만들 방의 title input*/
+.modal-title {
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(160, 145, 145);
+
+}
+
+/* input에 focus 시 색깔*/
+.modal-title:focus,
+.modal-capacity:focus,
+.modal-password:focus
+{
+    outline: none;
+    border-color: #90653E;
+}
+
+/* 만들 방의 capacity input*/
+.modal-capacity {
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    width: 20%;
+    border: 1px solid rgb(160, 145, 145);
+}
+
+/* 만들 방의 password input*/
+.modal-password {
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(160, 145, 145);
+
+}
+
+
+/*만들기 버튼*/
+.button-create {
+    background-color: #90653E;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+
+}
+
+/*체크박스 자체*/
+.privateCheckBox {
+    margin-left: 10px;
+    accent-color: #90653E;
+}

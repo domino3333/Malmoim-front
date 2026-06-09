@@ -15,26 +15,25 @@ const CreateModal = ({ show, setShow, title }) => {
 
 
     return (<>
-        <Modal show={show} onHide={() => setShow(false)}>
+        <Modal show={show} onHide={() => setShow(false)} contentClassName="my-modal">
             <div className="modal-body">
-                <h4>{title}</h4>
+                <h4 className="h4-title">{title}</h4>
                 <input className="modal-title" type="text" placeholder="제목" />
                 <input className="modal-capacity" type="number" placeholder="정원" />
 
                 <label htmlFor="checkBoxTitle">
                     비공개
-                    <input className="checkBoxTitle" type="checkbox" onChange={observeCheckBox} />
+                    <input className="privateCheckBox" type="checkbox" onChange={observeCheckBox} />
                 </label>
 
                 {isChecked ?
                     <input className="modal-password" type="password" placeholder="비밀번호" />
                     : null}
 
-                <button>
+                <button className="button-create">
                     만들기
                 </button>
             </div>
-
         </Modal>
 
     </>)
