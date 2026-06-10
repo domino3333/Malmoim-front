@@ -1,0 +1,38 @@
+
+
+/*myRoomsTable 자체*/
+.div-myRoomsTable{
+
+    width: 80%;
+    text-align: center;
+    margin: 50px;
+}
+
+
+/* 테이블의 td*/
+td{
+    border:none;
+    border-bottom: 1px solid rgb(205, 192, 192);
+}
+
+/*테이블의 thead*/
+.div-myRoomsTable-thead{
+    height: 50px;
+    border:1px solid rgb(205, 192, 192);
+}
+
+/*테이블의 한 줄 세로 크기 지정*/
+.div-myRoomsTable-tr{
+    height: 80px;
+}
+
+/*테이블의 왼쪽 테두리 선 지정*/
+.myRoomsTable-title{
+    border-left: 1px solid rgb(205, 192, 192);
+}
+
+/*테이블의 오른쪽 테두리 선 지정*/
+.myRoomsTable-status{
+border-right: 1px solid rgb(205, 192, 192);
+
+}
