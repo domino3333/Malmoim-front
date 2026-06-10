@@ -43,42 +43,41 @@ const MyContentPage = () => {
             <div className="div-MyContentPage-content-list">
                 <div className="div-content">
 
-                    <div className="div-content-head-main">
+                        <div className="div-content-head-main">
 
-                        <div className="div-content-head-left">
-                            <button className={activeTab === "all" ? "activeTab" : "tab"}
-                                onClick={() => setActiveTab("all")}
-                            >
-                                모두
-                            </button>
-                            <button className={activeTab === "private" ? "activeTab" : "tab"}
-                                onClick={() => setActiveTab("private")}>
-                                비공개
+                            <div className="div-content-head-left">
+                                <button className={activeTab === "all" ? "activeTab" : "tab"}
+                                    onClick={() => setActiveTab("all")}
+                                >
+                                    모두
+                                </button>
+                                <button className={activeTab === "private" ? "activeTab" : "tab"}
+                                    onClick={() => setActiveTab("private")}>
+                                    비공개
+                                </button>
+                            </div>
+
+                            <div className="div-content-head-right">
+                                <button className="button-head-create">
+                                    + 방 만들기
+                                </button>
+                            </div>
+
+                        </div>
+                        <div className="div-content-search-box">
+                            <input
+                                type="text"
+                                name="search-box"
+                                placeholder="방 제목"
+                            />
+                            <button type="button" className="search-button">
+                                <Search size={20} className="search-icon" />
                             </button>
                         </div>
 
-                        <div className="div-content-head-right">
-                            <button className="button-head-create">
-                                + 방 만들기
-                            </button>
-                        </div>
 
-                    </div>
-                    <div className="div-content-search-box">
-                        <input
-                            type="text"
-                            name="search-box"
-                            placeholder="방 제목"
-                        />
-                        <button type="button" className="search-button">
-                            <Search size={20} className="search-icon" />
-                        </button>
-                    </div>
+                        <MyRoomsTable rooms={rooms} />
 
-
-                    <MyRoomsTable rooms={rooms}/>
-
-                    
 
                 </div>
             </div>

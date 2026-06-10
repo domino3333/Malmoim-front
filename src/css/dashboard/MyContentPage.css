@@ -5,6 +5,15 @@
 }
 
 
+/* body 안의 전체 컴포넌트를 아우르는 div*/
+.div-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+
 
 /*content-list 전체 div*/
 .div-MyContentPage-content-list {
@@ -23,7 +32,6 @@
 .div-content-head-main {
     display: flex;
     justify-content: space-between;
-    margin: 20px;
     height: 80px;
     margin-bottom: 0px;
 }
@@ -89,8 +97,7 @@
 
 /*검색 창과 돋보기를 감싸는 div*/
 .div-content-search-box {
-    margin-bottom: 50px;
-    margin-left: 20px;
+    margin-bottom: 20px;
     border-radius: 8px;
     border: 1px solid #d6d0ca;
     background-color: white;
@@ -119,8 +126,8 @@
 
 
 /* 검색창의 돋보기 버튼  */
-.search-button{
-    border:none;
+.search-button {
+    border: none;
     background-color: transparent;
     display: flex;
 
