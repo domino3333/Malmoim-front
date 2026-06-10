@@ -14,6 +14,8 @@ const MyContentPage = () => {
 
     const nav = useNavigate();
 
+    const [activeTab, setActiveTab] = useState("all");
+
 
     const clickTab = (destination) => {
         nav(`/${destination}`);
@@ -42,13 +44,17 @@ const MyContentPage = () => {
                     <div className="div-content-head-main">
 
                         <div className="div-content-head-left">
-                            <button className="button-head-filter-all">
+                            <button className={activeTab === "all" ? "activeTab" : "tab"}
+                                onClick={() => setActiveTab("all")}
+                            >
                                 모두
                             </button>
-                            <button className="button-head-filter-active">
+                            <button className={activeTab === "active" ? "activeTab" : "tab"}
+                                onClick={() => setActiveTab("active")}>
                                 활성화
                             </button>
-                            <button className="button-head-filter-private">
+                            <button className={activeTab === "private" ? "activeTab" : "tab"}
+                                onClick={() => setActiveTab("private")}>
                                 비공개
                             </button>
                         </div>
@@ -62,7 +68,7 @@ const MyContentPage = () => {
                     </div>
 
                     <input type="text" className="div-content-search-box" name="search-box">
-                        
+
                     </input>
 
                     <table>

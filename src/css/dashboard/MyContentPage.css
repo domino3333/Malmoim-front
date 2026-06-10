@@ -49,11 +49,17 @@
 
 
 /* 필터 버튼*/
-.button-head-filter-all,
-.button-head-filter-active,
-.button-head-filter-private {
+ .activeTab{
     background-color: #c09d7d;
     border: 2px solid #90653E;
+    border-radius: 5px;
+    width: 15%;
+    height: 50%;
+    color:black;
+}
+
+/* 필터 버튼*/
+ .tab{
     border-radius: 5px;
     width: 15%;
     height: 50%;
