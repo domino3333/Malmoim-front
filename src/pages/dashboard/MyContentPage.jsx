@@ -5,6 +5,7 @@ import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar";
 import "../../css/dashboard/MyContentPage.css";
 import { useEffect, useState } from "react";
 import { getMyRooms } from "../../api/room/roomApi";
+import { Plus, Search, X } from "lucide-react";
 
 const MyContentPage = () => {
 
@@ -66,10 +67,18 @@ const MyContentPage = () => {
                         </div>
 
                     </div>
+                    <div className="div-content-search-box">
+                        <input
+                            type="text"
+                            name="search-box"
+                            placeholder="방 제목"
+                        />
+                        <button type="button" className="search-button">
+                            <Search size={20} className="search-icon" />
+                        </button>
+                    </div>
 
-                    <input type="text" className="div-content-search-box" name="search-box">
 
-                    </input>
 
                     <table>
                         {rooms.map((room) =>

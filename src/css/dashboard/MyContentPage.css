@@ -2,7 +2,6 @@
 .div-MyContentPage-body {
     margin-top: 30px;
     display: flex;
-
 }
 
 
@@ -15,6 +14,7 @@
     border-radius: 10px;
     height: 100vh;
     margin-left: 20px;
+    background-color: rgb(242, 237, 237);
 
 }
 
@@ -48,24 +48,31 @@
 }
 
 
-/* 필터 버튼*/
- .activeTab{
-    background-color: #c09d7d;
-    border: 2px solid #90653E;
+/* 활성화된 필터 버튼*/
+.activeTab {
     border-radius: 5px;
     width: 15%;
     height: 50%;
-    color:black;
+    font-weight: 600;
+    background-color: #EFE1D0;
+    border-color: #90653E;
+    color: #2F2116;
 }
 
-/* 필터 버튼*/
- .tab{
+/* 활성화가 안 된 필터 버튼*/
+.tab {
     border-radius: 5px;
+    border: none;
     width: 15%;
     height: 50%;
-    color:black;
+    background-color: rgb(242, 237, 237);
+    font-weight: 600;
 }
 
+/*활성화 안 된 버튼에 마우스 올릴 때*/
+.tab:not(.activeTab):hover {
+    background-color: #E9D8C4;
+}
 
 
 /* 방 만들기 버튼*/
@@ -76,20 +83,45 @@
     width: 30%;
     height: 50%;
     color: white;
+    font-weight: 600;
 
 }
 
-/*검색 창*/
-.div-content-search-box{
+/*검색 창과 돋보기를 감싸는 div*/
+.div-content-search-box {
     margin-bottom: 50px;
     margin-left: 20px;
-    border-radius: 5px;
-    border: 1px solid grey;
+    border-radius: 8px;
+    border: 1px solid #d6d0ca;
     background-color: white;
-    width:300px;
-    height: 30px;
-    padding: 5px;
-    
+    width: 380px;
+    height: 44px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
 
+}
+
+/* 검색창 input */
+.div-content-search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 15px;
+    background: transparent;
+}
+
+/* 검색창 돋보기 아이콘 */
+.search-icon {
+    font-size: 22px;
+    color: #555;
+}
+
+
+/* 검색창의 돋보기 버튼  */
+.search-button{
+    border:none;
+    background-color: transparent;
+    display: flex;
 
 }
