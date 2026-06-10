@@ -6,6 +6,7 @@ import "../../css/dashboard/MyContentPage.css";
 import { useEffect, useState } from "react";
 import { getMyRooms } from "../../api/room/roomApi";
 import { Plus, Search, X } from "lucide-react";
+import MyRoomsTable from "../../components/dashboard/table/MyRoomsTable";
 
 const MyContentPage = () => {
 
@@ -50,10 +51,6 @@ const MyContentPage = () => {
                             >
                                 모두
                             </button>
-                            <button className={activeTab === "active" ? "activeTab" : "tab"}
-                                onClick={() => setActiveTab("active")}>
-                                활성화
-                            </button>
                             <button className={activeTab === "private" ? "activeTab" : "tab"}
                                 onClick={() => setActiveTab("private")}>
                                 비공개
@@ -79,20 +76,9 @@ const MyContentPage = () => {
                     </div>
 
 
+                    <MyRoomsTable rooms={rooms}/>
 
-                    <table>
-                        {rooms.map((room) =>
-                            <tr key={room.no}>
-                                <td>
-                                    {room.title}
-                                </td>
-                                <td>
-                                    {room.hostNo}
-                                </td>
-
-                            </tr>
-                        )}
-                    </table>
+                    
 
                 </div>
             </div>
