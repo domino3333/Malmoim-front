@@ -37,7 +37,33 @@ const MyContentPage = () => {
         <div className="div-MyContentPage-body">
             <DashBoardSideBar clickTab={clickTab} />
             <div className="div-MyContentPage-content-list">
-                <div className="div-content-list">
+                <div className="div-content">
+
+                    <div className="div-content-head-main">
+
+                        <div className="div-content-head-left">
+                            <button className="button-head-filter-all">
+                                모두
+                            </button>
+                            <button className="button-head-filter-active">
+                                활성화
+                            </button>
+                            <button className="button-head-filter-private">
+                                비공개
+                            </button>
+                        </div>
+
+                        <div className="div-content-head-right">
+                            <button className="button-head-create">
+                                + 방 만들기
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <input type="text" className="div-content-search-box" name="search-box">
+                        
+                    </input>
 
                     <table>
                         {rooms.map((room) =>

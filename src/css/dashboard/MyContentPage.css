@@ -1,5 +1,3 @@
-
-
 /*바디 전체*/
 .div-MyContentPage-body {
     margin-top: 30px;
@@ -17,5 +15,75 @@
     border-radius: 10px;
     height: 100vh;
     margin-left: 20px;
+
+}
+
+
+/* All, Active, Private, 만들기버튼을 감싸는 div*/
+.div-content-head-main {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    height: 80px;
+    margin-bottom: 0px;
+}
+
+
+/*버튼들을 감싸는 div*/
+.div-content-head-left {
+    width: 60%;
+    display: flex;
+    gap: 20px;
+
+}
+
+/*방만들기 버튼을 감싸는 div*/
+.div-content-head-right {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 20px;
+
+}
+
+
+/* 필터 버튼*/
+.button-head-filter-all,
+.button-head-filter-active,
+.button-head-filter-private {
+    background-color: #c09d7d;
+    border: 2px solid #90653E;
+    border-radius: 5px;
+    width: 15%;
+    height: 50%;
+    color:black;
+}
+
+
+
+/* 방 만들기 버튼*/
+.button-head-create {
+    background-color: #90653E;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    height: 50%;
+    color: white;
+
+}
+
+/*검색 창*/
+.div-content-search-box{
+    margin-bottom: 50px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: white;
+    width:300px;
+    height: 30px;
+    padding: 5px;
+    
+
 
 }
