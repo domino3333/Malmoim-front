@@ -19,6 +19,9 @@ const MyContentPage = () => {
     const [activeTab, setActiveTab] = useState("all");
 
 
+    const [currentPage,setCurrentPage] =useState(1);
+    const pageSize = 5;
+
     const clickTab = (destination) => {
         nav(`/${destination}`);
     }
@@ -26,13 +29,13 @@ const MyContentPage = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const data = await getMyRooms();
+            const data = await getMyRooms(currentPage,5);
             setRooms(data);
         }
 
         fetchData();
 
-    }, [])
+    }, [currentPage])
 
     return (<>
         <DashBoardHeader />
