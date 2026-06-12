@@ -30,11 +30,11 @@ const LoginPage = () => {
           </div>
           <div className="div-login-email">
             <label htmlFor="email">이메일</label>
-            <input type="email" onChange={observeInput} id="email" name="email" />
+            <input type="email" onChange={observeInput} name="email" />
           </div>
           <div className="div-login-password">
             <label htmlFor="password">비밀번호</label>
-            <input type="password" onChange={observeInput} id="password" name="password" />
+            <input type="password" onChange={observeInput} name="password" />
           </div>
           <div className="div-login-button">
             <button
