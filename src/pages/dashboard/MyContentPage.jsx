@@ -19,23 +19,35 @@ const MyContentPage = () => {
     const [activeTab, setActiveTab] = useState("all");
 
 
-    const [currentPage,setCurrentPage] =useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 5;
 
 
-    const [totalPage,setTotalPage] = useState(0);
+    const [totalDataCount, setTotalDataCount] = useState(0);
 
+    const totalPage = Math.ceil(totalDataCount / pageSize)
+
+
+    const blockSize = 5;
+    const startBlock = Math.floor((currentPage - 1) / blockSize) * blockSize + 1;
+    const endBlock = Math.min(startBlock + blockSize - 1, totalPage);
+
+    const pages = Array.from(
+        { length: endBlock - startBlock + 1 }
+        , (_, i) => startBlock + i
+    );
 
     const clickTab = (destination) => {
         nav(`/${destination}`);
     }
 
+
     useEffect(() => {
 
         const fetchData = async () => {
-            const data = await getMyRooms(currentPage,pageSize);
+            const data = await getMyRooms(currentPage, pageSize);
             setRooms(data.rooms);
-            setTotalPage(data.totalCount);
+            setTotalDataCount(data.totalCount);
         }
 
         fetchData();
@@ -51,62 +63,53 @@ const MyContentPage = () => {
             <div className="div-MyContentPage-content-list">
                 <div className="div-content">
 
-                        <div className="div-content-head-main">
+                    <div className="div-content-head-main">
 
-                            <div className="div-content-head-left">
-                                <button className={activeTab === "all" ? "activeTab" : "tab"}
-                                    onClick={() => setActiveTab("all")}
-                                >
-                                    모두
-                                </button>
-                                <button className={activeTab === "private" ? "activeTab" : "tab"}
-                                    onClick={() => setActiveTab("private")}>
-                                    비공개
-                                </button>
-                            </div>
-
-                            <div className="div-content-head-right">
-                                <button className="button-head-create">
-                                    + 방 만들기
-                                </button>
-                            </div>
-
-                        </div>
-                        <div className="div-content-search-box">
-                            <input
-                                type="text"
-                                name="search-box"
-                                placeholder="방 제목"
-                            />
-                            <button type="button" className="search-button">
-                                <Search size={20} className="search-icon" />
+                        <div className="div-content-head-left">
+                            <button className={activeTab === "all" ? "activeTab" : "tab"}
+                                onClick={() => setActiveTab("all")}
+                            >
+                                모두
+                            </button>
+                            <button className={activeTab === "private" ? "activeTab" : "tab"}
+                                onClick={() => setActiveTab("private")}>
+                                비공개
                             </button>
                         </div>
 
+                        <div className="div-content-head-right">
+                            <button className="button-head-create">
+                                + 방 만들기
+                            </button>
+                        </div>
 
-                        <MyRoomsTable rooms={rooms} />
+                    </div>
+                    <div className="div-content-search-box">
+                        <input
+                            type="text"
+                            name="search-box"
+                            placeholder="방 제목"
+                        />
+                        <button type="button" className="search-button">
+                            <Search size={20} className="search-icon" />
+                        </button>
+                    </div>
 
-                        <button className="button-prev">
-                            &lt;
-                        </button>
-                        <button className="button-1" onClick={()=>setCurrentPage(1)}>
-                            1
-                        </button>
-                        <button className="button-2"onClick={()=>setCurrentPage(2)}>
-                            2
-                        </button>
-                        <button className="button-3">
-                            3
-                        </button>
-                        <button className="button-4">
-                            4
-                        </button>
-                        <button className="button-5">
-                            5
-                        </button>
-                        <button className="button-next">
-                            &gt;
-                        </button>
+
+                    <MyRoomsTable rooms={rooms} />
+
+                    <button className="button-prev">
+                        &lt;
+                    </button>
+
+
+                    {pages.map((page, index) =>
+                        <button key={page} onClick={()=>setCurrentPage(page)}>{page}</button>
+                    )}
+
+                    <button className="button-next">
+                        &gt;
+                    </button>
 
 
                 </div>
