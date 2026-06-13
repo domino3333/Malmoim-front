@@ -22,6 +22,10 @@ const MyContentPage = () => {
     const [currentPage,setCurrentPage] =useState(1);
     const pageSize = 5;
 
+
+    const [totalPage,setTotalPage] = useState(0);
+
+
     const clickTab = (destination) => {
         nav(`/${destination}`);
     }
@@ -29,8 +33,9 @@ const MyContentPage = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const data = await getMyRooms(currentPage,5);
-            setRooms(data);
+            const data = await getMyRooms(currentPage,pageSize);
+            setRooms(data.rooms);
+            setTotalPage(data.totalCount);
         }
 
         fetchData();
@@ -80,6 +85,28 @@ const MyContentPage = () => {
 
 
                         <MyRoomsTable rooms={rooms} />
+
+                        <button className="button-prev">
+                            &lt;
+                        </button>
+                        <button className="button-1" onClick={()=>setCurrentPage(1)}>
+                            1
+                        </button>
+                        <button className="button-2"onClick={()=>setCurrentPage(2)}>
+                            2
+                        </button>
+                        <button className="button-3">
+                            3
+                        </button>
+                        <button className="button-4">
+                            4
+                        </button>
+                        <button className="button-5">
+                            5
+                        </button>
+                        <button className="button-next">
+                            &gt;
+                        </button>
 
 
                 </div>
