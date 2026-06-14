@@ -123,11 +123,13 @@ const MyContentPage = () => {
 
                     <div className="div-paging-button-box">
 
-                        {startBlock !== 1 &&
-                            <button className="button-prev" onClick={prevClicked}>
-                                &lt; 이전
-                            </button>
-                        }
+                        <button
+                            className="button-prev"
+                            onClick={prevClicked}
+                            disabled={startBlock === 1}
+                        >
+                            &lt; 이전
+                        </button>
 
 
                         {pages.map((page, index) =>
@@ -135,10 +137,13 @@ const MyContentPage = () => {
                         )}
 
 
-                        {(totalPage > endBlock) &&
-                            <button className="button-next" onClick={nextClicked}>
-                                이후 &gt;
-                            </button>}
+                        <button 
+                            className="button-next" 
+                            onClick={nextClicked}
+                            disabled={(totalPage <= endBlock)}
+                        >
+                            이후 &gt;
+                        </button>
 
                     </div>
 
