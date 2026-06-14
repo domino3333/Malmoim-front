@@ -121,23 +121,27 @@ const MyContentPage = () => {
                     <MyRoomsTable rooms={rooms} />
 
 
-                    {startBlock !== 1 &&
-                        <button className="button-prev" onClick={prevClicked}>
-                            &lt; 이전
-                        </button>
-                    }
+                    <div className="div-paging-button-box">
+
+                        {startBlock !== 1 &&
+                            <button className="button-prev" onClick={prevClicked}>
+                                &lt; 이전
+                            </button>
+                        }
 
 
+                        {pages.map((page, index) =>
+                            <button className={currentPage === page ? "button-page-active" : "button-page"} key={page} onClick={() => setCurrentPage(page)}>{page}</button>
+                        )}
 
-                    {pages.map((page, index) =>
-                        <button className={currentPage === page ? "button-page-active" : "button-page"} key={page} onClick={() => setCurrentPage(page)}>{page}</button>
-                    )}
 
+                        {(totalPage > endBlock) &&
+                            <button className="button-next" onClick={nextClicked}>
+                                이후 &gt;
+                            </button>}
 
-                    {(totalPage > endBlock) &&
-                        <button className="button-next" onClick={nextClicked}>
-                            이후 &gt;
-                        </button>}
+                    </div>
+
 
 
 
