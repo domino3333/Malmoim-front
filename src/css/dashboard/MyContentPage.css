@@ -131,5 +131,31 @@
     border: none;
     background-color: transparent;
     display: flex;
+}
+
+
+
+/*활성화된 페이지 버튼*/
+.button-page-active{
+    background:none;
+    border:none;
+    font-weight: 700;
+}
+
+/*활성화되지 않은 페이지 버튼*/
+.button-page{
+    background:none;
+    border:none;
+    font-size: 0.8em;
+}
+
+
+/* "이전, 이후" 버튼 */
+.button-next,
+.button-prev
+{
+    background:none;
+    border:none;
 
 }
+

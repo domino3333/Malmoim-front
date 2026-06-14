@@ -123,20 +123,20 @@ const MyContentPage = () => {
 
                     {startBlock !== 1 &&
                         <button className="button-prev" onClick={prevClicked}>
-                            &lt;
+                            &lt; 이전
                         </button>
                     }
 
 
 
                     {pages.map((page, index) =>
-                        <button key={page} onClick={() => setCurrentPage(page)}>{page}</button>
+                        <button className={currentPage === page ? "button-page-active" : "button-page"} key={page} onClick={() => setCurrentPage(page)}>{page}</button>
                     )}
 
 
                     {(totalPage > endBlock) &&
                         <button className="button-next" onClick={nextClicked}>
-                            &gt;
+                            이후 &gt;
                         </button>}
 
 
