@@ -41,6 +41,30 @@ const MyContentPage = () => {
         nav(`/${destination}`);
     }
 
+    const prevClicked = () => {
+
+        //현재 블럭이 7이면
+        //이전 버튼을 눌렀을 때 첫블럭1로 가면서 1페이지로 바꾸면됨
+        //그러면 현재 블럭으로 이전과 이후의 블럭을 구해야 하는 게 관건
+
+        if (startBlock === 1) return;
+
+        const newStartBlock = startBlock - blockSize;
+        const newEndBlock = endBlock - blockSize;
+
+        setCurrentPage(newStartBlock);
+
+    }
+    const nextClicked = () => {
+        if (endBlock === 1) return;
+
+        const newStartBlock = startBlock + blockSize;
+        const newEndBlock = endBlock + blockSize;
+
+        setCurrentPage(newStartBlock);
+
+    }
+
 
     useEffect(() => {
 
@@ -98,18 +122,25 @@ const MyContentPage = () => {
 
                     <MyRoomsTable rooms={rooms} />
 
-                    <button className="button-prev">
-                        &lt;
-                    </button>
+
+                    {startBlock !== 1 &&
+                        <button className="button-prev" onClick={prevClicked}>
+                            &lt;
+                        </button>
+                    }
+
 
 
                     {pages.map((page, index) =>
-                        <button key={page} onClick={()=>setCurrentPage(page)}>{page}</button>
+                        <button key={page} onClick={() => setCurrentPage(page)}>{page}</button>
                     )}
 
-                    <button className="button-next">
-                        &gt;
-                    </button>
+
+                    {(totalPage > endBlock) &&
+                        <button className="button-next" onClick={nextClicked}>
+                            &gt;
+                        </button>}
+
 
 
                 </div>
