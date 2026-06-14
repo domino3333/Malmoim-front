@@ -100,7 +100,7 @@ const MyContentPage = () => {
                         </div>
 
                         <div className="div-content-head-right">
-                            <button className="button-head-create">
+                            <button className="button-head-create" onClick={()=>clickTab("createDetail")}>
                                 + 방 만들기
                             </button>
                         </div>
