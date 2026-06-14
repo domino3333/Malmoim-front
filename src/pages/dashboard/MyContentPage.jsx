@@ -50,16 +50,14 @@ const MyContentPage = () => {
         if (startBlock === 1) return;
 
         const newStartBlock = startBlock - blockSize;
-        const newEndBlock = endBlock - blockSize;
 
         setCurrentPage(newStartBlock);
 
     }
     const nextClicked = () => {
-        if (endBlock === 1) return;
+        if (endBlock === totalPage) return;
 
         const newStartBlock = startBlock + blockSize;
-        const newEndBlock = endBlock + blockSize;
 
         setCurrentPage(newStartBlock);
 
