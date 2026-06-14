@@ -12,26 +12,32 @@ const MyContentPage = () => {
 
 
 
+    //방 리스트
     const [rooms, setRooms] = useState([]);
 
     const nav = useNavigate();
 
+    //활성화된 탭 디폴트: "모두"
     const [activeTab, setActiveTab] = useState("all");
 
 
+    // 현재 페이지 넘버 디폴트:1페이지
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 5;
 
 
+    //총 데이터 카운트를 서버로부터 내려받아 저장
     const [totalDataCount, setTotalDataCount] = useState(0);
 
     const totalPage = Math.ceil(totalDataCount / pageSize)
 
 
+    // 블럭 사이즈
     const blockSize = 5;
     const startBlock = Math.floor((currentPage - 1) / blockSize) * blockSize + 1;
     const endBlock = Math.min(startBlock + blockSize - 1, totalPage);
 
+    //첫블럭과 마지막 블럭의 숫자를 이용하여 페이지들 넘버 배열 만들기
     const pages = Array.from(
         { length: endBlock - startBlock + 1 }
         , (_, i) => startBlock + i
