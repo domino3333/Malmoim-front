@@ -47,6 +47,11 @@ const MyContentPage = () => {
         nav(`/${destination}`);
     }
 
+
+    const clickRow = (no)=>{
+        nav(`/qna/${no}`);
+
+    }
     const prevClicked = () => {
 
         //현재 블럭이 7이면
@@ -124,7 +129,7 @@ const MyContentPage = () => {
                     </div>
 
 
-                    <MyRoomsTable rooms={rooms} />
+                    <MyRoomsTable rooms={rooms} clickRow={clickRow}/>
 
 
                     <div className="div-paging-button-box">

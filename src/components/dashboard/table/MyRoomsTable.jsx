@@ -3,7 +3,7 @@ import "../../../css/dashboard/MyRoomsTable.css"
 
 
 
-const MyRoomsTable = ({ rooms }) => {
+const MyRoomsTable = ({ rooms, clickRow }) => {
 
     return (<>
 
@@ -20,7 +20,8 @@ const MyRoomsTable = ({ rooms }) => {
 
             <tbody>
                 {rooms.map((room) =>
-                    <tr key={room.no} className="div-myRoomsTable-tr">
+                    <tr key={room.no} className="div-myRoomsTable-tr"
+                        onClick={()=>clickRow(room.no)}>
                         <td className="myRoomsTable-title">
                             {room.title}
                         </td>
