@@ -49,7 +49,7 @@ const MyContentPage = () => {
 
 
     const clickRow = (no)=>{
-        nav(`/qna/${no}`);
+        nav(`/qna/${no}/host`);
 
     }
     const prevClicked = () => {
