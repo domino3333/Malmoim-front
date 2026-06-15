@@ -9,21 +9,25 @@ const QnaHost = () => {
 
     useEffect(() => {
 
-        const client = connectQnaSocket(() => { });
+        const client = connectQnaSocket((connectedClient) => {
+            window.qnaClient = connectedClient;
+        });
+
+
         return () => client.deactivate();
     }, [])
 
 
 
-    const sendTest = ()=>{
+    const sendTest = () => {
         const client = window.qnaClient;
-        if(!client) return;
+        if (!client) return;
 
         client.publish({
             destination: "/app/qna/test",
-            body:JSON.stringify({
+            body: JSON.stringify({
                 roomNo: Number(no),
-                message:"호스트 테스트 메시지11",
+                message: "호스트 테스트 메시지11",
             }),
         });
     };

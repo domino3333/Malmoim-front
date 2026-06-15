@@ -11,13 +11,13 @@ const QnaParticipant = () => {
 
     useEffect(() => {
         const client = new Client({
-            webSocketFactory: () => new SockJS("http://localhost:8080/ws"),
+            brokerURL: "ws://localhost:8080/ws",
             reconnectDelay: 5000,
             debug: () => { },
         });
 
-        client.onConnect = ()=>{
-            client.subscribe(`/topic/qna/${no}`,(frame)=>{
+        client.onConnect = () => {
+            client.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
                 setMsg(data.message);
             });
@@ -25,7 +25,7 @@ const QnaParticipant = () => {
 
         client.activate();
 
-        return ()=> client.deactivate();
+        return () => client.deactivate();
 
     }, [no])
 
