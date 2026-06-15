@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 
-const QnaMain = () => {
+const QnaHost = () => {
 
 
     const { no } = useParams();
@@ -9,8 +9,8 @@ const QnaMain = () => {
     return (<>
 
         <h1>{no}</h1>
-        <p>몬데</p>
+        <p>호스트의qna 방</p>
     </>)
 }
 
-export default QnaMain;
+export default QnaHost;
