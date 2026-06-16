@@ -6,6 +6,8 @@ import { connectQnaSocket } from "../../api/room/qna/socket";
 const QnaHost = () => {
 
 
+    //client가 바뀐다고 화면을 다시 그릴 필요가 없기 때문에
+    // useRef 사용
     const clientRef = useRef(null);
 
     useEffect(() => {
