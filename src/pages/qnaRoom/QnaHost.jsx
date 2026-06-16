@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../api/room/qna/socket";
 
@@ -6,11 +6,12 @@ import { connectQnaSocket } from "../../api/room/qna/socket";
 const QnaHost = () => {
 
 
+    const clientRef = useRef(null);
 
     useEffect(() => {
 
         const client = connectQnaSocket((connectedClient) => {
-            window.qnaClient = connectedClient;
+            clientRef.current = connectedClient;
         });
 
 
@@ -20,8 +21,8 @@ const QnaHost = () => {
 
 
     const sendTest = () => {
-        const client = window.qnaClient;
-        if (!client) return;
+        const client = clientRef.current;
+        if (!client || !client.connected) return;
 
         client.publish({
             destination: "/app/qna/test",
@@ -34,6 +35,9 @@ const QnaHost = () => {
 
     const { no } = useParams();
     console.log("no", no);
+
+
+    
     return (<>
 
         <h1>{no}</h1>

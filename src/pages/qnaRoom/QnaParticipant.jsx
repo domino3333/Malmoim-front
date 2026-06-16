@@ -1,4 +1,3 @@
-import { Client } from "@stomp/stompjs";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../api/room/qna/socket";
@@ -18,8 +17,6 @@ const QnaParticipant = () => {
                 setMsg(data.message);
             });
         });
-
-        client.activate();
 
         return () => client.deactivate();
 
