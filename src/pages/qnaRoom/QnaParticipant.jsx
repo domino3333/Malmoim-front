@@ -1,6 +1,7 @@
 import { Client } from "@stomp/stompjs";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { connectQnaSocket } from "../../api/room/qna/socket";
 
 const QnaParticipant = () => {
 
@@ -10,18 +11,13 @@ const QnaParticipant = () => {
 
 
     useEffect(() => {
-        const client = new Client({
-            brokerURL: "ws://localhost:8080/ws",
-            reconnectDelay: 5000,
-            debug: () => { },
-        });
-
-        client.onConnect = () => {
-            client.subscribe(`/topic/qna/${no}`, (frame) => {
+        const client = connectQnaSocket((connectedClient) => {
+            connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
+                console.log("받은 메시지:", data);
                 setMsg(data.message);
             });
-        };
+        });
 
         client.activate();
 
