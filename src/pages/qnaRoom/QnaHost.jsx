@@ -21,12 +21,6 @@ const QnaHost = () => {
         return () => client.deactivate();
 
     }, [])
-
-    const client = clientRef.current;
-
-
-
-
     const sendTest = () => {
 
         const client = clientRef.current;
