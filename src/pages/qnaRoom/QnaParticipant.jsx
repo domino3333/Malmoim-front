@@ -6,22 +6,6 @@ const QnaParticipant = () => {
 
 
     const { no } = useParams();
-    const [msg, setMsg] = useState("");
-
-
-    useEffect(() => {
-        const client = connectQnaSocket((connectedClient) => {
-            connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
-                const data = JSON.parse(frame.body);
-                console.log("받은 메시지:", data);
-                setMsg(data.message);
-            });
-        });
-
-        return () => client.deactivate();
-
-    }, [no])
-
 
 
 
