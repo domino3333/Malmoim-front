@@ -8,9 +8,7 @@ const QnaHost = () => {
 
 
     const { no } = useParams();
-    console.log("no", no);
     const [question, setQuestion] = useState("");
-
     const clientRef = useRef(null);
 
 
