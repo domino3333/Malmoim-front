@@ -1,12 +1,32 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { connectQnaSocket } from "../../api/room/qna/socket";
+import { connectWebSocket } from "../../api/room/qna/socket";
 
 const QnaParticipant = () => {
 
 
     const { no } = useParams();
 
+
+    const [msg, setMsg] = useState("");
+
+
+
+
+    useEffect(() => {
+        const client = connectWebSocket();
+
+        client.onConnect = () => {
+            client.subscribe(`/topic/qna/${no}`, (frame) => {
+                const data = JSON.parse(frame.body);
+                setMsg(data.message);
+            })
+
+        }
+
+
+        return () => client.deactivate();
+    }, [])
 
 
     return (<>
