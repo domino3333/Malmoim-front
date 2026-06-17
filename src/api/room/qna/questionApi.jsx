@@ -1,5 +1,4 @@
 import axios from "axios"
-import WebSocketHost from "../../ApiHost"
 
 
 const wsPrefix = "/app/qna";

@@ -1,10 +1,11 @@
 import { Client } from "@stomp/stompjs"
+import { WebSocketHost } from "../../ApiHost"
 
 export const connectWebSocket = (onConnect) => {
 
     const client = new Client(
         {
-            brokerURL: "ws://localhost:8080/ws",
+            brokerURL: `${WebSocketHost}`,
             reconnectDelay: 5000,
             debug: (str) => console.log(str)
 

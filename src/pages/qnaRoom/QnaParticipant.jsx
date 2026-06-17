@@ -15,10 +15,7 @@ const QnaParticipant = () => {
     //input을 보는 change함수
     const observeQuestion = (e) => {
 
-        setQuestion({
-            ...question,
-            [e.target.name]: e.target.value
-        })
+        setQuestion(e.target.value);
 
     }
 
@@ -32,11 +29,10 @@ const QnaParticipant = () => {
             return;
         }
 
-        registerQuestion(client, question);
-
-
-
-
+        registerQuestion(client, {
+            roomNo: Number(no),
+            question: question
+        });
     }
 
 
