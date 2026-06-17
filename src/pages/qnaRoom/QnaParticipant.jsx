@@ -14,16 +14,14 @@ const QnaParticipant = () => {
 
 
     useEffect(() => {
-        const client = connectWebSocket();
-
-        client.onConnect = () => {
-            client.subscribe(`/topic/qna/${no}`, (frame) => {
-                const data = JSON.parse(frame.body);
-                setMsg(data.message);
-            })
-
-        }
-
+        const client = connectWebSocket(
+            () => {
+                client.subscribe(`/topic/qna/${no}`, (frame) => {
+                    const data = JSON.parse(frame.body);
+                    setMsg(data.message);
+                })
+            }
+        );
 
         return () => client.deactivate();
     }, [])
