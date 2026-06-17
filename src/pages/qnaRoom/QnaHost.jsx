@@ -21,14 +21,23 @@ const QnaHost = () => {
         return () => client.deactivate();
 
     }, [])
+
+
+
+
     const sendTest = () => {
 
         const client = clientRef.current;
+
+        if (!client || !client.connected) {
+            return;
+        }
+
         client.publish({
             destination: "/app/qna/register",
-            body:JSON.stringify({
-                roomNo:Number(no),
-                message:"호스트가 보낸 메시지"
+            body: JSON.stringify({
+                roomNo: Number(no),
+                message: "호스트가 보낸 메시지"
             })
         })
     }

@@ -15,8 +15,8 @@ const QnaParticipant = () => {
 
     useEffect(() => {
         const client = connectWebSocket(
-            () => {
-                client.subscribe(`/topic/qna/${no}`, (frame) => {
+            (connectedClient) => {
+                connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                     const data = JSON.parse(frame.body);
                     setMsg(data.message);
                 })
@@ -24,7 +24,7 @@ const QnaParticipant = () => {
         );
 
         return () => client.deactivate();
-    }, [])
+    }, [no])
 
 
     return (<>
