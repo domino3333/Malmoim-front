@@ -12,3 +12,8 @@
     height: 40px;
     border-radius: 10px;
 }
+
+.RoomHeader-title{
+    align-self: center;
+}
+
