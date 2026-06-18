@@ -1,6 +1,6 @@
 
 
-import "../../../css/dashboard/qnaRoom/RoomHeader.css"
+import "../../../css/dashboard/room/RoomHeader.css"
 import logo from "../../../assets/logo.png"
 
 

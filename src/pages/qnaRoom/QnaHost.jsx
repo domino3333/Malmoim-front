@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connectWebSocket } from "../../api/room/qna/socket";
 import RoomHeader from "../../components/dashboard/room/RoomHeader";
-
+import "../../css/dashboard/room/qna/QnaHost.css"
 
 const QnaHost = () => {
 
