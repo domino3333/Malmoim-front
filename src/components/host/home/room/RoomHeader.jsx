@@ -1,7 +1,7 @@
 
 
-import "../../../css/dashboard/room/RoomHeader.css"
-import logo from "../../../assets/logo.png"
+import "../../../../css/host/home/room/RoomHeader.css"
+import logo from "../../../../assets/logo.png"
 
 
 const RoomHeader = ({ title }) => {

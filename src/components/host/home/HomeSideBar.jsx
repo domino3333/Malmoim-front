@@ -1,8 +1,8 @@
-﻿import '../../css/dashboard/DashBoardSideBar.css'
-import personIcon from '../../assets/person.png'
-import plusIcon from '../../assets/plus.png'
+import '../../../css/host/home/HomeSideBar.css'
+import personIcon from '../../../assets/person.png'
+import plusIcon from '../../../assets/plus.png'
 
-const DashBoardSideBar = ({ clickTab }) => {
+const HomeSideBar = ({ clickTab }) => {
   return (
     <>
       <div className="div-dashboard-sidebar">
@@ -19,5 +19,5 @@ const DashBoardSideBar = ({ clickTab }) => {
   )
 }
 
-export default DashBoardSideBar
+export default HomeSideBar
 

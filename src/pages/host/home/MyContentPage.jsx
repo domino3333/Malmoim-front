@@ -1,12 +1,12 @@
 
 import { useNavigate } from "react-router-dom";
-import DashBoardHeader from "../../components/dashboard/DashBoardHeader";
-import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar";
-import "../../css/dashboard/MyContentPage.css";
+import HomeHeader from "../../../components/host/home/HomeHeader";
+import HomeSideBar from "../../../components/host/home/HomeSideBar";
+import "../../../css/host/home/MyContentPage.css";
 import { useEffect, useState } from "react";
-import { getMyRooms } from "../../api/room/roomApi";
+import { getMyRooms } from "../../../api/room/roomApi";
 import { Plus, Search, X } from "lucide-react";
-import MyRoomsTable from "../../components/dashboard/table/MyRoomsTable";
+import MyRoomsTable from "../../../components/host/home/table/MyRoomsTable";
 
 const MyContentPage = () => {
 
@@ -88,11 +88,11 @@ const MyContentPage = () => {
     }, [currentPage])
 
     return (<>
-        <DashBoardHeader />
+        <HomeHeader />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-MyContentPage-body">
-            <DashBoardSideBar clickTab={clickTab} />
+            <HomeSideBar clickTab={clickTab} />
             <div className="div-MyContentPage-content-list">
                 <div className="div-content">
 

@@ -1,14 +1,14 @@
 
-import "../../css/dashboard/HostDashboardPage.css"
+import "../../../css/host/home/HostHomePage.css"
 
 
-import DashBoardHeader from "../../components/dashboard/DashBoardHeader"
-import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar"
+import HomeHeader from "../../../components/host/home/HomeHeader"
+import HomeSideBar from "../../../components/host/home/HomeSideBar"
 import { useNavigate } from "react-router-dom"
 
 
 
-const HostDashboardPage = () => {
+const HostHomePage = () => {
 
     const nav = useNavigate();
 
@@ -21,11 +21,11 @@ const HostDashboardPage = () => {
 
     return (<>
 
-        <DashBoardHeader />
+        <HomeHeader />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-dashboard-body">
-            <DashBoardSideBar clickTab={clickTab} />
+            <HomeSideBar clickTab={clickTab} />
             <div className="div-dashboard-content-list">
                 <table>
                     <tr>
@@ -44,4 +44,4 @@ const HostDashboardPage = () => {
 
 }
 
-export default HostDashboardPage;
+export default HostHomePage;

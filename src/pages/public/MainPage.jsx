@@ -1,4 +1,4 @@
-﻿import MainNavBar from "../../components/home/MainNavBar"
+import MainNavBar from "../../components/public/MainNavBar"
 
 
 const MainPage = () =>{

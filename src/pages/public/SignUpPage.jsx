@@ -1,6 +1,6 @@
-﻿import { useState } from 'react'
-import MainNavBar from '../../components/home/MainNavBar'
-import '../../css/home/SignUpPage.css'
+import { useState } from 'react'
+import MainNavBar from '../../components/public/MainNavBar'
+import '../../css/public/SignUpPage.css'
 import { signUp } from '../../api/auth/authApi'
 
 const SignUpPage = () => {

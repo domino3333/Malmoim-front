@@ -1,16 +1,16 @@
-﻿import { Suspense, lazy } from 'react'
+import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import Loading from '../pages/home/Loading'
-import LoginPage from '../pages/home/LoginPage'
-import SignUpPage from '../pages/home/SignUpPage'
-import HostDashboardPage from '../pages/dashboard/HostDashboardPage'
-import CreatePage from '../pages/dashboard/CreatePage'
-import MyContentPage from '../pages/dashboard/MyContentPage'
-import CreateDetailPage from '../pages/dashboard/CreateDetailPage'
-import QnaHost from '../pages/qnaRoom/QnaHost'
-import QnaParticipant from '../pages/qnaRoom/QnaParticipant'
+import Loading from '../pages/public/Loading'
+import LoginPage from '../pages/public/LoginPage'
+import SignUpPage from '../pages/public/SignUpPage'
+import HostHomePage from '../pages/host/home/HostHomePage'
+import CreatePage from '../pages/host/home/CreatePage'
+import MyContentPage from '../pages/host/home/MyContentPage'
+import CreateDetailPage from '../pages/host/home/CreateDetailPage'
+import QnaHost from '../pages/host/qna/QnaHost'
+import QnaParticipant from '../pages/participant/qna/QnaParticipant'
 
-const MainPage = lazy(() => import('../pages/home/MainPage'))
+const MainPage = lazy(() => import('../pages/public/MainPage'))
 
 const root = createBrowserRouter([
   {
@@ -41,7 +41,7 @@ const root = createBrowserRouter([
     path: '/dashboard',
     element: (
       <Suspense fallback={<Loading />}>
-        <HostDashboardPage />
+        <HostHomePage />
       </Suspense>
     ),
   },

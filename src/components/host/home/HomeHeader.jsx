@@ -1,8 +1,8 @@
-﻿
-import logo from "../../assets/logo.png"
-import "../../css/dashboard/DashBoardHeader.css"
 
-const DashBoardHeader = () => {
+import logo from "../../../assets/logo.png"
+import "../../../css/host/home/HomeHeader.css"
+
+const HomeHeader = () => {
 
     return (<>
         <header className="header-HostDashboardPage">
@@ -15,4 +15,4 @@ const DashBoardHeader = () => {
     </>)
 }
 
-export default DashBoardHeader;
+export default HomeHeader;

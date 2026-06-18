@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import DashBoardHeader from "../../components/dashboard/DashBoardHeader";
-import DashBoardSideBar from "../../components/dashboard/DashBoardSideBar";
-import "../../css/dashboard/CreateDetailPage.css";
-import audience from "../../assets/audience.png"
+import HomeHeader from "../../../components/host/home/HomeHeader";
+import HomeSideBar from "../../../components/host/home/HomeSideBar";
+import "../../../css/host/home/CreateDetailPage.css";
+import audience from "../../../assets/audience.png"
 import { useState } from "react";
-import CreateModal from "../../components/modal/CreateModal";
+import CreateModal from "../../../components/host/modal/CreateModal";
 
 
 
@@ -20,11 +20,11 @@ const CreateDetailPage = () => {
     const [show, setShow] = useState(false);
 
     return (<>
-        <DashBoardHeader />
+        <HomeHeader />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-CreateDetailPage-body">
-            <DashBoardSideBar clickTab={clickTab} />
+            <HomeSideBar clickTab={clickTab} />
             <div className="div-CreateDetailPage-content-list">
                 <div className="btn-box">
                     <button className="btn1" onClick={() => setShow(true)}>

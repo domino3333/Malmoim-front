@@ -13,7 +13,7 @@ const RoomMiniHeader = ({ title, code, status }) => {
                 입장 코드:{code}
             </div>
             <div className="RoomMiniHeader-stauts">
-                상태:{stauts}
+                상태:{status}
             </div>
         </div>
 

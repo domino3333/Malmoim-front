@@ -1,4 +1,4 @@
-﻿import '../../css/home/MainNavBar.css'
+import '../../css/public/MainNavBar.css'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 

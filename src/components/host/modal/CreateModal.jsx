@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
-import "../../css/modal/CreateModal.css"
+import "../../../css/host/modal/CreateModal.css"
 import { useState } from "react";
-import { createQnARoom } from "../../api/room/roomApi";
+import { createQnARoom } from "../../../api/room/roomApi";
 
 
 

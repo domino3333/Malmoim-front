@@ -1,5 +1,5 @@
-﻿import MainNavBar from '../../components/home/MainNavBar'
-import '../../css/home/LoginPage.css'
+import MainNavBar from '../../components/public/MainNavBar'
+import '../../css/public/LoginPage.css'
 import { useState } from 'react'
 import { login } from '../../api/auth/authApi'
 import { Link, useNavigate } from 'react-router-dom'
