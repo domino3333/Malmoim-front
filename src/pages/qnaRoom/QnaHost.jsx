@@ -40,6 +40,15 @@ const QnaHost = () => {
 
         <div className="qna_host_main_div">
             <RoomHeader title={"청중 QnA"}/>
+            <div>
+                방 제목: title
+            </div>
+            <div>
+                입장코드: code
+            </div>
+            <div>
+                상태: status
+            </div>
         </div>
     </>)
 }
