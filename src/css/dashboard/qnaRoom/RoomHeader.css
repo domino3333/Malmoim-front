@@ -1,7 +1,7 @@
 /* 모든 방 상단 헤더 */
 .RoomHeader-main-div {
     display: flex;
-
+    justify-content: space-between;
 }
 
 

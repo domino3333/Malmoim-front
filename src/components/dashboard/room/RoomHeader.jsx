@@ -4,11 +4,11 @@ import "../../../css/dashboard/qnaRoom/RoomHeader.css"
 import logo from "../../../assets/logo.png"
 
 
-const RoomHeader = ({title}) =>{
+const RoomHeader = ({ title }) => {
 
-    return(<>
+    return (<>
         <div className="RoomHeader-main-div">
-            <img src={logo} alt="로고" className="RoomHeader-logo"/>
+            <img src={logo} alt="로고" className="RoomHeader-logo" />
             <div className="RoomHeader-title">
                 {title}
             </div>
