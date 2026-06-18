@@ -13,7 +13,8 @@
     border-radius: 10px;
 }
 
-.RoomHeader-title{
+.RoomHeader-title,
+.RoomHeader-my-info{
     align-self: center;
 }
 
