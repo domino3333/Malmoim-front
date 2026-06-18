@@ -1,0 +1,14 @@
+/* 모든 방 상단 헤더 */
+.RoomHeader-main-div {
+    display: flex;
+
+}
+
+
+/* 모든 방 헤더의 로고 */
+.RoomHeader-logo {
+
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+}

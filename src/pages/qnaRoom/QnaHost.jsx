@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connectWebSocket } from "../../api/room/qna/socket";
+import QnaRoomHeader from "../../components/dashboard/room/RoomHeader";
 
 
 const QnaHost = () => {
@@ -36,9 +37,10 @@ const QnaHost = () => {
 
     return (<>
 
-        <h1>{no}</h1>
-        <p>호스트의qna 방</p>
-        <p>질문:{question}</p>
+
+        <div className="qna_host_main_div">
+            <QnaRoomHeader title={"청중 QnA"}/>
+        </div>
     </>)
 }
 
