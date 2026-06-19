@@ -4,6 +4,7 @@
     justify-content: space-between;
 }
 
+/*로고와 메인title을 묶는 div*/
 .RoomHeader-left-div{
     display: flex;
     gap:20px;
