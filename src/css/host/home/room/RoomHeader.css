@@ -4,6 +4,10 @@
     justify-content: space-between;
 }
 
+.RoomHeader-left-div{
+    display: flex;
+    gap:20px;
+}
 
 /* 모든 방 헤더의 로고 */
 .RoomHeader-logo {
@@ -13,6 +17,7 @@
     border-radius: 10px;
 }
 
+/*방 헤더의 가장 상단*/
 .RoomHeader-title,
 .RoomHeader-my-info{
     align-self: center;
