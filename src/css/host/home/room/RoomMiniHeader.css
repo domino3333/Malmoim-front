@@ -1,0 +1,6 @@
+
+/* RoomMiniHeader의 div를 감싸는 main div*/
+.RoomMiniHeader-main-div{
+    display: flex;
+
+}

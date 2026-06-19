@@ -1,4 +1,5 @@
 
+import "../../../../css/host/home/room/RoomMiniHeader.css"
 
 const RoomMiniHeader = ({ title, code, status }) => {
 
