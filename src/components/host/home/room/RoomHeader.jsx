@@ -8,9 +8,11 @@ const RoomHeader = ({ title }) => {
 
     return (<>
         <div className="RoomHeader-main-div">
-            <img src={logo} alt="로고" className="RoomHeader-logo" />
-            <div className="RoomHeader-title">
-                {title}
+            <div className="RoomHeader-left-div">
+                <img src={logo} alt="로고" className="RoomHeader-logo" />
+                <div className="RoomHeader-title">
+                    {title}
+                </div>
             </div>
             <div className="RoomHeader-my-info">
                 정보
