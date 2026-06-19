@@ -1,6 +1,15 @@
 
 /* RoomMiniHeader의 div를 감싸는 main div*/
 .RoomMiniHeader-main-div{
-    display: flex;
+    
+    padding: 10px 10px;
+    
+}
 
+.RoomMiniHeader-padding-div{
+    
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    padding-top: 10px;
 }
