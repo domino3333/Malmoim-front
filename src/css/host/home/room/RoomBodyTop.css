@@ -1,0 +1,16 @@
+
+
+/*RoomBodyTop 전체를 아우르는 main div*/
+.RoomBodyTop-main-div{
+
+    display: flex;
+}
+
+
+/* 타이머 div */
+.timer-div{
+
+    width:500px;
+    height:200px;
+    border: 1px solid #90653E;
+}
