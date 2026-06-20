@@ -50,7 +50,7 @@ const QnaHost = () => {
             <div className="qna-host-body">
                 <RemoteControl />
                 <div className="qna-host-body-top">
-                    <HostQnaList />
+                    <HostQnaList/>
                     <QnaParticipantPannel />
                 </div>
 

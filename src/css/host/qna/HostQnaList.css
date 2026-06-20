@@ -1,13 +1,12 @@
 
 /* 전체를 아우르는 main div*/
 .HostQnaList-main-div{
-    width:100%;
+    width:70%;
 }
 
 /* 전체,대기,답변완료 버튼과 select박스를 감싸는 div*/
 .qna-toolbar-main-div {
     display: flex;
-    width: 70%;
     justify-content: space-between;
     align-items: center;
 }
