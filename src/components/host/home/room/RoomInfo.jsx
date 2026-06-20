@@ -1,11 +1,11 @@
 
-import "../../../../css/host/home/room/RoomBodyTop.css"
+import "../../../../css/host/home/room/RoomInfo.css"
 
-const RoomBodyTop = () => {
+const RoomInfo = () => {
 
     return (<>
 
-        <div className="RoomBodyTop-main-div">
+        <div className="RoomInfo-main-div">
             <div className="timer-div">
                 타이머 존
             </div>
@@ -25,4 +25,4 @@ const RoomBodyTop = () => {
     </>)
 }
 
-export default RoomBodyTop
+export default RoomInfo

@@ -1,7 +1,7 @@
 
 
-/*RoomBodyTop 전체를 아우르는 main div*/
-.RoomBodyTop-main-div{
+/*RoomInfo 전체를 아우르는 main div*/
+.RoomInfo-main-div{
 
     display: flex;
 }

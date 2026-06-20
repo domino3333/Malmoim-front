@@ -4,7 +4,7 @@ import { connectWebSocket } from "../../../api/room/qna/socket";
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 import "../../../css/host/qna/QnaHost.css"
-import RoomBodyTop from "../../../components/host/home/room/RoomBodyTop";
+import RoomInfo from "../../../components/host/home/room/RoomInfo";
 
 const QnaHost = () => {
 
@@ -43,7 +43,8 @@ const QnaHost = () => {
         <div className="qna_host_main_div">
             <RoomHeader title={"청중 QnA"}/>
             <RoomMiniHeader title={""} code={no} status={""}/>
-            <RoomBodyTop/>
+            <RoomInfo/>
+            
         </div>
     </>)
 }
