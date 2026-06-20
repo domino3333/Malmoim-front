@@ -1,6 +1,6 @@
 
 /* qnaHost 전체를 아우르는 div*/
-.qna_host_main_div{
+.qna-host-main-div{
     width:1000px;
     border: 1px solid red;
     margin: 0 auto;
