@@ -10,7 +10,21 @@
 /* 타이머 div */
 .timer-div{
 
-    width:500px;
+    width:50%;
     height:200px;
     border: 1px solid #90653E;
+}
+
+/* 방 정보 div들을 감싸는 div*/
+.room-info-div{
+    display: flex;
+    flex-direction: column;
+}
+
+/* 방 정보 div*/
+.room-info-1,
+.room-info-2,
+.room-info-3{
+    border:1px solid #90653E;
+    width:600px;
 }
