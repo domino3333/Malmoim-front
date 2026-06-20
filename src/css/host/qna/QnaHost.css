@@ -5,3 +5,12 @@
     border: 1px solid red;
     margin: 0 auto;
 }
+
+
+/* 질문리스트, 참여자 패널을 감싸는 div*/
+.qna-host-body{
+
+    display: flex;
+    width:100%;
+
+}

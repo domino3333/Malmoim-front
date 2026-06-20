@@ -5,6 +5,8 @@ import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 import "../../../css/host/qna/QnaHost.css"
 import RoomInfo from "../../../components/host/home/room/RoomInfo";
+import HostQnaList from "../../../components/host/home/room/HostQnaList";
+import QnaParticipantPannel from "../../../components/host/home/room/QnaParticipantPannel";
 
 const QnaHost = () => {
 
@@ -45,7 +47,8 @@ const QnaHost = () => {
             <RoomMiniHeader title={""} code={no} status={""}/>
             <RoomInfo/>
             <div className="qna-host-body">
-                
+                <HostQnaList/>
+                <QnaParticipantPannel/>
 
             </div>
         </div>

@@ -1,0 +1,18 @@
+
+/* 전체,대기,답변완료 버튼과 select박스를 감싸는 div*/
+.qna-toolbar-main-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 전체,대기,답변완료 버튼을 감싸는 div*/
+.qna-toolbar-left-div {
+    display: flex;
+}
+
+/* select 박스를 감싸는 div*/
+.qna-toolbar-right-div {
+    display: flex;
+}

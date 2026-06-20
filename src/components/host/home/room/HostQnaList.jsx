@@ -2,10 +2,35 @@
 
 import "../../../../css/host/qna/HostQnaList.css"
 
-const HostQnaList = ()=>{
+const HostQnaList = () => {
 
     return (<>
 
+
+        <div className="HostQnaList-main-div">
+            <h3>질문 리스트</h3>
+            <div className="qna-toolbar-main-div">
+                <div className="qna-toolbar-left-div">
+                    <button>
+                        전체
+                    </button>
+                    <button>
+                        대기
+                    </button>
+                    <button>
+                        답변 완료
+                    </button>
+                </div>
+                <div className="qna-toolbar-right-div">
+                    <select name="selectBox" id="order">
+                        <option value="latest">최신순</option>
+                        <option value="oldest">오래된 순</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div >
     </>)
 }
 
