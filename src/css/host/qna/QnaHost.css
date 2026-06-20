@@ -8,7 +8,7 @@
 
 
 /* 질문리스트, 참여자 패널을 감싸는 div*/
-.qna-host-body{
+.qna-host-body-top{
 
     display: flex;
     width:100%;

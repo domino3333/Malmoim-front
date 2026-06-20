@@ -1,6 +1,7 @@
 
 
 import "../../../../css/host/qna/HostQnaList.css"
+import QnaBox from "./QnaBox";
 
 const HostQnaList = () => {
 
@@ -26,6 +27,13 @@ const HostQnaList = () => {
                         <option value="latest">최신순</option>
                         <option value="oldest">오래된 순</option>
                     </select>
+                </div>
+
+            </div>
+
+            <div className="qnaList-main-div">
+                <div>
+                    <QnaBox/>
                 </div>
 
             </div>

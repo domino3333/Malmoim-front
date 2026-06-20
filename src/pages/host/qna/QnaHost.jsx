@@ -7,6 +7,7 @@ import "../../../css/host/qna/QnaHost.css"
 import RoomInfo from "../../../components/host/home/room/RoomInfo";
 import HostQnaList from "../../../components/host/home/room/HostQnaList";
 import QnaParticipantPannel from "../../../components/host/home/room/QnaParticipantPannel";
+import RemoteControl from "../../../components/host/home/room/RemoteControl";
 
 const QnaHost = () => {
 
@@ -43,12 +44,15 @@ const QnaHost = () => {
 
 
         <div className="qna-host-main-div">
-            <RoomHeader title={"청중 QnA"}/>
-            <RoomMiniHeader title={""} code={no} status={""}/>
-            <RoomInfo/>
+            <RoomHeader title={"청중 QnA"} />
+            <RoomMiniHeader title={""} code={no} status={""} />
+            <RoomInfo />
             <div className="qna-host-body">
-                <HostQnaList/>
-                <QnaParticipantPannel/>
+                <RemoteControl />
+                <div className="qna-host-body-top">
+                    <HostQnaList />
+                    <QnaParticipantPannel />
+                </div>
 
             </div>
         </div>
