@@ -16,7 +16,7 @@ const QnaBox = ()=>{
             </div>
             <div className="QnaBox-body-div">
                 <div>
-                    질문내용 한줄.......
+                    질문내용 한줄...으로 텍스트 가리기
                 </div>
             </div>
 
