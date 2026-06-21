@@ -18,6 +18,8 @@ const QnaHost = () => {
     const clientRef = useRef(null);
 
 
+
+    // 웹소켓 구독
     useEffect(() => {
 
         const client = connectWebSocket((connectedClient) => {
@@ -35,6 +37,10 @@ const QnaHost = () => {
 
     }, [no])
 
+    //http 용 useEffect
+    useEffect(()=>{
+        
+    },[])
 
 
 
