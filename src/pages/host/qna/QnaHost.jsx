@@ -72,7 +72,7 @@ const QnaHost = () => {
 
         <div className="qna-host-main-div">
             <RoomHeader title={"청중 QnA"} />
-            <RoomMiniHeader title={""} code={no} status={""} />
+            <RoomMiniHeader roomInfo={roomInfo} />
             <RoomInfo />
             <div className="qna-host-body">
                 <RemoteControl />

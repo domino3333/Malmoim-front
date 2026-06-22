@@ -1,7 +1,7 @@
 
 import "../../../../css/host/home/room/RoomMiniHeader.css"
 
-const RoomMiniHeader = ({ title, code, status }) => {
+const RoomMiniHeader = ({ roomInfo }) => {
 
 
     return (<>
@@ -9,13 +9,13 @@ const RoomMiniHeader = ({ title, code, status }) => {
         <div className="RoomMiniHeader-main-div">
             <div className="RoomMiniHeader-padding-div">
                 <div className="RoomMiniHeader-title">
-                    방제목:{title}
+                    방제목:{roomInfo.title}
                 </div>
                 <div className="RoomMiniHeader-code">
-                    입장 코드:{code}
+                    입장 코드:{roomInfo.code}
                 </div>
                 <div className="RoomMiniHeader-stauts">
-                    상태:
+                    상태:{roomInfo.status}
                 </div>
             </div>
         </div>
