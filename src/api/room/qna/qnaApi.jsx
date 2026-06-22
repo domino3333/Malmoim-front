@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import { ApiHost } from "../ApiHost";
+import { ApiHost } from "../../ApiHost";
 
 
 const prefix = "/api/qna"
