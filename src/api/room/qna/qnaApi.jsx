@@ -19,3 +19,16 @@ export const createQnARoom = async (input) => {
     );
 
 }
+
+export const getMyOneQnaRoom = async (no) => {
+
+    const token = sessionStorage.getItem('accessToken');
+
+    const result = await axios.get(`${prefix}/${no}`,{
+        headers:{
+            Authorization:`Bearer ${token}`
+        }
+    })
+
+    return
+}
