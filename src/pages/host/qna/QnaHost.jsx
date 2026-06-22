@@ -8,6 +8,7 @@ import RoomInfo from "../../../components/host/home/room/RoomInfo";
 import HostQnaList from "../../../components/host/home/room/HostQnaList";
 import QnaParticipantPannel from "../../../components/host/home/room/QnaParticipantPannel";
 import RemoteControl from "../../../components/host/home/room/RemoteControl";
+import { getMyOneQnaRoom } from "../../../api/room/qna/qnaApi";
 
 const QnaHost = () => {
 
@@ -15,6 +16,18 @@ const QnaHost = () => {
 
     const { no } = useParams();
     const [question, setQuestion] = useState("");
+    const [roomInfo, setRoomInfo] = useState({
+        no:0,
+        host_no:0,
+        title:"",
+        code:"",
+        capacity:0,
+        password:"",
+        created_at:"",
+        status:"",
+        type:""
+
+    });
     const clientRef = useRef(null);
 
 
@@ -39,6 +52,13 @@ const QnaHost = () => {
 
     //http 용 useEffect
     useEffect(()=>{
+
+        const fetchData = async ()=>{
+            const data = await getMyOneQnaRoom(no);
+
+        }
+
+
         
     },[])
 
