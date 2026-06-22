@@ -24,11 +24,11 @@ export const getMyOneQnaRoom = async (no) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const result = await axios.get(`${prefix}/${no}`,{
+    const result = await axios.get(`${ApiHost}${prefix}/${no}`,{
         headers:{
             Authorization:`Bearer ${token}`
         }
     })
 
-    return
+    return result.data;
 }
