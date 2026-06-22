@@ -3,7 +3,7 @@
 import "../../../../css/host/qna/HostQnaList.css"
 import QnaBox from "./QnaBox";
 
-const HostQnaList = () => {
+const HostQnaList = ({question}) => {
 
     return (<>
 
@@ -33,7 +33,7 @@ const HostQnaList = () => {
 
             <div className="qnaList-main-div">
                 <div>
-                    <QnaBox/>
+                    <QnaBox question={question}/>
                 </div>
 
             </div>

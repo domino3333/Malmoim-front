@@ -2,7 +2,7 @@
 
 import "../../../../css/host/qna/QnaBox.css"
 
-const QnaBox = ()=>{
+const QnaBox = ({question})=>{
 
     return(<>
         <div className="QnaBox-main-div">
@@ -16,7 +16,7 @@ const QnaBox = ()=>{
             </div>
             <div className="QnaBox-body-div">
                 <div>
-                    질문내용 한줄...으로 텍스트 가리기
+                    {question}
                 </div>
             </div>
 
