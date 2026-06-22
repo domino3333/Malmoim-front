@@ -55,9 +55,10 @@ const QnaHost = () => {
 
         const fetchData = async ()=>{
             const data = await getMyOneQnaRoom(no);
-
+            setRoomInfo(data);
         }
 
+        fetchData();
 
         
     },[])

@@ -3,7 +3,7 @@ import { ApiHost } from "../ApiHost";
 
 
 
-
+const prefix = "/api/room"
 
 
 
