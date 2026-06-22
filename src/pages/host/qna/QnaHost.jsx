@@ -18,12 +18,12 @@ const QnaHost = () => {
     const [question, setQuestion] = useState("");
     const [roomInfo, setRoomInfo] = useState({
         no:0,
-        host_no:0,
+        hostNo:0,
         title:"",
         code:"",
         capacity:0,
         password:"",
-        created_at:"",
+        createdAt:"",
         status:"",
         type:""
 
