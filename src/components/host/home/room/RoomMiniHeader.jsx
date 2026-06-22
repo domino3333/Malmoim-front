@@ -9,13 +9,13 @@ const RoomMiniHeader = ({ roomInfo }) => {
         <div className="RoomMiniHeader-main-div">
             <div className="RoomMiniHeader-padding-div">
                 <div className="RoomMiniHeader-title">
-                    방제목:{roomInfo.title}
+                    방제목: {roomInfo.title}
                 </div>
                 <div className="RoomMiniHeader-code">
-                    입장 코드:{roomInfo.code}
+                    입장 코드: {roomInfo.code}
                 </div>
                 <div className="RoomMiniHeader-stauts">
-                    상태:{roomInfo.status}
+                    상태: {roomInfo.status === "opened" ? "공개" : "비공개"}
                 </div>
             </div>
         </div>

@@ -50,7 +50,7 @@ const QnaHost = () => {
 
     }, [no])
 
-    //http 용 useEffect
+    // 방 하나의 정보를 불러오는 http useEffect
     useEffect(()=>{
 
         const fetchData = async ()=>{
@@ -61,7 +61,7 @@ const QnaHost = () => {
         fetchData();
 
         
-    },[])
+    },[no])
 
 
 
