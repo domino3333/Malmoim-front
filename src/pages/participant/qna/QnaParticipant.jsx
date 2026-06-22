@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
-import { registerQuestion } from "../../../api/room/qna/questionApi";
+import { registerQuestion } from "../../../api/room/qna/socketApi";
 
 const QnaParticipant = () => {
 

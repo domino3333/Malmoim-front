@@ -1,24 +1,21 @@
+
 import axios from "axios";
 import { ApiHost } from "../ApiHost";
 
 
+const prefix = "/api/qna"
 
 
-
-
-
-export const getMyRooms = async (currentPage,pageSize) => {
+// qna 방 생성 api
+export const createQnARoom = async (input) => {
 
     const token = sessionStorage.getItem('accessToken')
 
-    const result = await axios.get(`${ApiHost}${prefix}?page=${currentPage}&size=${pageSize}`,{
+    const result = await axios.post(`${ApiHost}${prefix}/create`, input, {
         headers: {
             Authorization: `Bearer ${token}`
         }
     }
     );
 
-    return result.data;
 }
-
-
