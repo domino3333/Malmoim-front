@@ -51,7 +51,7 @@ const TimerModal = ({ show, onHide }) => {
                 <div className="timer-main-div">
                     <div className="minute-main-div">
                         <button className="timer-arrow-top">△</button>
-                        <input type="text" onChange={observeMinute} inputMode="numeric" className="minute-input" />
+                        <input value={minute} type="text" onChange={observeMinute} inputMode="numeric" className="minute-input" />
                         <button className="timer-arrow-bottom">▽</button>
                         <p>분</p>
                     </div>
@@ -60,7 +60,7 @@ const TimerModal = ({ show, onHide }) => {
                     </div>
                     <div className="second-main-div">
                         <button className="timer-arrow-top">△</button>
-                        <input type="text" onChange={observeSecond} inputMode="numeric" className="second-input" />
+                        <input value={minute} type="text" onChange={observeSecond} inputMode="numeric" className="second-input" />
                         <button className="timer-arrow-bottom">▽</button>
                         <p>초</p>
                     </div>
