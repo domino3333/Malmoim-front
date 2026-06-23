@@ -7,12 +7,12 @@
 .minute-main-div {
     display: flex;
     flex-direction: column;
-    width: 100px;
+    width: 90px;
 }
 
 /* "초" 의 세개의 태그를 감싸는 div*/
 .second-main-div {
-    width: 100px;
+    width: 90px;
     display: flex;
     flex-direction: column;
 }
@@ -20,15 +20,34 @@
 /* 분 입력 input*/
 .minute-input {
     height: 80px;
+    border:1px solid #90653E;
 }
 
 /* 초 입력 input*/
 .second-input {
     height: 80px;
+    border:1px solid #90653E;
 }
 
-.timer-arrow-top
-.timer-arrow-bottom
-{
+/* 분, 초에 있는 위아래 화살표*/
+.timer-arrow-top,
+.timer-arrow-bottom{
     height: 40px;
+    background-color: white;
+    color: black;
+    border:1px solid #90653E;
+}
+
+/*위 화살표에 둥글게 곡선 적용*/
+.timer-arrow-top{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: none;
+}
+
+/* 아래 화살표에 둥글게 곡선 적용*/
+.timer-arrow-bottom{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: none;
 }
