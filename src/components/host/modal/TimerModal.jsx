@@ -49,6 +49,16 @@ const TimerModal = ({ show, onHide }) => {
                     10분
                 </div>
 
+
+                <div className="cancel-start-main-div">
+                    <button>
+                        취소
+                    </button>
+                    <button>
+                        시작
+                    </button>
+                </div>
+
             </div>
         </Modal>
     </>)
