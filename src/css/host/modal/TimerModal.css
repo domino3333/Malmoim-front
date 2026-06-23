@@ -22,6 +22,7 @@
     height: 80px;
     border:1px solid #90653E;
     text-align: center;
+    font-size: 1.5em;
 }
 
 /* 초 입력 input*/
@@ -29,6 +30,7 @@
     height: 80px;
     border:1px solid #90653E;
     text-align: center;
+    font-size: 1.5em;
 }
 
 /* 분, 초에 있는 위아래 화살표*/

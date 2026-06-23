@@ -7,8 +7,8 @@ const TimerModal = ({ show, onHide }) => {
 
 
 
-    const [minute, setMinute] = useState("");
-    const [second, setSecond] = useState("");
+    const [minute, setMinute] = useState("05");
+    const [second, setSecond] = useState("00");
 
 
     const observeMinute = (e) => {
@@ -16,7 +16,7 @@ const TimerModal = ({ show, onHide }) => {
 
         value = value.replace(/\D/g, "");
 
-        if (Number(value) > 60 || value.length>2) {
+        if (Number(value) > 60 || value.length > 2) {
             value = "60";
         }
 
@@ -28,11 +28,35 @@ const TimerModal = ({ show, onHide }) => {
 
         value = value.replace(/\D/g, "");
 
-        if (Number(value) > 60 || value.length>2) {
-            value = "60";
+        if (Number(value) > 60 || value.length > 2) {
+            value = "59";
         }
 
         setSecond(value);
+    }
+
+
+
+
+    const changeTime = (target, amount) => {
+
+        if (target === "minute") {
+            let value = Number(minute) + amount;
+
+            if (value < 0) value = 0;
+            if (value > 60) value = 60;
+
+            setMinute(String(value).padStart(2,"0"));
+        }
+
+        if (target === "second") {
+            let value = Number(second) + amount;
+
+            if (value < 0) value = 0;
+            if (value > 59) value = 59;
+
+            setSecond(String(value).padStart(2,"0"));
+        }
     }
 
     return (<>
@@ -50,18 +74,18 @@ const TimerModal = ({ show, onHide }) => {
                 <p>참여자가 질문을 작성할 시간을 정해주세요.</p>
                 <div className="timer-main-div">
                     <div className="minute-main-div">
-                        <button className="timer-arrow-top">△</button>
+                        <button className="timer-arrow-top" onClick={() => changeTime("minute", 1)}>△</button>
                         <input value={minute} type="text" onChange={observeMinute} inputMode="numeric" className="minute-input" />
-                        <button className="timer-arrow-bottom">▽</button>
+                        <button className="timer-arrow-bottom" onClick={() => changeTime("minute", -1)} >▽</button>
                         <p>분</p>
                     </div>
                     <div className="colon-div">
                         :
                     </div>
                     <div className="second-main-div">
-                        <button className="timer-arrow-top">△</button>
-                        <input value={minute} type="text" onChange={observeSecond} inputMode="numeric" className="second-input" />
-                        <button className="timer-arrow-bottom">▽</button>
+                        <button className="timer-arrow-top" onClick={() => changeTime("second", 1)}>△</button>
+                        <input value={second} type="text" onChange={observeSecond} inputMode="numeric" className="second-input" />
+                        <button className="timer-arrow-bottom" onClick={() => changeTime("second", -1)}>▽</button>
                         <p>초</p>
                     </div>
                 </div>
