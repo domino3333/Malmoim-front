@@ -9,6 +9,7 @@ import HostQnaList from "../../../components/host/home/room/HostQnaList";
 import QnaParticipantPannel from "../../../components/host/home/room/QnaParticipantPannel";
 import RemoteControl from "../../../components/host/home/room/RemoteControl";
 import { getMyOneQnaRoom } from "../../../api/room/qna/qnaApi";
+import TimerModal from "../../../components/host/modal/TimerModal";
 
 const QnaHost = () => {
 
@@ -29,6 +30,9 @@ const QnaHost = () => {
 
     });
     const clientRef = useRef(null);
+
+    //TimerModal에 대한 useState
+    const [show, setShow] = useState(false);
 
 
 
@@ -83,6 +87,10 @@ const QnaHost = () => {
 
             </div>
         </div>
+
+
+        <TimerModal show={show} setShow={setShow} onHide={()=>setShow(false)}/>
+
     </>)
 }
 

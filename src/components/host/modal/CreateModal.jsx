@@ -5,7 +5,7 @@ import { createQnARoom } from "../../../api/room/qna/qnaApi";
 
 
 
-const CreateModal = ({ show, setShow, onHide ,title }) => {
+const CreateModal = ({ show, onHide, title }) => {
 
 
     const [isChecked, setIsChecked] = useState(false);
@@ -14,23 +14,25 @@ const CreateModal = ({ show, setShow, onHide ,title }) => {
         setIsChecked(e.target.checked);
     }
 
-    const [input,setInput] = useState({
-        title:"",
-        capacity:"",
-        password:"",
-        isChecked:isChecked
+    const [input, setInput] = useState({
+        title: "",
+        capacity: "",
+        password: "",
+        isChecked: isChecked
     })
 
-    const observeInput = (e)=>{
-        setInput({...input,
-            [e.target.name]:e.target.value
+    const observeInput = (e) => {
+        setInput({
+            ...input,
+            [e.target.name]: e.target.value
         })
     }
 
-    const createRoom = async ()=>{
-        
-        await createQnARoom({...input,
-            isChecked:isChecked
+    const createRoom = async () => {
+
+        await createQnARoom({
+            ...input,
+            isChecked: isChecked
         });
 
     }
@@ -39,7 +41,7 @@ const CreateModal = ({ show, setShow, onHide ,title }) => {
     return (<>
         <Modal show={show} contentClassName="my-modal">
             <div className="modal-body">
-                <button onClick={()=>{
+                <button onClick={() => {
                     onHide()
                     setIsChecked(false)
                 }} className="button-modal-close">
@@ -58,12 +60,12 @@ const CreateModal = ({ show, setShow, onHide ,title }) => {
                     <input className="modal-password" name="password" onChange={observeInput} type="password" placeholder="비밀번호" />
                     : null}
 
-                <button className="button-create" 
-                    onClick={async ()=>{
+                <button className="button-create"
+                    onClick={async () => {
                         await createRoom()
                         onHide()
                         setIsChecked(false)
-                }}>
+                    }}>
                     만들기
                 </button>
             </div>
