@@ -1,0 +1,34 @@
+/* 분:초 를 감싸는 div*/
+.timer-main-div {
+    display: flex;
+}
+
+/* "분" 의 세개의 태그를 감싸는 div*/
+.minute-main-div {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+/* "초" 의 세개의 태그를 감싸는 div*/
+.second-main-div {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 분 입력 input*/
+.minute-input {
+    height: 80px;
+}
+
+/* 초 입력 input*/
+.second-input {
+    height: 80px;
+}
+
+.timer-arrow-top
+.timer-arrow-bottom
+{
+    height: 40px;
+}

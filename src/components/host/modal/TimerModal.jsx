@@ -20,18 +20,18 @@ const TimerModal = ({ show, onHide }) => {
                 <p>참여자가 질문을 작성할 시간을 정해주세요.</p>
                 <div className="timer-main-div">
                     <div className="minute-main-div">
-                        <button>▲</button>
-                        <input type="number" />
-                        <button>▼</button>
+                        <button className="timer-arrow-top">▲</button>
+                        <input type="number" className="minute-input"/>
+                        <button className="timer-arrow-bottom">▼</button>
                         <p>분</p>
                     </div>
                     <div className="colon-div">
                         :
                     </div>
                     <div className="second-main-div">
-                        <button>▲</button>
-                        <input type="number" />
-                        <button>▼</button>
+                        <button className="timer-arrow-top">▲</button>
+                        <input type="number" className="second-input"/>
+                        <button className="timer-arrow-bottom">▼</button>
                         <p>초</p>
                     </div>
                 </div>
