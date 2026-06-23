@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
+import "../../../css/host/modal/TimerModal.css"
 
 
 const TimerModal = ({ show, onHide }) => {
@@ -12,7 +13,7 @@ const TimerModal = ({ show, onHide }) => {
                 <button
                     onClick={() => onHide()}
                     className="button-timer-modal-close"
-                    >
+                >
                     X
                 </button>
                 <h4>질문 시간 설정</h4>
@@ -20,7 +21,7 @@ const TimerModal = ({ show, onHide }) => {
                 <div className="timer-main-div">
                     <div className="minute-main-div">
                         <button>▲</button>
-                        <input type="number"/>
+                        <input type="number" />
                         <button>▼</button>
                         <p>분</p>
                     </div>
@@ -29,10 +30,23 @@ const TimerModal = ({ show, onHide }) => {
                     </div>
                     <div className="second-main-div">
                         <button>▲</button>
-                        <input type="number"/>
+                        <input type="number" />
                         <button>▼</button>
                         <p>초</p>
                     </div>
+                </div>
+
+                <div className="minute-preset-1">
+                    1분
+                </div>
+                <div className="minute-preset-2">
+                    3분
+                </div>
+                <div className="minute-preset-3">
+                    5분
+                </div>
+                <div className="minute-preset-4">
+                    10분
                 </div>
 
             </div>
