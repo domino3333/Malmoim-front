@@ -16,7 +16,7 @@ const TimerModal = ({ show, onHide }) => {
 
         value = value.replace(/\D/g, "");
 
-        if (Number(value) > 60) {
+        if (Number(value) > 60 || value.length>2) {
             value = "60";
         }
 
@@ -28,7 +28,7 @@ const TimerModal = ({ show, onHide }) => {
 
         value = value.replace(/\D/g, "");
 
-        if (Number(value) > 60) {
+        if (Number(value) > 60 || value.length>2) {
             value = "60";
         }
 
