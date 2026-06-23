@@ -21,12 +21,14 @@
 .minute-input {
     height: 80px;
     border:1px solid #90653E;
+    text-align: center;
 }
 
 /* 초 입력 input*/
 .second-input {
     height: 80px;
     border:1px solid #90653E;
+    text-align: center;
 }
 
 /* 분, 초에 있는 위아래 화살표*/
