@@ -5,6 +5,36 @@ import "../../../css/host/modal/TimerModal.css"
 
 const TimerModal = ({ show, onHide }) => {
 
+
+
+    const [minute, setMinute] = useState("");
+    const [second, setSecond] = useState("");
+
+
+    const observeMinute = (e) => {
+        let value = e.target.value;
+
+        value = value.replace(/\D/g, "");
+
+        if (Number(value) > 60) {
+            value = "60";
+        }
+
+        setMinute(value);
+    }
+
+    const observeSecond = (e) => {
+        let value = e.target.value;
+
+        value = value.replace(/\D/g, "");
+
+        if (Number(value) > 60) {
+            value = "60";
+        }
+
+        setSecond(value);
+    }
+
     return (<>
 
         <Modal show={show} onHide={onHide}>
@@ -21,7 +51,7 @@ const TimerModal = ({ show, onHide }) => {
                 <div className="timer-main-div">
                     <div className="minute-main-div">
                         <button className="timer-arrow-top">△</button>
-                        <input type="text" inputMode="numeric"  className="minute-input"/>
+                        <input type="text" onChange={observeMinute} inputMode="numeric" className="minute-input" />
                         <button className="timer-arrow-bottom">▽</button>
                         <p>분</p>
                     </div>
@@ -30,7 +60,7 @@ const TimerModal = ({ show, onHide }) => {
                     </div>
                     <div className="second-main-div">
                         <button className="timer-arrow-top">△</button>
-                        <input type="text" inputMode="numeric"  className="second-input"/>
+                        <input type="text" onChange={observeSecond} inputMode="numeric" className="second-input" />
                         <button className="timer-arrow-bottom">▽</button>
                         <p>초</p>
                     </div>
