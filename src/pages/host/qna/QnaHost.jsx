@@ -79,7 +79,7 @@ const QnaHost = () => {
             <RoomMiniHeader roomInfo={roomInfo} />
             <RoomInfo />
             <div className="qna-host-body">
-                <RemoteControl />
+                <RemoteControl setShow={setShow} />
                 <div className="qna-host-body-top">
                     <HostQnaList question={question}/>
                     <QnaParticipantPannel />
@@ -89,7 +89,7 @@ const QnaHost = () => {
         </div>
 
 
-        <TimerModal show={show} setShow={setShow} onHide={()=>setShow(false)}/>
+        <TimerModal show={show} onHide={()=>setShow(false)}/>
 
     </>)
 }

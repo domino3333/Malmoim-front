@@ -1,11 +1,11 @@
 
 import "../../../../css/host/qna/RemoteControl.css"
 
-const RemoteControl= ()=>{
+const RemoteControl = ({ setShow }) => {
 
-    return(<>
+    return (<>
 
-        <button>
+        <button onClick={()=>setShow(true)}>
             질문 시작
         </button>
         <button>
