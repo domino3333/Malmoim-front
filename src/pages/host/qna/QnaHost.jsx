@@ -38,6 +38,9 @@ const QnaHost = () => {
     const [show, setShow] = useState(false);
     const [totalSecond,setTotalSecond] =useState(0);
 
+    const startTimer = (seconds)=>{
+        setTotalSecond(seconds);
+    }
 
 
     // 웹소켓 구독
@@ -93,7 +96,7 @@ const QnaHost = () => {
         </div>
 
 
-        <TimerModal setTotalSecond={setTotalSecond} show={show} onHide={()=>setShow(false)}/>
+        <TimerModal startTimer={startTimer} show={show} onHide={()=>setShow(false)}/>
 
     </>)
 }

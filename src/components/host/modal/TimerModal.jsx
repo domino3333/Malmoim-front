@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import "../../../css/host/modal/TimerModal.css"
 
 
-const TimerModal = ({ show, onHide,setTotalSecond }) => {
+const TimerModal = ({ show, onHide,startTimer }) => {
 
 
 
@@ -19,7 +19,7 @@ const TimerModal = ({ show, onHide,setTotalSecond }) => {
         const secondNumber = Number(second);
 
         const totalSecond = minuteNumber * 60 + secondNumber;
-        setTotalSecond(totalSecond);
+        startTimer(totalSecond);
         onHide();
 
     }
