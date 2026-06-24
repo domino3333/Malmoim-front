@@ -15,7 +15,7 @@ const RoomMiniHeader = ({ roomInfo }) => {
                     입장 코드: {roomInfo.code}
                 </div>
                 <div className="RoomMiniHeader-stauts">
-                    상태: {roomInfo.status === "opened" ? "공개" : "비공개"}
+                    상태: {roomInfo.visibility === "PUBLIC" ? "공개" : "비공개"}
                 </div>
             </div>
         </div>

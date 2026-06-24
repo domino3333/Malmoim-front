@@ -32,7 +32,7 @@ const MyRoomsTable = ({ rooms, clickRow }) => {
                             {room.type}
                         </td>
                         <td className="myRoomsTable-status">
-                            {room.status === "opened" ? "공개" : "비공개"}
+                            {room.visibility === "PUBLIC" ? "공개" : "비공개"}
                         </td>
 
                     </tr>

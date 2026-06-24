@@ -25,7 +25,7 @@ const QnaHost = () => {
         capacity:0,
         password:"",
         createdAt:"",
-        status:"",
+        visibility:"",
         type:""
 
     });
