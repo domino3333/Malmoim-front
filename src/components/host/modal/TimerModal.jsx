@@ -23,6 +23,7 @@ const TimerModal = ({ show, onHide }) => {
         }
 
         setMinute(value);
+        //시간을 직접 바꿀 땐 프리셋 풀리도록 null 넣어주기
         setSelectedPreset(null);
     }
 
@@ -36,6 +37,7 @@ const TimerModal = ({ show, onHide }) => {
         }
 
         setSecond(value);
+        //시간을 직접 바꿀 땐 프리셋 풀리도록 null 넣어주기
         setSelectedPreset(null);
     }
 
@@ -51,6 +53,7 @@ const TimerModal = ({ show, onHide }) => {
 
     //화살표를 눌렀을 때 시간을 조정하는 함수
     const changeTime = (target, amount) => {
+        //시간을 직접 바꿀 땐 프리셋 풀리도록 null 넣어주기
         setSelectedPreset(null);
 
         if (target === "minute") {
