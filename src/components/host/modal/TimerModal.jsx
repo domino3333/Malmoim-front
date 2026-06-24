@@ -134,7 +134,7 @@ const TimerModal = ({ show, onHide,startTimer }) => {
                         <button onClick={() => onHide()} className="timer-modal-cancel-button">
                             취소
                         </button>
-                        <button className="timer-modal-start-button">
+                        <button className="timer-modal-start-button" onClick={clickStart}>
                             시작
                         </button>
                     </div>
