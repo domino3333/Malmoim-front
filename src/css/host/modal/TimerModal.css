@@ -114,14 +114,26 @@ input[type="number"] {
     justify-content: space-around;
 }
 
-/* 분 프리셋 각각의 div */
+/* 분 프리셋 각각의 div(비활성화 상태) */
 .minute-preset {
     border: 1px solid grey;
     padding: 2px 10px;
     border-radius: 5px;
     width: 80px;
     text-align: center;
-    background-color: rgb(255, 251, 251);
+    color: black;
+    background-color: #fffdfb;
+}
+
+/* 활성화된 분 프리셋의 버튼 색*/
+.minute-preset-active{
+    border: 1px solid grey;
+    padding: 2px 10px;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+    color:white;
+    background-color: #90653E;
 }
 
 /* 취소/시작을 감싸는 main div*/
@@ -158,3 +170,4 @@ input[type="number"] {
     padding: 5px 10px;
 
 }
+

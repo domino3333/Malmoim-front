@@ -10,6 +10,8 @@ const TimerModal = ({ show, onHide }) => {
     const [minute, setMinute] = useState("05");
     const [second, setSecond] = useState("00");
 
+    const [selectedPreset, setSelectedPreset] = useState(5);
+
 
     const observeMinute = (e) => {
         let value = e.target.value;
@@ -38,8 +40,9 @@ const TimerModal = ({ show, onHide }) => {
 
 
     const presetTime = (minute)=>{
-        setMinute(String(minute));
+        setMinute(String(minute).padStart(2,"0"));
         setSecond(String("00"));
+        setSelectedPreset(minute);
     }
 
 
@@ -94,16 +97,16 @@ const TimerModal = ({ show, onHide }) => {
 
                 <div className="minute-preset-parent-div">
 
-                    <button className="minute-preset" onClick={()=>presetTime(1)}>
+                    <button className={selectedPreset===1 ? "minute-preset-active":"minute-preset"} onClick={()=>presetTime(1)}>
                         1분
                     </button>
-                    <button className="minute-preset" onClick={()=>presetTime(3)}>
+                    <button className={selectedPreset===3 ? "minute-preset-active":"minute-preset"} onClick={()=>presetTime(3)}>
                         3분
                     </button>
-                    <button className="minute-preset" onClick={()=>presetTime(5)}>
+                    <button className={selectedPreset===5 ? "minute-preset-active":"minute-preset"} onClick={()=>presetTime(5)}>
                         5분
                     </button>
-                    <button className="minute-preset" onClick={()=>presetTime(10)}>
+                    <button className={selectedPreset===10 ? "minute-preset-active":"minute-preset"} onClick={()=>presetTime(10)}>
                         10분
                     </button>
                 </div>
