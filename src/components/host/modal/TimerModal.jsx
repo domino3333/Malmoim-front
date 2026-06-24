@@ -46,7 +46,7 @@ const TimerModal = ({ show, onHide }) => {
             if (value < 0) value = 0;
             if (value > 60) value = 60;
 
-            setMinute(String(value).padStart(2,"0"));
+            setMinute(String(value).padStart(2, "0"));
         }
 
         if (target === "second") {
@@ -55,7 +55,7 @@ const TimerModal = ({ show, onHide }) => {
             if (value < 0) value = 0;
             if (value > 59) value = 59;
 
-            setSecond(String(value).padStart(2,"0"));
+            setSecond(String(value).padStart(2, "0"));
         }
     }
 
@@ -90,27 +90,32 @@ const TimerModal = ({ show, onHide }) => {
                     </div>
                 </div>
 
-                <div className="minute-preset-1">
-                    1분
-                </div>
-                <div className="minute-preset-2">
-                    3분
-                </div>
-                <div className="minute-preset-3">
-                    5분
-                </div>
-                <div className="minute-preset-4">
-                    10분
+                <div className="minute-preset-parent-div">
+
+                    <div className="minute-preset">
+                        1분
+                    </div>
+                    <div className="minute-preset">
+                        3분
+                    </div>
+                    <div className="minute-preset">
+                        5분
+                    </div>
+                    <div className="minute-preset">
+                        10분
+                    </div>
                 </div>
 
 
                 <div className="cancel-start-main-div">
-                    <button>
-                        취소
-                    </button>
-                    <button>
-                        시작
-                    </button>
+                    <div className="cancel-start-border-div">
+                        <button>
+                            취소
+                        </button>
+                        <button>
+                            시작
+                        </button>
+                    </div>
                 </div>
 
             </div>

@@ -20,7 +20,7 @@
 /* 분 입력 input*/
 .minute-input {
     height: 80px;
-    border:1px solid #90653E;
+    border: 1px solid #90653E;
     text-align: center;
     font-size: 1.5em;
 }
@@ -28,29 +28,29 @@
 /* 초 입력 input*/
 .second-input {
     height: 80px;
-    border:1px solid #90653E;
+    border: 1px solid #90653E;
     text-align: center;
     font-size: 1.5em;
 }
 
 /* 분, 초에 있는 위아래 화살표*/
 .timer-arrow-top,
-.timer-arrow-bottom{
+.timer-arrow-bottom {
     height: 40px;
     background-color: white;
     color: black;
-    border:1px solid #90653E;
+    border: 1px solid #90653E;
 }
 
 /*위 화살표에 둥글게 곡선 적용*/
-.timer-arrow-top{
+.timer-arrow-top {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: none;
 }
 
 /* 아래 화살표에 둥글게 곡선 적용*/
-.timer-arrow-bottom{
+.timer-arrow-bottom {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top: none;
@@ -60,11 +60,37 @@
 /* input number 박스에서 화살표 박스 없애기*/
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type="number"] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
-/*                                        */
+
+/*------------------------------------------*/
+
+
+/* 분 프리셋을 감싸는 div */
+.minute-preset-parent-div {
+    display: flex;
+    gap: 15px;
+}
+
+/* 분 프리셋 각각의 div */
+.minute-preset {
+    border: 1px solid grey;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+/* 취소/시작을 감싸는 main div*/
+.cancel-start-main-div {
+
+    padding: 10px;
+}
+
+/* 상단 border만 주기위한 div*/
+.cancel-start-border-div {
+    border-top: 1px solid grey;
+}
