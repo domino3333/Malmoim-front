@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import "../../../css/host/modal/TimerModal.css"
 
 
-const TimerModal = ({ show, onHide }) => {
+const TimerModal = ({ show, onHide,setTotalSecond }) => {
 
 
 
@@ -12,6 +12,17 @@ const TimerModal = ({ show, onHide }) => {
 
     const [selectedPreset, setSelectedPreset] = useState(5);
 
+
+    // 시작 버튼 누르면 호출되는 함수
+    const clickStart = () => {
+        const minuteNumber = Number(minute);
+        const secondNumber = Number(second);
+
+        const totalSecond = minuteNumber * 60 + secondNumber;
+        setTotalSecond(totalSecond);
+        onHide();
+
+    }
 
     const observeMinute = (e) => {
         let value = e.target.value;

@@ -29,10 +29,14 @@ const QnaHost = () => {
         type:""
 
     });
+
+
+
     const clientRef = useRef(null);
 
     //TimerModal에 대한 useState
     const [show, setShow] = useState(false);
+    const [totalSecond,setTotalSecond] =useState(0);
 
 
 
@@ -89,7 +93,7 @@ const QnaHost = () => {
         </div>
 
 
-        <TimerModal show={show} onHide={()=>setShow(false)}/>
+        <TimerModal setTotalSecond={setTotalSecond} show={show} onHide={()=>setShow(false)}/>
 
     </>)
 }
