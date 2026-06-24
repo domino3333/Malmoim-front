@@ -121,6 +121,7 @@ input[type="number"] {
     border-radius: 5px;
     width: 80px;
     text-align: center;
+    background-color: rgb(255, 251, 251);
 }
 
 /* 취소/시작을 감싸는 main div*/

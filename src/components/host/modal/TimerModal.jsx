@@ -37,7 +37,14 @@ const TimerModal = ({ show, onHide }) => {
 
 
 
+    const presetTime = (minute)=>{
+        setMinute(String(minute));
+        setSecond(String("00"));
+    }
 
+
+
+    //화살표를 눌렀을 때 시간을 조정하는 함수
     const changeTime = (target, amount) => {
 
         if (target === "minute") {
@@ -87,18 +94,18 @@ const TimerModal = ({ show, onHide }) => {
 
                 <div className="minute-preset-parent-div">
 
-                    <div className="minute-preset">
+                    <button className="minute-preset" onClick={()=>presetTime(1)}>
                         1분
-                    </div>
-                    <div className="minute-preset">
+                    </button>
+                    <button className="minute-preset" onClick={()=>presetTime(3)}>
                         3분
-                    </div>
-                    <div className="minute-preset">
+                    </button>
+                    <button className="minute-preset" onClick={()=>presetTime(5)}>
                         5분
-                    </div>
-                    <div className="minute-preset">
+                    </button>
+                    <button className="minute-preset" onClick={()=>presetTime(10)}>
                         10분
-                    </div>
+                    </button>
                 </div>
 
 
