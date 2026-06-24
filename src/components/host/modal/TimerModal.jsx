@@ -64,12 +64,7 @@ const TimerModal = ({ show, onHide }) => {
         <Modal show={show} onHide={onHide}>
 
             <div className="timer-modal-body">
-                <button
-                    onClick={() => onHide()}
-                    className="button-timer-modal-close"
-                >
-                    X
-                </button>
+                
                 <h4>질문 시간 설정</h4>
                 <p>참여자가 질문을 작성할 시간을 정해주세요.</p>
                 <div className="timer-main-div">
@@ -109,7 +104,7 @@ const TimerModal = ({ show, onHide }) => {
 
                 <div className="cancel-start-main-div">
                     <div className="cancel-start-border-div">
-                        <button className="timer-modal-cancel-button">
+                        <button onClick={() => onHide()} className="timer-modal-cancel-button">
                             취소
                         </button>
                         <button className="timer-modal-start-button">
