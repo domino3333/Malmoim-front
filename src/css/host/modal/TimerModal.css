@@ -93,4 +93,28 @@ input[type="number"] {
 /* 상단 border만 주기위한 div*/
 .cancel-start-border-div {
     border-top: 1px solid grey;
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+}
+
+/* 취소 버튼 */
+.timer-modal-cancel-button {
+    border: 1px solid #90653E;
+    background-color: white;
+    width: 50%;
+    border-radius: 5px;
+    color: #90653E;
+
+}
+
+/* 시작 버튼 */
+.timer-modal-start-button {
+    border: 1px solid #90653E;
+    background-color: #90653E;
+    width: 50%;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+
 }

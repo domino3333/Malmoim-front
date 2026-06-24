@@ -109,10 +109,10 @@ const TimerModal = ({ show, onHide }) => {
 
                 <div className="cancel-start-main-div">
                     <div className="cancel-start-border-div">
-                        <button>
+                        <button className="timer-modal-cancel-button">
                             취소
                         </button>
-                        <button>
+                        <button className="timer-modal-start-button">
                             시작
                         </button>
                     </div>
