@@ -46,12 +46,13 @@ const QnaHost = () => {
     const [show, setShow] = useState(false);
     const [totalSecond,setTotalSecond] =useState(0);
 
-    const startTimer = (seconds)=>{
+    const startTimer = async (seconds)=>{
         setTotalSecond(seconds);
         // timer start api 호출
-        callStartTimer(roomInfo.no,seconds);
+        const data = await callStartTimer(roomInfo.no,seconds);
+        setTimerInfo(data);
+        
     }
-
 
     // 웹소켓 구독
     useEffect(() => {
