@@ -31,6 +31,13 @@ const QnaHost = () => {
 
     });
 
+    const [timerInfo,setTimerInfo] = useState({
+        roomNo:0,
+        status:"",
+        questionStartedAt:"",
+        questionEndedAt:""
+    })
+
 
 
     const clientRef = useRef(null);
