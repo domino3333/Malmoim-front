@@ -20,11 +20,27 @@ export const createQnARoom = async (input) => {
 
 }
 
+// 하나의 qna 방을 가져오는 api
 export const getMyOneQnaRoom = async (no) => {
 
     const token = sessionStorage.getItem('accessToken');
 
     const result = await axios.get(`${ApiHost}${prefix}/${no}`,{
+        headers:{
+            Authorization:`Bearer ${token}`
+        }
+    })
+
+    return result.data;
+}
+
+
+// 타이머 시작 api
+export const callStartTimer = async ()=>{
+
+    const token = sessionStorage.getItem('accessToken');
+
+    const result = await axios.get(`${ApiHost}${prefix}/start-timer`,{
         headers:{
             Authorization:`Bearer ${token}`
         }

@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import "../../../css/host/modal/TimerModal.css"
 
 
-const TimerModal = ({ show, onHide,startTimer }) => {
+const TimerModal = ({ show, onHide, startTimer }) => {
 
 
 

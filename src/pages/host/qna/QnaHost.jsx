@@ -41,6 +41,7 @@ const QnaHost = () => {
 
     const startTimer = (seconds)=>{
         setTotalSecond(seconds);
+        // timer start api 호출
     }
 
 
