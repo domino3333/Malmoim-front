@@ -25,9 +25,9 @@ export const getMyOneQnaRoom = async (no) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const result = await axios.get(`${ApiHost}${prefix}/${no}`,{
-        headers:{
-            Authorization:`Bearer ${token}`
+    const result = await axios.get(`${ApiHost}${prefix}/${no}`, {
+        headers: {
+            Authorization: `Bearer ${token}`
         }
     })
 
@@ -36,13 +36,13 @@ export const getMyOneQnaRoom = async (no) => {
 
 
 // 타이머 시작 api
-export const callStartTimer = async ()=>{
+export const callStartTimer = async (roomNo,durationSeconds) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const result = await axios.get(`${ApiHost}${prefix}/start-timer`,{
-        headers:{
-            Authorization:`Bearer ${token}`
+    const result = await axios.post(`${ApiHost}${prefix}/${roomNo}/start-timer`, { durationSeconds }, {
+        headers: {
+            Authorization: `Bearer ${token}`
         }
     })
 
