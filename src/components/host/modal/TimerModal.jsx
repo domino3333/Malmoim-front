@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import "../../../css/host/modal/TimerModal.css"
+import { callStartTimer } from "../../../api/room/qna/qnaApi";
 
 
 const TimerModal = ({ show, onHide, startTimer }) => {

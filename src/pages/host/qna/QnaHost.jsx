@@ -8,7 +8,7 @@ import RoomInfo from "../../../components/host/home/room/RoomInfo";
 import HostQnaList from "../../../components/host/home/room/HostQnaList";
 import QnaParticipantPannel from "../../../components/host/home/room/QnaParticipantPannel";
 import RemoteControl from "../../../components/host/home/room/RemoteControl";
-import { getMyOneQnaRoom } from "../../../api/room/qna/qnaApi";
+import { callStartTimer, getMyOneQnaRoom } from "../../../api/room/qna/qnaApi";
 import TimerModal from "../../../components/host/modal/TimerModal";
 
 const QnaHost = () => {
@@ -42,6 +42,7 @@ const QnaHost = () => {
     const startTimer = (seconds)=>{
         setTotalSecond(seconds);
         // timer start api 호출
+        callStartTimer(roomInfo.no,seconds);
     }
 
 
