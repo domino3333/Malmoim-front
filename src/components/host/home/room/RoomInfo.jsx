@@ -2,6 +2,7 @@
 import { useTimer } from "react-timer-hook";
 import "../../../../css/host/home/room/RoomInfo.css"
 import { useEffect } from "react";
+import { updateRoomStatus } from "../../../../api/room/qna/qnaApi";
 
 
 const RoomInfo = ({ roomInfo, timerInfo }) => {
@@ -19,10 +20,9 @@ const RoomInfo = ({ roomInfo, timerInfo }) => {
     } = useTimer({
         expiryTimestamp: defaultTime,
         autoStart: false,
-        onExpire: () => {
+        onExpire: async () => {
             console.log("타이머 종료");
-            
-
+            await updateRoomStatus(roomInfo.roomNo,"READY");
         },
         interval: 1000,
     });
