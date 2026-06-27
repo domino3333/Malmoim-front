@@ -18,24 +18,24 @@ const QnaHost = () => {
     const { no } = useParams();
     const [question, setQuestion] = useState("");
     const [roomInfo, setRoomInfo] = useState({
-        no:0,
-        hostNo:0,
-        title:"",
-        code:"",
-        capacity:0,
-        password:"",
-        createdAt:"",
-        visibility:"",
-        status:"",
-        type:""
+        no: 0,
+        hostNo: 0,
+        title: "",
+        code: "",
+        capacity: 0,
+        password: "",
+        createdAt: "",
+        visibility: "",
+        status: "",
+        type: ""
 
     });
 
-    const [timerInfo,setTimerInfo] = useState({
-        roomNo:0,
-        status:"",
-        questionStartedAt:"",
-        questionEndedAt:""
+    const [timerInfo, setTimerInfo] = useState({
+        roomNo: 0,
+        status: "",
+        questionStartedAt: "",
+        questionEndedAt: ""
     })
 
 
@@ -44,14 +44,33 @@ const QnaHost = () => {
 
     //TimerModal에 대한 useState
     const [show, setShow] = useState(false);
-    const [totalSecond,setTotalSecond] =useState(0);
+    const [totalSecond, setTotalSecond] = useState(0);
 
-    const startTimer = async (seconds)=>{
+    const startTimer = async (seconds) => {
         setTotalSecond(seconds);
         // timer start api 호출
-        const data = await callStartTimer(roomInfo.no,seconds);
+        const data = await callStartTimer(roomInfo.no, seconds);
         setTimerInfo(data);
+        calculateRemainingSeconds(data.questionEndedAt);
+
+    }
+
+
+    const calculateRemainingSeconds = (questionEndedAt) => {
+
+        const endedAtMs = new Date(questionEndedAt).getTime();
+        const nowMs = Date.now();
+
+        const remainingMs = endedAtMs - nowMs;
+        const remainingSeconds = remainingMs / 1000;
+
+        const resultMinutes = remainingSeconds / 60;
+        const resultSeconds = remainingSeconds % 60;
         
+        console.log("resultMinutes:",resultMinutes);
+        console.log("resultSeconds:",resultSeconds);
+
+
     }
 
     // 웹소켓 구독
@@ -73,17 +92,17 @@ const QnaHost = () => {
     }, [no])
 
     // 방 하나의 정보를 불러오는 http useEffect
-    useEffect(()=>{
+    useEffect(() => {
 
-        const fetchData = async ()=>{
+        const fetchData = async () => {
             const data = await getMyOneQnaRoom(no);
             setRoomInfo(data);
         }
 
         fetchData();
 
-        
-    },[no])
+
+    }, [no])
 
 
 
@@ -99,7 +118,7 @@ const QnaHost = () => {
             <div className="qna-host-body">
                 <RemoteControl setShow={setShow} />
                 <div className="qna-host-body-top">
-                    <HostQnaList question={question}/>
+                    <HostQnaList question={question} />
                     <QnaParticipantPannel />
                 </div>
 
@@ -107,7 +126,7 @@ const QnaHost = () => {
         </div>
 
 
-        <TimerModal startTimer={startTimer} show={show} onHide={()=>setShow(false)}/>
+        <TimerModal startTimer={startTimer} show={show} onHide={() => setShow(false)} />
 
     </>)
 }
