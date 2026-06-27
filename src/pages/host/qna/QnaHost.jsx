@@ -38,8 +38,6 @@ const QnaHost = () => {
         questionEndedAt: ""
     })
 
-
-
     const clientRef = useRef(null);
 
     //TimerModal에 대한 useState
@@ -51,32 +49,8 @@ const QnaHost = () => {
         // timer start api 호출
         const data = await callStartTimer(roomInfo.no, seconds);
         setTimerInfo(data);
-        calculateRemainingSeconds(data.questionEndedAt);
-
     }
 
-
-    const calculateRemainingSeconds = (questionEndedAt) => {
-
-        const endedAtMs = new Date(questionEndedAt).getTime();
-        const nowMs = Date.now();
-
-        const remainingMs = endedAtMs - nowMs;
-
-        const remainingSeconds = Math.max(0,Math.ceil(remainingMs / 1000));
-
-        const resultMinutes = Math.floor(remainingSeconds / 60);
-        const resultSeconds = remainingSeconds % 60;
-        
-        console.log("resultMinutes:",resultMinutes);
-        console.log("resultSeconds:",resultSeconds);
-
-        return {
-            minutes : resultMinutes,
-            seconds : resultSeconds
-        }
-
-    }
 
     // 웹소켓 구독
     useEffect(() => {
@@ -119,7 +93,7 @@ const QnaHost = () => {
         <div className="qna-host-main-div">
             <RoomHeader title={"청중 QnA"} />
             <RoomMiniHeader roomInfo={roomInfo} />
-            <RoomInfo />
+            <RoomInfo timerInfo={timerInfo} />
             <div className="qna-host-body">
                 <RemoteControl setShow={setShow} />
                 <div className="qna-host-body-top">
