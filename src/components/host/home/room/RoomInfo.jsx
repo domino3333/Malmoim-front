@@ -20,7 +20,9 @@ const RoomInfo = ({ roomInfo, timerInfo }) => {
         expiryTimestamp: defaultTime,
         autoStart: false,
         onExpire: () => {
-            console.log("타이머 종료")
+            console.log("타이머 종료");
+            
+
         },
         interval: 1000,
     });

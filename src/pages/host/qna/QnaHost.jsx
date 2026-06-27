@@ -81,7 +81,7 @@ const QnaHost = () => {
         fetchData();
 
 
-    }, [no])
+    }, [no,roomInfo.status])
 
 
 
