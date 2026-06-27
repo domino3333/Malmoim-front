@@ -54,7 +54,7 @@ export const updateRoomStatus = async (roomNo, status) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const result = await axios.post(`${ApiHost}${prefix}/${roomNo}`, { status: status }, {
+    const result = await axios.post(`${ApiHost}${prefix}/${roomNo}/update-status`, { status: status }, {
         headers: {
             Authorization: `Bearer ${token}`
 

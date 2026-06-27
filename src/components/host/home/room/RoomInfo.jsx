@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { updateRoomStatus } from "../../../../api/room/qna/qnaApi";
 
 
-const RoomInfo = ({ roomInfo, timerInfo }) => {
+const RoomInfo = ({ setRoomInfo, roomInfo, timerInfo }) => {
 
 
     const defaultTime = new Date();
@@ -22,7 +22,10 @@ const RoomInfo = ({ roomInfo, timerInfo }) => {
         autoStart: false,
         onExpire: async () => {
             console.log("타이머 종료");
-            await updateRoomStatus(roomInfo.roomNo,"READY");
+            await updateRoomStatus(roomInfo.no,"READY");
+            setRoomInfo({...roomInfo,
+                status:"READY"
+            })
         },
         interval: 1000,
     });
