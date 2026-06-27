@@ -1,22 +1,20 @@
-
-
 /*RoomInfo 전체를 아우르는 main div*/
-.RoomInfo-main-div{
+.RoomInfo-main-div {
 
     display: flex;
 }
 
 
 /* 타이머 div */
-.timer-div{
+.timer-div {
 
-    width:50%;
-    height:200px;
+    width: 50%;
+    height: 200px;
     border: 1px solid #90653E;
 }
 
 /* 방 정보 div들을 감싸는 div*/
-.room-info-div{
+.room-info-div {
     display: flex;
     flex-direction: column;
 }
@@ -24,7 +22,8 @@
 /* 방 정보 div*/
 .room-info-1,
 .room-info-2,
-.room-info-3{
-    border:1px solid #90653E;
-    width:600px;
+.room-info-3,
+.room-info-4 {
+    border: 1px solid #90653E;
+    width: 600px;
 }

@@ -4,7 +4,7 @@ import "../../../../css/host/home/room/RoomInfo.css"
 import { useEffect } from "react";
 
 
-const RoomInfo = ({ timerInfo }) => {
+const RoomInfo = ({ roomInfo, timerInfo }) => {
 
 
     const defaultTime = new Date();
@@ -37,18 +37,21 @@ const RoomInfo = ({ timerInfo }) => {
 
         <div className="RoomInfo-main-div">
             <div className="timer-div">
-                {String(minutes).padStart(2,"0")}:
-                {String(seconds).padStart(2,"0")}
+                {String(minutes).padStart(2, "0")}:
+                {String(seconds).padStart(2, "0")}
             </div>
             <div className="room-info-div">
                 <div className="room-info-1">
-                    방 정보1
+                    입장 가능 인원: {roomInfo.capacity}
                 </div>
                 <div className="room-info-2">
-                    방 정보2
+                    비밀번호: {roomInfo.password || "없음"}
                 </div>
                 <div className="room-info-3">
-                    방 정보3
+                    상태: {roomInfo.status}
+                </div>
+                <div className="room-info-4">
+                    타입: {roomInfo.type}
                 </div>
             </div>
         </div>
