@@ -49,6 +49,9 @@ const QnaHost = () => {
         // timer start api 호출
         const data = await callStartTimer(roomInfo.no, seconds);
         setTimerInfo(data);
+        setRoomInfo(prev=>({...roomInfo,
+            status:data.status
+        }))
     }
 
 
@@ -81,7 +84,7 @@ const QnaHost = () => {
         fetchData();
 
 
-    }, [no,roomInfo])
+    }, [no])
 
 
 
