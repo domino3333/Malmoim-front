@@ -42,7 +42,6 @@ const QnaHost = () => {
 
     //TimerModal에 대한 useState
     const [show, setShow] = useState(false);
-    const [totalSecond, setTotalSecond] = useState(0);
 
     const startTimer = async (seconds) => {
         setTotalSecond(seconds);
