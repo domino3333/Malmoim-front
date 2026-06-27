@@ -9,11 +9,13 @@ const RoomInfo = ({ timerInfo }) => {
 
     const defaultTime = new Date();
 
+    //useTimer 라이브러리
     const {
         seconds,
         minutes,
         isRunning,
         restart,
+        start
     } = useTimer({
         expiryTimestamp: defaultTime,
         autoStart: false,
@@ -25,7 +27,7 @@ const RoomInfo = ({ timerInfo }) => {
 
 
     useEffect(() => {
-        if (!timerInfo.questionEndedAt) return;
+        if (!timerInfo?.questionEndedAt) return;
 
         const expiryTime = new Date(timerInfo.questionEndedAt);
         restart(expiryTime, true);
