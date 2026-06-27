@@ -62,14 +62,19 @@ const QnaHost = () => {
         const nowMs = Date.now();
 
         const remainingMs = endedAtMs - nowMs;
-        const remainingSeconds = remainingMs / 1000;
 
-        const resultMinutes = remainingSeconds / 60;
+        const remainingSeconds = Math.max(0,Math.ceil(remainingMs / 1000));
+
+        const resultMinutes = Math.floor(remainingSeconds / 60);
         const resultSeconds = remainingSeconds % 60;
         
         console.log("resultMinutes:",resultMinutes);
         console.log("resultSeconds:",resultSeconds);
 
+        return {
+            minutes : resultMinutes,
+            seconds : resultSeconds
+        }
 
     }
 
