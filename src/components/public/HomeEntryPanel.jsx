@@ -3,6 +3,7 @@ import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
+import { checkRoomCode } from "../../api/entry/entryApi"
 
 const HomeEntryPanel = () => {
 
@@ -14,8 +15,8 @@ const HomeEntryPanel = () => {
         setCode(e.target.value);
     }
 
-    const sendCode = () => {
-
+    const sendCode = async () => {
+        const result = await checkRoomCode(code);
     }
 
     return (<>
