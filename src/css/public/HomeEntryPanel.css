@@ -1,0 +1,49 @@
+/* 두개 패널을 감싸는 main div */
+.HomeEntryPanel-main-parent {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    gap:20px;
+}
+
+/* 왼쪽 대문 패널 */
+.HomeEntryPanel-left-pannel {
+    border: 1px solid red;
+    height:500px;
+    width: 35%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+/* 오른쪽 대문 패널 */
+.HomeEntryPanel-right-pannel {
+    border: 1px solid green;
+    height:500px;
+    width: 35%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+
+.left-panel-input-div{
+    display: flex;
+    width:600px;
+    justify-content: center;
+
+}
+
+/* 코드 입력하는 input 태그 */
+.code-input{
+
+    width:280px;
+    height:60px;
+}
+
+
+/* 코드 input 오른쪽의 화살표 버튼*/
+.code-input-arrow-button{
+    width:80px;
+    height:60px;
+}
