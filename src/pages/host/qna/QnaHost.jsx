@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
@@ -15,6 +15,7 @@ const QnaHost = () => {
 
 
 
+    const nav = useNavigate();
     const { no } = useParams();
     const [question, setQuestion] = useState("");
     const [roomInfo, setRoomInfo] = useState({
@@ -43,12 +44,17 @@ const QnaHost = () => {
     //TimerModal에 대한 useState
     const [show, setShow] = useState(false);
 
+    const clickLogo = () => {
+        nav("/");
+    }
+
     const startTimer = async (seconds) => {
         // timer start api 호출
         const data = await callStartTimer(roomInfo.no, seconds);
         setTimerInfo(data);
-        setRoomInfo(prev=>({...roomInfo,
-            status:data.status
+        setRoomInfo(prev => ({
+            ...prev,
+            status: data.status
         }))
     }
 
@@ -92,7 +98,7 @@ const QnaHost = () => {
 
 
         <div className="qna-host-main-div">
-            <RoomHeader title={"청중 QnA"} />
+            <RoomHeader title={"청중 QnA"} clickLogo={clickLogo} />
             <RoomMiniHeader roomInfo={roomInfo} />
             <RoomInfo setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">

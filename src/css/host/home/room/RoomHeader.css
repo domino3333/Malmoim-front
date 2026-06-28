@@ -10,9 +10,9 @@
     gap:20px;
 }
 
-/* 모든 방 헤더의 로고 */
+/* 헤더의 로고 */
 .RoomHeader-logo {
-
+    cursor: pointer;
     width: 100px;
     height: 40px;
     border-radius: 10px;
