@@ -47,3 +47,11 @@
     width:100px;
     height:60px;
 }
+
+/* people 이미지 */
+.HomeEntryPanel-left-pannel img,
+.HomeEntryPanel-right-pannel img{
+    width:200px;
+    height:200px;
+    border-radius: 100%;
+}

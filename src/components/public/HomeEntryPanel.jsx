@@ -1,7 +1,7 @@
 
 import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
-import { home } from "../../assets/home-icon.png"
+import home from "../../assets/home-icon.png"
 
 const HomeEntryPanel = () => {
 
@@ -22,8 +22,15 @@ const HomeEntryPanel = () => {
                 </div>
             </div>
             <div className="HomeEntryPanel-right-pannel">
-                오
-
+                <img src={home} alt="" />
+                <h2>방을 직접 만들기</h2>
+                <p>로그인 후 방을 만들고 진행할 수 있어요</p>
+                <button className="host-start-button">
+                    호스트로 시작
+                </button>
+                <div className="right-panel-advice-div">
+                    입장코드는 호스트가 제공한 코드를 입력해주세요
+                </div>
             </div>
         </div>
     </>)
