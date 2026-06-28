@@ -2,56 +2,80 @@
 .HomeEntryPanel-main-parent {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
-    gap:20px;
+    padding: 50px 50px;
+    gap: 20px;
+    background-color: rgb(242, 237, 237);
 }
 
 /* 왼쪽 대문 패널 */
 .HomeEntryPanel-left-pannel {
-    border: 1px solid red;
-    height:500px;
+    border: 1px solid #90653E;
+    height: 500px;
     width: 35%;
     text-align: center;
     border-radius: 5px;
+    background-color: white;
+    padding-top: 20px;
 }
 
 
 /* 오른쪽 대문 패널 */
 .HomeEntryPanel-right-pannel {
-    border: 1px solid green;
-    height:500px;
+    padding-top: 20px;
+    border: 1px solid #90653E;
+    height: 500px;
     width: 35%;
     text-align: center;
     border-radius: 5px;
+    background-color: white;
 }
 
+/* 참여자이신가요, 방을직접만들기 <- h2 텍스트 */
+.HomeEntryPanel-main-parent h2 {
+    font-weight: 900;
+}
 
 /* 코드 입력과 버튼을 감싸는 div*/
-.left-panel-input-div{
+.left-panel-input-div {
     display: flex;
     margin: 0 auto;
-    width:min(80%,360px);
+    width: min(80%, 360px);
+
+}
+
+/* 가이드 텍스트 */
+.panel-guide-text {
+    font-size: 1.0em;
 
 }
 
 /* 코드 입력하는 input 태그 */
-.code-input{
-    flex:1;
-    width:260px;
-    height:60px;
+.code-input {
+    flex: 1;
+    width: 260px;
+    height: 60px;
 }
 
 
 /* 코드 input 오른쪽의 화살표 버튼*/
-.code-input-arrow-button{
-    width:100px;
-    height:60px;
+.code-input-arrow-button {
+    width: 100px;
+    height: 60px;
 }
 
 /* people 이미지 */
 .HomeEntryPanel-left-pannel img,
-.HomeEntryPanel-right-pannel img{
-    width:200px;
-    height:200px;
+.HomeEntryPanel-right-pannel img {
+    width: 100px;
+    height: 100px;
     border-radius: 100%;
+}
+
+
+.left-panel-advice-div {
+    border: none;
+    background-color: grey;
+    width: 400px;
+    color: white;
+    margin: 0 auto;
 }

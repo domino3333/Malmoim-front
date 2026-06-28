@@ -12,7 +12,7 @@ const HomeEntryPanel = () => {
             <div className="HomeEntryPanel-left-pannel">
                 <img src={people} alt="people-icon" />
                 <h2>참여자이신가요?</h2>
-                <p>입장코드를 입력하고 실시간 Q&A에 참여하세요</p>
+                <p className="panel-guide-text">입장코드를 입력하고 실시간 Q&A에 참여하세요</p>
                 <div className="left-panel-input-div">
                     <input type="text" name="code" className="code-input" />
                     <button className="code-input-arrow-button">→</button>
@@ -24,7 +24,7 @@ const HomeEntryPanel = () => {
             <div className="HomeEntryPanel-right-pannel">
                 <img src={home} alt="" />
                 <h2>방을 직접 만들기</h2>
-                <p>로그인 후 방을 만들고 진행할 수 있어요</p>
+                <p className="panel-guide-text">로그인 후 방을 만들고 진행할 수 있어요</p>
                 <button className="host-start-button">
                     호스트로 시작
                 </button>
