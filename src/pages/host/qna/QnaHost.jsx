@@ -44,7 +44,6 @@ const QnaHost = () => {
     const [show, setShow] = useState(false);
 
     const startTimer = async (seconds) => {
-        setTotalSecond(seconds);
         // timer start api 호출
         const data = await callStartTimer(roomInfo.no, seconds);
         setTimerInfo(data);
