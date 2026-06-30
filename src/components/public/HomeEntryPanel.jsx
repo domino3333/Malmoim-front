@@ -4,17 +4,14 @@ import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
 import { checkRoomCode } from "../../api/entry/entryApi"
+import EntryModal from "./modal/EntryModal"
 
 const HomeEntryPanel = () => {
 
 
     const [code, setCode] = useState("");
-    const [roomInfo, setRoomInfo] = useState({
-        roomNo: 0,
-        title: "",
-        hasPassword: false
-    });
-
+    const [roomInfo, setRoomInfo] = useState(null);
+    const [show,setShow] = useState(false);
 
     const observeCode = (e) => {
         setCode(e.target.value);
@@ -30,6 +27,9 @@ const HomeEntryPanel = () => {
             alert("존재하지 않는 입장 코드입니다.");
         }
     }
+
+
+
 
     return (<>
 
@@ -58,6 +58,10 @@ const HomeEntryPanel = () => {
                 </div>
             </div>
         </div>
+
+
+        {roomInfo && <EntryModal roomInfo={roomInfo} show={show} onHide={()=>setShow(false)}/>}
+
     </>)
 }
 export default HomeEntryPanel;
