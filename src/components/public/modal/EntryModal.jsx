@@ -6,10 +6,10 @@ const EntryModal = ({ roomInfo, show, onHide }) => {
 
 
     return (<>
-        <Modal contentClassName="Entry-modal">
+        <Modal show={show} contentClassName="Entry-modal">
             <div className="entry-modal-body">
                 <h3>{roomInfo.title}</h3>
-                
+                <p>ㅇㅇㅇ</p>
 
 
             </div>
