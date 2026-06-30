@@ -10,9 +10,9 @@ const HomeEntryPanel = () => {
 
     const [code, setCode] = useState("");
     const [roomInfo, setRoomInfo] = useState({
-        roomNo:0,
-        title:"",
-        hasPassword:false
+        roomNo: 0,
+        title: "",
+        hasPassword: false
     });
 
 
@@ -21,8 +21,14 @@ const HomeEntryPanel = () => {
     }
 
     const sendCode = async () => {
-        const data = await checkRoomCode(code);
-        setRoomInfo(data);
+        try {
+            const data = await checkRoomCode(code);
+            setRoomInfo(data);
+
+        } catch (e) {
+            console.log(e);
+            alert("존재하지 않는 입장 코드입니다.");
+        }
     }
 
     return (<>
