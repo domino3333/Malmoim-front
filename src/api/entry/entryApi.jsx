@@ -6,7 +6,7 @@ const prefix = "/api/entry"
 
 export const checkRoomCode = async (code) => {
 
-    const result = await axios.post(`${ApiHost}/${prefix}/check-code`, code,
+    const result = await axios.post(`${ApiHost}${prefix}/check-code`, code,
         null
     );
 
