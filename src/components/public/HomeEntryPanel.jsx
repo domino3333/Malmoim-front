@@ -9,6 +9,11 @@ const HomeEntryPanel = () => {
 
 
     const [code, setCode] = useState("");
+    const [roomInfo, setRoomInfo] = useState({
+        roomNo:0,
+        title:"",
+        hasPassword:false
+    });
 
 
     const observeCode = (e) => {
@@ -16,7 +21,8 @@ const HomeEntryPanel = () => {
     }
 
     const sendCode = async () => {
-        const result = await checkRoomCode(code);
+        const data = await checkRoomCode(code);
+        setRoomInfo(data);
     }
 
     return (<>
