@@ -10,4 +10,6 @@ export const checkRoomCode = async (code) => {
         null
     );
 
+    return result.data;
+
 }
