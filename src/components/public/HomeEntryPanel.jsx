@@ -21,7 +21,6 @@ const HomeEntryPanel = () => {
         try {
             const data = await checkRoomCode(code.trim().toUpperCase());
             setRoomInfo(data);
-            console.log(data.title);
             setShow(true);
 
         } catch (e) {
