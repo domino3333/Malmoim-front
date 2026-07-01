@@ -1,8 +1,12 @@
-/* entry modal 전체를 감싸는 div */
-.entry-modal-body {
+
+/* 모달 자체 */
+.Entry-modal{
+    width:400px;
+    height:300px;
     display: flex;
     flex-direction: column;
 }
+
 
 /* 상단 우측 X 버튼*/
 .entry-modal-x-button {
@@ -18,8 +22,8 @@
 
 
 /* 방 제목 h3 텍스트*/
-.entry-modal-body h3 {
-    text-align: center;
+.Entry-modal h3 {
+    align-self: center;
 }
 
 /* 방 코드 텍스트 */
@@ -34,3 +38,8 @@
     align-self: center;
 }
 
+/* 입장하기 버튼*/
+.entry-modal-enter-button{
+    margin: 80px 10px;
+    
+}

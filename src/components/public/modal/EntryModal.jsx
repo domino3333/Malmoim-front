@@ -8,7 +8,6 @@ const EntryModal = ({ roomInfo, show, onHide }) => {
 
     return (<>
         <Modal show={show} contentClassName="Entry-modal">
-            <div className="entry-modal-body">
                 <button className="entry-modal-x-button"
                     onClick={onHide}
                 >X</button>
@@ -23,7 +22,6 @@ const EntryModal = ({ roomInfo, show, onHide }) => {
                     입장하기
                 </button>
 
-            </div>
         </Modal>
     </>)
 }
