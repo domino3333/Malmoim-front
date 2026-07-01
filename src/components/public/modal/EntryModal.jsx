@@ -11,7 +11,7 @@ const EntryModal = ({ roomInfo, show, onHide }) => {
                 <button className="entry-modal-x-button"
                     onClick={onHide}
                 >X</button>
-                <h3>방 제목: {roomInfo.title}</h3>
+                <h3>{roomInfo.title}</h3>
                 <p className="entry-modal-code-p">코드: {roomInfo.code}</p>
                 <p className="entry-modal-capacity-p">정원: {roomInfo.capacity}</p>
 

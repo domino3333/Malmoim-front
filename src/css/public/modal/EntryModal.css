@@ -5,6 +5,7 @@
     height:300px;
     display: flex;
     flex-direction: column;
+    background-color: rgb(242, 237, 237);
 }
 
 
@@ -24,6 +25,7 @@
 /* 방 제목 h3 텍스트*/
 .Entry-modal h3 {
     align-self: center;
+    font-weight: 600;
 }
 
 /* 방 코드 텍스트 */
