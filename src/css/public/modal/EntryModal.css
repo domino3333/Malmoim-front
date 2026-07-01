@@ -1,29 +1,36 @@
-
 /* entry modal 전체를 감싸는 div */
-.entry-modal-body{
+.entry-modal-body {
     display: flex;
     flex-direction: column;
 }
 
 /* 상단 우측 X 버튼*/
-.entry-modal-x-button{
+.entry-modal-x-button {
     align-self: flex-end;
-    border:none;
+    border: none;
     background-color: #90653E;
     border-radius: 5px;
-    width:30px;
+    width: 30px;
     height: 30px;
     margin: 10px;
-    color:white;
+    color: white;
 }
 
 
 /* 방 제목 h3 텍스트*/
-.entry-modal-body h3{
+.entry-modal-body h3 {
     text-align: center;
 }
 
 /* 방 코드 텍스트 */
-.entry-modal-code-p{
+.entry-modal-code-p {
     text-align: center;
 }
+
+/*비밀번호 인풋 */
+.entry-modal-password-input {
+    height:40px;
+    padding:10px;
+    align-self: center;
+}
+
