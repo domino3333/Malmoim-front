@@ -39,28 +39,28 @@ const CreateModal = ({ show, onHide, title }) => {
 
 
     return (<>
-        <Modal show={show} contentClassName="my-modal">
-            <div className="modal-body">
+        <Modal show={show} contentClassName="create-modal">
+            <div className="create-modal-body">
                 <button onClick={() => {
                     onHide()
                     setIsChecked(false)
-                }} className="button-modal-close">
+                }} className="create-modal-x-button">
                     X
                 </button>
-                <h4 className="h4-title">{title}</h4>
-                <input className="modal-title" name="title" onChange={observeInput} type="text" placeholder="제목" />
-                <input className="modal-capacity" name="capacity" onChange={observeInput} type="number" placeholder="정원" />
+                <h4 className="create-modal-title-h4">{title}</h4>
+                <input className="create-modal-title-input" name="title" onChange={observeInput} type="text" placeholder="제목" />
+                <input className="create-modal-capacity-input" name="capacity" onChange={observeInput} type="number" placeholder="정원" />
 
                 <label htmlFor="checkBoxTitle">
                     비공개
-                    <input className="privateCheckBox" type="checkbox" onChange={observeCheckBox} />
+                    <input className="create-modal-private-checkbox" type="checkbox" onChange={observeCheckBox} />
                 </label>
 
                 {isChecked ?
-                    <input className="modal-password" name="password" onChange={observeInput} type="password" placeholder="비밀번호" />
+                    <input className="create-modal-password-input" name="password" onChange={observeInput} type="password" placeholder="비밀번호" />
                     : null}
 
-                <button className="button-create"
+                <button className="create-modal-create-button"
                     onClick={async () => {
                         await createRoom()
                         onHide()

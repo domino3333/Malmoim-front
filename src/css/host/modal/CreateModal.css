@@ -1,5 +1,5 @@
 /*모달 창 자체*/
-.my-modal {
+.create-modal {
     border: none;
     border: 3px solid #90653E;
     border-radius: 20px;
@@ -7,7 +7,7 @@
 
 
 /*모달 창의 title*/
-.h4-title {
+.create-modal-title-h4 {
     text-align: center;
     font-weight: 600;
     color: black;
@@ -15,7 +15,7 @@
 
 
 /*모달 전체를 감싸는 body*/
-.modal-body {
+.create-modal-body {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -24,7 +24,7 @@
 }
 
 /* 모달창 닫기 X 버튼*/
-.button-modal-close{
+.create-modal-x-button{
     border-radius: 10px;
     width: 10%;
     border: none;
@@ -37,7 +37,7 @@
 
 
 /* 만들 방의 title input*/
-.modal-title {
+.create-modal-title-input {
     padding: 5px;
     padding-left: 10px;
     border-radius: 10px;
@@ -46,15 +46,15 @@
 }
 
 /* input에 focus 시 색깔*/
-.modal-title:focus,
-.modal-capacity:focus,
-.modal-password:focus {
+.create-modal-title-input:focus,
+.create-modal-capacity-input:focus,
+.create-modal-password-input:focus {
     outline: none;
     border-color: #90653E;
 }
 
 /* 만들 방의 capacity input*/
-.modal-capacity {
+.create-modal-capacity-input {
     padding: 5px;
     padding-left: 10px;
     border-radius: 10px;
@@ -63,7 +63,7 @@
 }
 
 /* 만들 방의 password input*/
-.modal-password {
+.create-modal-password-input {
     padding: 5px;
     padding-left: 10px;
     border-radius: 10px;
@@ -73,7 +73,7 @@
 
 
 /*만들기 버튼*/
-.button-create {
+.create-modal-create-button {
     background-color: #90653E;
     border: none;
     padding: 10px;
@@ -84,7 +84,7 @@
 }
 
 /*체크박스 자체*/
-.privateCheckBox {
+.create-modal-private-checkbox {
     margin-left: 10px;
     accent-color: #90653E;
 }
