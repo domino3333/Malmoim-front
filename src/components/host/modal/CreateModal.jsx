@@ -17,7 +17,7 @@ const CreateModal = ({ show, onHide, title }) => {
     const [input, setInput] = useState({
         title: "",
         capacity: "",
-        password: "",
+        password: null,
         isChecked: isChecked
     })
 
