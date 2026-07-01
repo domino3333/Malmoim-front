@@ -18,7 +18,7 @@ const EntryModal = ({ roomInfo, show, onHide }) => {
                     <input className="entry-modal-password-input" type="password" placeholder="비밀번호.." />
                 }
 
-                <button className="entry-modal-enter-button">
+                <button className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
                     입장하기
                 </button>
 

@@ -38,9 +38,22 @@
     align-self: center;
 }
 
-/* 입장하기 버튼*/
-.entry-modal-enter-button{
+/* 비밀번호가 있을 때 입장하기 버튼*/
+.entry-modal-enter-button-v1{
     margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #90653E;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 50px;
+    
+}
+
+/* 비밀번호 없을 경우 입장하기 버튼*/
+.entry-modal-enter-button-v2{
+    margin-top: 90px;
     margin-left: 20px;
     margin-right: 20px;
     background-color: #90653E;
