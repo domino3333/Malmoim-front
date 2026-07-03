@@ -7,7 +7,6 @@ const NickNameModal = ({ roomInfo, show, onHide }) => {
 
     return (<>
         <Modal show={show} contentClassName="Nickname-modal">
-            <p>닉모달</p>
                 <button className="nickname-modal-x-button"
                     onClick={onHide}
                 >X</button>
