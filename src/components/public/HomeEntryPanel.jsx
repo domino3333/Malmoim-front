@@ -5,6 +5,7 @@ import home from "../../assets/home-icon.png"
 import { useState } from "react"
 import { checkRoomCode } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
+import NickNameModal from "./modal/NickNameModal"
 
 const HomeEntryPanel = () => {
 
@@ -70,6 +71,7 @@ const HomeEntryPanel = () => {
 
         {roomInfo && <EntryModal clickNext={clickNext} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
 
+        {roomInfo && <NickNameModal roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
     </>)
 }
 export default HomeEntryPanel;

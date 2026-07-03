@@ -2,7 +2,7 @@ import { Modal } from "react-bootstrap";
 import "../../../css/public/modal/NickNameModal.css"
 
 
-const NickNameModal = ({ show, onHide }) => {
+const NickNameModal = ({ roomInfo, show, onHide }) => {
 
 
     return (<>
