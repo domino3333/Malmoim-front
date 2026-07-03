@@ -2,7 +2,7 @@ import { Modal } from "react-bootstrap";
 import "../../../css/public/modal/EntryModal.css"
 
 
-const EntryModal = ({ roomInfo, show, onHide }) => {
+const EntryModal = ({ clickNext,roomInfo, show, onHide }) => {
 
     //roominfo에 roomNo, title, code ,hasPassword 내려옴
 
@@ -19,8 +19,8 @@ const EntryModal = ({ roomInfo, show, onHide }) => {
                     <input className="entry-modal-password-input" type="password" placeholder="비밀번호.." />
                 }
 
-                <button className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
-                    입장하기
+                <button onClick={clickNext} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
+                    다음
                 </button>
 
         </Modal>

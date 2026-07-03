@@ -7,6 +7,7 @@ const NickNameModal = ({ show, onHide }) => {
 
     return (<>
         <Modal show={show} contentClassName="Nickname-modal">
+            <p>닉모달</p>
                 <button className="nickname-modal-x-button"
                     onClick={onHide}
                 >X</button>
@@ -14,9 +15,7 @@ const NickNameModal = ({ show, onHide }) => {
                 <p className="nickname-modal-code-p">코드: {roomInfo.code}</p>
                 <p className="nickname-modal-capacity-p">정원: (현재정원표기 구현예정)/{roomInfo.capacity}</p>
 
-                {roomInfo.hasPassword &&
-                    <input className="nickname-modal-password-input" type="password" placeholder="비밀번호.." />
-                }
+
 
                 <button className={roomInfo.hasPassword ?"nickname-modal-enter-button-v1": "nickname-modal-enter-button-v2"}>
                     입장하기

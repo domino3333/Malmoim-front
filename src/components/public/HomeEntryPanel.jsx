@@ -11,7 +11,8 @@ const HomeEntryPanel = () => {
 
     const [code, setCode] = useState("");
     const [roomInfo, setRoomInfo] = useState(null);
-    const [show,setShow] = useState(false);
+    const [entryModalShow, setEntryModalShow] = useState(false);
+    const [nicknameModalShow, setNicknameModalShow] = useState(false);
 
     const observeCode = (e) => {
         setCode(e.target.value);
@@ -21,12 +22,18 @@ const HomeEntryPanel = () => {
         try {
             const data = await checkRoomCode(code.trim().toUpperCase());
             setRoomInfo(data);
-            setShow(true);
+            setEntryModalShow(true);
 
         } catch (e) {
             console.log(e);
             alert("존재하지 않는 입장 코드입니다.");
         }
+    }
+
+    const clickNext = () => {
+
+        setEntryModalShow(false);
+        setNicknameModalShow(true);
     }
 
 
@@ -61,7 +68,7 @@ const HomeEntryPanel = () => {
         </div>
 
 
-        {roomInfo && <EntryModal roomInfo={roomInfo} show={show} onHide={()=>setShow(false)}/>}
+        {roomInfo && <EntryModal clickNext={clickNext} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
 
     </>)
 }
