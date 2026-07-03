@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 
 const MainNavBar = () => {
+  // "/" 루트에 있고, 누구나 볼 수 있는 페이지
   return (
     <>
       <header className="navbar-header">

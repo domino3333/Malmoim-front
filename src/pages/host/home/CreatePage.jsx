@@ -12,7 +12,7 @@ const CreatePage = () => {
     }
 
     return (<>
-        <HomeHeader />
+        <HomeHeader clickTab={clickTab}/>
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-CreatePage-body">

@@ -2,11 +2,12 @@
 import logo from "../../../assets/logo.png"
 import "../../../css/host/home/HomeHeader.css"
 
-const HomeHeader = () => {
+//host 페이지의 상단 바
+const HomeHeader = ({ clickTab }) => {
 
     return (<>
         <header className="header-HostDashboardPage">
-            <img src={logo} alt="로고" />
+            <img src={logo} alt="로고" onClick={() => clickTab("/")} />
             <div>
                 내 정보버튼
             </div>
