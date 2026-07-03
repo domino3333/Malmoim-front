@@ -42,7 +42,7 @@
 
 /* 비밀번호가 있을 때 입장하기 버튼*/
 .nickname-modal-enter-button-v1{
-    margin-top: 30px;
+    margin-top: 70px;
     margin-left: 20px;
     margin-right: 20px;
     background-color: #90653E;
@@ -68,6 +68,7 @@
     
 }
 
+/* 정원 텍스트 */
 .nickname-modal-capacity-p{
     text-align: center;
 }
