@@ -1,9 +1,9 @@
 
 import logo from "../../../assets/logo.png"
-import "../../../css/host/home/HomeHeader.css"
+import "../../../css/host/home/HostHomeHeader.css"
 
 //host 페이지의 상단 바
-const HomeHeader = ({ clickTab }) => {
+const HostHomeHeader = ({ clickTab }) => {
 
     return (<>
         <header className="header-HostDashboardPage">
@@ -16,4 +16,4 @@ const HomeHeader = ({ clickTab }) => {
     </>)
 }
 
-export default HomeHeader;
+export default HostHomeHeader;

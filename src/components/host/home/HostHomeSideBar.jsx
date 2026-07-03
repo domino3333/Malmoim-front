@@ -1,8 +1,8 @@
-import '../../../css/host/home/HomeSideBar.css'
+import '../../../css/host/home/HostHomeSideBar.css'
 import personIcon from '../../../assets/person.png'
 import plusIcon from '../../../assets/plus.png'
 
-const HomeSideBar = ({ clickTab }) => {
+const HostHomeSideBar = ({ clickTab }) => {
   return (
     <>
       <div className="div-dashboard-sidebar">
@@ -19,5 +19,4 @@ const HomeSideBar = ({ clickTab }) => {
   )
 }
 
-export default HomeSideBar
-
+export default HostHomeSideBar

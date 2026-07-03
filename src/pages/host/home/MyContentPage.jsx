@@ -1,7 +1,7 @@
 
 import { useNavigate } from "react-router-dom";
-import HomeHeader from "../../../components/host/home/HomeHeader";
-import HomeSideBar from "../../../components/host/home/HomeSideBar";
+import HostHomeHeader from "../../../components/host/home/HostHomeHeader";
+import HostHomeSideBar from "../../../components/host/home/HostHomeSideBar";
 import "../../../css/host/home/MyContentPage.css";
 import { useEffect, useState } from "react";
 import { getMyRooms } from "../../../api/room/roomApi";
@@ -88,11 +88,11 @@ const MyContentPage = () => {
     }, [currentPage])
 
     return (<>
-        <HomeHeader />
+        <HostHomeHeader />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-MyContentPage-body">
-            <HomeSideBar clickTab={clickTab} />
+            <HostHomeSideBar clickTab={clickTab} />
             <div className="div-MyContentPage-content-list">
                 <div className="div-content">
 

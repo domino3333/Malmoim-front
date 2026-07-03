@@ -2,8 +2,8 @@
 import "../../../css/host/home/HostHomePage.css"
 
 
-import HomeHeader from "../../../components/host/home/HomeHeader"
-import HomeSideBar from "../../../components/host/home/HomeSideBar"
+import HostHomeHeader from "../../../components/host/home/HostHomeHeader"
+import HostHomeSideBar from "../../../components/host/home/HostHomeSideBar"
 import { useNavigate } from "react-router-dom"
 
 
@@ -21,11 +21,11 @@ const HostHomePage = () => {
 
     return (<>
 
-        <HomeHeader clickTab={clickTab} />
+        <HostHomeHeader clickTab={clickTab} />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-dashboard-body">
-            <HomeSideBar clickTab={clickTab} />
+            <HostHomeSideBar clickTab={clickTab} />
             <div className="div-dashboard-content-list">
                 <table>
                     <tr>
