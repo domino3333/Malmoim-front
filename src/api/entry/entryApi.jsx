@@ -23,5 +23,7 @@ export const checkRoomPassword = async (password) => {
         null
     )
 
+    return result.data;
+
 
 }
