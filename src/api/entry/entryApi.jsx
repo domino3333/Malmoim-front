@@ -17,9 +17,9 @@ export const checkRoomCode = async (code) => {
 
 
 // 비밀번호를 확인하는 api 호출
-export const checkRoomPassword = async (password) => {
+export const checkRoomPassword = async (roomNo, password) => {
 
-    const result = await axios.post(`${ApiHost}${prefix}/check-password`, { password },
+    const result = await axios.post(`${ApiHost}${prefix}/check-password`, { roomNo, password },
         null
     )
 

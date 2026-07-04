@@ -16,7 +16,7 @@ const HomeEntryPanel = () => {
     const [entryModalShow, setEntryModalShow] = useState(false);
     const [nicknameModalShow, setNicknameModalShow] = useState(false);
 
-    const [passwordCheckResponse,setPasswordCheckResponse] = usesState(null);
+    const [passwordCheckResponse,setPasswordCheckResponse] = useState(null);
 
 
     const observeCode = (e) => {
@@ -35,10 +35,10 @@ const HomeEntryPanel = () => {
         }
     }
 
-    const clickNext = async (password) => {
+    const clickNext = async (roomNo, password) => {
 
         try{
-            const result = await checkRoomPassword(password);
+            const result = await checkRoomPassword(roomInfo.roomNo,password);
             setPasswordCheckResponse(result);
         }catch(e){
             alert(e);
