@@ -3,7 +3,7 @@ import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
-import { checkRoomCode } from "../../api/entry/entryApi"
+import { checkRoomCode, checkRoomPassword } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
 import NickNameModal from "./modal/NickNameModal"
 
@@ -12,8 +12,12 @@ const HomeEntryPanel = () => {
 
     const [code, setCode] = useState("");
     const [roomInfo, setRoomInfo] = useState(null);
+
     const [entryModalShow, setEntryModalShow] = useState(false);
     const [nicknameModalShow, setNicknameModalShow] = useState(false);
+
+    const [passwordCheckResponse,setPasswordCheckResponse] = usesState(null);
+
 
     const observeCode = (e) => {
         setCode(e.target.value);
@@ -31,7 +35,14 @@ const HomeEntryPanel = () => {
         }
     }
 
-    const clickNext = () => {
+    const clickNext = async (password) => {
+
+        try{
+            const result = await checkRoomPassword(password);
+            setPasswordCheckResponse(result);
+        }catch(e){
+            alert(e);
+        }
 
         setEntryModalShow(false);
         setNicknameModalShow(true);
