@@ -16,7 +16,7 @@ const HomeEntryPanel = () => {
     const [entryModalShow, setEntryModalShow] = useState(false);
     const [nicknameModalShow, setNicknameModalShow] = useState(false);
 
-    const [passwordCheckResponse,setPasswordCheckResponse] = useState(null);
+    const [passwordCheckResponse, setPasswordCheckResponse] = useState(null);
 
 
     const observeCode = (e) => {
@@ -37,15 +37,16 @@ const HomeEntryPanel = () => {
 
     const clickNext = async (roomNo, password) => {
 
-        try{
-            const result = await checkRoomPassword(roomInfo.roomNo,password);
+        try {
+            const result = await checkRoomPassword(roomInfo.roomNo, password);
             setPasswordCheckResponse(result);
-        }catch(e){
-            alert(e);
+            setEntryModalShow(false);
+            setNicknameModalShow(true);
+        } catch (e) {
+            alert("비밀번호 불일치");
         }
 
-        setEntryModalShow(false);
-        setNicknameModalShow(true);
+
     }
 
 
