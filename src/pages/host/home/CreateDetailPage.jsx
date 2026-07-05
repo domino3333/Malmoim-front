@@ -12,19 +12,15 @@ const CreateDetailPage = () => {
 
     const nav = useNavigate();
 
-    const clickTab = (destination) => {
-        nav(`/${destination}`);
-    }
-
 
     const [show, setShow] = useState(false);
 
     return (<>
-        <HostHomeHeader />
+        <HostHomeHeader/>
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-CreateDetailPage-body">
-            <HostHomeSideBar clickTab={clickTab} />
+            <HostHomeSideBar/>
             <div className="div-CreateDetailPage-content-list">
                 <div className="btn-box">
                     <button className="btn1" onClick={() => setShow(true)}>

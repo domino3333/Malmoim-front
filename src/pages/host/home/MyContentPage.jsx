@@ -43,10 +43,6 @@ const MyContentPage = () => {
         , (_, i) => startBlock + i
     );
 
-    const clickTab = (destination) => {
-        nav(`/${destination}`);
-    }
-
 
     const clickRow = (no)=>{
         nav(`/qna/${no}/host`);
@@ -92,7 +88,7 @@ const MyContentPage = () => {
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-MyContentPage-body">
-            <HostHomeSideBar clickTab={clickTab} />
+            <HostHomeSideBar/>
             <div className="div-MyContentPage-content-list">
                 <div className="div-content">
 
@@ -111,7 +107,7 @@ const MyContentPage = () => {
                         </div>
 
                         <div className="div-content-head-right">
-                            <button className="button-head-create" onClick={()=>clickTab("createDetail")}>
+                            <button className="button-head-create" onClick={()=>nav("createDetail")}>
                                 + 방 만들기
                             </button>
                         </div>

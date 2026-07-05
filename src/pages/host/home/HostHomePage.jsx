@@ -10,22 +10,17 @@ import { useNavigate } from "react-router-dom"
 
 const HostHomePage = () => {
 
-    const nav = useNavigate();
-
-    const clickTab = (destination) => {
-        nav(`${destination}`);
-    }
-
+    
 
 
 
     return (<>
 
-        <HostHomeHeader clickTab={clickTab} />
+        <HostHomeHeader/>
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-dashboard-body">
-            <HostHomeSideBar clickTab={clickTab} />
+            <HostHomeSideBar/>
             <div className="div-dashboard-content-list">
                 <table>
                     <tr>
