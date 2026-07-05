@@ -3,7 +3,7 @@ import personIcon from '../../../assets/person.png'
 import plusIcon from '../../../assets/plus.png'
 import { useNavigate } from 'react-router-dom'
 
-const HostHomeSideBar = ({ clickTab }) => {
+const HostHomeSideBar = () => {
 
 
 

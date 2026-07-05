@@ -4,7 +4,6 @@ import "../../../css/host/home/HostHomePage.css"
 
 import HostHomeHeader from "../../../components/host/home/HostHomeHeader"
 import HostHomeSideBar from "../../../components/host/home/HostHomeSideBar"
-import { useNavigate } from "react-router-dom"
 
 
 

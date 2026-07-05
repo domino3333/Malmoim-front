@@ -107,7 +107,7 @@ const MyContentPage = () => {
                         </div>
 
                         <div className="div-content-head-right">
-                            <button className="button-head-create" onClick={()=>nav("createDetail")}>
+                            <button className="button-head-create" onClick={()=>nav("/createDetail")}>
                                 + 방 만들기
                             </button>
                         </div>

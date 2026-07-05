@@ -4,7 +4,7 @@ import logo from "../../../assets/logo.png"
 import "../../../css/host/home/HostHomeHeader.css"
 
 //host 페이지의 상단 바
-const HostHomeHeader = ({ clickTab }) => {
+const HostHomeHeader = () => {
 
     const nav = useNavigate();
 
