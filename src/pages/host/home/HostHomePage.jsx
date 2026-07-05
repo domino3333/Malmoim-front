@@ -13,7 +13,7 @@ const HostHomePage = () => {
     const nav = useNavigate();
 
     const clickTab = (destination) => {
-        nav(`/${destination}`);
+        nav(`${destination}`);
     }
 
 

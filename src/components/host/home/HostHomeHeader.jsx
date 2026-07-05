@@ -7,7 +7,7 @@ const HostHomeHeader = ({ clickTab }) => {
 
     return (<>
         <header className="header-HostDashboardPage">
-            <img src={logo} alt="로고" onClick={() => clickTab("/")} />
+            <img src={logo} alt="로고" onClick={()=>clickTab("/")} />
             <div>
                 내 정보버튼
             </div>
