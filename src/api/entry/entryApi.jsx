@@ -27,3 +27,12 @@ export const checkRoomPassword = async (roomNo, password) => {
 
 
 }
+
+export const insertNickName = async (nickname) => {
+
+    const result = await axios.post(`${ApiHost}${prefix}/insert-nickname`, { nickname },
+        null
+    )
+
+    return result.data;
+}
