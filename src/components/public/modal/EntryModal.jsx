@@ -10,7 +10,7 @@ const EntryModal = ({ clickNext,roomInfo, show, onHide }) => {
     const [password,setPassword] =useState("");
 
     const observePassword = (e)=>{
-        //const { value } = e.target.value;
+        //const { value } = e.target;
         setPassword(e.target.value);
         
     }
