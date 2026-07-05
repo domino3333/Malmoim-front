@@ -28,8 +28,8 @@ const EntryModal = ({ clickNext,roomInfo, show, onHide }) => {
                     <input className="entry-modal-password-input" onChange={observePassword} type="password" placeholder="비밀번호.." />
                 }
 
-                <button onClick={()=>clickNext(roomInfo.roomNo,password)} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
-                    다음
+                <button onClick={()=>clickNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
+                    {roomInfo.hasPassword ? "다음" : "입장"}
                 </button>
 
         </Modal>

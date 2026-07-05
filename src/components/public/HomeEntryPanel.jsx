@@ -35,11 +35,13 @@ const HomeEntryPanel = () => {
         }
     }
 
-    const clickNext = async (roomNo, password) => {
+    const clickNext = async (roomNo, password, hasPassword) => {
 
         try {
-            const result = await checkRoomPassword(roomNo, password);
-            setPasswordCheckResponse(result);
+            if(hasPassword){
+                const result = await checkRoomPassword(roomNo, password);
+                setPasswordCheckResponse(result);
+            }
             setEntryModalShow(false);
             setNicknameModalShow(true);
         } catch (e) {
