@@ -51,6 +51,11 @@ const HomeEntryPanel = () => {
 
     }
 
+    const clickEnter = async ()=>{
+        
+        const result = await insertNickName(roomInfo.roomNo,nickname);
+    }
+
 
 
 
@@ -85,7 +90,7 @@ const HomeEntryPanel = () => {
 
         {roomInfo && <EntryModal clickNext={clickNext} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
 
-        {roomInfo && <NickNameModal roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
+        {roomInfo && <NickNameModal clickEnter={clickEnter} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
     </>)
 }
 export default HomeEntryPanel;

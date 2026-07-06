@@ -28,9 +28,10 @@ export const checkRoomPassword = async (roomNo, password) => {
 
 }
 
-export const insertNickName = async (nickname) => {
+// 입장하기 클릭 시 닉네임을 보내는 함수
+export const insertNickName = async (roomNo,nickname) => {
 
-    const result = await axios.post(`${ApiHost}${prefix}/insert-nickname`, { nickname },
+    const result = await axios.post(`${ApiHost}${prefix}/insert-nickname`, { roomNo,nickname },
         null
     )
 
