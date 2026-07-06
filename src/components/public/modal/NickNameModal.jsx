@@ -37,7 +37,7 @@ const NickNameModal = ({ clickEnter, roomInfo, show, onHide }) => {
 
 
             <button
-                onClick={clickEnter}
+                onClick={()=>clickEnter(roomInfo.roomNo,nickname)}
                 className={roomInfo.hasPassword ? "nickname-modal-enter-button-v1" : "nickname-modal-enter-button-v2"}>
                 입장하기
             </button>

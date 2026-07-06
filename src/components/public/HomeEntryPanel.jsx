@@ -3,7 +3,7 @@ import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
-import { checkRoomCode, checkRoomPassword } from "../../api/entry/entryApi"
+import { checkRoomCode, checkRoomPassword, insertNickName } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
 import NickNameModal from "./modal/NickNameModal"
 
@@ -51,9 +51,9 @@ const HomeEntryPanel = () => {
 
     }
 
-    const clickEnter = async ()=>{
+    const clickEnter = (roomNo,nickname)=>{
         
-        const result = await insertNickName(roomInfo.roomNo,nickname);
+        insertNickName(roomNo,nickname);
     }
 
 
