@@ -10,7 +10,7 @@ const QnaParticipantPage = () => {
 
     const { no } = useParams();
     const [question, setQuestion] = useState("");
-    const [roomInfo,setRoomInfo] = useState();
+    const [roomInfo, setRoomInfo] = useState(null);
 
     const clientRef = useRef(null);
 
@@ -50,15 +50,17 @@ const QnaParticipantPage = () => {
 
 
     // roomInfo 받아오는 useEffect
-    useEffect(()=>{
+    useEffect(() => {
 
-        const fetchRoomInfo = async ()=>{
+        const fetchRoomInfo = async () => {
 
             const data = await getOneQnaRoomAsParticipant(no);
             setRoomInfo(data);
         }
 
-    },[no])
+        fetchRoomInfo();
+
+    }, [no])
 
 
 
@@ -69,7 +71,7 @@ const QnaParticipantPage = () => {
 
 
         <div className="qna-paricipant-main-div">
-            <RoomMiniHeader roomInfo={roomInfo}/>
+            {roomInfo ? <RoomMiniHeader roomInfo={roomInfo} /> : <div>로딩중</div>}
 
         </div>
 
