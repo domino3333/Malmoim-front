@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
 import { registerQuestion } from "../../../api/room/qna/socketApi";
 
-const QnaParticipant = () => {
+const QnaParticipantPage = () => {
 
 
     const { no } = useParams();
@@ -12,7 +12,7 @@ const QnaParticipant = () => {
     const clientRef = useRef(null);
 
 
-    //input을 보는 change함수
+    //input??蹂대뒗 change?⑥닔
     const observeQuestion = (e) => {
 
         setQuestion(e.target.value);
@@ -20,7 +20,7 @@ const QnaParticipant = () => {
     }
 
 
-    // 전송 클릭 시
+    // ?꾩넚 ?대┃ ??
     const sendQuestion = () => {
 
         const client = clientRef.current;
@@ -50,12 +50,13 @@ const QnaParticipant = () => {
     return (<>
 
         <h1>{no}</h1>
-        <p>참여자의qna 방</p>
+        <p>참여자의 qna 방</p>
 
-        <input onChange={observeQuestion} type="text" placeholder="질문을 입력하세요." name="question" />
+        <input onChange={observeQuestion} type="text" placeholder="질문을 입력하세요" name="question" />
         <button onClick={sendQuestion}>입력</button>
 
     </>)
 }
 
-export default QnaParticipant;
+export default QnaParticipantPage;
+

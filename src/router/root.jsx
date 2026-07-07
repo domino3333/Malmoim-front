@@ -8,7 +8,7 @@ import CreatePage from '../pages/host/home/CreatePage'
 import MyContentPage from '../pages/host/home/MyContentPage'
 import CreateDetailPage from '../pages/host/home/CreateDetailPage'
 import QnaHostPage from '../pages/host/qna/QnaHostPage'
-import QnaParticipant from '../pages/participant/qna/QnaParticipant'
+import QnaParticipantPage from '../pages/participant/qna/QnaParticipantPage'
 
 const MainPage = lazy(() => import('../pages/public/MainPage'))
 
@@ -81,12 +81,13 @@ const root = createBrowserRouter([
     path: '/qna/:no',
     element: (
       <Suspense fallback={<Loading />}>
-        <QnaParticipant/>
+        <QnaParticipantPage/>
       </Suspense>
     ),
   },
 ])
 
 export default root
+
 
 
