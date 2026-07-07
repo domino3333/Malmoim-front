@@ -1,7 +1,6 @@
 import { Modal } from "react-bootstrap";
 import "../../../css/public/modal/NickNameModal.css"
 import { useState } from "react";
-import { insertNickName } from "../../../api/entry/entryApi";
 
 
 const NickNameModal = ({ clickEnter, roomInfo, show, onHide }) => {

@@ -6,6 +6,7 @@ import { useState } from "react"
 import { checkRoomCode, checkRoomPassword, insertParticipant } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
 import NickNameModal from "./modal/NickNameModal"
+import { useNavigate } from "react-router-dom"
 
 const HomeEntryPanel = () => {
 
@@ -18,6 +19,7 @@ const HomeEntryPanel = () => {
 
     const [passwordCheckResponse, setPasswordCheckResponse] = useState(null);
 
+    const nav = useNavigate();
 
     const observeCode = (e) => {
         setCode(e.target.value);
@@ -53,9 +55,11 @@ const HomeEntryPanel = () => {
     }
 
     // "입장하기" 버튼 클릭
-    const clickEnter = (roomNo,nickname)=>{
+    const clickEnter = async (roomNo,nickname)=>{
         
-        const data = insertParticipant(roomNo,nickname);
+        const data = await insertParticipant(roomNo,nickname);
+        
+        nav(`/qna/${roomNo}`);
     }
 
 
