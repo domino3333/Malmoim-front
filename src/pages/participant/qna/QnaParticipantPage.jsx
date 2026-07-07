@@ -12,7 +12,6 @@ const QnaParticipantPage = () => {
     const clientRef = useRef(null);
 
 
-    //input??蹂대뒗 change?⑥닔
     const observeQuestion = (e) => {
 
         setQuestion(e.target.value);
@@ -20,7 +19,6 @@ const QnaParticipantPage = () => {
     }
 
 
-    // ?꾩넚 ?대┃ ??
     const sendQuestion = () => {
 
         const client = clientRef.current;
