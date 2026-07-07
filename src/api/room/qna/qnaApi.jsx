@@ -34,7 +34,7 @@ export const getMyOneQnaRoom = async (no) => {
     return result.data;
 }
 
-// 하나의 qna 방을 가져오는 api ( 호스트용, 토큰 O )
+// 하나의 qna 방을 가져오는 api ( 참여자용 , 토큰 X )
 export const getOneQnaRoomAsParticipant = async (no) => {
 
 
