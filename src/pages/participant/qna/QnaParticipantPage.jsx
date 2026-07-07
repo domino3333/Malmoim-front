@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
 import { registerQuestion } from "../../../api/room/qna/socketApi";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
+import { getOneQnaRoomAsParticipant } from "../../../api/room/qna/qnaApi";
 
 const QnaParticipantPage = () => {
 
 
     const { no } = useParams();
     const [question, setQuestion] = useState("");
+    const [roomInfo,setRoomInfo] = useState();
 
     const clientRef = useRef(null);
 
@@ -52,7 +54,8 @@ const QnaParticipantPage = () => {
 
         const fetchRoomInfo = async ()=>{
 
-            await 
+            const data = await getOneQnaRoomAsParticipant(no);
+            setRoomInfo(data);
         }
 
     },[no])
@@ -66,7 +69,7 @@ const QnaParticipantPage = () => {
 
 
         <div className="qna-paricipant-main-div">
-            <RoomMiniHeader/>
+            <RoomMiniHeader roomInfo={roomInfo}/>
 
         </div>
 
