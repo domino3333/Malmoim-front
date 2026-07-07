@@ -3,7 +3,7 @@ import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
-import { checkRoomCode, checkRoomPassword, insertNickName } from "../../api/entry/entryApi"
+import { checkRoomCode, checkRoomPassword, insertParticipant } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
 import NickNameModal from "./modal/NickNameModal"
 
@@ -35,6 +35,7 @@ const HomeEntryPanel = () => {
         }
     }
 
+    // "다음" 버튼 클릭
     const clickNext = async (roomNo, password, hasPassword) => {
 
         try {
@@ -51,9 +52,10 @@ const HomeEntryPanel = () => {
 
     }
 
+    // "입장하기" 버튼 클릭
     const clickEnter = (roomNo,nickname)=>{
         
-        insertNickName(roomNo,nickname);
+        const data = insertParticipant(roomNo,nickname);
     }
 
 

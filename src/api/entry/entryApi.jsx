@@ -29,7 +29,7 @@ export const checkRoomPassword = async (roomNo, password) => {
 }
 
 // 입장하기 클릭 시 닉네임을 보내는 함수
-export const insertNickName = async (roomNo,nickname) => {
+export const insertParticipant = async (roomNo,nickname) => {
 
     const result = await axios.post(`${ApiHost}${prefix}/insert-nickname`, { roomNo,nickname },
         null
@@ -39,12 +39,3 @@ export const insertNickName = async (roomNo,nickname) => {
 }
 
 
-// 입장하기 클릭 시 참여자 페이지로 이동하는 함수
-export const enterQnaRoom = async () => {
-
-    const result = await axios.post(`${ApiHost}${prefix}/enter-qna`, { roomNo,nickname },
-        null
-    )
-
-    return result.data;
-}
