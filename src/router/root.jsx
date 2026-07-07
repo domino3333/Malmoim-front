@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react'
+﻿import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import Loading from '../pages/public/Loading'
 import LoginPage from '../pages/public/LoginPage'
@@ -7,7 +7,7 @@ import HostHomePage from '../pages/host/home/HostHomePage'
 import CreatePage from '../pages/host/home/CreatePage'
 import MyContentPage from '../pages/host/home/MyContentPage'
 import CreateDetailPage from '../pages/host/home/CreateDetailPage'
-import QnaHost from '../pages/host/qna/QnaHost'
+import QnaHostPage from '../pages/host/qna/QnaHostPage'
 import QnaParticipant from '../pages/participant/qna/QnaParticipant'
 
 const MainPage = lazy(() => import('../pages/public/MainPage'))
@@ -73,7 +73,7 @@ const root = createBrowserRouter([
     path: '/qna/:no/host',
     element: (
       <Suspense fallback={<Loading />}>
-        <QnaHost/>
+        <QnaHostPage/>
       </Suspense>
     ),
   },
@@ -88,4 +88,5 @@ const root = createBrowserRouter([
 ])
 
 export default root
+
 

@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
-import "../../../css/host/qna/QnaHost.css"
+import "../../../css/host/qna/QnaHostPage.css"
 import RoomInfo from "../../../components/host/home/room/RoomInfo";
 import HostQnaList from "../../../components/host/home/room/HostQnaList";
 import QnaParticipantPannel from "../../../components/host/home/room/QnaParticipantPannel";
@@ -11,7 +11,7 @@ import RemoteControl from "../../../components/host/home/room/RemoteControl";
 import { callStartTimer, getMyOneQnaRoom } from "../../../api/room/qna/qnaApi";
 import TimerModal from "../../../components/host/modal/TimerModal";
 
-const QnaHost = () => {
+const QnaHostPage = () => {
 
 
 
@@ -41,7 +41,7 @@ const QnaHost = () => {
 
     const clientRef = useRef(null);
 
-    //TimerModal에 대한 useState
+    //TimerModal?????useState
     const [show, setShow] = useState(false);
 
     const clickLogo = () => {
@@ -49,7 +49,7 @@ const QnaHost = () => {
     }
 
     const startTimer = async (seconds) => {
-        // timer start api 호출
+        // timer start api ?몄텧
         const data = await callStartTimer(roomInfo.no, seconds);
         setTimerInfo(data);
         setRoomInfo(prev => ({
@@ -59,7 +59,7 @@ const QnaHost = () => {
     }
 
 
-    // 웹소켓 구독
+    // ?뱀냼耳?援щ룆
     useEffect(() => {
 
         const client = connectWebSocket((connectedClient) => {
@@ -67,7 +67,7 @@ const QnaHost = () => {
 
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
-                console.log("구독 data:", data);
+                console.log("援щ룆 data:", data);
                 setQuestion(data.question);
             });
 
@@ -77,7 +77,7 @@ const QnaHost = () => {
 
     }, [no])
 
-    // 방 하나의 정보를 불러오는 http useEffect
+    // 諛??섎굹???뺣낫瑜?遺덈윭?ㅻ뒗 http useEffect
     useEffect(() => {
 
         const fetchData = async () => {
@@ -98,7 +98,7 @@ const QnaHost = () => {
 
 
         <div className="qna-host-main-div">
-            <RoomHeader title={"청중 QnA"} clickLogo={clickLogo} />
+            <RoomHeader title={"泥?쨷 QnA"} clickLogo={clickLogo} />
             <RoomMiniHeader roomInfo={roomInfo} />
             <RoomInfo setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">
@@ -117,4 +117,5 @@ const QnaHost = () => {
     </>)
 }
 
-export default QnaHost;
+export default QnaHostPage;
+
