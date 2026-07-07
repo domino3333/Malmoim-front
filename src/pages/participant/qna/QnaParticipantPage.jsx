@@ -2,6 +2,7 @@
 import { useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
 import { registerQuestion } from "../../../api/room/qna/socketApi";
+import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 
 const QnaParticipantPage = () => {
 
@@ -34,6 +35,7 @@ const QnaParticipantPage = () => {
     }
 
 
+    // 웹소켓 연결 useEffect
     useEffect(() => {
         const client = connectWebSocket((connectedClient) => {
             clientRef.current = connectedClient;
@@ -45,13 +47,34 @@ const QnaParticipantPage = () => {
     }, [no])
 
 
+    // roomInfo 받아오는 useEffect
+    useEffect(()=>{
+
+        const fetchRoomInfo = async ()=>{
+
+            await 
+        }
+
+    },[no])
+
+
+
+
+
+
     return (<>
 
-        <h1>{no}</h1>
-        <p>참여자의 qna 방</p>
 
-        <input onChange={observeQuestion} type="text" placeholder="질문을 입력하세요" name="question" />
-        <button onClick={sendQuestion}>입력</button>
+        <div className="qna-paricipant-main-div">
+            <RoomMiniHeader/>
+
+        </div>
+
+
+
+
+        {/* <input onChange={observeQuestion} type="text" placeholder="질문을 입력하세요" name="question" />
+        <button onClick={sendQuestion}>입력</button> */}
 
     </>)
 }

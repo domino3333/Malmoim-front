@@ -20,16 +20,25 @@ export const createQnARoom = async (input) => {
 
 }
 
-// 하나의 qna 방을 가져오는 api
+// 하나의 qna 방을 가져오는 api ( 호스트용, 토큰 O )
 export const getMyOneQnaRoom = async (no) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const result = await axios.get(`${ApiHost}${prefix}/${no}`, {
+    const result = await axios.get(`${ApiHost}${prefix}/${no}/host`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
     })
+
+    return result.data;
+}
+
+// 하나의 qna 방을 가져오는 api ( 호스트용, 토큰 O )
+export const getOneQnaRoomAsParticipant = async (no) => {
+
+
+    const result = await axios.get(`${ApiHost}${prefix}/${no}/participant`, null )
 
     return result.data;
 }
