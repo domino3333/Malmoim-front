@@ -19,18 +19,7 @@ const QnaParticipantPage = () => {
 
     const { no } = useParams();
     const [question, setQuestion] = useState("");
-    const [roomInfo, setRoomInfo] = useState({
-        no: 0,
-        hostNo: 0,
-        title: "",
-        code: "",
-        capacity: 0,
-        password: "",
-        createdAt: "",
-        status: "",
-        type: "",
-        visibility: "",
-    });
+    const [roomInfo, setRoomInfo] = useState(null);
 
     const clientRef = useRef(null);
 
@@ -103,9 +92,9 @@ const QnaParticipantPage = () => {
 
         <div className="qna-paricipant-main-div">
             <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
-            {roomInfo ? <RoomMiniHeader roomInfo={roomInfo} /> : <div>로딩중</div>}
+            {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
-            <PhaseComponent roomInfo={roomInfo}/>
+            {roomInfo && <PhaseComponent roomInfo={roomInfo}/>}
         </div>
 
 
