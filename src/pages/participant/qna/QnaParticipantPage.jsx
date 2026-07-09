@@ -24,6 +24,7 @@ const QnaParticipantPage = () => {
     const clientRef = useRef(null);
 
 
+    // 화면 별 view에 대한 맵
     const phaseComponents = {
         READY: ParticipantReadyView,
         QUESTION_OPEN: ParticipantQuestionOpenView,
