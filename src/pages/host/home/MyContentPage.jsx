@@ -29,13 +29,13 @@ const MyContentPage = () => {
     //총 데이터 카운트를 서버로부터 내려받아 저장
     const [totalDataCount, setTotalDataCount] = useState(0);
 
-    const totalPage = Math.ceil(totalDataCount / pageSize)
+    const totalPages = Math.ceil(totalDataCount / pageSize)
 
 
     // 블럭 사이즈
     const blockSize = 5;
     const startBlock = Math.floor((currentPage - 1) / blockSize) * blockSize + 1;
-    const endBlock = Math.min(startBlock + blockSize - 1, totalPage);
+    const endBlock = Math.min(startBlock + blockSize - 1, totalPages);
 
     //첫블럭과 마지막 블럭의 숫자를 이용하여 페이지들 넘버 배열 만들기
     const pages = Array.from(
@@ -62,7 +62,7 @@ const MyContentPage = () => {
 
     }
     const nextClicked = () => {
-        if (endBlock === totalPage) return;
+        if (endBlock === totalPages) return;
 
         const newStartBlock = startBlock + blockSize;
 
@@ -147,7 +147,7 @@ const MyContentPage = () => {
                         <button 
                             className="button-next" 
                             onClick={nextClicked}
-                            disabled={(totalPage <= endBlock)}
+                            disabled={(totalPages <= endBlock)}
                         >
                             이후 &gt;
                         </button>

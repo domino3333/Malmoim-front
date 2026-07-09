@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
 import "../../../css/host/modal/CreateModal.css"
 import { useState } from "react";
-import { createQnARoom } from "../../../api/room/qna/qnaApi";
+import { createQnaRoom } from "../../../api/room/qna/qnaApi";
 
 
 
@@ -30,7 +30,7 @@ const CreateModal = ({ show, onHide, title }) => {
 
     const createRoom = async () => {
 
-        await createQnARoom({
+        await createQnaRoom({
             ...input,
             isChecked: isChecked
         });

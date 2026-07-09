@@ -18,8 +18,8 @@ const TimerModal = ({ show, onHide, startTimer }) => {
         const minuteNumber = Number(minute);
         const secondNumber = Number(second);
 
-        const totalSecond = minuteNumber * 60 + secondNumber;
-        startTimer(totalSecond);
+        const totalSeconds = minuteNumber * 60 + secondNumber;
+        startTimer(totalSeconds);
         onHide();
 
     }

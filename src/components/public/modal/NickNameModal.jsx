@@ -1,9 +1,9 @@
 import { Modal } from "react-bootstrap";
-import "../../../css/public/modal/NickNameModal.css"
+import "../../../css/public/modal/NicknameModal.css"
 import { useState } from "react";
 
 
-const NickNameModal = ({ clickEnter, roomInfo, show, onHide }) => {
+const NicknameModal = ({ clickEnter, roomInfo, show, onHide }) => {
 
 
     const [nickname, setNickname] = useState("");
@@ -45,4 +45,4 @@ const NickNameModal = ({ clickEnter, roomInfo, show, onHide }) => {
     </>)
 }
 
-export default NickNameModal;
+export default NicknameModal;

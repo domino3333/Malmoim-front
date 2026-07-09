@@ -4,7 +4,7 @@ import home from "../../assets/home-icon.png"
 import { useState } from "react"
 import { checkRoomCode, checkRoomPassword, insertParticipant } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
-import NickNameModal from "./modal/NickNameModal"
+import NicknameModal from "./modal/NicknameModal"
 import { useNavigate } from "react-router-dom"
 
 const HomeEntryPanel = () => {
@@ -95,7 +95,7 @@ const HomeEntryPanel = () => {
 
         {roomInfo && <EntryModal clickNext={clickNext} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
 
-        {roomInfo && <NickNameModal clickEnter={clickEnter} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
+        {roomInfo && <NicknameModal clickEnter={clickEnter} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
     </>)
 }
 export default HomeEntryPanel;

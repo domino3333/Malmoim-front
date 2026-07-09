@@ -7,7 +7,7 @@ const prefix = "/api/qna"
 
 
 // qna 방 생성 api
-export const createQnARoom = async (input) => {
+export const createQnaRoom = async (input) => {
 
     const token = sessionStorage.getItem('accessToken')
 
