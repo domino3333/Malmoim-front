@@ -10,12 +10,11 @@ const ParticipantReadyView = () => {
         
             <div className="ParticipantReadyView-parent-div">
                 <div className="readyView-left-panel">
-
+                    호스트가 질문 시간을 준비 중이에요...
                 </div>
                 <div className="readyView-right-panel">
                     <MyInfoPanel/>
                     <ParticipantListPanel/>
-                    
                 </div>
                 
             </div>
