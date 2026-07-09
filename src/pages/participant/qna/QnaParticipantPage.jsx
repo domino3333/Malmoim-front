@@ -95,6 +95,7 @@ const QnaParticipantPage = () => {
             <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
+
             {PhaseComponent && <PhaseComponent roomInfo={roomInfo}/>}
         </div>
 

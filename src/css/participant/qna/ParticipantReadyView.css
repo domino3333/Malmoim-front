@@ -1,0 +1,20 @@
+
+
+/* ready view 전체의 부모 div */
+.ParticipantReadyView-parent-div{
+
+    display: flex;
+}
+
+
+/* 왼쪽 패널 */
+.readyView-left-panel{
+
+
+}
+
+/* 오른쪽 패널 */
+.readyView-right-panel{
+
+
+}
