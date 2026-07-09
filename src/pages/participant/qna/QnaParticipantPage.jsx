@@ -5,6 +5,7 @@ import { registerQuestion } from "../../../api/room/qna/socketApi";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 import { getOneQnaRoomAsParticipant } from "../../../api/room/qna/qnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
+import RoomHeader from "../../../components/host/home/room/RoomHeader";
 
 const QnaParticipantPage = () => {
 
@@ -64,7 +65,9 @@ const QnaParticipantPage = () => {
     }, [no])
 
 
-
+    const clickLogo = () => {
+        nav("/");
+    }
 
 
 
@@ -72,6 +75,7 @@ const QnaParticipantPage = () => {
 
 
         <div className="qna-paricipant-main-div">
+            <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
             {roomInfo ? <RoomMiniHeader roomInfo={roomInfo} /> : <div>로딩중</div>}
 
         </div>
