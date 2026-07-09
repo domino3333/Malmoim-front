@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
@@ -41,7 +41,7 @@ const QnaHostPage = () => {
 
     const clientRef = useRef(null);
 
-    //TimerModal?????useState
+    // TimerModal 표시 상태
     const [show, setShow] = useState(false);
 
     const clickLogo = () => {
@@ -49,7 +49,7 @@ const QnaHostPage = () => {
     }
 
     const startTimer = async (seconds) => {
-        // timer start api ?몄텧
+        // timer start api 호출
         const data = await callStartTimer(roomInfo.no, seconds);
         setTimerInfo(data);
         setRoomInfo(prev => ({
@@ -59,7 +59,7 @@ const QnaHostPage = () => {
     }
 
 
-    // ?뱀냼耳?援щ룆
+    // 웹소켓 구독
     useEffect(() => {
 
         const client = connectWebSocket((connectedClient) => {
@@ -67,7 +67,7 @@ const QnaHostPage = () => {
 
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
-                console.log("援щ룆 data:", data);
+                console.log("구독 data:", data);
                 setQuestion(data.question);
             });
 
@@ -77,7 +77,7 @@ const QnaHostPage = () => {
 
     }, [no])
 
-    // 諛??섎굹???뺣낫瑜?遺덈윭?ㅻ뒗 http useEffect
+    // 방 하나의 정보를 불러오는 http useEffect
     useEffect(() => {
 
         const fetchData = async () => {

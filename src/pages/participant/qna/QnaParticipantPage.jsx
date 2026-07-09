@@ -4,6 +4,7 @@ import { connectWebSocket } from "../../../api/room/qna/socket";
 import { registerQuestion } from "../../../api/room/qna/socketApi";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 import { getOneQnaRoomAsParticipant } from "../../../api/room/qna/qnaApi";
+import "../../../css/participant/qna/QnaParticipantPage.css"
 
 const QnaParticipantPage = () => {
 
