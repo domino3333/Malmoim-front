@@ -1,5 +1,6 @@
 
 import "../../../css/participant/qna/ParticipantReadyView.css"
+import ParticipantListPanel from "../ParticipantListPanel";
 import MyInfoPanel from "./MyInfoPanel";
 
 const ParticipantReadyView = () => {
@@ -13,9 +14,8 @@ const ParticipantReadyView = () => {
                 </div>
                 <div className="readyView-right-panel">
                     <MyInfoPanel/>
-                    <div className="readyView-participant-list">
-                        참여자목록
-                    </div>
+                    <ParticipantListPanel/>
+                    
                 </div>
                 
             </div>
