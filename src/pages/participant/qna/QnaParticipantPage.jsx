@@ -1,5 +1,5 @@
 ﻿import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { connectWebSocket } from "../../../api/room/qna/socket";
 import { registerQuestion } from "../../../api/room/qna/socketApi";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
@@ -9,6 +9,8 @@ import RoomHeader from "../../../components/host/home/room/RoomHeader";
 
 const QnaParticipantPage = () => {
 
+
+    const nav = useNavigate();
 
     const { no } = useParams();
     const [question, setQuestion] = useState("");
