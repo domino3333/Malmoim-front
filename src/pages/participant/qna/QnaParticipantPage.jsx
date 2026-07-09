@@ -32,7 +32,7 @@ const QnaParticipantPage = () => {
         FINISHED: ParticipantFinishedView,
     }
 
-    const PhaseComponent = phaseComponents[roomInfo.status];
+    const PhaseComponent = roomInfo ? phaseComponents[roomInfo.status] : null;
 
 
     const observeQuestion = (e) => {
@@ -94,7 +94,7 @@ const QnaParticipantPage = () => {
             <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
-            {roomInfo && <PhaseComponent roomInfo={roomInfo}/>}
+            {PhaseComponent && <PhaseComponent roomInfo={roomInfo}/>}
         </div>
 
 
