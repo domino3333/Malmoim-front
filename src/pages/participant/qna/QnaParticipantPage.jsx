@@ -7,6 +7,10 @@ import { getOneQnaRoomAsParticipant } from "../../../api/room/qna/qnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
+import ParticipantQuestionOpenView from "../../../components/participant/qna/ParticipantQuestionOpenView";
+import ParticipantVotingOpenView from "../../../components/participant/qna/ParticipantVotingOpenView";
+import ParticipantAnsweringView from "../../../components/participant/qna/ParticipantAnsweringView";
+import ParticipantFinishedView from "../../../components/participant/qna/ParticipantFinishedView";
 
 const QnaParticipantPage = () => {
 
@@ -15,17 +19,28 @@ const QnaParticipantPage = () => {
 
     const { no } = useParams();
     const [question, setQuestion] = useState("");
-    const [roomInfo, setRoomInfo] = useState(null);
+    const [roomInfo, setRoomInfo] = useState({
+        no: 0,
+        hostNo: 0,
+        title: "",
+        code: "",
+        capacity: 0,
+        password: "",
+        createdAt: "",
+        status: "",
+        type: "",
+        visibility: "",
+    });
 
     const clientRef = useRef(null);
 
 
     const phaseComponents = {
-        READY:ParticipantReadyView,
-        QUESTION_OPEN:ParticipantQuestionOpenView,
-        VOTING_OPEN:ParticipantVotingOpenView,
-        ANSWERING:ParticipantAnsweringView,
-        FINISHED:ParticipantFinishedView,
+        READY: ParticipantReadyView,
+        QUESTION_OPEN: ParticipantQuestionOpenView,
+        VOTING_OPEN: ParticipantVotingOpenView,
+        ANSWERING: ParticipantAnsweringView,
+        FINISHED: ParticipantFinishedView,
     }
 
     const PhaseComponent = phaseComponents[roomInfo.status];
@@ -90,7 +105,7 @@ const QnaParticipantPage = () => {
             <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
             {roomInfo ? <RoomMiniHeader roomInfo={roomInfo} /> : <div>로딩중</div>}
 
-            <PhaseComponent/>
+            <PhaseComponent roomInfo={roomInfo}/>
         </div>
 
 
