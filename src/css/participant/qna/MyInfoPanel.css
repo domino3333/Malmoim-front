@@ -1,0 +1,11 @@
+
+
+
+/* 내 정보 패널 최상위 div*/
+.MyInfoPanel-parent-div{
+    border: 1px solid #90653E;
+    padding:10px;
+    border-radius: 10px;
+    background-color: rgb(242, 237, 237);
+}
+
