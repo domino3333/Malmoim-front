@@ -8,10 +8,10 @@ const QnaParticipantPanel = ()=>{
 
         <div className="QnaParticipantPanel-main-div">
             <div className="QnaParticipantPanel-header">
-                李몄뿬??18紐?
+                참여자 18명
             </div>
             <div className="QnaParticipantPanel-body">
-                李몄뿬?먮챸??彛덈（猷?
+                참여자명단 구현 예정
             </div>
 
         </div>

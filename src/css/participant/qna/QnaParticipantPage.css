@@ -1,6 +1,5 @@
-﻿
-/* ?섏씠吏 ?꾩껜瑜??꾩슦瑜대뒗 main div*/
-.qna-participant-main-div{
-    width:1000px;
+/* 페이지 전체를 감싸는 main div */
+.qna-participant-main-div {
+    width: 1000px;
     margin: 0 auto;
 }
