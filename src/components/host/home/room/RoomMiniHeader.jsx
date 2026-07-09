@@ -1,4 +1,3 @@
-
 import "../../../../css/host/home/room/RoomMiniHeader.css"
 
 const RoomMiniHeader = ({ roomInfo }) => {
@@ -14,7 +13,7 @@ const RoomMiniHeader = ({ roomInfo }) => {
                 <div className="RoomMiniHeader-code">
                     입장 코드: {roomInfo.code}
                 </div>
-                <div className="RoomMiniHeader-stauts">
+                <div className="RoomMiniHeader-status">
                     공개 여부: {roomInfo.visibility === "PUBLIC" ? "공개방" : "비밀방"}
                 </div>
             </div>

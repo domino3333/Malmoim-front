@@ -91,7 +91,7 @@ const QnaParticipantPage = () => {
     return (<>
 
 
-        <div className="qna-paricipant-main-div">
+        <div className="qna-participant-main-div">
             <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 

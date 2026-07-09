@@ -1,4 +1,4 @@
-/* 두개 패널을 감싸는 main div */
+﻿/* ?먭컻 ?⑤꼸??媛먯떥??main div */
 .HomeEntryPanel-main-parent {
     display: flex;
     justify-content: center;
@@ -7,8 +7,8 @@
     background-color: rgb(242, 237, 237);
 }
 
-/* 왼쪽 대문 패널 */
-.HomeEntryPanel-left-pannel {
+/* ?쇱そ ?臾??⑤꼸 */
+.HomeEntryPanel-left-panel {
     border: 1px solid #90653E;
     height: 500px;
     width: 35%;
@@ -19,8 +19,8 @@
 }
 
 
-/* 오른쪽 대문 패널 */
-.HomeEntryPanel-right-pannel {
+/* ?ㅻⅨ履??臾??⑤꼸 */
+.HomeEntryPanel-right-panel {
     padding-top: 60px;
     border: 1px solid #90653E;
     height: 500px;
@@ -30,13 +30,13 @@
     background-color: white;
 }
 
-/* 참여자이신가요, 방을직접만들기 <- h2 텍스트 */
+/* 李몄뿬?먯씠?좉??? 諛⑹쓣吏곸젒留뚮뱾湲?<- h2 ?띿뒪??*/
 .HomeEntryPanel-main-parent h2 {
     font-weight: 900;
     margin-top: 10px;
 }
 
-/* 코드 입력과 버튼을 감싸는 div*/
+/* 肄붾뱶 ?낅젰怨?踰꾪듉??媛먯떥??div*/
 .left-panel-input-div {
     display: flex;
     margin: 0 auto;
@@ -44,13 +44,13 @@
 
 }
 
-/* 가이드 텍스트 */
+/* 媛?대뱶 ?띿뒪??*/
 .panel-guide-text {
     font-size: 1.0em;
 
 }
 
-/* 코드 입력하는 input 태그 */
+/* 肄붾뱶 ?낅젰?섎뒗 input ?쒓렇 */
 .code-input {
     flex: 1;
     width: 260px;
@@ -63,7 +63,7 @@
 }
 
 
-/* 코드 input 오른쪽의 화살표 버튼*/
+/* 肄붾뱶 input ?ㅻⅨ履쎌쓽 ?붿궡??踰꾪듉*/
 .code-input-arrow-button {
     width: 100px;
     height: 60px;
@@ -76,15 +76,15 @@
 
 }
 
-/* people 이미지 */
-.HomeEntryPanel-left-pannel img,
-.HomeEntryPanel-right-pannel img {
+/* people ?대?吏 */
+.HomeEntryPanel-left-panel img,
+.HomeEntryPanel-right-panel img {
     width: 100px;
     height: 100px;
     border-radius: 100%;
 }
 
-/*왼쪽 패널 advice 텍스트*/
+/*?쇱そ ?⑤꼸 advice ?띿뒪??/
 .left-panel-advice-div {
     border: none;
     background-color: #cab6a4;
@@ -95,7 +95,7 @@
 }
 
 
-/* 호스트로 시작하기 버튼*/
+/* ?몄뒪?몃줈 ?쒖옉?섍린 踰꾪듉*/
 .host-start-button {
     border: 1px solid #90653E;
     background-color: #90653E;
@@ -106,7 +106,7 @@
     font-size: 1.2em;
 }
 
-/* 오른쪽 패널 advice 텍스트*/
+/* ?ㅻⅨ履??⑤꼸 advice ?띿뒪??/
 .right-panel-advice-div {
     border: none;
     background-color: #cab6a4;

@@ -1,11 +1,11 @@
-/* RoomMiniHeader의 div를 감싸는 main div*/
+﻿/* RoomMiniHeader??div瑜?媛먯떥??main div*/
 .RoomMiniHeader-main-div {
 
     padding: 10px 10px;
 
 }
 
-/* 90%만 그리는 직선을 위한 div*/
+/* 90%留?洹몃━??吏곸꽑???꾪븳 div*/
 .RoomMiniHeader-padding-div {
 
     display: grid;
@@ -15,18 +15,18 @@
     gap:10px;
 }
 
-/* 방 타이틀 div */
+/* 諛???댄? div */
 .RoomMiniHeader-title {
 
     border: 1px solid #90653E;
 }
 
-/* 방 code div */
+/* 諛?code div */
 .RoomMiniHeader-code {
     border: 1px solid #90653E;
 }
 
-/* 방 상태 div */
-.RoomMiniHeader-stauts {
+/* 諛??곹깭 div */
+.RoomMiniHeader-status {
     border: 1px solid #90653E;
 }

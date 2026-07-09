@@ -1,4 +1,3 @@
-
 import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
@@ -68,7 +67,7 @@ const HomeEntryPanel = () => {
     return (<>
 
         <div className="HomeEntryPanel-main-parent">
-            <div className="HomeEntryPanel-left-pannel">
+            <div className="HomeEntryPanel-left-panel">
                 <img src={people} alt="people-icon" />
                 <h2>참여자이신가요?</h2>
                 <p className="panel-guide-text">입장코드를 입력하고 실시간 Q&A에 참여하세요</p>
@@ -80,7 +79,7 @@ const HomeEntryPanel = () => {
                     입장코드는 호스트가 제공한 코드를 입력해주세요
                 </div>
             </div>
-            <div className="HomeEntryPanel-right-pannel">
+            <div className="HomeEntryPanel-right-panel">
                 <img src={home} alt="" />
                 <h2>방을 직접 만들기</h2>
                 <p className="panel-guide-text">로그인 후 방을 만들고 진행할 수 있어요</p>

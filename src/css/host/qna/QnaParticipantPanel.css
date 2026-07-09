@@ -1,11 +1,11 @@
-/*전체를 아우르는 main div*/
-.QnaParticipantPannel-main-div {
+﻿/*?꾩껜瑜??꾩슦瑜대뒗 main div*/
+.QnaParticipantPanel-main-div {
 
     width: 30%;
     border: 1px solid red;
 }
 
-.QnaParticipantPannel-header{
+.QnaParticipantPanel-header{
 
     border: 1px solid green;
     background-color: rgb(242, 237, 237);
