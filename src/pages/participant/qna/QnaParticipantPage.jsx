@@ -6,6 +6,7 @@ import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 import { getOneQnaRoomAsParticipant } from "../../../api/room/qna/qnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
+import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
 
 const QnaParticipantPage = () => {
 
@@ -19,10 +20,19 @@ const QnaParticipantPage = () => {
     const clientRef = useRef(null);
 
 
+    const phaseComponents = {
+        READY:ParticipantReadyView,
+        QUESTION_OPEN:ParticipantQuestionOpenView,
+        VOTING_OPEN:ParticipantVotingOpenView,
+        ANSWERING:ParticipantAnsweringView,
+        FINISHED:ParticipantFinishedView,
+    }
+
+    const PhaseComponent = phaseComponents[roomInfo.status];
+
+
     const observeQuestion = (e) => {
-
         setQuestion(e.target.value);
-
     }
 
 
@@ -80,6 +90,7 @@ const QnaParticipantPage = () => {
             <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
             {roomInfo ? <RoomMiniHeader roomInfo={roomInfo} /> : <div>로딩중</div>}
 
+            <PhaseComponent/>
         </div>
 
 
