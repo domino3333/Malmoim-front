@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ApiHost } from "../ApiHost";
+import { API_BASE_URL } from "../ApiHost";
 
 
 
@@ -11,14 +11,14 @@ export const getMyRooms = async (currentPage,pageSize) => {
 
     const token = sessionStorage.getItem('accessToken')
 
-    const result = await axios.get(`${ApiHost}${prefix}?page=${currentPage}&size=${pageSize}`,{
+    const response = await axios.get(`${API_BASE_URL}${prefix}?page=${currentPage}&size=${pageSize}`,{
         headers: {
             Authorization: `Bearer ${token}`
         }
     }
     );
 
-    return result.data;
+    return response.data;
 }
 
 

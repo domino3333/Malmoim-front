@@ -4,7 +4,7 @@ import axios from "axios"
 const wsPrefix = "/app/qna";
 
 //질문 등록(publish)
-export const registerQuestion = (client, data) => {
+export const publishQuestion = (client, data) => {
 
     client.publish({
         destination: `${wsPrefix}/register`,

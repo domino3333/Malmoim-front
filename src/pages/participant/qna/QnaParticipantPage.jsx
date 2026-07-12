@@ -1,9 +1,9 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { connectWebSocket } from "../../../api/room/qna/socket";
-import { registerQuestion } from "../../../api/room/qna/socketApi";
+import { connectQnaSocket } from "../../../api/room/qna/socket";
+import { publishQuestion } from "../../../api/room/qna/socketApi";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
-import { getOneQnaRoomAsParticipant } from "../../../api/room/qna/qnaApi";
+import { getParticipantQnaRoom } from "../../../api/room/qna/qnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
@@ -36,12 +36,12 @@ const QnaParticipantPage = () => {
     const PhaseComponent = roomInfo ? phaseComponents[roomInfo.status] : null;
 
 
-    const observeQuestion = (e) => {
+    const handleQuestionChange = (e) => {
         setQuestion(e.target.value);
     }
 
 
-    const sendQuestion = () => {
+    const handleQuestionSubmit = () => {
 
         const client = clientRef.current;
 
@@ -49,7 +49,7 @@ const QnaParticipantPage = () => {
             return;
         }
 
-        registerQuestion(client, {
+        publishQuestion(client, {
             roomNo: Number(no),
             question: question
         });
@@ -58,7 +58,7 @@ const QnaParticipantPage = () => {
 
     // 웹소켓 연결 useEffect
     useEffect(() => {
-        const client = connectWebSocket((connectedClient) => {
+        const client = connectQnaSocket((connectedClient) => {
             clientRef.current = connectedClient;
         })
 
@@ -73,7 +73,7 @@ const QnaParticipantPage = () => {
 
         const fetchRoomInfo = async () => {
 
-            const data = await getOneQnaRoomAsParticipant(no);
+            const data = await getParticipantQnaRoom(no);
             setRoomInfo(data);
         }
 
@@ -82,7 +82,7 @@ const QnaParticipantPage = () => {
     }, [no])
 
 
-    const clickLogo = () => {
+    const handleLogoClick = () => {
         nav("/");
     }
 
@@ -92,7 +92,7 @@ const QnaParticipantPage = () => {
 
 
         <div className="qna-participant-main-div">
-            <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
+            <RoomHeader title={"실시간 QnA"} onLogoClick={handleLogoClick} />
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
 
@@ -102,8 +102,8 @@ const QnaParticipantPage = () => {
 
 
 
-        {/* <input onChange={observeQuestion} type="text" placeholder="질문을 입력하세요" name="question" />
-        <button onClick={sendQuestion}>입력</button> */}
+        {/* <input onChange={handleQuestionChange} type="text" placeholder="질문을 입력하세요" name="question" />
+        <button onClick={handleQuestionSubmit}>입력</button> */}
 
     </>)
 }

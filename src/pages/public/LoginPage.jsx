@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   const nav = useNavigate()
 
-  const observeInput = (e) => {
+  const handleInputChange = (e) => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
@@ -30,11 +30,11 @@ const LoginPage = () => {
           </div>
           <div className="div-login-email">
             <label htmlFor="email">이메일</label>
-            <input type="email" onChange={observeInput} name="email" />
+            <input type="email" onChange={handleInputChange} name="email" />
           </div>
           <div className="div-login-password">
             <label htmlFor="password">비밀번호</label>
-            <input type="password" onChange={observeInput} name="password" />
+            <input type="password" onChange={handleInputChange} name="password" />
           </div>
           <div className="div-login-button">
             <button
@@ -57,4 +57,3 @@ const LoginPage = () => {
 }
 
 export default LoginPage
-

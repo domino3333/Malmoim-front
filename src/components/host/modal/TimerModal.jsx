@@ -14,7 +14,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
 
     // 시작 버튼 누르면 호출되는 함수
-    const clickStart = () => {
+    const handleStart = () => {
         const minuteNumber = Number(minute);
         const secondNumber = Number(second);
 
@@ -24,7 +24,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
     }
 
-    const observeMinute = (e) => {
+    const handleMinuteChange = (e) => {
         let value = e.target.value;
 
         value = value.replace(/\D/g, "");
@@ -38,7 +38,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
         setSelectedPreset(null);
     }
 
-    const observeSecond = (e) => {
+    const handleSecondChange = (e) => {
         let value = e.target.value;
 
         value = value.replace(/\D/g, "");
@@ -54,7 +54,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
 
 
-    const presetTime = (minute) => {
+    const applyTimePreset = (minute) => {
         setMinute(String(minute).padStart(2, "0"));
         setSecond(String("00"));
         setSelectedPreset(minute);
@@ -63,7 +63,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
 
     //화살표를 눌렀을 때 시간을 조정하는 함수
-    const changeTime = (target, amount) => {
+    const adjustTime = (target, amount) => {
         //시간을 직접 바꿀 땐 프리셋 풀리도록 null 넣어주기
         setSelectedPreset(null);
 
@@ -96,34 +96,34 @@ const TimerModal = ({ show, onHide, startTimer }) => {
                 <p>참여자가 질문을 작성할 시간을 정해주세요.</p>
                 <div className="timer-main-div">
                     <div className="minute-main-div">
-                        <button className="timer-arrow-top" onClick={() => changeTime("minute", 1)}>△</button>
-                        <input value={minute} type="text" onChange={observeMinute} inputMode="numeric" className="minute-input" />
-                        <button className="timer-arrow-bottom" onClick={() => changeTime("minute", -1)} >▽</button>
+                        <button className="timer-arrow-top" onClick={() => adjustTime("minute", 1)}>△</button>
+                        <input value={minute} type="text" onChange={handleMinuteChange} inputMode="numeric" className="minute-input" />
+                        <button className="timer-arrow-bottom" onClick={() => adjustTime("minute", -1)} >▽</button>
                         <p>분</p>
                     </div>
                     <div className="colon-div">
                         :
                     </div>
                     <div className="second-main-div">
-                        <button className="timer-arrow-top" onClick={() => changeTime("second", 1)}>△</button>
-                        <input value={second} type="text" onChange={observeSecond} inputMode="numeric" className="second-input" />
-                        <button className="timer-arrow-bottom" onClick={() => changeTime("second", -1)}>▽</button>
+                        <button className="timer-arrow-top" onClick={() => adjustTime("second", 1)}>△</button>
+                        <input value={second} type="text" onChange={handleSecondChange} inputMode="numeric" className="second-input" />
+                        <button className="timer-arrow-bottom" onClick={() => adjustTime("second", -1)}>▽</button>
                         <p>초</p>
                     </div>
                 </div>
 
                 <div className="minute-preset-parent-div">
 
-                    <button className={selectedPreset === 1 ? "minute-preset-active" : "minute-preset"} onClick={() => presetTime(1)}>
+                    <button className={selectedPreset === 1 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(1)}>
                         1분
                     </button>
-                    <button className={selectedPreset === 3 ? "minute-preset-active" : "minute-preset"} onClick={() => presetTime(3)}>
+                    <button className={selectedPreset === 3 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(3)}>
                         3분
                     </button>
-                    <button className={selectedPreset === 5 ? "minute-preset-active" : "minute-preset"} onClick={() => presetTime(5)}>
+                    <button className={selectedPreset === 5 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(5)}>
                         5분
                     </button>
-                    <button className={selectedPreset === 10 ? "minute-preset-active" : "minute-preset"} onClick={() => presetTime(10)}>
+                    <button className={selectedPreset === 10 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(10)}>
                         10분
                     </button>
                 </div>
@@ -134,7 +134,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
                         <button onClick={() => onHide()} className="timer-modal-cancel-button">
                             취소
                         </button>
-                        <button className="timer-modal-start-button" onClick={clickStart}>
+                        <button className="timer-modal-start-button" onClick={handleStart}>
                             시작
                         </button>
                     </div>

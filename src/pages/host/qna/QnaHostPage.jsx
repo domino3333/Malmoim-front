@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { connectWebSocket } from "../../../api/room/qna/socket";
+import { connectQnaSocket } from "../../../api/room/qna/socket";
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 import "../../../css/host/qna/QnaHostPage.css"
 import RoomInfo from "../../../components/host/home/room/RoomInfo";
 import HostQnaList from "../../../components/host/home/room/HostQnaList";
 import QnaParticipantPanel from "../../../components/host/home/room/QnaParticipantPanel";
-import RemoteControl from "../../../components/host/home/room/RemoteControl";
-import { callStartTimer, getMyOneQnaRoom } from "../../../api/room/qna/qnaApi";
+import QnaControlPanel from "../../../components/host/home/room/QnaControlPanel";
+import { getHostQnaRoom, startQuestionPhase } from "../../../api/room/qna/qnaApi";
 import TimerModal from "../../../components/host/modal/TimerModal";
 
 const QnaHostPage = () => {
@@ -42,15 +42,15 @@ const QnaHostPage = () => {
     const clientRef = useRef(null);
 
     // TimerModal 표시 상태
-    const [show, setShow] = useState(false);
+    const [isTimerModalOpen, setIsTimerModalOpen] = useState(false);
 
-    const clickLogo = () => {
+    const handleLogoClick = () => {
         nav("/");
     }
 
-    const startTimer = async (seconds) => {
+    const handleStartQuestionPhase = async (seconds) => {
         // timer start api 호출
-        const data = await callStartTimer(roomInfo.no, seconds);
+        const data = await startQuestionPhase(roomInfo.no, seconds);
         setTimerInfo(data);
         setRoomInfo(prev => ({
             ...prev,
@@ -62,7 +62,7 @@ const QnaHostPage = () => {
     // 웹소켓 구독
     useEffect(() => {
 
-        const client = connectWebSocket((connectedClient) => {
+        const client = connectQnaSocket((connectedClient) => {
             clientRef.current = connectedClient;
 
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
@@ -80,12 +80,12 @@ const QnaHostPage = () => {
     // 방 하나의 정보를 불러오는 http useEffect
     useEffect(() => {
 
-        const fetchData = async () => {
-            const data = await getMyOneQnaRoom(no);
+        const fetchRoomInfo = async () => {
+            const data = await getHostQnaRoom(no);
             setRoomInfo(data);
         }
 
-        fetchData();
+        fetchRoomInfo();
 
 
     }, [no])
@@ -98,11 +98,11 @@ const QnaHostPage = () => {
 
 
         <div className="qna-host-main-div">
-            <RoomHeader title={"실시간 QnA"} clickLogo={clickLogo} />
+            <RoomHeader title={"실시간 QnA"} onLogoClick={handleLogoClick} />
             <RoomMiniHeader roomInfo={roomInfo} />
             <RoomInfo setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">
-                <RemoteControl setShow={setShow} />
+                <QnaControlPanel onOpenTimerModal={() => setIsTimerModalOpen(true)} />
                 <div className="qna-host-body-top">
                     <HostQnaList question={question} />
                     <QnaParticipantPanel />
@@ -112,7 +112,7 @@ const QnaHostPage = () => {
         </div>
 
 
-        <TimerModal startTimer={startTimer} show={show} onHide={() => setShow(false)} />
+        <TimerModal startTimer={handleStartQuestionPhase} show={isTimerModalOpen} onHide={() => setIsTimerModalOpen(false)} />
 
     </>)
 }

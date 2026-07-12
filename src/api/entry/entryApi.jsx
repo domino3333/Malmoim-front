@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ApiHost } from "../ApiHost";
+import { API_BASE_URL } from "../ApiHost";
 
 
 const prefix = "/api/entry"
@@ -7,11 +7,11 @@ const prefix = "/api/entry"
 // 방 코드를 확인하는 api 호출
 export const checkRoomCode = async (code) => {
 
-    const result = await axios.post(`${ApiHost}${prefix}/check-code`, { code },
+    const response = await axios.post(`${API_BASE_URL}${prefix}/check-code`, { code },
         null
     );
 
-    return result.data;
+    return response.data;
 
 }
 
@@ -19,23 +19,23 @@ export const checkRoomCode = async (code) => {
 // 비밀번호를 확인하는 api 호출
 export const checkRoomPassword = async (roomNo, password) => {
 
-    const result = await axios.post(`${ApiHost}${prefix}/check-password`, { roomNo, password },
+    const response = await axios.post(`${API_BASE_URL}${prefix}/check-password`, { roomNo, password },
         null
     )
 
-    return result.data;
+    return response.data;
 
 
 }
 
 // 입장하기 클릭 시 닉네임을 보내는 함수
-export const insertParticipant = async (roomNo, nickname) => {
+export const joinRoom = async (roomNo, nickname) => {
 
-    const result = await axios.post(`${ApiHost}${prefix}/insert-participant`, { roomNo, nickname },
+    const response = await axios.post(`${API_BASE_URL}${prefix}/insert-participant`, { roomNo, nickname },
         null
     )
 
-    return result.data;
+    return response.data;
 }
 
 

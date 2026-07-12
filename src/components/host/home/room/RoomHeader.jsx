@@ -4,12 +4,12 @@ import "../../../../css/host/home/room/RoomHeader.css"
 import logo from "../../../../assets/logo.png"
 
 
-const RoomHeader = ({ title, clickLogo }) => {
+const RoomHeader = ({ title, onLogoClick }) => {
 
     return (<>
         <div className="RoomHeader-main-div">
             <div className="RoomHeader-left-div">
-                <img src={logo} onClick={clickLogo} alt="로고" className="RoomHeader-logo" />
+                <img src={logo} onClick={onLogoClick} alt="로고" className="RoomHeader-logo" />
                 <div className="RoomHeader-title">
                     {title}
                 </div>

@@ -2,7 +2,7 @@ import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
-import { checkRoomCode, checkRoomPassword, insertParticipant } from "../../api/entry/entryApi"
+import { checkRoomCode, checkRoomPassword, joinRoom } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
 import NicknameModal from "./modal/NicknameModal"
 import { useNavigate } from "react-router-dom"
@@ -20,11 +20,11 @@ const HomeEntryPanel = () => {
 
     const nav = useNavigate();
 
-    const observeCode = (e) => {
+    const handleCodeChange = (e) => {
         setCode(e.target.value);
     }
 
-    const sendCode = async () => {
+    const handleCodeSubmit = async () => {
         try {
             const data = await checkRoomCode(code.trim().toUpperCase());
             setRoomInfo(data);
@@ -37,12 +37,12 @@ const HomeEntryPanel = () => {
     }
 
     // "다음" 버튼 클릭
-    const clickNext = async (roomNo, password, hasPassword) => {
+    const handleEntryNext = async (roomNo, password, hasPassword) => {
 
         try {
             if(hasPassword){
-                const result = await checkRoomPassword(roomNo, password);
-                setPasswordCheckResponse(result);
+                const response = await checkRoomPassword(roomNo, password);
+                setPasswordCheckResponse(response);
             }
             setEntryModalShow(false);
             setNicknameModalShow(true);
@@ -54,9 +54,9 @@ const HomeEntryPanel = () => {
     }
 
     // "입장하기" 버튼 클릭
-    const clickEnter = async (roomNo,nickname)=>{
+    const handleJoinRoom = async (roomNo,nickname)=>{
         
-        const data = await insertParticipant(roomNo,nickname);
+        const data = await joinRoom(roomNo,nickname);
         
         nav(`/qna/${roomNo}`);
     }
@@ -72,8 +72,8 @@ const HomeEntryPanel = () => {
                 <h2>참여자이신가요?</h2>
                 <p className="panel-guide-text">입장코드를 입력하고 실시간 Q&A에 참여하세요</p>
                 <div className="left-panel-input-div">
-                    <input onChange={observeCode} type="text" name="code" className="code-input" />
-                    <button onClick={sendCode} className="code-input-arrow-button">→</button>
+                    <input onChange={handleCodeChange} type="text" name="code" className="code-input" />
+                    <button onClick={handleCodeSubmit} className="code-input-arrow-button">→</button>
                 </div>
                 <div className="left-panel-advice-div">
                     입장코드는 호스트가 제공한 코드를 입력해주세요
@@ -93,9 +93,9 @@ const HomeEntryPanel = () => {
         </div>
 
 
-        {roomInfo && <EntryModal clickNext={clickNext} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
+        {roomInfo && <EntryModal onNext={handleEntryNext} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
 
-        {roomInfo && <NicknameModal clickEnter={clickEnter} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
+        {roomInfo && <NicknameModal onJoin={handleJoinRoom} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
     </>)
 }
 export default HomeEntryPanel;

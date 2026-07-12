@@ -1,11 +1,11 @@
 
-import "../../../../css/host/qna/RemoteControl.css"
+import "../../../../css/host/qna/QnaControlPanel.css"
 
-const RemoteControl = ({ setShow }) => {
+const QnaControlPanel = ({ onOpenTimerModal }) => {
 
     return (<>
 
-        <button onClick={()=>setShow(true)}>
+        <button onClick={onOpenTimerModal}>
             질문 시작
         </button>
         <button>
@@ -21,4 +21,4 @@ const RemoteControl = ({ setShow }) => {
 }
 
 
-export default RemoteControl;
+export default QnaControlPanel;

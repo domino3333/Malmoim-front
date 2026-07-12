@@ -4,7 +4,7 @@ import HostHomeSideBar from "../../../components/host/home/HostHomeSideBar";
 import "../../../css/host/home/CreateDetailPage.css";
 import audience from "../../../assets/audience.png"
 import { useState } from "react";
-import CreateModal from "../../../components/host/modal/CreateModal";
+import CreateQnaRoomModal from "../../../components/host/modal/CreateQnaRoomModal";
 
 
 
@@ -13,7 +13,7 @@ const CreateDetailPage = () => {
     const nav = useNavigate();
 
 
-    const [show, setShow] = useState(false);
+    const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
     return (<>
         <HostHomeHeader/>
@@ -23,7 +23,7 @@ const CreateDetailPage = () => {
             <HostHomeSideBar/>
             <div className="div-CreateDetailPage-content-list">
                 <div className="btn-box">
-                    <button className="btn1" onClick={() => setShow(true)}>
+                    <button className="btn1" onClick={() => setIsCreateModalOpen(true)}>
                         <img src={audience} alt="청중이미지" />
                         <div className="div-qna">
                             청중 QnA
@@ -34,7 +34,7 @@ const CreateDetailPage = () => {
             </div>
         </div>
 
-        <CreateModal show={show} onHide={()=>setShow(false)} title={"청중QnA"}/>
+        <CreateQnaRoomModal show={isCreateModalOpen} onHide={()=>setIsCreateModalOpen(false)} title={"청중QnA"}/>
 
         
 

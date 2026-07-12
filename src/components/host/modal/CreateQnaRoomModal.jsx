@@ -1,38 +1,38 @@
 import { Modal } from "react-bootstrap";
-import "../../../css/host/modal/CreateModal.css"
+import "../../../css/host/modal/CreateQnaRoomModal.css"
 import { useState } from "react";
 import { createQnaRoom } from "../../../api/room/qna/qnaApi";
 
 
 
-const CreateModal = ({ show, onHide, title }) => {
+const CreateQnaRoomModal = ({ show, onHide, title }) => {
 
 
-    const [isChecked, setIsChecked] = useState(false);
+    const [isPrivate, setIsPrivate] = useState(false);
 
-    const observeCheckBox = (e) => {
-        setIsChecked(e.target.checked);
+    const handlePrivateChange = (e) => {
+        setIsPrivate(e.target.checked);
     }
 
     const [input, setInput] = useState({
         title: "",
         capacity: "",
         password: null,
-        isChecked: isChecked
+        isPrivate: isPrivate
     })
 
-    const observeInput = (e) => {
+    const handleInputChange = (e) => {
         setInput({
             ...input,
             [e.target.name]: e.target.value
         })
     }
 
-    const createRoom = async () => {
+    const handleCreateRoom = async () => {
 
         await createQnaRoom({
             ...input,
-            isChecked: isChecked
+            isPrivate: isPrivate
         });
 
     }
@@ -43,28 +43,28 @@ const CreateModal = ({ show, onHide, title }) => {
             <div className="create-modal-body">
                 <button onClick={() => {
                     onHide()
-                    setIsChecked(false)
+                    setIsPrivate(false)
                 }} className="create-modal-x-button">
                     X
                 </button>
                 <h4 className="create-modal-title-h4">{title}</h4>
-                <input className="create-modal-title-input" name="title" onChange={observeInput} type="text" placeholder="제목" />
-                <input className="create-modal-capacity-input" name="capacity" onChange={observeInput} type="number" placeholder="정원" />
+                <input className="create-modal-title-input" name="title" onChange={handleInputChange} type="text" placeholder="제목" />
+                <input className="create-modal-capacity-input" name="capacity" onChange={handleInputChange} type="number" placeholder="정원" />
 
                 <label htmlFor="checkBoxTitle">
                     비공개
-                    <input className="create-modal-private-checkbox" type="checkbox" onChange={observeCheckBox} />
+                    <input className="create-modal-private-checkbox" type="checkbox" onChange={handlePrivateChange} />
                 </label>
 
-                {isChecked ?
-                    <input className="create-modal-password-input" name="password" onChange={observeInput} type="password" placeholder="비밀번호" />
+                {isPrivate ?
+                    <input className="create-modal-password-input" name="password" onChange={handleInputChange} type="password" placeholder="비밀번호" />
                     : null}
 
                 <button className="create-modal-create-button"
                     onClick={async () => {
-                        await createRoom()
+                        await handleCreateRoom()
                         onHide()
-                        setIsChecked(false)
+                        setIsPrivate(false)
                     }}>
                     만들기
                 </button>
@@ -74,4 +74,4 @@ const CreateModal = ({ show, onHide, title }) => {
     </>)
 }
 
-export default CreateModal;
+export default CreateQnaRoomModal;

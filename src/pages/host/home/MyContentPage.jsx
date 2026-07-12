@@ -27,9 +27,9 @@ const MyContentPage = () => {
 
 
     //총 데이터 카운트를 서버로부터 내려받아 저장
-    const [totalDataCount, setTotalDataCount] = useState(0);
+    const [totalRoomCount, setTotalRoomCount] = useState(0);
 
-    const totalPages = Math.ceil(totalDataCount / pageSize)
+    const totalPages = Math.ceil(totalRoomCount / pageSize)
 
 
     // 블럭 사이즈
@@ -44,11 +44,11 @@ const MyContentPage = () => {
     );
 
 
-    const clickRow = (no)=>{
+    const handleRoomRowClick = (no)=>{
         nav(`/qna/${no}/host`);
 
     }
-    const prevClicked = () => {
+    const handlePreviousBlock = () => {
 
         //현재 블럭이 7이면
         //이전 버튼을 눌렀을 때 첫블럭1로 가면서 1페이지로 바꾸면됨
@@ -61,7 +61,7 @@ const MyContentPage = () => {
         setCurrentPage(newStartBlock);
 
     }
-    const nextClicked = () => {
+    const handleNextBlock = () => {
         if (endBlock === totalPages) return;
 
         const newStartBlock = startBlock + blockSize;
@@ -73,13 +73,13 @@ const MyContentPage = () => {
 
     useEffect(() => {
 
-        const fetchData = async () => {
+        const fetchRooms = async () => {
             const data = await getMyRooms(currentPage, pageSize);
             setRooms(data.rooms);
-            setTotalDataCount(data.totalCount);
+            setTotalRoomCount(data.totalCount);
         }
 
-        fetchData();
+        fetchRooms();
 
     }, [currentPage])
 
@@ -125,14 +125,14 @@ const MyContentPage = () => {
                     </div>
 
 
-                    <MyRoomsTable rooms={rooms} clickRow={clickRow}/>
+                    <MyRoomsTable rooms={rooms} onRoomClick={handleRoomRowClick}/>
 
 
                     <div className="div-paging-button-box">
 
                         <button
                             className="button-prev"
-                            onClick={prevClicked}
+                            onClick={handlePreviousBlock}
                             disabled={startBlock === 1}
                         >
                             &lt; 이전
@@ -146,7 +146,7 @@ const MyContentPage = () => {
 
                         <button 
                             className="button-next" 
-                            onClick={nextClicked}
+                            onClick={handleNextBlock}
                             disabled={(totalPages <= endBlock)}
                         >
                             이후 &gt;

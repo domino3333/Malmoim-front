@@ -3,13 +3,13 @@ import "../../../css/public/modal/EntryModal.css"
 import { useState } from "react";
 
 
-const EntryModal = ({ clickNext,roomInfo, show, onHide }) => {
+const EntryModal = ({ onNext,roomInfo, show, onHide }) => {
 
     //roominfo에 roomNo, title, code ,hasPassword 내려옴
 
     const [password,setPassword] =useState("");
 
-    const observePassword = (e)=>{
+    const handlePasswordChange = (e)=>{
         //const { value } = e.target;
         setPassword(e.target.value);
         
@@ -25,10 +25,10 @@ const EntryModal = ({ clickNext,roomInfo, show, onHide }) => {
                 <p className="entry-modal-capacity-p">정원: (현재정원표기 구현예정)/{roomInfo.capacity}</p>
 
                 {roomInfo.hasPassword &&
-                    <input className="entry-modal-password-input" onChange={observePassword} type="password" placeholder="비밀번호.." />
+                    <input className="entry-modal-password-input" onChange={handlePasswordChange} type="password" placeholder="비밀번호.." />
                 }
 
-                <button onClick={()=>clickNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
+                <button onClick={()=>onNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
                     {roomInfo.hasPassword ? "다음" : "입장"}
                 </button>
 

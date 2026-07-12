@@ -3,13 +3,13 @@ import "../../../css/public/modal/NicknameModal.css"
 import { useState } from "react";
 
 
-const NicknameModal = ({ clickEnter, roomInfo, show, onHide }) => {
+const NicknameModal = ({ onJoin, roomInfo, show, onHide }) => {
 
 
     const [nickname, setNickname] = useState("");
 
 
-    const observeInput = (e) => {
+    const handleNicknameChange = (e) => {
         const { value } = e.target;
         setNickname(value);
     }
@@ -28,7 +28,7 @@ const NicknameModal = ({ clickEnter, roomInfo, show, onHide }) => {
             <p className="nickname-modal-capacity-p">정원: (현재정원표기 구현예정)/{roomInfo.capacity}</p>
 
             <input
-                onChange={observeInput}
+                onChange={handleNicknameChange}
                 className="nickname-input"
                 type="text"
                 name="nickname"
@@ -36,7 +36,7 @@ const NicknameModal = ({ clickEnter, roomInfo, show, onHide }) => {
 
 
             <button
-                onClick={()=>clickEnter(roomInfo.roomNo,nickname)}
+                onClick={()=>onJoin(roomInfo.roomNo,nickname)}
                 className={roomInfo.hasPassword ? "nickname-modal-enter-button-v1" : "nickname-modal-enter-button-v2"}>
                 입장하기
             </button>

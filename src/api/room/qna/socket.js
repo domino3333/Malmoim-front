@@ -1,11 +1,11 @@
 import { Client } from "@stomp/stompjs"
-import { WebSocketHost } from "../../ApiHost"
+import { WEBSOCKET_URL } from "../../ApiHost"
 
-export const connectWebSocket = (onConnect) => {
+export const connectQnaSocket = (onConnect) => {
 
     const client = new Client(
         {
-            brokerURL: `${WebSocketHost}`,
+            brokerURL: `${WEBSOCKET_URL}`,
             reconnectDelay: 5000,
             debug: (str) => console.log(str)
 

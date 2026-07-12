@@ -10,7 +10,7 @@ const SignUpPage = () => {
     name: '',
   })
 
-  const observeInput = (e) => {
+  const handleInputChange = (e) => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
@@ -28,15 +28,15 @@ const SignUpPage = () => {
           </div>
           <div className="div-signUp-email">
             <label htmlFor="email">이메일</label>
-            <input type="email" onChange={observeInput} id="email" name="email" />
+            <input type="email" onChange={handleInputChange} id="email" name="email" />
           </div>
           <div className="div-signUp-password">
             <label htmlFor="password">비밀번호</label>
-            <input type="password" onChange={observeInput} id="password" name="password" />
+            <input type="password" onChange={handleInputChange} id="password" name="password" />
           </div>
           <div className="div-signUp-name">
             <label htmlFor="name">이름</label>
-            <input type="text" onChange={observeInput} id="name" name="name" />
+            <input type="text" onChange={handleInputChange} id="name" name="name" />
           </div>
           <div className="div-signUp-button">
             <button type="button" onClick={() => signUp(input)}>가입하기</button>
