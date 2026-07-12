@@ -2,6 +2,7 @@
 
 import "../../../../css/host/qna/QuestionCard.css"
 
+// 질문 내용과 작성자·추천 정보를 표시하는 카드 컴포넌트.
 const QuestionCard = ({question})=>{
 
     return(<>

@@ -9,6 +9,7 @@ const EntryModal = ({ onNext,roomInfo, show, onHide }) => {
 
     const [password,setPassword] =useState("");
 
+    // 사용자가 입력한 방 비밀번호의 상태 반영.
     const handlePasswordChange = (e)=>{
         //const { value } = e.target;
         setPassword(e.target.value);

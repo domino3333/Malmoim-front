@@ -21,6 +21,7 @@ export const createQnaRoom = async (input) => {
 }
 
 // 하나의 qna 방을 가져오는 api ( 호스트용, 토큰 O )
+// 호스트 권한으로 소유한 Q&A 방 정보 조회.
 export const getHostQnaRoom = async (no) => {
 
     const token = sessionStorage.getItem('accessToken');
@@ -35,6 +36,7 @@ export const getHostQnaRoom = async (no) => {
 }
 
 // 하나의 qna 방을 가져오는 api ( 참여자용 , 토큰 X )
+// 참가자 화면에 필요한 Q&A 방 정보 조회.
 export const getParticipantQnaRoom = async (no) => {
 
 
@@ -45,6 +47,7 @@ export const getParticipantQnaRoom = async (no) => {
 
 
 // 타이머 시작 api
+// 질문 시간 저장 및 질문 접수 단계 시작.
 export const startQuestionPhase = async (roomNo, durationSeconds) => {
 
     const token = sessionStorage.getItem('accessToken');

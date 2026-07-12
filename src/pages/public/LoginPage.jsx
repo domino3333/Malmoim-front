@@ -12,6 +12,7 @@ const LoginPage = () => {
 
   const nav = useNavigate()
 
+  // 이메일 또는 비밀번호 입력값의 상태 반영.
   const handleInputChange = (e) => {
     setInput({
       ...input,

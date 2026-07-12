@@ -29,6 +29,7 @@ export const checkRoomPassword = async (roomNo, password) => {
 }
 
 // 입장하기 클릭 시 닉네임을 보내는 함수
+// 참가자 정보 저장 및 방 입장 결과 반환.
 export const joinRoom = async (roomNo, nickname) => {
 
     const response = await axios.post(`${API_BASE_URL}${prefix}/insert-participant`, { roomNo, nickname },

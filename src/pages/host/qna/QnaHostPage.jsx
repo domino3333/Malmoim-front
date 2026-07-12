@@ -44,10 +44,12 @@ const QnaHostPage = () => {
     // TimerModal 표시 상태
     const [isTimerModalOpen, setIsTimerModalOpen] = useState(false);
 
+    // 말모임 로고 클릭 시 메인 페이지 이동.
     const handleLogoClick = () => {
         nav("/");
     }
 
+    // 질문 접수 시작 요청 및 타이머·방 상태 갱신.
     const handleStartQuestionPhase = async (seconds) => {
         // timer start api 호출
         const data = await startQuestionPhase(roomInfo.no, seconds);
@@ -80,6 +82,7 @@ const QnaHostPage = () => {
     // 방 하나의 정보를 불러오는 http useEffect
     useEffect(() => {
 
+        // 호스트가 소유한 현재 Q&A 방 정보 조회.
         const fetchRoomInfo = async () => {
             const data = await getHostQnaRoom(no);
             setRoomInfo(data);

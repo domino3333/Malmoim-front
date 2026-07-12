@@ -36,11 +36,13 @@ const QnaParticipantPage = () => {
     const PhaseComponent = roomInfo ? phaseComponents[roomInfo.status] : null;
 
 
+    // 질문 입력값의 상태 반영.
     const handleQuestionChange = (e) => {
         setQuestion(e.target.value);
     }
 
 
+    // 현재 질문을 같은 방의 WebSocket 구독자에게 발행.
     const handleQuestionSubmit = () => {
 
         const client = clientRef.current;
@@ -71,6 +73,7 @@ const QnaParticipantPage = () => {
     // roomInfo 받아오는 useEffect
     useEffect(() => {
 
+        // 참가자 화면에 필요한 현재 Q&A 방 정보 조회.
         const fetchRoomInfo = async () => {
 
             const data = await getParticipantQnaRoom(no);
@@ -82,6 +85,7 @@ const QnaParticipantPage = () => {
     }, [no])
 
 
+    // 말모임 로고 클릭 시 메인 페이지 이동.
     const handleLogoClick = () => {
         nav("/");
     }

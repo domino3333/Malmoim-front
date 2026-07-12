@@ -5,11 +5,13 @@ import { createQnaRoom } from "../../../api/room/qna/qnaApi";
 
 
 
+// Q&A 방 생성에 필요한 값을 입력받는 모달 컴포넌트.
 const CreateQnaRoomModal = ({ show, onHide, title }) => {
 
 
     const [isPrivate, setIsPrivate] = useState(false);
 
+    // 비공개 체크 여부의 상태 반영.
     const handlePrivateChange = (e) => {
         setIsPrivate(e.target.checked);
     }
@@ -21,6 +23,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
         isPrivate: isPrivate
     })
 
+    // name 속성 기준 방 생성 입력값의 상태 반영.
     const handleInputChange = (e) => {
         setInput({
             ...input,
@@ -28,6 +31,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
         })
     }
 
+    // 입력한 방 정보 기반 Q&A 방 생성 요청.
     const handleCreateRoom = async () => {
 
         await createQnaRoom({

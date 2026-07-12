@@ -14,6 +14,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
 
     // 시작 버튼 누르면 호출되는 함수
+    // 입력한 분과 초를 전체 초로 변환 후 질문 타이머 시작.
     const handleStart = () => {
         const minuteNumber = Number(minute);
         const secondNumber = Number(second);
@@ -24,6 +25,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
     }
 
+    // 분 입력값의 숫자 필터링 및 허용 범위 보정.
     const handleMinuteChange = (e) => {
         let value = e.target.value;
 
@@ -38,6 +40,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
         setSelectedPreset(null);
     }
 
+    // 초 입력값의 숫자 필터링 및 허용 범위 보정.
     const handleSecondChange = (e) => {
         let value = e.target.value;
 
@@ -54,6 +57,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
 
 
+    // 선택한 프리셋 기준 분과 초 설정.
     const applyTimePreset = (minute) => {
         setMinute(String(minute).padStart(2, "0"));
         setSecond(String("00"));
@@ -63,6 +67,7 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
 
     //화살표를 눌렀을 때 시간을 조정하는 함수
+    // 대상과 증감량 기준 분 또는 초 조정.
     const adjustTime = (target, amount) => {
         //시간을 직접 바꿀 땐 프리셋 풀리도록 null 넣어주기
         setSelectedPreset(null);

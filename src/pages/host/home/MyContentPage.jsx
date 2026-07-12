@@ -44,10 +44,12 @@ const MyContentPage = () => {
     );
 
 
+    // 선택한 방의 호스트 Q&A 페이지 이동.
     const handleRoomRowClick = (no)=>{
         nav(`/qna/${no}/host`);
 
     }
+    // 이전 페이지 block의 첫 페이지 이동.
     const handlePreviousBlock = () => {
 
         //현재 블럭이 7이면
@@ -61,6 +63,7 @@ const MyContentPage = () => {
         setCurrentPage(newStartBlock);
 
     }
+    // 다음 페이지 block의 첫 페이지 이동.
     const handleNextBlock = () => {
         if (endBlock === totalPages) return;
 
@@ -73,6 +76,7 @@ const MyContentPage = () => {
 
     useEffect(() => {
 
+        // 현재 페이지에 표시할 호스트의 방 목록 조회.
         const fetchRooms = async () => {
             const data = await getMyRooms(currentPage, pageSize);
             setRooms(data.rooms);
