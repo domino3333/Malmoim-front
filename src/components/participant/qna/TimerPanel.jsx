@@ -1,3 +1,4 @@
+import "./../../../css/participant/qna/TimerPanel.css"
 
 
 const TimerPanel = () => {

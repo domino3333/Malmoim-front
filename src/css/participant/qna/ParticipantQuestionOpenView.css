@@ -2,5 +2,6 @@
 
 /* 타이머 패널, 방 상태 패널을 감싸는 div*/
 .Question-open-view-head{
-
+ 
+    display: flex;
 }

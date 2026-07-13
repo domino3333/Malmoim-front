@@ -1,4 +1,5 @@
 
+import "./../../../css/participant/qna/StatusPanel.css"
 
 const StatusPanel = ()=>{
 
@@ -8,3 +9,5 @@ const StatusPanel = ()=>{
         </div>
     </>)
 }
+
+export default StatusPanel;
