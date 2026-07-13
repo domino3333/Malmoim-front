@@ -1,4 +1,5 @@
 
+import "../../../css/participant/qna/ParticipantQuestionOpenView.css"
 
 const ParticipantQuestionOpenView = ()=>{
 
