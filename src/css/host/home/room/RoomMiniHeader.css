@@ -1,6 +1,6 @@
 /* RoomMiniHeader의 div를 감싸는 main div*/
 .RoomMiniHeader-main-div {
-    padding: 10px 10px;
+    padding: 10px 0;
 }
 
 /* 90%만 그리는 직선을 위한 div*/
