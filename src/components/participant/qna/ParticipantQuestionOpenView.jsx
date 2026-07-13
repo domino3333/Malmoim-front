@@ -1,10 +1,12 @@
 
 import "../../../css/participant/qna/ParticipantQuestionOpenView.css"
 
-const ParticipantQuestionOpenView = ()=>{
+const ParticipantQuestionOpenView = () => {
 
     return (<>
-    <p> 질문오픈 화면 </p>
+        <div className="Question-open-view-head">
+            
+        </div>
     </>)
 }
 
