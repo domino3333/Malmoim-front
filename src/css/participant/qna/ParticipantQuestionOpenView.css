@@ -1,9 +1,13 @@
-
-
 /* 타이머 패널, 방 상태 패널을 감싸는 div*/
-.Question-open-view-head{
- 
+.Question-open-view-head {
+
     display: flex;
-    gap:30px;
-    height:100px;
+    gap: 30px;
+    height: 100px;
+}
+
+
+/* 질문 등록, 내 정보, 참여자 리스트,  패널을 감싸는 div*/
+.Question-open-view-body {
+    display: flex;
 }
