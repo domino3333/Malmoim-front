@@ -9,5 +9,32 @@
 
 /* 질문 등록, 내 정보, 참여자 리스트,  패널을 감싸는 div*/
 .Question-open-view-body {
+    margin-top: 20px;
     display: flex;
+    gap:30px;
 }
+
+/* 질문 등록 박스 */
+.question-left-panel{
+    flex:1;
+    border:1px solid red;
+}
+
+/* 왼쪽 패널 parent div*/
+.question-left-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 질문 등록해주세요 텍스트*/
+.question-left-panel h3{
+    text-align: center;
+}
+
+/* 등록하기 버튼 */
+.question-left-panel-register{
+    width:100px;
+    margin: 0 auto;
+}
+
