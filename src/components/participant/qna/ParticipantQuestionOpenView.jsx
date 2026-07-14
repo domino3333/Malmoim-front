@@ -9,8 +9,8 @@ const ParticipantQuestionOpenView = () => {
 
     return (<>
         <div className="Question-open-view-head">
-            <TimerPanel />
-            <StatusPanel />
+            <TimerPanel/>
+            <StatusPanel/>
 
         </div>
         <div className="Question-open-view-body">
