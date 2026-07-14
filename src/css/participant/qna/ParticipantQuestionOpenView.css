@@ -12,6 +12,7 @@
     margin-top: 20px;
     display: flex;
     gap:30px;
+    height:70vh;
 }
 
 /* 질문 등록 박스 */
@@ -38,3 +39,7 @@
     margin: 0 auto;
 }
 
+/* myinfo와 참여자list를 감싸는 패널 div*/
+.question-right-panel{
+    border:1px solid red; 
+}
