@@ -23,6 +23,9 @@ const ParticipantQuestionOpenView = () => {
                 <ParticipantListPanel/>
             </div>
         </div>
+
+
+        {/* 여기서 버튼 누르면 모달이 나와야 함 */}
     </>)
 }
 
