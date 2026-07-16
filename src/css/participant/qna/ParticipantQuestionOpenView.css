@@ -37,6 +37,11 @@
 .question-left-panel-register{
     width:100px;
     margin: 0 auto;
+    border: none;
+    padding:5px;
+    color:white;
+    background-color: #90653E;
+    border-radius: 5px;
 }
 
 /* myinfo와 참여자list를 감싸는 패널 div*/
