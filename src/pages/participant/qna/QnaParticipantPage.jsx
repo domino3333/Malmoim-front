@@ -62,7 +62,23 @@ const QnaParticipantPage = () => {
     useEffect(() => {
         const client = connectQnaSocket((connectedClient) => {
             clientRef.current = connectedClient;
+
+
+            connectedClient.subscribe(`/topic/qna/${no}/phase`,
+                (frame)=>{
+                    const data = JSON.parse(frame.body);
+
+                    setRoomInfo(prev=>({
+                        ...prev,
+                        status:data.status
+                    }))
+                }
+            )
+
         })
+
+
+
 
 
         return () => client.deactivate();
