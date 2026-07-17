@@ -20,6 +20,7 @@ const QnaParticipantPage = () => {
     const { no } = useParams();
     const [question, setQuestion] = useState("");
     const [roomInfo, setRoomInfo] = useState(null);
+    const [timerInfo, setTimerInfo] =useState(null);
 
     const clientRef = useRef(null);
 
@@ -72,6 +73,8 @@ const QnaParticipantPage = () => {
                         ...prev,
                         status:data.status
                     }))
+
+                    setTimerInfo(data);
                 }
             )
 
