@@ -9,7 +9,7 @@ const TimerPanel = ({ timerInfo }) => {
     return (<>
 
         <div className="timer-panel-parent-div">
-            {timerInfo.questionStartedAt}
+            <p>시작{timerInfo.questionStartedAt}</p>
             <p>종료:{timerInfo.questionEndedAt}</p>
         </div>
     </>)
