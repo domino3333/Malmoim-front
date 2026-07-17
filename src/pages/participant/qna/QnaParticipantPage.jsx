@@ -20,7 +20,12 @@ const QnaParticipantPage = () => {
     const { no } = useParams();
     const [question, setQuestion] = useState("");
     const [roomInfo, setRoomInfo] = useState(null);
-    const [timerInfo, setTimerInfo] =useState(null);
+    const [timerInfo, setTimerInfo] = useState({
+        roomNo: 0,
+        status: "",
+        questionStartedAt: "",
+        questionEndedAt: ""
+    });
 
     const clientRef = useRef(null);
 
@@ -66,12 +71,12 @@ const QnaParticipantPage = () => {
 
 
             connectedClient.subscribe(`/topic/qna/${no}/phase`,
-                (frame)=>{
+                (frame) => {
                     const data = JSON.parse(frame.body);
 
-                    setRoomInfo(prev=>({
+                    setRoomInfo(prev => ({
                         ...prev,
-                        status:data.status
+                        status: data.status
                     }))
 
                     setTimerInfo(data);
@@ -120,7 +125,7 @@ const QnaParticipantPage = () => {
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
 
-            {PhaseComponent && <PhaseComponent roomInfo={roomInfo}/>}
+            {PhaseComponent && <PhaseComponent roomInfo={roomInfo} />}
         </div>
 
 
