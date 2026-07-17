@@ -4,7 +4,7 @@ import "./../../../css/participant/qna/TimerPanel.css"
 const TimerPanel = ({ timerInfo }) => {
 
 
-    
+    //todo 시작/종료시간으로 타이머 그리기
 
     return (<>
 
