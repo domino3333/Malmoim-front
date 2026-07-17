@@ -5,11 +5,11 @@ import MyInfoPanel from "./MyInfoPanel";
 import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
 
-const ParticipantQuestionOpenView = () => {
+const ParticipantQuestionOpenView = ({timerInfo}) => {
 
     return (<>
         <div className="Question-open-view-head">
-            <TimerPanel/>
+            <TimerPanel timerInfo={timerInfo}/>
             <StatusPanel/>
 
         </div>
