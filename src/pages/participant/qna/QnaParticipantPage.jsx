@@ -90,6 +90,7 @@ const QnaParticipantPage = () => {
     useEffect(() => {
 
         // 참가자 화면에 필요한 현재 Q&A 방 정보 조회.
+        //일단 여기선 question시작/종료 시간을 안 줌
         const fetchRoomInfo = async () => {
 
             const data = await getParticipantQnaRoom(no);
