@@ -1,7 +1,7 @@
 import "./../../../css/participant/qna/TimerPanel.css"
 
 
-const TimerPanel = () => {
+const TimerPanel = ({ timerInfo }) => {
 
     return (<>
 
