@@ -6,28 +6,29 @@ import MyInfoPanel from "./MyInfoPanel";
 import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
 
-const ParticipantQuestionOpenView = ({timerInfo}) => {
+const ParticipantQuestionOpenView = ({ timerInfo }) => {
 
-const {
+    const {
         seconds,
         minutes,
         hours,
         isRunning,
         restart
     } = useTimer({
-        expiryTimestamp: new Date(),
+        expiryTimestamp: new Date(timerInfo.questionEndedAt),
         onExpire: () => console.log(" 질문 시간 종료"),
         autoStart: false,
     });
 
+    const timerDetail = {minutes, seconds, restart }
 
 
 
 
     return (<>
         <div className="Question-open-view-head">
-            <TimerPanel timerInfo={timerInfo}/>
-            <StatusPanel/>
+            <TimerPanel timerInfo={timerInfo} timerDetail={timerDetail}/>
+            <StatusPanel isRunning={isRunning}/>
 
         </div>
         <div className="Question-open-view-body">
@@ -36,8 +37,8 @@ const {
                 <button className="question-left-panel-register"> 등록하기 </button>
             </div>
             <div className="question-right-panel">
-                <MyInfoPanel/>
-                <ParticipantListPanel/>
+                <MyInfoPanel />
+                <ParticipantListPanel />
             </div>
         </div>
 

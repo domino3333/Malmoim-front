@@ -3,7 +3,7 @@ import "./../../../css/participant/qna/TimerPanel.css"
 import { useEffect } from "react"
 
 
-const TimerPanel = ({ timerInfo }) => {
+const TimerPanel = ({ timerInfo, timerDetail }) => {
 
 
     
@@ -16,7 +16,7 @@ const TimerPanel = ({ timerInfo }) => {
 
         const expiryTime = new Date(timerInfo.questionEndedAt);
 
-        restart(expiryTime, true);
+        timerDetail.restart(expiryTime, true);
 
     }, [timerInfo?.questionEndedAt]);
 
@@ -26,8 +26,8 @@ const TimerPanel = ({ timerInfo }) => {
 
         <div className="timer-panel-parent-div">
             <p>
-                {String(minutes).padStart(2, "0")}:
-                {String(seconds).padStart(2, "0")}
+                {String(timerDetail.minutes).padStart(2, "0")}:
+                {String(timerDetail.seconds).padStart(2, "0")}
             </p>
         </div>
 
