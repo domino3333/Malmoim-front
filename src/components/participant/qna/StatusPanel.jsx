@@ -5,7 +5,7 @@ const StatusPanel = ()=>{
 
     return(<>
         <div className="status-panel-parent-div">
-            status패널
+            상태
         </div>
     </>)
 }
