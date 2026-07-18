@@ -5,31 +5,30 @@ import { useEffect } from "react"
 
 const TimerPanel = ({ timerInfo }) => {
 
+
     const {
         seconds,
         minutes,
-        restart,
-        isRunning
+        hours,
+        isRunning,
+        restart
     } = useTimer({
-        expiryTimestamp:new Date(),
-        autoStart:false,
-        onExpire:()=>{
-            console.log("질문 시간 종료");
-        }
-
-    })
+        expiryTimestamp: new Date(),
+        onExpire: () => console.log(" 질문 시간 종료"),
+        autoStart: false,
+    });
 
 
-    useEffect(()=>{
-        if(!timerInfo?.questionEndedAt){
+    useEffect(() => {
+        if (!timerInfo?.questionEndedAt) {
             return;
         }
 
         const expiryTime = new Date(timerInfo.questionEndedAt);
 
-        restart(expiryTime,true);
+        restart(expiryTime, true);
 
-    },[timerInfo?.questionEndedAt]);
+    }, [timerInfo?.questionEndedAt]);
 
 
 
@@ -37,12 +36,13 @@ const TimerPanel = ({ timerInfo }) => {
 
         <div className="timer-panel-parent-div">
             <p>
-                {String(minutes).padStart(2,"0")}:
-                {String(seconds).padStart(2,"0")}
+                {String(minutes).padStart(2, "0")}:
+                {String(seconds).padStart(2, "0")}
             </p>
+            <p>{isRunning ? "진행 중" : "대기 중"}</p>
         </div>
 
-        <p>{isRunning ? "진행 중": "대기 중"}</p>
+
     </>)
 }
 
