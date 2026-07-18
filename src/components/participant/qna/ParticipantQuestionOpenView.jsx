@@ -1,4 +1,5 @@
 
+import { useTimer } from "react-timer-hook";
 import "../../../css/participant/qna/ParticipantQuestionOpenView.css"
 import ParticipantListPanel from "../ParticipantListPanel";
 import MyInfoPanel from "./MyInfoPanel";
@@ -6,6 +7,22 @@ import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
 
 const ParticipantQuestionOpenView = ({timerInfo}) => {
+
+const {
+        seconds,
+        minutes,
+        hours,
+        isRunning,
+        restart
+    } = useTimer({
+        expiryTimestamp: new Date(),
+        onExpire: () => console.log(" 질문 시간 종료"),
+        autoStart: false,
+    });
+
+
+
+
 
     return (<>
         <div className="Question-open-view-head">

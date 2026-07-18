@@ -6,17 +6,7 @@ import { useEffect } from "react"
 const TimerPanel = ({ timerInfo }) => {
 
 
-    const {
-        seconds,
-        minutes,
-        hours,
-        isRunning,
-        restart
-    } = useTimer({
-        expiryTimestamp: new Date(),
-        onExpire: () => console.log(" 질문 시간 종료"),
-        autoStart: false,
-    });
+    
 
 
     useEffect(() => {
