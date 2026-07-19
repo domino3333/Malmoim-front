@@ -22,6 +22,7 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
 
     const timerDetail = {minutes, seconds, restart }
 
+    //todo 참여자의 정보 받아오기
 
 
 

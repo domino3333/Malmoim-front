@@ -10,4 +10,4 @@ const StatusPanel = ({isRunning})=>{
     </>)
 }
 
-export default StatusPanel;
+export default StatusPanel; 
