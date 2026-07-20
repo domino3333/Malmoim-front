@@ -5,6 +5,7 @@ import ParticipantListPanel from "../ParticipantListPanel";
 import MyInfoPanel from "./MyInfoPanel";
 import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
+import { useEffect } from "react";
 
 const ParticipantQuestionOpenView = ({ timerInfo }) => {
 
@@ -20,16 +21,31 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
         autoStart: false,
     });
 
-    const timerDetail = {minutes, seconds, restart }
+    const timerTime = { minutes, seconds }
+    const timerAction = { restart };
 
     //todo 참여자의 정보 받아오기
 
 
 
+    useEffect(() => {
+        if (!timerInfo?.questionEndedAt) {
+            return;
+        }
+
+
+        const expiryTime = new Date(timerInfo.questionEndedAt);
+
+        restart(expiryTime, true);
+
+    }, [timerInfo?.questionEndedAt]);
+
+
+
     return (<>
         <div className="Question-open-view-head">
-            <TimerPanel timerInfo={timerInfo} timerDetail={timerDetail}/>
-            <StatusPanel isRunning={isRunning}/>
+            <TimerPanel minutes={minutes} seconds={seconds} />
+            <StatusPanel isRunning={isRunning} />
 
         </div>
         <div className="Question-open-view-body">

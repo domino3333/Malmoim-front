@@ -1,24 +1,10 @@
 import { useTimer } from "react-timer-hook"
 import "./../../../css/participant/qna/TimerPanel.css"
-import { useEffect } from "react"
 
 
-const TimerPanel = ({ timerInfo, timerDetail }) => {
+const TimerPanel = ({ minutes,seconds }) => {
 
 
-    
-
-
-    useEffect(() => {
-        if (!timerInfo?.questionEndedAt) {
-            return;
-        }
-
-        const expiryTime = new Date(timerInfo.questionEndedAt);
-
-        timerDetail.restart(expiryTime, true);
-
-    }, [timerInfo?.questionEndedAt]);
 
 
 
@@ -26,8 +12,8 @@ const TimerPanel = ({ timerInfo, timerDetail }) => {
 
         <div className="timer-panel-parent-div">
             <p>
-                {String(timerDetail.minutes).padStart(2, "0")}:
-                {String(timerDetail.seconds).padStart(2, "0")}
+                {String(minutes).padStart(2, "0")}:
+                {String(seconds).padStart(2, "0")}
             </p>
         </div>
 
