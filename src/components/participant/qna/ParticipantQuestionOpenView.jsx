@@ -22,7 +22,6 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
     });
 
     const timerTime = { minutes, seconds }
-    const timerAction = { restart };
 
     //todo 참여자의 정보 받아오기
 
@@ -44,7 +43,7 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
 
     return (<>
         <div className="Question-open-view-head">
-            <TimerPanel minutes={minutes} seconds={seconds} />
+            <TimerPanel timerTime={timerTime} />
             <StatusPanel isRunning={isRunning} />
 
         </div>
