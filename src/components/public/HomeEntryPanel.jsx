@@ -61,6 +61,7 @@ const HomeEntryPanel = () => {
     const handleJoinRoom = async (roomNo,nickname)=>{
         
         const data = await joinRoom(roomNo,nickname);
+        //todo 참여자 토큰 받기
         
         nav(`/qna/${roomNo}`);
     }
