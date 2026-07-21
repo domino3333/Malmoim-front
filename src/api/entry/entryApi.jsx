@@ -36,6 +36,9 @@ export const joinRoom = async (roomNo, nickname) => {
         null
     )
 
+    sessionStorage.setItem(`malmoim:participant-session:${roomNo}`,response.data.participantToken);
+
+
     return response.data;
 }
 
