@@ -36,6 +36,7 @@ export const joinRoom = async (roomNo, nickname) => {
         null
     )
 
+    // 서버로부터 받는 참여자 토큰 저장
     sessionStorage.setItem(`malmoim:participant-session:${roomNo}`,response.data.participantToken);
 
 
