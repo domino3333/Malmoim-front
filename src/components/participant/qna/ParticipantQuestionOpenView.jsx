@@ -5,9 +5,10 @@ import ParticipantListPanel from "../ParticipantListPanel";
 import MyInfoPanel from "./MyInfoPanel";
 import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { publishQuestion } from "../../../api/room/qna/socketApi";
 import { Modal } from "react-bootstrap";
+import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 
 const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
 
@@ -26,6 +27,9 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
     const timerTime = { minutes, seconds }
 
     //todo 참여자의 정보 받아오기
+
+
+    const [questionSubmitModalShow,setQuestionSubmitModalShow] = useState(false);
 
 
     useEffect(() => {
@@ -51,7 +55,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
         <div className="Question-open-view-body">
             <div className="question-left-panel">
                 <h3>질문을 등록해주세요!</h3>
-                <button onClick={onQuestionSubmit} className="question-left-panel-register"> 등록하기 </button>
+                <button onClick={()=>setQuestionSubmitModalShow(true)} className="question-left-panel-register"> 등록하기 </button>
             </div>
             <div className="question-right-panel">
                 <MyInfoPanel />
@@ -59,6 +63,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
             </div>
         </div>
 
+        <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit} />
 
 
     </>)
