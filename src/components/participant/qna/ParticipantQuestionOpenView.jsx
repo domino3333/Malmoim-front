@@ -63,7 +63,8 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
             </div>
         </div>
 
-        <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit} />
+        {setQuestionSubmitModalShow && 
+        <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit} />}
 
 
     </>)

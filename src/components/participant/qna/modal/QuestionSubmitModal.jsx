@@ -2,13 +2,13 @@ import { Modal } from "react-bootstrap";
 
 
 
-const QuestionSubmitModal = ({questionSubmitModalShow})=>{
+const QuestionSubmitModal = ({show, onHide, onSubmit})=>{
 
 
     return(<>
     
 
-        <Modal show={questionSubmitModalShow} contentClassName="question-submit-modal">
+        <Modal show={show} contentClassName="question-submit-modal">
             <h3>모달</h3>
         </Modal>
     </>)
