@@ -125,7 +125,7 @@ const QnaParticipantPage = () => {
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
 
-            {PhaseComponent && <PhaseComponent roomInfo={roomInfo} timerInfo={timerInfo} />}
+            {PhaseComponent && <PhaseComponent roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit}/>}
         </div>
 
 

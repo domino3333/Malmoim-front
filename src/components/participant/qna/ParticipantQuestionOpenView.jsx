@@ -6,8 +6,9 @@ import MyInfoPanel from "./MyInfoPanel";
 import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
 import { useEffect } from "react";
+import { publishQuestion } from "../../../api/room/qna/socketApi";
 
-const ParticipantQuestionOpenView = ({ timerInfo }) => {
+const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
 
     const {
         seconds,
@@ -27,8 +28,8 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
 
 
     // 질문 등록하기 버튼 함수
-    const handleQuestionSubmit = ()=>{
-        
+    const handleQuestionSubmit = async ()=>{
+        await publishQuestion();
 
     }
 
@@ -57,7 +58,7 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
         <div className="Question-open-view-body">
             <div className="question-left-panel">
                 <h3>질문을 등록해주세요!</h3>
-                <button onClick={handleQuestionSubmit} className="question-left-panel-register"> 등록하기 </button>
+                <button onClick={onQuestionSubmit} className="question-left-panel-register"> 등록하기 </button>
             </div>
             <div className="question-right-panel">
                 <MyInfoPanel />
