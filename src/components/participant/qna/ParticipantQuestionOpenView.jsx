@@ -17,13 +17,20 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
         restart
     } = useTimer({
         expiryTimestamp: new Date(timerInfo.questionEndedAt),
-        onExpire: () => console.log(" 질문 시간 종료"),
+        onExpire: () => console.log("질문 시간 종료"),
         autoStart: false,
     });
 
     const timerTime = { minutes, seconds }
 
     //todo 참여자의 정보 받아오기
+
+
+    // 질문 등록하기 버튼 함수
+    const handleQuestionSubmit = ()=>{
+        
+
+    }
 
 
 
@@ -50,7 +57,7 @@ const ParticipantQuestionOpenView = ({ timerInfo }) => {
         <div className="Question-open-view-body">
             <div className="question-left-panel">
                 <h3>질문을 등록해주세요!</h3>
-                <button className="question-left-panel-register"> 등록하기 </button>
+                <button onClick={handleQuestionSubmit} className="question-left-panel-register"> 등록하기 </button>
             </div>
             <div className="question-right-panel">
                 <MyInfoPanel />
