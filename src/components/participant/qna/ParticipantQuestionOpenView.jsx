@@ -7,6 +7,7 @@ import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
 import { useEffect } from "react";
 import { publishQuestion } from "../../../api/room/qna/socketApi";
+import { Modal } from "react-bootstrap";
 
 const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
 
@@ -59,7 +60,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
         </div>
 
 
-        {/* 여기서 버튼 누르면 모달이 나와야 함 */}
+
     </>)
 }
 
