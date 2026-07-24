@@ -27,14 +27,6 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
     //todo 참여자의 정보 받아오기
 
 
-    // 질문 등록하기 버튼 함수
-    const handleQuestionSubmit = async ()=>{
-        await publishQuestion();
-
-    }
-
-
-
     useEffect(() => {
         if (!timerInfo?.questionEndedAt) {
             return;
