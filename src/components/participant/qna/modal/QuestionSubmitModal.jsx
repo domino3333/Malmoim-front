@@ -9,7 +9,9 @@ const QuestionSubmitModal = ({show, onHide, onSubmit})=>{
     
 
         <Modal show={show} contentClassName="question-submit-modal">
-            <h3>모달</h3>
+            <h3>질문 등록</h3>
+            <textarea name="question-area">dff</textarea>
+            <button>완료</button>
         </Modal>
     </>)
 }
