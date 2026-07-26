@@ -1,9 +1,18 @@
 
 
+/* 모달 창의 전체를 아우르는 클래스*/
 .question-submit-modal{
+
+    border: 1px solid #90653E;
 
 }
 
+/* 질문 등록 < 텍스트*/
 .question-submit-modal h3{
     text-align: center;
+}
+
+/* x버튼 */
+.question-submit-modal-x-button{
+    border:none;
 }
