@@ -1,53 +1,68 @@
-
-
 /* 모달 창의 전체를 아우르는 클래스*/
-.question-submit-modal{
+.question-submit-modal {
 
-    width:400px;
-    height:300px;
+    width: 400px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     background-color: rgb(242, 237, 237);
 }
 
 /* 질문 등록 < 텍스트*/
-.question-submit-modal h3{
+.question-submit-modal h3 {
     text-align: center;
 }
 
 /* x버튼 */
-.question-submit-modal-x-button{
-    border:none;
-    width:30px;
+.question-submit-modal-x-button {
+    border: none;
+    width: 30px;
     height: 30px;
     align-self: flex-end;
-    margin:5px;
+    margin: 5px;
     border-radius: 5px;
     background-color: #90653E;
-    color:white;
+    color: white;
 }
 
 /* 질문 등록 textarea*/
-.qustion-submit-modal-textarea{
+.qustion-submit-modal-textarea {
 
     resize: none;
-    width:90%;
+    width: 90%;
     height: 200px;
     margin: 0 auto;
     border-radius: 5px;
-    padding:10px;
+    padding: 10px;
+    border: 1px solid #90653E;
+
 }
 
 /* 취소, 완료 버튼을 감싸는 div*/
-.qustion-submit-modal-button-box{
+.qustion-submit-modal-button-box {
     display: flex;
+    width: 400px;
+    margin: 0 auto;
+    gap: 10px;
 
 }
+
 /* 취소 버튼*/
-.qustion-submit-modal-cancel-button{
-    background-color: #90653E;
-    color:white;
+.qustion-submit-modal-cancel-button {
+    background-color: white;
+    color: #90653E;
     border: 1px solid #90653E;
     border-radius: 5px;
+    flex: 1;
+
+}
+
+/* 완료 버튼*/
+.qustion-submit-modal-submit-button {
+    background-color: #90653E;
+    color: white;
+    border: 1px solid #90653E;
+    border-radius: 5px;
+    flex: 1;
 
 }
