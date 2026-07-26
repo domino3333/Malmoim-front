@@ -37,3 +37,13 @@
     border-radius: 5px;
     padding:10px;
 }
+
+.qustion-submit-modal-button-box{
+    display: flex;
+
+}
+/* 취소 버튼*/
+.qustion-submit-modal-cancel-button{
+
+
+}
