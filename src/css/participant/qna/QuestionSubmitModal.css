@@ -3,8 +3,11 @@
 /* 모달 창의 전체를 아우르는 클래스*/
 .question-submit-modal{
 
+    width:400px;
+    height:300px;
     border: 1px solid #90653E;
-
+    display: flex;
+    flex-direction: column;
 }
 
 /* 질문 등록 < 텍스트*/
@@ -15,4 +18,11 @@
 /* x버튼 */
 .question-submit-modal-x-button{
     border:none;
+    width:30px;
+    height: 30px;
+    text-align: center;
+    align-self: flex-end;
+    margin:5px;
+    padding:5px;
+    border-radius: 5px;
 }
