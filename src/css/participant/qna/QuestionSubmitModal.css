@@ -72,7 +72,14 @@
 
 }
 
+/* textarea 클릭 시 border 효과 적용*/
 .qustion-submit-modal-textarea:focus {
     outline: none;
     border: 2px solid #90653E;
+}
+
+/* 버튼 클릭 시 애니메이션 효과*/
+.qustion-submit-modal-submit-button:active, 
+.qustion-submit-modal-cancel-button:active {
+    transform: translateY(2px);
 }
