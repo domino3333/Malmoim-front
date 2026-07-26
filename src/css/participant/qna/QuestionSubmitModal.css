@@ -38,12 +38,16 @@
     padding:10px;
 }
 
+/* 취소, 완료 버튼을 감싸는 div*/
 .qustion-submit-modal-button-box{
     display: flex;
 
 }
 /* 취소 버튼*/
 .qustion-submit-modal-cancel-button{
-
+    background-color: #90653E;
+    color:white;
+    border: 1px solid #90653E;
+    border-radius: 5px;
 
 }
