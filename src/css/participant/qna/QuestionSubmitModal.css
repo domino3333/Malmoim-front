@@ -1,7 +1,7 @@
 /* 모달 창의 전체를 아우르는 클래스*/
-.question-submit-modal {
+.modal-content.question-submit-modal {
 
-    width: 400px;
+    width: 500px;
     height: 500px;
     display: flex;
     flex-direction: column;
