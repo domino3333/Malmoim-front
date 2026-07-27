@@ -130,10 +130,6 @@ const QnaParticipantPage = () => {
 
 
 
-
-        {/* <input onChange={handleQuestionChange} type="text" placeholder="질문을 입력하세요" name="question" />
-        <button onClick={handleQuestionSubmit}>입력</button> */}
-
     </>)
 }
 
