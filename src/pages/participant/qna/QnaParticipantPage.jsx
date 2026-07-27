@@ -49,7 +49,7 @@ const QnaParticipantPage = () => {
 
 
     // 현재 질문을 같은 방의 WebSocket 구독자에게 발행.
-    const handleQuestionSubmit = () => {
+    const handleQuestionSubmit = (question) => {
 
         const client = clientRef.current;
 
