@@ -10,7 +10,7 @@ import { publishQuestion } from "../../../api/room/qna/socketApi";
 import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 
-const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
+const ParticipantQuestionOpenView = ({ roomInfo, timerInfo, onQuestionSubmit }) => {
 
     const {
         seconds,
@@ -64,7 +64,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
         </div>
 
         {questionSubmitModalShow && 
-        <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit} />}
+        <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit} roomInfo={roomInfo} />}
 
 
     </>)

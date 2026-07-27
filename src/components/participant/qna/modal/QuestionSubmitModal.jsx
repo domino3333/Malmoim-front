@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 
-const QuestionSubmitModal = ({ show, onHide, onSubmit }) => {
+const QuestionSubmitModal = ({ show, onHide, onSubmit,roomInfo }) => {
 
 
     const [question,setQuestion] = useState("");
@@ -24,9 +24,8 @@ const QuestionSubmitModal = ({ show, onHide, onSubmit }) => {
             <div className="qustion-submit-modal-button-box">
                 <button className="qustion-submit-modal-cancel-button">취소</button>
                 <button className="qustion-submit-modal-submit-button"
-                    onClick={onSubmit}
+                    onClick={()=>onSubmit(roomInfo.roomNo,question)}
                 >완료</button>
-
             </div>
         </Modal>
     </>)
