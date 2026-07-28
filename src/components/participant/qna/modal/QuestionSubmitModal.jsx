@@ -24,7 +24,10 @@ const QuestionSubmitModal = ({ show, onHide, onSubmit }) => {
             <div className="qustion-submit-modal-button-box">
                 <button className="qustion-submit-modal-cancel-button">취소</button>
                 <button className="qustion-submit-modal-submit-button"
-                    onClick={()=>onSubmit(question)}
+                    onClick={()=>{
+                        onSubmit(question)
+                        onHide()
+                    }}
                 >완료</button>
             </div>
         </Modal>
