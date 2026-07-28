@@ -66,7 +66,12 @@ const QnaParticipantPage = () => {
 
     // 웹소켓 연결 useEffect
     useEffect(() => {
-        const client = connectQnaSocket((connectedClient) => {
+
+        const token = sessionStorage.getItem(
+            `malmoim:participant-session:${no}`
+        );
+
+        const client = connectQnaSocket(token,(connectedClient) => {
             clientRef.current = connectedClient;
 
 
