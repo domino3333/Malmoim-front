@@ -9,7 +9,7 @@ const NicknameModal = ({ onJoin, roomInfo, show, onHide }) => {
     const [nickname, setNickname] = useState("");
 
 
-    // 사용자가 입력한 닉네임의 상태 반영.
+    // 사용자가 입력한 닉네임의 상태 반영
     const handleNicknameChange = (e) => {
         const { value } = e.target;
         setNickname(value);

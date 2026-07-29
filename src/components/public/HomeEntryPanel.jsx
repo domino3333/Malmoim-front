@@ -20,12 +20,12 @@ const HomeEntryPanel = () => {
 
     const nav = useNavigate();
 
-    // 사용자가 입력한 입장 코드의 상태 반영.
+    // 사용자가 입력한 입장 코드의 상태 반영
     const handleCodeChange = (e) => {
         setCode(e.target.value);
     }
 
-    // 입장 코드 기반 방 정보 조회 및 입장 모달 표시.
+    // 입장 코드 기반 방 정보 조회 및 입장 모달 표시
     const handleCodeSubmit = async () => {
         try {
             const data = await checkRoomCode(code.trim().toUpperCase());
@@ -39,7 +39,7 @@ const HomeEntryPanel = () => {
     }
 
     // "다음" 버튼 클릭
-    // 방 비밀번호 검증 및 닉네임 입력 단계 이동.
+    // 방 비밀번호 검증 및 닉네임 입력 단계 이동
     const handleEntryNext = async (roomNo, password, hasPassword) => {
 
         try {
@@ -57,7 +57,7 @@ const HomeEntryPanel = () => {
     }
 
     // "입장하기" 버튼 클릭
-    // 참가자 저장 및 Q&A 참여자 페이지 이동.
+    // 참가자 저장 및 Q&A 참여자 페이지 이동
     const handleJoinRoom = async (roomNo,nickname)=>{
         
         const data = await joinRoom(roomNo,nickname);

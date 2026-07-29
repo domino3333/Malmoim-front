@@ -10,7 +10,7 @@ const SignUpPage = () => {
     name: '',
   })
 
-  // name 속성 기준 회원가입 입력값의 상태 반영.
+  // name 속성 기준 회원가입 입력값의 상태 반영
   const handleInputChange = (e) => {
     setInput({
       ...input,
