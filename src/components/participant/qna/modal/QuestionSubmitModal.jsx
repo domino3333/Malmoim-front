@@ -19,11 +19,11 @@ const QuestionSubmitModal = ({ show, onHide, onSubmit }) => {
         <Modal show={show} contentClassName="question-submit-modal">
             <button className="question-submit-modal-x-button">X</button>
             <h3>질문 등록</h3>
-            <textarea onChange={handleQuestionChange} className="qustion-submit-modal-textarea" name="question-area" placeholder="질문을 등록해 보세요!" />
+            <textarea onChange={handleQuestionChange} className="question-submit-modal-textarea" name="question-area" placeholder="질문을 등록해 보세요!" />
 
-            <div className="qustion-submit-modal-button-box">
-                <button className="qustion-submit-modal-cancel-button">취소</button>
-                <button className="qustion-submit-modal-submit-button"
+            <div className="question-submit-modal-button-box">
+                <button className="question-submit-modal-cancel-button">취소</button>
+                <button className="question-submit-modal-submit-button"
                     onClick={()=>{
                         onSubmit(question)
                         onHide()

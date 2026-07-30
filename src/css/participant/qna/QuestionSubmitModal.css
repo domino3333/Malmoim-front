@@ -28,7 +28,7 @@
 }
 
 /* 질문 등록 textarea*/
-.qustion-submit-modal-textarea {
+.question-submit-modal-textarea {
 
     resize: none;
     width: 90%;
@@ -44,7 +44,7 @@
 }
 
 /* 취소, 완료 버튼을 감싸는 div*/
-.qustion-submit-modal-button-box {
+.question-submit-modal-button-box {
     display: flex;
     gap: 10px;
     width:90%;
@@ -57,7 +57,7 @@
 }
 
 /* 취소 버튼*/
-.qustion-submit-modal-cancel-button {
+.question-submit-modal-cancel-button {
     background-color: white;
     color: #90653E;
     border: 1px solid #90653E;
@@ -67,7 +67,7 @@
 }
 
 /* 완료 버튼*/
-.qustion-submit-modal-submit-button {
+.question-submit-modal-submit-button {
     background-color: #90653E;
     color: white;
     border: 1px solid #90653E;
@@ -77,13 +77,13 @@
 }
 
 /* textarea 클릭 시 border 효과 적용*/
-.qustion-submit-modal-textarea:focus {
+.question-submit-modal-textarea:focus {
     outline: none;
     border: 2px solid #90653E;
 }
 
 /* 버튼 클릭 시 애니메이션 효과*/
-.qustion-submit-modal-submit-button:active, 
-.qustion-submit-modal-cancel-button:active {
+.question-submit-modal-submit-button:active,
+.question-submit-modal-cancel-button:active {
     transform: translateY(2px);
 }
