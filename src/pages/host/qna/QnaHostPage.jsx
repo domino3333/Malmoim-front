@@ -65,7 +65,7 @@ const QnaHostPage = () => {
     useEffect(() => {
         const token = sessionStorage.getItem('accessToken');
 
-        const client = connectQnaSocket((token, connectedClient) => {
+        const client = connectQnaSocket(token, (connectedClient) => {
 
 
             clientRef.current = connectedClient;
