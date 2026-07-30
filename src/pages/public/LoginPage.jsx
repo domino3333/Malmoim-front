@@ -1,4 +1,4 @@
-import MainNavBar from '../../components/public/MainNavBar'
+import MainNavbar from '../../components/public/MainNavbar'
 import '../../css/public/LoginPage.css'
 import { useState } from 'react'
 import { login } from '../../api/auth/authApi'
@@ -22,7 +22,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <MainNavBar />
+      <MainNavbar />
       <div className="div-LoginPage-main">
         <div className="div-login-mainbox">
           <div className="div-login-text">

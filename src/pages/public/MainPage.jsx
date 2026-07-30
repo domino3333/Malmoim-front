@@ -1,11 +1,11 @@
 import HomeEntryPanel from "../../components/public/HomeEntryPanel"
-import MainNavBar from "../../components/public/MainNavBar"
+import MainNavbar from "../../components/public/MainNavbar"
 
 
 const MainPage = () =>{
 
   return (<>
-    <MainNavBar/>
+    <MainNavbar/>
     <HomeEntryPanel/>
   </>)
 }
