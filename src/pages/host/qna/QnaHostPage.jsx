@@ -63,8 +63,11 @@ const QnaHostPage = () => {
 
     // 웹소켓 구독
     useEffect(() => {
+        const token = sessionStorage.getItem('accessToken');
 
-        const client = connectQnaSocket((connectedClient) => {
+        const client = connectQnaSocket((token, connectedClient) => {
+
+
             clientRef.current = connectedClient;
 
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
