@@ -1,0 +1,77 @@
+
+
+/*전체 내브를 감싸는 header*/
+.navbar-header {
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    border-bottom: 1px solid rgb(226, 219, 219);
+    padding: 10px;
+}
+
+/* 로고 위치 박스 */
+.navbar-logo {
+    margin-left: 150px;
+
+
+}
+
+/* 로고이미지 */
+.navbar-logo img {
+    border-radius: 10px;
+    width: 150px;
+    height: 60px;
+}
+
+/* 서비스 소개 | 사용 방법 */
+.navbar-menu {
+    display: flex;
+    gap: 30px;
+    margin-left: 120px;
+    font-weight: 500;
+
+}
+
+
+/* 서비스 소개 | 사용 방법 << 이곳의 텍스트 컬러*/
+.navbar-menu a {
+    color: black;
+}
+
+
+/* 로그인 | 회원가입 박스 */
+.navbar-auth {
+    justify-self: end;
+    display: flex;
+    gap: 30px;
+    margin-right: 150px;
+}
+
+
+/* 회원가입 박스 및 텍스트 컬러 */
+.div-signUp {
+    padding:20px;
+    background-color: #90653E;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+/* 로그인 박스 */
+.div-login {
+    padding: 20px;
+    color: black;
+}
+
+
+/* 로그인의 텍스트 컬러 */
+.div-login a {
+    color: black;
+    font-weight: 600;
+}
+
+/* 전체 Link 태그의 밑줄 삭제 */
+.navbar-header a {
+    text-decoration: none;
+}
