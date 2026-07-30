@@ -6,7 +6,6 @@ import MyInfoPanel from "./MyInfoPanel";
 import StatusPanel from "./StatusPanel";
 import TimerPanel from "./TimerPanel";
 import { useEffect, useState } from "react";
-import { publishQuestion } from "../../../api/room/qna/socketApi";
 import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 
