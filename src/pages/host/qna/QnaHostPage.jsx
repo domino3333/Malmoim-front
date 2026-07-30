@@ -101,7 +101,7 @@ const QnaHostPage = () => {
 
 
         <div className="qna-host-main-div">
-            <RoomHeader title={"실시간 QnA"} onLogoClick={handleLogoClick} />
+            <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
             <RoomMiniHeader roomInfo={roomInfo} />
             <RoomInfo setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">

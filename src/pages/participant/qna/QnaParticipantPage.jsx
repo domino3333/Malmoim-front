@@ -126,7 +126,7 @@ const QnaParticipantPage = () => {
 
 
         <div className="qna-participant-main-div">
-            <RoomHeader title={"실시간 QnA"} onLogoClick={handleLogoClick} />
+            <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
 
