@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import MainNavBar from '../../components/public/MainNavBar'
+import MainNavbar from '../../components/public/MainNavbar'
 import '../../css/public/SignUpPage.css'
 import { signUp } from '../../api/auth/authApi'
 
@@ -20,7 +20,7 @@ const SignUpPage = () => {
 
   return (
     <>
-      <MainNavBar />
+      <MainNavbar />
       <div className="div-SignUpPage-main">
         <div className="div-signUp-mainbox">
           <div className="div-signUp-text">
