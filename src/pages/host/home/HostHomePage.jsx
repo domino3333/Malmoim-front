@@ -3,7 +3,7 @@ import "../../../css/host/home/HostHomePage.css"
 
 
 import HostHomeHeader from "../../../components/host/home/HostHomeHeader"
-import HostHomeSideBar from "../../../components/host/home/HostHomeSideBar"
+import HostHomeSidebar from "../../../components/host/home/HostHomeSidebar"
 
 
 
@@ -19,7 +19,7 @@ const HostHomePage = () => {
 
         {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-dashboard-body">
-            <HostHomeSideBar/>
+            <HostHomeSidebar/>
             <div className="div-dashboard-content-list">
                 <table>
                     <tr>
