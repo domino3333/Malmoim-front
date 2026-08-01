@@ -1,5 +1,5 @@
 /*헤더 로고 이미지*/
-.header-HostDashboardPage img {
+.host-home-header img {
 
     width: 180px;
     height: 70px;
@@ -9,7 +9,7 @@
 
 
 /*헤더*/
-.header-HostDashboardPage {
+.host-home-header {
     display: flex;
     justify-content: space-between;
 }
