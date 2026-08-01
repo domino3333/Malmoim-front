@@ -11,12 +11,6 @@
 }
 
 
-/* 테이블의 td*/
-.div-myRoomsTabletd{
-    border:none;
-    border-bottom: 1px solid rgb(205, 192, 192);
-}
-
 /*테이블의 thead*/
 .div-myRoomsTable-thead{
     height: 40px;
