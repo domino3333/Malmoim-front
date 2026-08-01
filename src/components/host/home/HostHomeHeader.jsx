@@ -9,7 +9,7 @@ const HostHomeHeader = () => {
     const nav = useNavigate();
 
     return (<>
-        <header className="header-HostDashboardPage">
+        <header className="host-home-header">
             <img src={logo} alt="로고" onClick={()=>nav("/")} />
             <div>
                 내 정보버튼
