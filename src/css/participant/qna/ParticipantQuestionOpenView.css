@@ -24,8 +24,7 @@
 /* 왼쪽 패널 parent div*/
 .question-left-panel{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 

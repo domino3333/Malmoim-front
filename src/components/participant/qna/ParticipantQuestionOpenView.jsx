@@ -9,8 +9,9 @@ import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 import ParticipantQuestionList from "./ParticipantQuestionList";
+import ParticipantQuestionCard from "./ParticipantQuestionCard";
 
-const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit,question }) => {
+const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit, question }) => {
 
     const {
         seconds,
@@ -29,7 +30,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit,question }) =
     //todo 참여자의 정보 받아오기
 
 
-    const [questionSubmitModalShow,setQuestionSubmitModalShow] = useState(false);
+    const [questionSubmitModalShow, setQuestionSubmitModalShow] = useState(false);
 
 
     useEffect(() => {
@@ -54,8 +55,8 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit,question }) =
         </div>
         <div className="Question-open-view-body">
             <div className="question-left-panel">
-                <ParticipantQuestionList  onClickRegister={()=>setQuestionSubmitModalShow(true)} />
-               
+                <ParticipantQuestionList onClickRegister={() => setQuestionSubmitModalShow(true)} />
+                <ParticipantQuestionCard />
             </div>
             <div className="question-right-panel">
                 <MyInfoPanel />
@@ -64,10 +65,10 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit,question }) =
         </div>
 
         {questionSubmitModalShow &&
-            <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit}/>
+            <QuestionSubmitModal show={questionSubmitModalShow} onHide={() => setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit} />
         }
 
-        
+
 
 
     </>)

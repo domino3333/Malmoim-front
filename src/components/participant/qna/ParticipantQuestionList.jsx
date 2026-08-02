@@ -1,13 +1,18 @@
 import "../../../css/participant/qna/ParticipantQuestionList.css";
 
-const ParticipantQuestionList = ({ onClickRegister}) => {
+const ParticipantQuestionList = ({ onClickRegister }) => {
 
     return (<>
 
-        <p>질문 리스트</p>
-        <button onClick={onClickRegister} className="question-register">등록하기</button>
+        <div className="ParticipantQuestionList-parent-div">
+            <p>질문 리스트</p>
+            <button onClick={onClickRegister} className="question-register">등록하기</button>
 
-        
+        </div>
+
+
+
+
     </>)
 }
 

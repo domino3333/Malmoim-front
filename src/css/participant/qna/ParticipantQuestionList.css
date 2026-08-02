@@ -8,3 +8,10 @@
     background-color: #90653E;
     border-radius: 5px;
 }
+
+/* 왼쪽 패널 parent div*/
+.ParticipantQuestionList-parent-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
