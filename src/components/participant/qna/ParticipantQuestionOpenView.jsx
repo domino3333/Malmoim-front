@@ -11,7 +11,7 @@ import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 import ParticipantQuestionToolbar from "./ParticipantQuestionToolbar";
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
 
-const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit, question }) => {
+const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit, questions }) => {
 
     const {
         seconds,

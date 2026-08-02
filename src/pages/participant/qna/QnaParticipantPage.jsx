@@ -18,7 +18,7 @@ const QnaParticipantPage = () => {
     const nav = useNavigate();
 
     const { no } = useParams();
-    const [question, setQuestion] = useState([]);
+    const [questions, setQuestions] = useState([]);
     const [roomInfo, setRoomInfo] = useState(null);
     const [timerInfo, setTimerInfo] = useState({
         roomNo: 0,
@@ -88,7 +88,7 @@ const QnaParticipantPage = () => {
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
-                    setQuestion(prev => [...prev, data]);
+                    setQuestions(prev => [...prev, data]);
                 }
             )
 
@@ -130,7 +130,7 @@ const QnaParticipantPage = () => {
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
 
-            {PhaseComponent && <PhaseComponent question={question} roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit} />}
+            {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit} />}
         </div>
 
 

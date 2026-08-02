@@ -17,7 +17,7 @@ const QnaHostPage = () => {
 
     const nav = useNavigate();
     const { no } = useParams();
-    const [question, setQuestion] = useState([]);
+    const [questions, setQuestions] = useState([]);
     const [roomInfo, setRoomInfo] = useState({
         no: 0,
         hostNo: 0,
@@ -73,7 +73,7 @@ const QnaHostPage = () => {
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
                 console.log("구독 data:", data);
-                setQuestion(data.question);
+                setQuestions(prev=>[...prev,data.question]);
             });
 
         })
@@ -110,7 +110,7 @@ const QnaHostPage = () => {
             <div className="qna-host-body">
                 <QnaControlPanel onOpenTimerModal={() => setIsTimerModalOpen(true)} />
                 <div className="qna-host-body-top">
-                    <HostQnaList question={question} />
+                    <HostQnaList questions={questions} />
                     <QnaParticipantPanel />
                 </div>
 
