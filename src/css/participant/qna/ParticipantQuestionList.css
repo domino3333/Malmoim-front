@@ -1,1 +1,10 @@
 
+/* 등록하기 버튼 */
+.question-register{
+    width:100px;
+    border: none;
+    height: 40px;
+    color:white;
+    background-color: #90653E;
+    border-radius: 5px;
+}

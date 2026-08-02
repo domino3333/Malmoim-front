@@ -29,15 +29,7 @@
 }
 
 
-/* 등록하기 버튼 */
-.question-left-panel-register{
-    width:100px;
-    border: none;
-    height: 40px;
-    color:white;
-    background-color: #90653E;
-    border-radius: 5px;
-}
+
 
 /* myinfo와 참여자list를 감싸는 패널 div*/
 .question-right-panel{
