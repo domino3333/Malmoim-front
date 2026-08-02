@@ -8,7 +8,7 @@ import TimerPanel from "./TimerPanel";
 import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
-import ParticipantQuestionList from "./ParticipantQuestionList";
+import ParticipantQuestionToolbar from "./ParticipantQuestionToolbar";
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
 
 const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit, question }) => {
@@ -55,7 +55,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit, question }) 
         </div>
         <div className="Question-open-view-body">
             <div className="question-left-panel">
-                <ParticipantQuestionList onClickRegister={() => setQuestionSubmitModalShow(true)} />
+                <ParticipantQuestionToolbar onOpenQuestionModal={() => setQuestionSubmitModalShow(true)} />
                 <ParticipantQuestionCard />
             </div>
             <div className="question-right-panel">
