@@ -18,7 +18,7 @@ const QnaParticipantPage = () => {
     const nav = useNavigate();
 
     const { no } = useParams();
-    const [question, setQuestion] = useState("");
+    const [question, setQuestion] = useState([]);
     const [roomInfo, setRoomInfo] = useState(null);
     const [timerInfo, setTimerInfo] = useState({
         roomNo: 0,
@@ -40,12 +40,6 @@ const QnaParticipantPage = () => {
     }
 
     const PhaseComponent = roomInfo ? phaseComponents[roomInfo.status] : null;
-
-
-    // 질문 입력값의 상태 반영
-    const handleQuestionChange = (e) => {
-        setQuestion(e.target.value);
-    }
 
 
     // 현재 질문을 같은 방의 WebSocket 구독자에게 발행
@@ -71,10 +65,11 @@ const QnaParticipantPage = () => {
             `malmoim:participant-session:${no}`
         );
 
-        const client = connectQnaSocket(token,(connectedClient) => {
+        const client = connectQnaSocket(token, (connectedClient) => {
             clientRef.current = connectedClient;
 
 
+            // 타이머 구독
             connectedClient.subscribe(`/topic/qna/${no}/phase`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
@@ -88,11 +83,15 @@ const QnaParticipantPage = () => {
                 }
             )
 
+            connectedClient.subscribe(`/topic/qna/${no}`,
+                (frame) => {
+                    const data = JSON.parse(frame.body);
+
+                    setQuestion(prev => [...prev, data]);
+                }
+            )
+
         })
-
-
-
-
 
         return () => client.deactivate();
 
@@ -130,7 +129,7 @@ const QnaParticipantPage = () => {
             {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
 
 
-            {PhaseComponent && <PhaseComponent roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit}/>}
+            {PhaseComponent && <PhaseComponent roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit} />}
         </div>
 
 
