@@ -17,7 +17,7 @@ const QnaHostPage = () => {
 
     const nav = useNavigate();
     const { no } = useParams();
-    const [question, setQuestion] = useState("");
+    const [question, setQuestion] = useState([]);
     const [roomInfo, setRoomInfo] = useState({
         no: 0,
         hostNo: 0,
