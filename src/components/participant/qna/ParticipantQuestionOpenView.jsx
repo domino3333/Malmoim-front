@@ -10,7 +10,7 @@ import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 import ParticipantQuestionList from "./ParticipantQuestionList";
 
-const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
+const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit,question }) => {
 
     const {
         seconds,
@@ -54,7 +54,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
         </div>
         <div className="Question-open-view-body">
             <div className="question-left-panel">
-                <ParticipantQuestionList  onClickRegister={()=>setQuestionSubmitModalShow(true)} show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit}/>
+                <ParticipantQuestionList  onClickRegister={()=>setQuestionSubmitModalShow(true)} />
                
             </div>
             <div className="question-right-panel">
@@ -62,6 +62,10 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
                 <ParticipantListPanel />
             </div>
         </div>
+
+        {questionSubmitModalShow &&
+            <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit}/>
+        }
 
         
 
