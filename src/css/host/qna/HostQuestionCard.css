@@ -2,13 +2,13 @@
 
 
 /* 전체를 아우르는 main div*/
-.QuestionCard-main-div{
+.HostQuestionCard-main-div{
 
     border:1px solid grey;
 }
 
 /*닉네임과 추천수를 감싸는 div*/
-.QuestionCard-header-div{
+.HostQuestionCard-header-div{
 
     display: flex;
     justify-content: space-between;

@@ -1,7 +1,7 @@
 
 
 import "../../../../css/host/qna/HostQnaList.css"
-import QuestionCard from "./QuestionCard";
+import HostQuestionCard from "./HostQuestionCard";
 
 const HostQnaList = ({question}) => {
 
@@ -33,7 +33,7 @@ const HostQnaList = ({question}) => {
 
             <div className="qnaList-main-div">
                 <div>
-                    <QuestionCard question={question}/>
+                    <HostQuestionCard question={question}/>
                 </div>
 
             </div>
