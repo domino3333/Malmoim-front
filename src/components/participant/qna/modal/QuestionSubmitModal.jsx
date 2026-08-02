@@ -16,7 +16,7 @@ const QuestionSubmitModal = ({ show, onHide, onSubmit }) => {
     return (<>
 
 
-        <Modal show={show} contentClassName="question-submit-modal">
+        <Modal show={show} onHide={onHide} contentClassName="question-submit-modal">
             <button className="question-submit-modal-x-button" onClick={onHide}>X</button>
             <h3>질문 등록</h3>
             <textarea onChange={handleQuestionChange} className="question-submit-modal-textarea" name="question-area" placeholder="질문을 등록해 보세요!" />
