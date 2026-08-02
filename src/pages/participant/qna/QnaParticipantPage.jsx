@@ -83,6 +83,7 @@ const QnaParticipantPage = () => {
                 }
             )
 
+            // 다른 참여자의 질문 구독
             connectedClient.subscribe(`/topic/qna/${no}`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
