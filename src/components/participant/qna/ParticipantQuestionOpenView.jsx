@@ -53,8 +53,9 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
         </div>
         <div className="Question-open-view-body">
             <div className="question-left-panel">
-                <h3>질문 리스트</h3>
-                <button onClick={()=>setQuestionSubmitModalShow(true)} className="question-left-panel-register"> 등록하기 </button>
+                
+                <p>질문 리스트</p>
+                <button onClick={()=>setQuestionSubmitModalShow(true)} className="question-left-panel-register">등록하기</button>
             </div>
             <div className="question-right-panel">
                 <MyInfoPanel />
