@@ -24,21 +24,18 @@
 /* 왼쪽 패널 parent div*/
 .question-left-panel{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-/* 질문 등록해주세요 텍스트*/
-.question-left-panel h3{
-    text-align: center;
-}
 
 /* 등록하기 버튼 */
 .question-left-panel-register{
     width:100px;
-    margin: 0 auto;
     border: none;
     padding:5px;
+    height: 40px;
+    text-align: center;
     color:white;
     background-color: #90653E;
     border-radius: 5px;

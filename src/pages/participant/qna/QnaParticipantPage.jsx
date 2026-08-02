@@ -58,7 +58,7 @@ const QnaParticipantPage = () => {
     }
 
 
-    // 웹소켓 연결 useEffect
+    // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {
 
         const token = sessionStorage.getItem(
