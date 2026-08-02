@@ -73,7 +73,7 @@ const QnaHostPage = () => {
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
                 console.log("구독 data:", data);
-                setQuestions(prev=>[...prev,data.question]);
+                setQuestions(prev => [...prev, data.question]);
             });
 
         })
