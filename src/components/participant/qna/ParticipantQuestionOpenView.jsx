@@ -8,6 +8,7 @@ import TimerPanel from "./TimerPanel";
 import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
+import ParticipantQuestionList from "./ParticipantQuestionList";
 
 const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
 
@@ -53,9 +54,8 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
         </div>
         <div className="Question-open-view-body">
             <div className="question-left-panel">
-                
-                <p>질문 리스트</p>
-                <button onClick={()=>setQuestionSubmitModalShow(true)} className="question-left-panel-register">등록하기</button>
+                <ParticipantQuestionList  onClickRegister={()=>setQuestionSubmitModalShow(true)} show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit}/>
+               
             </div>
             <div className="question-right-panel">
                 <MyInfoPanel />
@@ -63,8 +63,7 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit }) => {
             </div>
         </div>
 
-        {questionSubmitModalShow && 
-        <QuestionSubmitModal show={questionSubmitModalShow} onHide={()=>setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit}/>}
+        
 
 
     </>)
