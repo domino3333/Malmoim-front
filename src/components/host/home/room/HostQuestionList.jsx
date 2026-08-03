@@ -1,14 +1,14 @@
 
 
-import "../../../../css/host/qna/HostQnaList.css"
+import "../../../../css/host/qna/HostQuestionList.css"
 import HostQuestionCard from "./HostQuestionCard";
 
-const HostQnaList = ({questions}) => {
+const HostQuestionList = ({questions}) => {
 
     return (<>
 
 
-        <div className="HostQnaList-main-div">
+        <div className="HostQuestionList-main-div">
             <h3>질문 리스트</h3>
             <div className="qna-toolbar-main-div">
                 <div className="qna-toolbar-left-div">
@@ -42,4 +42,4 @@ const HostQnaList = ({questions}) => {
     </>)
 }
 
-export default HostQnaList;
+export default HostQuestionList;

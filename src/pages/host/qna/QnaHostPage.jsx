@@ -5,7 +5,7 @@ import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
 import "../../../css/host/qna/QnaHostPage.css"
 import RoomInfo from "../../../components/host/home/room/RoomInfo";
-import HostQnaList from "../../../components/host/home/room/HostQnaList";
+import HostQuestionList from "../../../components/host/home/room/HostQuestionList";
 import QnaParticipantPanel from "../../../components/host/home/room/QnaParticipantPanel";
 import QnaControlPanel from "../../../components/host/home/room/QnaControlPanel";
 import { getHostQnaRoom, startQuestionPhase } from "../../../api/room/qna/qnaApi";
@@ -110,7 +110,7 @@ const QnaHostPage = () => {
             <div className="qna-host-body">
                 <QnaControlPanel onOpenTimerModal={() => setIsTimerModalOpen(true)} />
                 <div className="qna-host-body-top">
-                    <HostQnaList questions={questions} />
+                    <HostQuestionList questions={questions} />
                     <QnaParticipantPanel />
                 </div>
 
