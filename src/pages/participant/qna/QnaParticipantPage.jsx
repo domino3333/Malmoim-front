@@ -2,7 +2,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/room/qna/socket";
 import { publishQuestion } from "../../../api/room/qna/socketApi";
-import RoomMiniHeader from "../../../components/host/home/room/RoomMiniHeader";
+import RoomSubheader from "../../../components/host/home/room/RoomSubheader";
 import { getParticipantQnaRoom } from "../../../api/room/qna/qnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
@@ -127,7 +127,7 @@ const QnaParticipantPage = () => {
 
         <div className="qna-participant-main-div">
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
-            {roomInfo && <RoomMiniHeader roomInfo={roomInfo} />}
+            {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
 
 
             {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit} />}

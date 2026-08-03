@@ -1,10 +1,10 @@
-/* RoomMiniHeader의 div를 감싸는 main div*/
-.RoomMiniHeader-main-div {
+/* RoomSubheader의 div를 감싸는 main div*/
+.RoomSubheader-main-div {
     padding: 10px 0;
 }
 
 /* 90%만 그리는 직선을 위한 div*/
-.RoomMiniHeader-padding-div {
+.RoomSubheader-padding-div {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     border-top: 1px solid grey;
@@ -13,16 +13,16 @@
 }
 
 /* 방 타이틀 div */
-.RoomMiniHeader-title {
+.RoomSubheader-title {
     border: 1px solid #90653E;
 }
 
 /* 방 code div */
-.RoomMiniHeader-code {
+.RoomSubheader-code {
     border: 1px solid #90653E;
 }
 
 /* 방 상태 div */
-.RoomMiniHeader-status {
+.RoomSubheader-status {
     border: 1px solid #90653E;
 }
