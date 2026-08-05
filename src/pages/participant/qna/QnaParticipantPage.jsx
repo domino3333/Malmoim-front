@@ -43,7 +43,7 @@ const QnaParticipantPage = () => {
 
 
     // 현재 질문을 같은 방의 WebSocket 구독자에게 발행
-    const handleQuestionSubmit = (question,participantNo) => {
+    const handleQuestionSubmit = (question) => {
 
         const client = clientRef.current;
 
@@ -53,7 +53,6 @@ const QnaParticipantPage = () => {
 
         publishQuestion(client, {
             roomNo: Number(no),
-            participantNo:participantNo,
             question: question
         });
     }
