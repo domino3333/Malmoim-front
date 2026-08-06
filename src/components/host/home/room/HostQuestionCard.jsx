@@ -9,15 +9,15 @@ const HostQuestionCard = ({question})=>{
         <div className="HostQuestionCard-main-div">
             <div className="HostQuestionCard-header-div">
                 <div className="HostQuestionCard-nickname-div">
-                    닉네임
+                    닉네임: {question.nickname}
                 </div>
                 <div className="HostQuestionCard-vote-div">
-                    추천수:33
+                    추천수:{question.voteCount}
                 </div>
             </div>
             <div className="HostQuestionCard-body-div">
                 <div>
-                    {question}
+                    {question.content}
                 </div>
             </div>
 
