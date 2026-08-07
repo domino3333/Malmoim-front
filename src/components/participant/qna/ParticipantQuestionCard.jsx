@@ -4,9 +4,12 @@ const ParticipantQuestionCard = ({ questions }) => {
 
     return (<>
 
-        <div>
-            질문:{questions[0].content}
-        </div>
+
+        {questions.map((question, i) => 
+            <div key={question.no}>
+                질문:{i}, {question.content}
+            </div>
+        )}
     </>)
 }
 
