@@ -19,6 +19,9 @@ const HostQuestionCard = ({question})=>{
                 <div>
                     질문: {question.content}
                 </div>
+                <div>
+                    시간: {question.createdAt}
+                </div>
             </div>
 
         </div>
