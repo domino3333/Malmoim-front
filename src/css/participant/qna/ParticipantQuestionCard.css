@@ -1,1 +1,6 @@
 
+
+/* 카드 전체를 감싸는 div*/
+.ParticipantQuestionCard{
+    border: 1px solid rgb(242, 237, 237);
+}

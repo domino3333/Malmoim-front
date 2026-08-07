@@ -6,8 +6,9 @@ const ParticipantQuestionCard = ({ questions }) => {
 
 
         {questions.map((question, i) => 
-            <div key={question.no}>
-                질문:{i}, {question.content}
+            <div key={question.no} className="ParticipantQuestionCard">
+                <p className="ParticipantQuestionCard-nickname">닉네임:{question.nickname}</p>
+                <p className="ParticipantQuestionCard-content">{question.content}</p>
             </div>
         )}
     </>)
