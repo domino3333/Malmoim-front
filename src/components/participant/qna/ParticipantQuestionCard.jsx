@@ -1,10 +1,12 @@
 import "../../../css/participant/qna/ParticipantQuestionCard.css";
 
-const ParticipantQuestionCard = () => {
+const ParticipantQuestionCard = ({ questions }) => {
 
     return (<>
-        <p>참여자용 질문카드</p>
 
+        <div>
+            질문:{questions[0].content}
+        </div>
     </>)
 }
 
