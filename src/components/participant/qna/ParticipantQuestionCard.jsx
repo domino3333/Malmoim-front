@@ -12,6 +12,8 @@ const ParticipantQuestionCard = ({ questions }) => {
                 <div key={question.no} className="ParticipantQuestionCard">
                     <p className="ParticipantQuestionCard-nickname">닉네임:{question.nickname}</p>
                     <p className="ParticipantQuestionCard-content">{question.content}</p>
+                    <p className="ParticipantQuestionCard-time">{question.createdAt}</p>
+                    
                 </div>
             )}
 
