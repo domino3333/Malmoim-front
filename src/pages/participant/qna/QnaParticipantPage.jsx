@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/room/qna/socket";
 import { publishQuestion } from "../../../api/room/qna/socketApi";
 import RoomSubheader from "../../../components/host/home/room/RoomSubheader";
-import { getParticipantQnaRoom } from "../../../api/room/qna/qnaApi";
+import { getParticipantInfo, getParticipantQnaRoom } from "../../../api/room/qna/qnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/host/home/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
@@ -156,9 +156,8 @@ const QnaParticipantPage = () => {
     useEffect(() => {
 
         const fetchParticipantInfo = async () => {
-            const data = await getParticipantInfo();
-            setMyInfo(data);
-
+            const data = await getParticipantInfo(no);
+            setParticipantInfo(data);
         }
 
         fetchParticipantInfo();

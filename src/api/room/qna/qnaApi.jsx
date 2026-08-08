@@ -76,8 +76,8 @@ export const updateRoomStatus = async (roomNo, status) => {
 }
 
 
-//참여자의 정보를 받아오는 api
-export const getParticipantInfo = async () => {
+// 참여자의 정보를 받아오는 api
+export const getParticipantInfo = async (roomNo) => {
 
     const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
 
