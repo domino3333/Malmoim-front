@@ -1,4 +1,4 @@
-import "../../../../css/host/home/room/RoomSubheader.css"
+import "../../../css/common/room/RoomSubheader.css"
 
 const RoomSubheader = ({ roomInfo }) => {
 

@@ -1,10 +1,7 @@
-
 import axios from "axios";
-import { API_BASE_URL } from "../../ApiHost";
+import { API_BASE_URL } from "../ApiHost";
 
-
-const prefix = "/api/qna"
-
+const prefix = "/api/qna";
 
 // qna 방 생성 api
 export const createQnaRoom = async (input) => {
@@ -35,17 +32,6 @@ export const getHostQnaRoom = async (no) => {
     return response.data;
 }
 
-// 하나의 qna 방을 가져오는 api ( 참여자용 , 토큰 X )
-// 참가자 화면에 필요한 Q&A 방 정보 조회
-export const getParticipantQnaRoom = async (no) => {
-
-
-    const response = await axios.get(`${API_BASE_URL}${prefix}/${no}/participant`, null)
-
-    return response.data;
-}
-
-
 // 타이머 시작 api
 // 질문 시간 저장 및 질문 접수 단계 시작
 export const startQuestionPhase = async (roomNo, durationSeconds) => {
@@ -73,19 +59,4 @@ export const updateRoomStatus = async (roomNo, status) => {
         }
     })
 
-}
-
-
-// 참여자의 정보를 받아오는 api
-export const getParticipantInfo = async (roomNo) => {
-
-    const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
-
-    const response = await axios.get(`${API_BASE_URL}${prefix}/participant-info`, {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    })
-
-    return response.data;
 }

@@ -4,7 +4,7 @@ import HostHomeSidebar from "../../../components/host/home/HostHomeSidebar";
 import "../../../css/host/home/CreateDetailPage.css";
 import audience from "../../../assets/audience.png"
 import { useState } from "react";
-import CreateQnaRoomModal from "../../../components/host/modal/CreateQnaRoomModal";
+import CreateQnaRoomModal from "../../../components/host/qna/modal/CreateQnaRoomModal";
 
 
 

@@ -1,18 +1,18 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { connectQnaSocket } from "../../../api/room/qna/socket";
-import { publishQuestion } from "../../../api/room/qna/socketApi";
-import RoomSubheader from "../../../components/host/home/room/RoomSubheader";
-import { getParticipantInfo, getParticipantQnaRoom } from "../../../api/room/qna/qnaApi";
+import { connectQnaSocket } from "../../../api/qna/qnaSocket";
+import { publishQuestion } from "../../../api/qna/qnaMessageApi";
+import RoomSubheader from "../../../components/common/room/RoomSubheader";
+import { getParticipantInfo, getParticipantQnaRoom } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
-import RoomHeader from "../../../components/host/home/room/RoomHeader";
+import RoomHeader from "../../../components/common/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
 import ParticipantQuestionOpenView from "../../../components/participant/qna/ParticipantQuestionOpenView";
 import ParticipantVotingOpenView from "../../../components/participant/qna/ParticipantVotingOpenView";
 import ParticipantAnsweringView from "../../../components/participant/qna/ParticipantAnsweringView";
 import ParticipantFinishedView from "../../../components/participant/qna/ParticipantFinishedView";
 import MyInfoPanel from "../../../components/participant/qna/MyInfoPanel";
-import ParticipantListPanel from "../../../components/participant/ParticipantListPanel";
+import ParticipantListPanel from "../../../components/participant/qna/ParticipantListPanel";
 import TimerPanel from "../../../components/participant/qna/TimerPanel";
 import StatusPanel from "../../../components/participant/qna/StatusPanel";
 import { useTimer } from "react-timer-hook";

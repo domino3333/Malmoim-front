@@ -1,6 +1,6 @@
 
 
-import "../../../../css/host/qna/HostQuestionList.css"
+import "../../../css/host/qna/HostQuestionList.css"
 import HostQuestionCard from "./HostQuestionCard";
 
 const HostQuestionList = ({questions}) => {

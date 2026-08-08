@@ -1,5 +1,5 @@
 
-import "../../../../css/host/qna/QnaControlPanel.css"
+import "../../../css/host/qna/QnaControlPanel.css"
 
 // 호스트의 Q&A 진행 단계 조작용 제어 패널 컴포넌트
 const QnaControlPanel = ({ onOpenTimerModal }) => {

@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
-import "../../../css/host/modal/CreateQnaRoomModal.css"
+import "../../../../css/host/qna/modal/CreateQnaRoomModal.css"
 import { useState } from "react";
-import { createQnaRoom } from "../../../api/room/qna/qnaApi";
+import { createQnaRoom } from "../../../../api/qna/hostQnaApi";
 
 
 

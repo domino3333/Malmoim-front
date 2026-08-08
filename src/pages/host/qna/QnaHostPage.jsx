@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { connectQnaSocket } from "../../../api/room/qna/socket";
-import RoomHeader from "../../../components/host/home/room/RoomHeader";
-import RoomSubheader from "../../../components/host/home/room/RoomSubheader";
+import { connectQnaSocket } from "../../../api/qna/qnaSocket";
+import RoomHeader from "../../../components/common/room/RoomHeader";
+import RoomSubheader from "../../../components/common/room/RoomSubheader";
 import "../../../css/host/qna/QnaHostPage.css"
-import RoomInfo from "../../../components/host/home/room/RoomInfo";
-import HostQuestionList from "../../../components/host/home/room/HostQuestionList";
-import QnaParticipantPanel from "../../../components/host/home/room/QnaParticipantPanel";
-import QnaControlPanel from "../../../components/host/home/room/QnaControlPanel";
-import { getHostQnaRoom, startQuestionPhase } from "../../../api/room/qna/qnaApi";
-import TimerModal from "../../../components/host/modal/TimerModal";
+import RoomInfo from "../../../components/host/qna/RoomInfo";
+import HostQuestionList from "../../../components/host/qna/HostQuestionList";
+import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPanel";
+import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
+import { getHostQnaRoom, startQuestionPhase } from "../../../api/qna/hostQnaApi";
+import TimerModal from "../../../components/host/qna/modal/TimerModal";
 
 const QnaHostPage = () => {
 

@@ -1,5 +1,5 @@
 import { Modal } from "react-bootstrap";
-import "../../../../css/participant/qna/QuestionSubmitModal.css"
+import "../../../../css/participant/qna/modal/QuestionSubmitModal.css"
 import { useState } from "react";
 
 

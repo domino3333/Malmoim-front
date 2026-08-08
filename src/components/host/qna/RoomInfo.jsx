@@ -1,8 +1,8 @@
 
 import { useTimer } from "react-timer-hook";
-import "../../../../css/host/home/room/RoomInfo.css"
+import "../../../css/host/qna/RoomInfo.css"
 import { useEffect } from "react";
-import { updateRoomStatus } from "../../../../api/room/qna/qnaApi";
+import { updateRoomStatus } from "../../../api/qna/hostQnaApi";
 
 
 const RoomInfo = ({ setRoomInfo, roomInfo, timerInfo }) => {

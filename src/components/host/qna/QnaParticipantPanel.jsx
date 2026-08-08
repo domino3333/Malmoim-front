@@ -1,6 +1,6 @@
 
 
-import "../../../../css/host/qna/QnaParticipantPanel.css"
+import "../../../css/host/qna/QnaParticipantPanel.css"
 
 const QnaParticipantPanel = ()=>{
 

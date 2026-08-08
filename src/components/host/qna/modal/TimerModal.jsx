@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
-import "../../../css/host/modal/TimerModal.css"
+import "../../../../css/host/qna/modal/TimerModal.css"
 
 
 const TimerModal = ({ show, onHide, startTimer }) => {
