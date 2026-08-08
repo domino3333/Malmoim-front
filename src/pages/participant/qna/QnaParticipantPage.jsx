@@ -11,6 +11,8 @@ import ParticipantQuestionOpenView from "../../../components/participant/qna/Par
 import ParticipantVotingOpenView from "../../../components/participant/qna/ParticipantVotingOpenView";
 import ParticipantAnsweringView from "../../../components/participant/qna/ParticipantAnsweringView";
 import ParticipantFinishedView from "../../../components/participant/qna/ParticipantFinishedView";
+import MyInfoPanel from "../../../components/participant/qna/MyInfoPanel";
+import ParticipantListPanel from "../../../components/participant/ParticipantListPanel";
 
 const QnaParticipantPage = () => {
 
@@ -129,8 +131,16 @@ const QnaParticipantPage = () => {
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
             {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
 
+            <div className="phaseComponent-parent-div">
+                <div className="phaseComponent-left-panel">
+                    {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit} />}
+                </div>
+                <div className="phaseComponent-right-panel">
+                    <MyInfoPanel />
+                    <ParticipantListPanel />
+                </div>
 
-            {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit} />}
+            </div>
         </div>
 
 

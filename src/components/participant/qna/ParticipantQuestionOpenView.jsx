@@ -58,10 +58,6 @@ const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit, questions })
                 <ParticipantQuestionToolbar onOpenQuestionModal={() => setQuestionSubmitModalShow(true)} />
                 <ParticipantQuestionCard questions={questions}/>
             </div>
-            <div className="question-right-panel">
-                <MyInfoPanel />
-                <ParticipantListPanel />
-            </div>
         </div>
 
         {questionSubmitModalShow &&
