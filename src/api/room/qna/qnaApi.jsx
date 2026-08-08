@@ -77,13 +77,15 @@ export const updateRoomStatus = async (roomNo, status) => {
 
 
 //참여자의 정보를 받아오는 api
-export const getParticipantInfo = async (roomNo) => {
+export const getParticipantInfo = async () => {
 
     const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/participant-info`, {
+    const response = await axios.get(`${API_BASE_URL}${prefix}/participant-info`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
     })
+
+    return response.data;
 }
