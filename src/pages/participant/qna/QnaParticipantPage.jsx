@@ -161,7 +161,7 @@ const QnaParticipantPage = () => {
             {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
 
             <div className="qna-participant-timer-status-parent">
-                <TimerPanel timerTime={timerInfo} />
+                <TimerPanel timerTime={timerTime} />
                 <StatusPanel isRunning={isRunning} />
 
             </div>
