@@ -23,6 +23,9 @@ const QnaParticipantPage = () => {
     const nav = useNavigate();
 
     const { no } = useParams();
+
+    const [participantInfo, setParticipantInfo] = useState();
+
     const [questions, setQuestions] = useState([]);
     const [roomInfo, setRoomInfo] = useState(null);
     const [timerInfo, setTimerInfo] = useState({
@@ -62,6 +65,7 @@ const QnaParticipantPage = () => {
         });
     }
 
+    // useTimer 라이브러리 사용
     const {
         seconds,
         minutes,
@@ -144,6 +148,19 @@ const QnaParticipantPage = () => {
         fetchRoomInfo();
 
     }, [no])
+
+
+    useEffect(() => {
+
+        const fetchParticipantInfo = async () => {
+            const data = await getParticipantInfo();
+            setMyInfo(data);
+
+        }
+
+        fetchParticipantInfo();
+
+    }, [])
 
 
     // 말모임 로고 클릭 시 메인 페이지 이동

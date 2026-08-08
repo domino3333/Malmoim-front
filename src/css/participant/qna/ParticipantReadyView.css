@@ -1,8 +1,6 @@
 /* ready view 전체의 부모 div */
 .ParticipantReadyView-parent-div {
 
-    display: flex;
-
 }
 
 
@@ -12,6 +10,7 @@
     border: 1px solid green;
     width: 700px;
     height: 90vh;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
