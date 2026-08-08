@@ -12,3 +12,22 @@
     gap: 30px;
     height: 100px;
 }
+
+/* 페이즈컴포넌트 + 오른쪽패널 감싸는 div */
+.phaseComponent-parent-div{
+    display: flex;
+    gap:10px;
+
+}
+
+/* phase별로 달라지는 컴포넌트를 감싸는 div */
+.phaseComponent-left-panel{
+    width: 70%;
+}
+
+
+
+/* 내 정보 + 참여자 리스트 감싸는 div */
+.phaseComponent-left-panel{
+    flex:1;
+}
