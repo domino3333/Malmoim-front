@@ -1,17 +1,12 @@
 
-import { useTimer } from "react-timer-hook";
 import "../../../css/participant/qna/ParticipantQuestionOpenView.css"
-import ParticipantListPanel from "../ParticipantListPanel";
-import MyInfoPanel from "./MyInfoPanel";
-import StatusPanel from "./StatusPanel";
-import TimerPanel from "./TimerPanel";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 import ParticipantQuestionToolbar from "./ParticipantQuestionToolbar";
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
 
-const ParticipantQuestionOpenView = ({ timerInfo, onQuestionSubmit, questions }) => {
+const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions }) => {
 
 
 

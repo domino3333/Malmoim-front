@@ -1,7 +1,5 @@
 
 import "../../../css/participant/qna/ParticipantReadyView.css"
-import ParticipantListPanel from "../ParticipantListPanel";
-import MyInfoPanel from "./MyInfoPanel";
 
 const ParticipantReadyView = () => {
 
