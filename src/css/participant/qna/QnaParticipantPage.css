@@ -3,3 +3,12 @@
     width: 1000px;
     margin: 0 auto;
 }
+
+
+/* 타이머 패널, 방 상태 패널을 감싸는 div*/
+.qna-participant-timer-status-parent {
+
+    display: flex;
+    gap: 30px;
+    height: 100px;
+}

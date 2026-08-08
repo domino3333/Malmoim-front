@@ -13,6 +13,9 @@ import ParticipantAnsweringView from "../../../components/participant/qna/Partic
 import ParticipantFinishedView from "../../../components/participant/qna/ParticipantFinishedView";
 import MyInfoPanel from "../../../components/participant/qna/MyInfoPanel";
 import ParticipantListPanel from "../../../components/participant/ParticipantListPanel";
+import TimerPanel from "../../../components/participant/qna/TimerPanel";
+import StatusPanel from "../../../components/participant/qna/StatusPanel";
+import { useTimer } from "react-timer-hook";
 
 const QnaParticipantPage = () => {
 
@@ -59,6 +62,32 @@ const QnaParticipantPage = () => {
         });
     }
 
+    const {
+        seconds,
+        minutes,
+        hours,
+        isRunning,
+        restart
+    } = useTimer({
+        expiryTimestamp: new Date(timerInfo.questionEndedAt),
+        onExpire: () => console.log("질문 시간 종료"),
+        autoStart: false,
+    });
+
+    const timerTime = { minutes, seconds }
+
+    //타이머 인포 useEffect
+    useEffect(() => {
+        if (!timerInfo?.questionEndedAt) {
+            return;
+        }
+
+
+        const expiryTime = new Date(timerInfo.questionEndedAt);
+
+        restart(expiryTime, true);
+
+    }, [timerInfo?.questionEndedAt]);
 
     // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {
@@ -131,9 +160,15 @@ const QnaParticipantPage = () => {
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
             {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
 
+            <div className="qna-participant-timer-status-parent">
+                <TimerPanel timerTime={timerInfo} />
+                <StatusPanel isRunning={isRunning} />
+
+            </div>
+
             <div className="phaseComponent-parent-div">
                 <div className="phaseComponent-left-panel">
-                    {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} timerInfo={timerInfo} onQuestionSubmit={handleQuestionSubmit} />}
+                    {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} onQuestionSubmit={handleQuestionSubmit} />}
                 </div>
                 <div className="phaseComponent-right-panel">
                     <MyInfoPanel />
