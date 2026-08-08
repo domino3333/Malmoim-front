@@ -24,7 +24,9 @@ const QnaParticipantPage = () => {
 
     const { no } = useParams();
 
-    const [participantInfo, setParticipantInfo] = useState();
+    const [participantInfo, setParticipantInfo] = useState({
+        nickname:""
+    });
 
     const [questions, setQuestions] = useState([]);
     const [roomInfo, setRoomInfo] = useState(null);
@@ -150,6 +152,7 @@ const QnaParticipantPage = () => {
     }, [no])
 
 
+    //참여자 정보를 받아오는 useEffect
     useEffect(() => {
 
         const fetchParticipantInfo = async () => {
@@ -188,7 +191,7 @@ const QnaParticipantPage = () => {
                     {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} onQuestionSubmit={handleQuestionSubmit} />}
                 </div>
                 <div className="phaseComponent-right-panel">
-                    <MyInfoPanel />
+                    <MyInfoPanel participantInfo={participantInfo} />
                     <ParticipantListPanel />
                 </div>
 
