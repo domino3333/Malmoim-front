@@ -106,7 +106,7 @@ const QnaParticipantPage = () => {
             clientRef.current = connectedClient;
 
 
-            // 타이머 구독
+            // 방 상태와 타이머 구독
             connectedClient.subscribe(`/topic/qna/${no}/phase`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
