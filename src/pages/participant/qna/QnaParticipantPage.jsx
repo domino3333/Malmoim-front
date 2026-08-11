@@ -80,7 +80,7 @@ const QnaParticipantPage = () => {
         autoStart: false,
     });
 
-    const timerTime = { minutes, seconds }
+    const remainingTime = { minutes, seconds }
 
     //타이머 인포 useEffect
     useEffect(() => {
@@ -180,7 +180,7 @@ const QnaParticipantPage = () => {
             {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
 
             <div className="qna-participant-timer-status-parent">
-                <TimerPanel timerTime={timerTime} />
+                <TimerPanel remainingTime={remainingTime} />
                 <StatusPanel isRunning={isRunning} />
 
             </div>
