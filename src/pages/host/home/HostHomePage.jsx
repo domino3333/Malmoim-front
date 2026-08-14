@@ -1,17 +1,11 @@
 
 import "../../../css/host/home/HostHomePage.css"
-
-
 import HostHomeHeader from "../../../components/host/home/HostHomeHeader"
 import HostHomeSidebar from "../../../components/host/home/HostHomeSidebar"
 
 
 
 const HostHomePage = () => {
-
-    
-
-
 
     return (<>
 

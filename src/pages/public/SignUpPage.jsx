@@ -4,6 +4,9 @@ import '../../css/public/SignUpPage.css'
 import { signUp } from '../../api/auth/authApi'
 
 const SignUpPage = () => {
+
+
+  
   const [input, setInput] = useState({
     email: '',
     password: '',
