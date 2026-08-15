@@ -30,6 +30,11 @@ const QnaParticipantPage = () => {
     });
 
     //참여자 리스트 info
+    /*
+    형태:
+        private Integer participantCount;
+        private List<ActiveParticipantResponse> participants; // 현재 접속 중인 참여자 리스트
+     */
     const [participantList, setParticipantList] = useState([]);
 
     const [questions, setQuestions] = useState([]);
