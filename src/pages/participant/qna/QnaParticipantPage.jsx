@@ -24,9 +24,13 @@ const QnaParticipantPage = () => {
 
     const { no } = useParams();
 
+    //참여자 본인 1명의 info
     const [participantInfo, setParticipantInfo] = useState({
         nickname:""
     });
+
+    //참여자 리스트 info
+    const [participantList, setParticipantList] = useState([]);
 
     const [questions, setQuestions] = useState([]);
     const [roomInfo, setRoomInfo] = useState(null);
@@ -129,6 +133,15 @@ const QnaParticipantPage = () => {
                 }
             )
 
+            // 참여자 리스트 구독
+            connectedClient.subscribe(`/topic/qna/` + roomNo + `/participants`,
+                (frame) => {
+                    const data = JSON.parse(frame.body);
+
+                    setParticipantList(prev => [...prev, data]);
+                }
+            )
+
         })
 
         return () => client.deactivate();
@@ -152,7 +165,7 @@ const QnaParticipantPage = () => {
     }, [no])
 
 
-    //참여자 정보를 받아오는 useEffect(http스냅샷)
+    //참여자 정보(참여자 본인1명)를 받아오는 useEffect(http스냅샷)
     useEffect(() => {
 
         const fetchParticipantInfo = async () => {
