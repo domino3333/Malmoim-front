@@ -209,7 +209,7 @@ const QnaParticipantPage = () => {
                 </div>
                 <div className="phaseComponent-right-panel">
                     <MyInfoPanel participantInfo={participantInfo} />
-                    <ParticipantListPanel />
+                    <ParticipantListPanel participantList={participantList}/>
                 </div>
 
             </div>
