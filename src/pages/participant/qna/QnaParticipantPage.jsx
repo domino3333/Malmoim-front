@@ -35,7 +35,10 @@ const QnaParticipantPage = () => {
         private Integer participantCount;
         private List<ActiveParticipantResponse> participants; // 현재 접속 중인 참여자 리스트
      */
-    const [participantList, setParticipantList] = useState([]);
+    const [participantList, setParticipantList] = useState({
+        participantCount:0,
+        participants:[]
+    });
 
     const [questions, setQuestions] = useState([]);
     const [roomInfo, setRoomInfo] = useState(null);
@@ -143,7 +146,7 @@ const QnaParticipantPage = () => {
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
-                    setParticipantList(prev => [...prev, data]);
+                    setParticipantList(data);
                 }
             )
 

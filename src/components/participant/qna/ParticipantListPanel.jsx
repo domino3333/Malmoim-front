@@ -7,7 +7,6 @@ const ParticipantListPanel = ({participantList}) => {
 
 
 
-
     return (<>
         <div className="ParticipantListPanel-parent-div">
             <div className="participant-list-count">
