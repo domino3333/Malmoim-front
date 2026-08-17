@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/qna/qnaSocket";
 import { publishQuestion } from "../../../api/qna/qnaMessageApi";
 import RoomSubheader from "../../../components/common/room/RoomSubheader";
-import { getParticipantInfo, getParticipantQnaRoom } from "../../../api/qna/participantQnaApi";
+import { getParticipantInfo, getParticipantList, getParticipantQnaRoom } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/common/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
@@ -182,6 +182,18 @@ const QnaParticipantPage = () => {
         }
 
         fetchParticipantInfo();
+
+    }, [])
+
+    //참여자 리스트를 받아오는 useEffect(http스냅샷)
+    useEffect(() => {
+
+        const fetchParticipantList = async () => {
+            const data = await getParticipantList(no);
+            setParticipantList(data);
+        }
+
+        fetchParticipantList();
 
     }, [])
 
