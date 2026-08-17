@@ -73,4 +73,6 @@ export const getParticipantList = async (roomNo) => {
         }
     })
 
+    return response.data;
+    
 }
