@@ -32,6 +32,11 @@ const QnaHostPage = () => {
 
     });
 
+    const [participantList, setParticipantList] = useState({
+        participantCount:0,
+        participants:[]
+    });
+
     const [timerInfo, setTimerInfo] = useState({
         roomNo: 0,
         status: "",
@@ -72,8 +77,12 @@ const QnaHostPage = () => {
 
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
-                console.log("구독 data:", data);
                 setQuestions(prev => [...prev, data]);
+            });
+
+            connectedClient.subscribe(`/topic/qna/${no}/participants`, (frame) => {
+                const data = JSON.parse(frame.body);
+                setParticipantList(data);
             });
 
         })
