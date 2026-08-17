@@ -8,7 +8,7 @@ import RoomInfo from "../../../components/host/qna/RoomInfo";
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, startQuestionPhase } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, startQuestionPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 
 const QnaHostPage = () => {
@@ -70,7 +70,7 @@ const QnaHostPage = () => {
     useEffect(() => {
         const token = sessionStorage.getItem('accessToken');
 
-        const client = connectQnaSocket(token, (connectedClient) => {
+        const client = connectQnaSocket(token, async (connectedClient) => {
 
 
             clientRef.current = connectedClient;
@@ -84,6 +84,9 @@ const QnaHostPage = () => {
                 const data = JSON.parse(frame.body);
                 setParticipantList(data);
             });
+
+            const particiapantListSnapshot = await getParticipantList(no);
+            setParticipantList(particiapantListSnapshot);
 
         })
 

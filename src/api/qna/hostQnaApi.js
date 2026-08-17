@@ -60,3 +60,17 @@ export const updateRoomStatus = async (roomNo, status) => {
     })
 
 }
+
+// 참여자리스트 http api
+export const getParticipantList = async (roomNo) => {
+
+    const token = sessionStorage.getItem('accessToken');
+
+    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/participant-list`,{
+        headers: {
+            Authorization: `Bearer ${token}`
+
+        }
+    })
+
+}
