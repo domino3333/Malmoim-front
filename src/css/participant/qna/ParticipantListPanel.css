@@ -14,11 +14,14 @@
 .participant-list-info{
     display: flex;
     flex-direction: column;
+    height: 310px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* 참여자 리스트 한명한명의 칸*/
 .participant-list-info p {
     padding:5px;
     margin:0px;
-    
+    flex-shrink: 0;
 }
