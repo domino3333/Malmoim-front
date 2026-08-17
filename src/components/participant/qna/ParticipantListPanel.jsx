@@ -14,8 +14,6 @@ const ParticipantListPanel = ({participantList}) => {
             </div>
 
 
-            
-
             <div className="participant-list-info">
                 {participantList.participants.map((participant)=><p>{participant.nickname}</p>)}
             </div>
