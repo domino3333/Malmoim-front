@@ -26,3 +26,18 @@ export const getParticipantInfo = async (roomNo) => {
 
     return response.data;
 }
+
+
+// 참여자 리스트를 받아오는 api
+export const getParticipantList = async (roomNo) =>{
+
+    const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
+
+    const response = await axios.get(`${API_BASE_URL}${prefix}/participant-list`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+    return response.data;
+}
