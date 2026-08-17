@@ -12,8 +12,12 @@ const ParticipantListPanel = ({participantList}) => {
             <div className="participant-list-count">
                 참여자 수: {participantList.participantCount}
             </div>
+
+
+            
+
             <div className="participant-list-info">
-                닉네임 쭈루룩
+                {participantList.participants.map((participant)=><p>{participant.nickname}</p>)}
             </div>
         </div>
 
