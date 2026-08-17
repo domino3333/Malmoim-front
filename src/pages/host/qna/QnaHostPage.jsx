@@ -123,7 +123,7 @@ const QnaHostPage = () => {
                 <QnaControlPanel onOpenTimerModal={() => setIsTimerModalOpen(true)} />
                 <div className="qna-host-body-top">
                     <HostQuestionList questions={questions} />
-                    <QnaParticipantPanel />
+                    <QnaParticipantPanel participantList={participantList}/>
                 </div>
 
             </div>

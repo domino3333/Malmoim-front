@@ -2,16 +2,18 @@
 
 import "../../../css/host/qna/QnaParticipantPanel.css"
 
-const QnaParticipantPanel = ()=>{
+const QnaParticipantPanel = ({participantList})=>{
 
     return(<>
 
         <div className="QnaParticipantPanel-main-div">
             <div className="QnaParticipantPanel-header">
-                참여자:18명
+                참여자 수: {participantList.participantCount}
             </div>
             <div className="QnaParticipantPanel-body">
-                참여자명단 쭈루룩
+                {participantList.participants.map((participant)=>
+                    <p key={participant.participantNo}>{participant.nickname}</p>
+                )}
             </div>
 
         </div>
