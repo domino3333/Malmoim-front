@@ -114,7 +114,7 @@ const QnaParticipantPage = () => {
             `malmoim:participant-session:${no}`
         );
 
-        const client = connectQnaSocket(token, (connectedClient) => {
+        const client = connectQnaSocket(token, async (connectedClient) => {
             clientRef.current = connectedClient;
 
 
@@ -150,6 +150,9 @@ const QnaParticipantPage = () => {
                 }
             )
 
+            const particiapantListSnapshot = await getParticipantList(no);
+            setParticipantList(particiapantListSnapshot);
+
         })
 
         return () => client.deactivate();
@@ -182,18 +185,6 @@ const QnaParticipantPage = () => {
         }
 
         fetchParticipantInfo();
-
-    }, [])
-
-    //참여자 리스트를 받아오는 useEffect(http스냅샷)
-    useEffect(() => {
-
-        const fetchParticipantList = async () => {
-            const data = await getParticipantList(no);
-            setParticipantList(data);
-        }
-
-        fetchParticipantList();
 
     }, [])
 
