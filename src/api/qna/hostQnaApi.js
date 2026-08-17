@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_BASE_URL } from "../ApiHost";
 
-const prefix = "/api/qna";
+const prefix = "/api/host/qna";
 
 // qna 방 생성 api
 export const createQnaRoom = async (input) => {

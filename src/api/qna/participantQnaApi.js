@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_BASE_URL } from "../ApiHost";
 
-const prefix = "/api/qna";
+const prefix = "/api/participant/qna";
 
 // 하나의 qna 방을 가져오는 api ( 참여자용 , 토큰 X )
 // 참가자 화면에 필요한 Q&A 방 정보 조회
