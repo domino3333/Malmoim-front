@@ -77,7 +77,7 @@ const QnaHostPage = () => {
 
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
-                setQuestions(prev => [...prev, data]);
+                setQuestions(prev => mergeQuestionLists(prev,[data]));
             });
 
             connectedClient.subscribe(`/topic/qna/${no}/participants`, (frame) => {
@@ -88,8 +88,6 @@ const QnaHostPage = () => {
             const particiapantListSnapshot = await getParticipantList(no);
             setParticipantList(particiapantListSnapshot);
 
-            const questionListSnapshot = await getQuestionList(no);
-            setQuestions(questionListSnapshot);
 
         })
 
