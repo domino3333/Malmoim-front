@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/qna/qnaSocket";
 import { publishQuestion } from "../../../api/qna/qnaMessageApi";
 import RoomSubheader from "../../../components/common/room/RoomSubheader";
-import { getParticipantInfo, getParticipantList, getParticipantQnaRoom } from "../../../api/qna/participantQnaApi";
+import { getParticipantInfo, getParticipantList, getParticipantQnaRoom, getQuestionList } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/common/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
@@ -153,6 +153,8 @@ const QnaParticipantPage = () => {
             const particiapantListSnapshot = await getParticipantList(no);
             setParticipantList(particiapantListSnapshot);
 
+            const questionListSnapshot = await getQuestionList(no);
+            setQuestions(questionListSnapshot);
             
 
         })
