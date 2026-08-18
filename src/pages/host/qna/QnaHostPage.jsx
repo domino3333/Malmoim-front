@@ -88,6 +88,9 @@ const QnaHostPage = () => {
             const particiapantListSnapshot = await getParticipantList(no);
             setParticipantList(particiapantListSnapshot);
 
+            const questionListSnapshot = await getQuestionList(no);
+            setQuestions(questionListSnapshot);
+
         })
 
         return () => client.deactivate();
@@ -107,23 +110,6 @@ const QnaHostPage = () => {
 
 
     }, [no])
-
-    // 질문 리스트를 불러오는 http useEffect
-    useEffect(() => {
-
-        // 특정 roomNo의 질문 리스트 가져오기
-        const fetchQuestionList = async () => {
-            const data = await getQuestionList(no);
-            setQuestions(data);
-        }
-
-        fetchQuestionList();
-
-
-    }, [no])
-
-
-
 
 
     return (<>
