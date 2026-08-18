@@ -137,7 +137,7 @@ const QnaParticipantPage = () => {
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
-                    setQuestions(prev => [...prev, data]);
+                    setQuestions(prev => mergeQuestionLists(prev,[data]));
                 }
             )
 
@@ -153,8 +153,6 @@ const QnaParticipantPage = () => {
             const particiapantListSnapshot = await getParticipantList(no);
             setParticipantList(particiapantListSnapshot);
 
-            const questionListSnapshot = await getQuestionList(no);
-            setQuestions(questionListSnapshot);
             
 
         })
