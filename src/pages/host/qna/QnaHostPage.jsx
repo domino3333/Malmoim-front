@@ -34,8 +34,8 @@ const QnaHostPage = () => {
     });
 
     const [participantList, setParticipantList] = useState({
-        participantCount:0,
-        participants:[]
+        participantCount: 0,
+        participants: []
     });
 
     const [timerInfo, setTimerInfo] = useState({
@@ -78,13 +78,16 @@ const QnaHostPage = () => {
 
             connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
                 const data = JSON.parse(frame.body);
-                setQuestions(prev => mergeQuestionLists(prev,[data]));
+                setQuestions(prev => mergeQuestionLists(prev, [data]));
             });
 
             connectedClient.subscribe(`/topic/qna/${no}/participants`, (frame) => {
                 const data = JSON.parse(frame.body);
                 setParticipantList(data);
             });
+
+            const questionListSnapshot = await getQuestionList(no);
+            setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
 
             const particiapantListSnapshot = await getParticipantList(no);
             setParticipantList(particiapantListSnapshot);
@@ -122,7 +125,7 @@ const QnaHostPage = () => {
                 <QnaControlPanel onOpenTimerModal={() => setIsTimerModalOpen(true)} />
                 <div className="qna-host-body-top">
                     <HostQuestionList questions={questions} />
-                    <QnaParticipantPanel participantList={participantList}/>
+                    <QnaParticipantPanel participantList={participantList} />
                 </div>
 
             </div>
