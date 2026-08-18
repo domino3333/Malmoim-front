@@ -8,7 +8,7 @@ import RoomInfo from "../../../components/host/qna/RoomInfo";
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, startQuestionPhase } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, getQuestionList, startQuestionPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 
 const QnaHostPage = () => {
@@ -104,6 +104,20 @@ const QnaHostPage = () => {
         }
 
         fetchRoomInfo();
+
+
+    }, [no])
+
+    // 질문 리스트를 불러오는 http useEffect
+    useEffect(() => {
+
+        // 특정 roomNo의 질문 리스트 가져오기
+        const fetchQuestionList = async () => {
+            const data = await getQuestionList(no);
+            setQuestions(data);
+        }
+
+        fetchQuestionList();
 
 
     }, [no])
