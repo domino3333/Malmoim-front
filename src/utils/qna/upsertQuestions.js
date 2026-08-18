@@ -1,5 +1,5 @@
 
-const mergeQuestionLists = (baseQuestions,latestQuestions) =>{
+export const mergeQuestionLists = (baseQuestions,latestQuestions) =>{
 
     const questionMap = new Map();
 

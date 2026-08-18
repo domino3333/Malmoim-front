@@ -10,6 +10,7 @@ import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPane
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
 import { getHostQnaRoom, getParticipantList, getQuestionList, startQuestionPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
+import { mergeQuestionLists } from "../../../utils/qna/upsertQuestions";
 
 const QnaHostPage = () => {
 
