@@ -76,3 +76,20 @@ export const getParticipantList = async (roomNo) => {
     return response.data;
     
 }
+
+
+// 질문 리스트 http api
+export const getQuestionList = async (roomNo) => {
+
+    const token = sessionStorage.getItem('accessToken');
+
+    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/question-list`,{
+        headers: {
+            Authorization: `Bearer ${token}`
+
+        }
+    })
+
+    return response.data;
+    
+}
