@@ -153,6 +153,8 @@ const QnaParticipantPage = () => {
             const particiapantListSnapshot = await getParticipantList(no);
             setParticipantList(particiapantListSnapshot);
 
+            
+
         })
 
         return () => client.deactivate();
