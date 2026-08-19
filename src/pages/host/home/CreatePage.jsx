@@ -10,7 +10,6 @@ const CreatePage = () => {
     return (<>
         <HostHomeHeader/>
 
-        {/*대쉬보드 전체를 감싸는 body div*/}
         <div className="div-CreatePage-body">
             <HostHomeSidebar />
             <div className="div-CreatePage-content-list">
