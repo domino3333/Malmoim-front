@@ -4,7 +4,7 @@ import { connectQnaSocket } from "../../../api/qna/qnaSocket";
 import RoomHeader from "../../../components/common/room/RoomHeader";
 import RoomSubheader from "../../../components/common/room/RoomSubheader";
 import "../../../css/host/qna/QnaHostPage.css"
-import RoomInfo from "../../../components/host/qna/RoomInfo";
+import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPanel";
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
@@ -120,7 +120,7 @@ const QnaHostPage = () => {
         <div className="qna-host-main-div">
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
             <RoomSubheader roomInfo={roomInfo} />
-            <RoomInfo setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
+            <QnaRoomOverviewPanel setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">
                 <QnaControlPanel onOpenTimerModal={() => setIsTimerModalOpen(true)} />
                 <div className="qna-host-body-top">

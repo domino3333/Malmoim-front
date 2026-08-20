@@ -1,11 +1,11 @@
 
 import { useTimer } from "react-timer-hook";
-import "../../../css/host/qna/RoomInfo.css"
+import "../../../css/host/qna/QnaRoomOverviewPanel.css"
 import { useEffect } from "react";
 import { updateRoomStatus } from "../../../api/qna/hostQnaApi";
 
 
-const RoomInfo = ({ setRoomInfo, roomInfo, timerInfo }) => {
+const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
 
 
     const defaultTime = new Date();
@@ -64,4 +64,4 @@ const RoomInfo = ({ setRoomInfo, roomInfo, timerInfo }) => {
     </>)
 }
 
-export default RoomInfo
+export default QnaRoomOverviewPanel
