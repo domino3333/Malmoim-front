@@ -32,7 +32,6 @@ export const getHostQnaRoom = async (no) => {
     return response.data;
 }
 
-// 타이머 시작 api
 // 질문 시간 저장 및 질문 접수 단계 시작
 export const startQuestionPhase = async (roomNo, durationSeconds) => {
 
