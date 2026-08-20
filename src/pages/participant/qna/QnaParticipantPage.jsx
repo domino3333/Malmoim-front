@@ -151,6 +151,15 @@ const QnaParticipantPage = () => {
                 }
             )
 
+            // 방 상태 변경 구독
+            connectedClient.subscribe(`/topic/qna/${no}/complete/status`,
+                (frame) => {
+                    const data = JSON.parse(frame.body);
+
+                    setRoomInfo(prev=>({...prev,status:data.status}));
+                }
+            )
+
             const questionListSnapshot = await getQuestionList(no);
             setQuestions(prev => mergeQuestionLists(questionListSnapshot,prev));
 
