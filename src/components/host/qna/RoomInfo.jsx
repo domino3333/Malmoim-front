@@ -23,7 +23,7 @@ const RoomInfo = ({ setRoomInfo, roomInfo, timerInfo }) => {
         onExpire: async () => {
             console.log("타이머 종료");
             await updateRoomStatus(roomInfo.no,"READY");
-            setRoomInfo(prev => ({...roomInfo,
+            setRoomInfo(prev => ({...prev,
                 status:"READY"
             }))
         },
