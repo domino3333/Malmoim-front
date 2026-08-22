@@ -57,7 +57,9 @@ const QnaParticipantPage = () => {
     const phaseComponents = {
         READY: ParticipantReadyView,
         QUESTION_OPEN: ParticipantQuestionOpenView,
+        QUESTION_CLOSED: ParticipantQuestionClosedView,
         VOTING_OPEN: ParticipantVotingOpenView,
+        VOTING_CLOSED: ParticipantVotingClosedView,
         ANSWERING: ParticipantAnsweringView,
         FINISHED: ParticipantFinishedView,
     }
