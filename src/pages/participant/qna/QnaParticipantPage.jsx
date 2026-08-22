@@ -17,6 +17,8 @@ import TimerPanel from "../../../components/participant/qna/TimerPanel";
 import StatusPanel from "../../../components/participant/qna/StatusPanel";
 import { useTimer } from "react-timer-hook";
 import { mergeQuestionLists } from "../../../utils/qna/upsertQuestions";
+import ParticipantQuestionClosedView from "../../../components/participant/qna/ParticipantQuestionClosedView";
+import ParticipantVotingClosedView from "../../../components/participant/qna/ParticipantVotingClosedView";
 
 const QnaParticipantPage = () => {
 
