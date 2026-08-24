@@ -48,8 +48,8 @@ const QnaParticipantPage = () => {
     const [timerInfo, setTimerInfo] = useState({
         roomNo: 0,
         status: "",
-        questionStartedAt: "",
-        questionEndedAt: ""
+        phaseStartedAt: "",
+        phaseEndedAt: ""
     });
 
     const clientRef = useRef(null);
@@ -92,7 +92,7 @@ const QnaParticipantPage = () => {
         isRunning,
         restart
     } = useTimer({
-        expiryTimestamp: new Date(timerInfo.questionEndedAt),
+        expiryTimestamp: new Date(timerInfo.phaseEndedAt),
         onExpire: () => console.log("질문 시간 종료"),
         autoStart: false,
     });
@@ -101,16 +101,16 @@ const QnaParticipantPage = () => {
 
     //타이머 인포 useEffect
     useEffect(() => {
-        if (!timerInfo?.questionEndedAt) {
+        if (!timerInfo?.phaseEndedAt) {
             return;
         }
 
 
-        const expiryTime = new Date(timerInfo.questionEndedAt);
+        const expiryTime = new Date(timerInfo.phaseEndedAt);
 
         restart(expiryTime, true);
 
-    }, [timerInfo?.questionEndedAt]);
+    }, [timerInfo?.phaseEndedAt]);
 
     // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {

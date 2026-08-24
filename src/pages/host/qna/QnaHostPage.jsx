@@ -41,8 +41,8 @@ const QnaHostPage = () => {
     const [timerInfo, setTimerInfo] = useState({
         roomNo: 0,
         status: "",
-        questionStartedAt: "",
-        questionEndedAt: ""
+        phaseStartedAt: "",
+        phaseEndedAt: ""
     })
 
     const clientRef = useRef(null);
