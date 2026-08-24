@@ -24,7 +24,7 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
             console.log("타이머 종료");
             await updateRoomStatus(roomInfo.no,"QUESTION_CLOSED");
             setRoomInfo(prev => ({...prev,
-                status:"READY"
+                status:"QUESTION_CLOSED"
             }))
         },
         interval: 1000,
@@ -32,11 +32,11 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
 
 
     useEffect(() => {
-        if (!timerInfo?.questionEndedAt) return;
+        if (!timerInfo?.phaseEndedAt) return;
 
-        const expiryTime = new Date(timerInfo.questionEndedAt);
+        const expiryTime = new Date(timerInfo.phaseEndedAt);
         restart(expiryTime, true);
-    }, [timerInfo.questionEndedAt])
+    }, [timerInfo.phaseEndedAt])
 
     return (<>
 
