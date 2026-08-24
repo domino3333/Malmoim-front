@@ -22,7 +22,7 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
         autoStart: false,
         onExpire: async () => {
             console.log("타이머 종료");
-            await updateRoomStatus(roomInfo.no,"READY");
+            await updateRoomStatus(roomInfo.no,"QUESTION_CLOSED");
             setRoomInfo(prev => ({...prev,
                 status:"READY"
             }))
