@@ -1,19 +1,18 @@
-/* ready view 전체의 부모 div */
-.ParticipantQuestionClosedView-parent-div {
-
-}
-
-
-
-/* 왼쪽 패널 */
-.ParticipantQuestionClosedView-left-panel {
+/* 질문 종료 view 최상위 부모 */
+.ParticipantQuestionClosedView-parent-panel {
+    display: flex;
+    flex-direction: column;
     border: 1px solid green;
     width: 700px;
     height: 90vh;
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
 }
+
+
+/* 상단 텍스트 div */
+.ParticipantQuestionClosedView-top-panel {
+    text-align: center;
+}
+
+/*질문 목록 감싸는 div*/
+.ParticipantQuestionClosedView-bottom-panel {}
