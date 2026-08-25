@@ -21,13 +21,23 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
         expiryTimestamp: defaultTime,
         autoStart: false,
         onExpire: async () => {
-            console.log("타이머 종료");
-            await updateRoomStatus(roomInfo.no,"QUESTION_CLOSED");
-            setRoomInfo(prev => ({...prev,
-                status:"QUESTION_CLOSED"
+            let nextStatus;
+
+            if (roomInfo.status == "QUESTION_OPEN") {
+                nextStatus = "QUESTION_CLOSED"
+            } else if (roomInfo.status == "VOTING_OPEN") {
+                nextStatus = "VOTING_CLOSED"
+            } else {
+                return;
+            }
+
+            await updateRoomStatus(roomInfo.no, nextStatus);
+            setRoomInfo(prev => ({
+                ...prev,
+                status: nextStatus
             }))
         },
-        interval: 1000,
+        interval: 1000
     });
 
 
