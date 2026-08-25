@@ -72,6 +72,8 @@ export const updateRoomStatus = async (roomNo, status) => {
         }
     })
 
+    return response.data;
+
 }
 
 // 참여자리스트 http api

@@ -31,10 +31,10 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
                 return;
             }
 
-            await updateRoomStatus(roomInfo.no, nextStatus);
+            const data = await updateRoomStatus(roomInfo.no, nextStatus);
             setRoomInfo(prev => ({
                 ...prev,
-                status: nextStatus
+                status: data.status
             }))
         },
         interval: 1000
