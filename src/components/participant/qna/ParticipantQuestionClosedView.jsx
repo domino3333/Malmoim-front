@@ -1,4 +1,5 @@
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
+import "../../../css/participant/qna/ParticipantQuestionClosedView.css";
 
 
 const ParticipantQuestionClosedView = ({questions}) => {
