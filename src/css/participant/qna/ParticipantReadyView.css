@@ -1,12 +1,12 @@
 /* ready view 전체의 부모 div */
-.ParticipantReadyView-parent-div {
+.ParticipantQuestionClosedView-parent-div {
 
 }
 
 
 
 /* 왼쪽 패널 */
-.readyView-left-panel {
+.ParticipantQuestionClosedView-left-panel {
     border: 1px solid green;
     width: 700px;
     height: 90vh;
