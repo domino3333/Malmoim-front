@@ -46,6 +46,20 @@ export const startQuestionPhase = async (roomNo, durationSeconds) => {
     return response.data;
 }
 
+// 투표 시작
+export const startVotingPhase = async (roomNo, durationSeconds) => {
+
+    const token = sessionStorage.getItem('accessToken');
+
+    const response = await axios.post(`${API_BASE_URL}${prefix}/${roomNo}/start-timer`, { durationSeconds }, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+    return response.data;
+}
+
 // 방 상태 업데이트 api
 export const updateRoomStatus = async (roomNo, status) => {
 

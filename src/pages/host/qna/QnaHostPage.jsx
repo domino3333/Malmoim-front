@@ -8,7 +8,7 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, getQuestionList, startQuestionPhase } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, getQuestionList, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/upsertQuestions";
 
@@ -59,6 +59,17 @@ const QnaHostPage = () => {
     const handleStartQuestionPhase = async (seconds) => {
         // timer start api 호출
         const data = await startQuestionPhase(roomInfo.no, seconds);
+        setTimerInfo(data);
+        setRoomInfo(prev => ({
+            ...prev,
+            status: data.status
+        }))
+    }
+
+    //투표 시작 요청
+    const handleStartVotingPhase = async () => {
+
+        const data = await startVotingPhase(roomInfo.no, seconds);
         setTimerInfo(data);
         setRoomInfo(prev => ({
             ...prev,
