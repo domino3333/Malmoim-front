@@ -23,9 +23,9 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
         onExpire: async () => {
             let nextStatus;
 
-            if (roomInfo.status == "QUESTION_OPEN") {
+            if (roomInfo.status === "QUESTION_OPEN") {
                 nextStatus = "QUESTION_CLOSED"
-            } else if (roomInfo.status == "VOTING_OPEN") {
+            } else if (roomInfo.status === "VOTING_OPEN") {
                 nextStatus = "VOTING_CLOSED"
             } else {
                 return;
