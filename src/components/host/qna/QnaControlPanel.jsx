@@ -2,14 +2,14 @@
 import "../../../css/host/qna/QnaControlPanel.css"
 
 // 호스트의 Q&A 진행 단계 조작용 제어 패널 컴포넌트
-const QnaControlPanel = ({ onOpenTimerModal }) => {
+const QnaControlPanel = ({ onOpenQuestionTimerModal, onOpenVotingTimerModal }) => {
 
     return (<>
 
-        <button onClick={onOpenTimerModal}>
+        <button onClick={onOpenQuestionTimerModal}>
             질문 시작
         </button>
-        <button>
+        <button onClick={onOpenVotingTimerModal}>
             추천 시작
         </button>
         <button>

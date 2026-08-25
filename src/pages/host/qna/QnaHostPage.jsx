@@ -134,7 +134,11 @@ const QnaHostPage = () => {
             <RoomSubheader roomInfo={roomInfo} />
             <QnaRoomOverviewPanel setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">
-                <QnaControlPanel onOpenTimerModal={() => setIsQuestionTimerOpen(true)} />
+                <QnaControlPanel
+                    onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
+                    onOpenVotingTimerModal={() => setIsVotingTimerOpen(true)}
+
+                />
                 <div className="qna-host-body-top">
                     <HostQuestionList questions={questions} />
                     <QnaParticipantPanel participantList={participantList} />
@@ -144,7 +148,19 @@ const QnaHostPage = () => {
         </div>
 
 
-        <TimerModal startTimer={handleStartQuestionPhase} show={isQuestionTimerOpen} onHide={() => setIsQuestionTimerOpen(false)} />
+        <TimerModal
+            title={"질문 시간 설정"}
+            description={"참여자가 질문을 작성할 수 있는 제한 시간을 정해주세요."}
+            startTimer={handleStartQuestionPhase}
+            show={isQuestionTimerOpen}
+            onHide={() => setIsQuestionTimerOpen(false)} />
+
+        <TimerModal
+            title={"투표 시간 설정"}
+            description={"참여자가 투표할 수 있는 제한 시간을 정해주세요."}
+            startTimer={handleStartQuestionPhase}
+            show={isVotingTimerOpen}
+            onHide={() => setIsVotingTimerOpen(false)} />
 
     </>)
 }

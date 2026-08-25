@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/TimerModal.css"
 
 
-const TimerModal = ({ show, onHide, startTimer }) => {
+const TimerModal = ({ title, description, show, onHide, startTimer }) => {
 
 
 
@@ -97,8 +97,8 @@ const TimerModal = ({ show, onHide, startTimer }) => {
 
             <div className="timer-modal-body">
 
-                <h4>질문 시간 설정</h4>
-                <p>참여자가 질문을 작성할 시간을 정해주세요.</p>
+                <h4>{title}</h4>
+                <p>{description}</p>
                 <div className="timer-main-div">
                     <div className="minute-main-div">
                         <button className="timer-arrow-top" onClick={() => adjustTime("minute", 1)}>△</button>
