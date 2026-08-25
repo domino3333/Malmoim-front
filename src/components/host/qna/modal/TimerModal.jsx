@@ -15,12 +15,12 @@ const TimerModal = ({ title, description, show, onHide, startTimer }) => {
 
     // 시작 버튼 누르면 호출되는 함수
     // 입력한 분과 초를 전체 초로 변환 후 질문 타이머 시작
-    const handleStart = () => {
+    const handleStart = async () => {
         const minuteNumber = Number(minute);
         const secondNumber = Number(second);
 
         const totalSeconds = minuteNumber * 60 + secondNumber;
-        startTimer(totalSeconds);
+        await startTimer(totalSeconds);
         onHide();
 
     }
