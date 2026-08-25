@@ -51,7 +51,7 @@ export const startVotingPhase = async (roomNo, durationSeconds) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/${roomNo}/start-timer`, { durationSeconds }, {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/${roomNo}/start-voting`, { durationSeconds }, {
         headers: {
             Authorization: `Bearer ${token}`
         }

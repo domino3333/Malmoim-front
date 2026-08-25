@@ -48,7 +48,8 @@ const QnaHostPage = () => {
     const clientRef = useRef(null);
 
     // TimerModal 표시 상태
-    const [isTimerModalOpen, setIsTimerModalOpen] = useState(false);
+    const [isQuestionTimerOpen, setIsQuestionTimerOpen] = useState(false);
+    const [isVotingTimerOpen, setIsVotingTimerOpen] = useState(false);
 
     // 말모임 로고 클릭 시 메인 페이지 이동
     const handleLogoClick = () => {
@@ -133,7 +134,7 @@ const QnaHostPage = () => {
             <RoomSubheader roomInfo={roomInfo} />
             <QnaRoomOverviewPanel setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">
-                <QnaControlPanel onOpenTimerModal={() => setIsTimerModalOpen(true)} />
+                <QnaControlPanel onOpenTimerModal={() => setIsQuestionTimerOpen(true)} />
                 <div className="qna-host-body-top">
                     <HostQuestionList questions={questions} />
                     <QnaParticipantPanel participantList={participantList} />
@@ -143,7 +144,7 @@ const QnaHostPage = () => {
         </div>
 
 
-        <TimerModal startTimer={handleStartQuestionPhase} show={isTimerModalOpen} onHide={() => setIsTimerModalOpen(false)} />
+        <TimerModal startTimer={handleStartQuestionPhase} show={isQuestionTimerOpen} onHide={() => setIsQuestionTimerOpen(false)} />
 
     </>)
 }
