@@ -68,7 +68,7 @@ const QnaHostPage = () => {
     }
 
     //투표 시작 요청
-    const handleStartVotingPhase = async () => {
+    const handleStartVotingPhase = async (seconds) => {
 
         const data = await startVotingPhase(roomInfo.no, seconds);
         setTimerInfo(data);
@@ -158,7 +158,7 @@ const QnaHostPage = () => {
         <TimerModal
             title={"투표 시간 설정"}
             description={"참여자가 투표할 수 있는 제한 시간을 정해주세요."}
-            startTimer={handleStartQuestionPhase}
+            startTimer={handleStartVotingPhase}
             show={isVotingTimerOpen}
             onHide={() => setIsVotingTimerOpen(false)} />
 
