@@ -20,3 +20,9 @@
 .qna-toolbar-right-div {
     display: flex;
 }
+
+/* 질문 리스트를 감싸는 div - 스크롤 적용*/
+.qnaList-main-div{
+    max-height: 500px;
+    overflow-y: auto;
+}
