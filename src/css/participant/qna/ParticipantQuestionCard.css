@@ -2,8 +2,6 @@
 .ParticipantQuestionCard-list {
     display: flex;
     flex-direction: column;
-    max-height: 700px;
-    overflow-y: auto;
 }
 
 /* 카드 전체를 감싸는 div*/

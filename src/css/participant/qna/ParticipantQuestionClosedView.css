@@ -4,7 +4,6 @@
     flex-direction: column;
     border: 1px solid green;
     width: 700px;
-    height: 90vh;
     margin-top: 20px;
 }
 
@@ -15,4 +14,6 @@
 
 /* 질문 목록 감싸는 div */
 .ParticipantQuestionClosedView-bottom-panel {
+    max-height: 500px;
+    overflow-y: auto;
 }
