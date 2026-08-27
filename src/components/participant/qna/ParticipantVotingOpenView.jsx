@@ -5,7 +5,7 @@ const ParticipantVotingOpenView = () => {
     return (<>
         <div className="ParticipantVotingOpenView-parent-div">
                 <div className="ParticipantVotingOpenView-left-panel">
-                    ParticipantVotingOpenView
+                    투표 오픈
                 </div>
                 
             </div>

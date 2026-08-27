@@ -1,0 +1,12 @@
+
+
+.ParticipantVotingOpenView-left-panel{
+
+    border: 1px solid green;
+    width: 700px;
+    height: 90vh;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
