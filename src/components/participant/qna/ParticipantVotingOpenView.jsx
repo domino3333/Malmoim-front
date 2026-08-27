@@ -1,9 +1,14 @@
 
-
-const ParticipantVotingOpenView=()=>{
+import "../../../css/participant/qna/ParticipantVotingOpenView.css"
+const ParticipantVotingOpenView = () => {
 
     return (<>
-    <p> 투표오픈 화면 </p>
+        <div className="ParticipantVotingOpenView-parent-div">
+                <div className="ParticipantVotingOpenView-left-panel">
+                    ParticipantVotingOpenView
+                </div>
+                
+            </div>
     </>)
 }
 
