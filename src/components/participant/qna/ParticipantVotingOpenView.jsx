@@ -1,17 +1,15 @@
 
 import "../../../css/participant/qna/ParticipantVotingOpenView.css"
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
-const ParticipantVotingOpenView = ({questions}) => {
+const ParticipantVotingOpenView = ({ questions }) => {
 
     return (<>
         <div className="ParticipantVotingOpenView-parent-div">
-                <div className="ParticipantVotingOpenView-left-panel">
-                    {questions.map((question)=>{
-                        <ParticipantQuestionCard key={question.no} questions={questions}/>
-                    })}
-                </div>
-                
+            <div className="ParticipantVotingOpenView-left-panel">
+                <ParticipantQuestionCard questions={questions} />
             </div>
+
+        </div>
     </>)
 }
 
