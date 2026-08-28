@@ -7,7 +7,7 @@ const ParticipantVotingOpenView = ({questions}) => {
         <div className="ParticipantVotingOpenView-parent-div">
                 <div className="ParticipantVotingOpenView-left-panel">
                     {questions.map((question)=>{
-                        <ParticipantQuestionCard key={question.no}/>
+                        <ParticipantQuestionCard key={question.no} questions={questions}/>
                     })}
                 </div>
                 
