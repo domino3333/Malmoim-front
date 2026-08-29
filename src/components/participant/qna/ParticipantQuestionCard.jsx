@@ -1,6 +1,6 @@
 import "../../../css/participant/qna/ParticipantQuestionCard.css";
 
-const ParticipantQuestionCard = ({ questions }) => {
+const ParticipantQuestionCard = ({ canVote = false, questions }) => {
 
     return (<>
 
@@ -13,9 +13,9 @@ const ParticipantQuestionCard = ({ questions }) => {
                     <p className="ParticipantQuestionCard-time">{question.createdAt}</p>
                 </div>
                 <div className="ParticipantQuestionCard-right">
-                    <button>
+                    {canVote && <button>
                         좋아요
-                    </button>
+                    </button>}
                 </div>
 
             </div>
