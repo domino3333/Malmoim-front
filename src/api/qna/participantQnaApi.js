@@ -55,3 +55,17 @@ export const getQuestionList = async (roomNo) =>{
 
     return response.data;
 }
+
+// 질문 리스트를 받아오는 api
+export const voteQuestion = async (roomNo) =>{
+
+    const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
+
+    const response = await axios.post(`${API_BASE_URL}${prefix}/vote-question`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+    return response.data;
+}
