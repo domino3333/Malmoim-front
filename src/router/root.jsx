@@ -70,7 +70,7 @@ const root = createBrowserRouter([
     ),
   },
   {
-    path: '/qna/:no/host',
+    path: '/qna/:roomNo/host',
     element: (
       <Suspense fallback={<Loading />}>
         <QnaHostPage/>
@@ -78,7 +78,7 @@ const root = createBrowserRouter([
     ),
   },
   {
-    path: '/qna/:no',
+    path: '/qna/:roomNo',
     element: (
       <Suspense fallback={<Loading />}>
         <QnaParticipantPage/>
