@@ -17,10 +17,10 @@ const QnaHostPage = () => {
 
 
     const nav = useNavigate();
-    const { no } = useParams();
+    const { roomNo } = useParams();
     const [questions, setQuestions] = useState([]);
     const [roomInfo, setRoomInfo] = useState({
-        no: 0,
+        roomNo: 0,
         hostNo: 0,
         title: "",
         code: "",
@@ -59,7 +59,7 @@ const QnaHostPage = () => {
     // 질문 접수 시작 요청 및 타이머·방 상태 갱신
     const handleStartQuestionPhase = async (seconds) => {
         // timer start api 호출
-        const data = await startQuestionPhase(roomInfo.no, seconds);
+        const data = await startQuestionPhase(roomInfo.roomNo, seconds);
         setTimerInfo(data);
         setRoomInfo(prev => ({
             ...prev,
@@ -70,7 +70,7 @@ const QnaHostPage = () => {
     //투표 시작 요청
     const handleStartVotingPhase = async (seconds) => {
 
-        const data = await startVotingPhase(roomInfo.no, seconds);
+        const data = await startVotingPhase(roomInfo.roomNo, seconds);
         setTimerInfo(data);
         setRoomInfo(prev => ({
             ...prev,
@@ -88,20 +88,20 @@ const QnaHostPage = () => {
 
             clientRef.current = connectedClient;
 
-            connectedClient.subscribe(`/topic/qna/${no}`, (frame) => {
+            connectedClient.subscribe(`/topic/qna/${roomNo}`, (frame) => {
                 const data = JSON.parse(frame.body);
                 setQuestions(prev => mergeQuestionLists(prev, [data]));
             });
 
-            connectedClient.subscribe(`/topic/qna/${no}/participants`, (frame) => {
+            connectedClient.subscribe(`/topic/qna/${roomNo}/participants`, (frame) => {
                 const data = JSON.parse(frame.body);
                 setParticipantList(data);
             });
 
-            const questionListSnapshot = await getQuestionList(no);
+            const questionListSnapshot = await getQuestionList(roomNo);
             setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
 
-            const particiapantListSnapshot = await getParticipantList(no);
+            const particiapantListSnapshot = await getParticipantList(roomNo);
             setParticipantList(particiapantListSnapshot);
 
 
@@ -109,21 +109,21 @@ const QnaHostPage = () => {
 
         return () => client.deactivate();
 
-    }, [no])
+    }, [roomNo])
 
     // 방 하나의 정보를 불러오는 http useEffect
     useEffect(() => {
 
         // 호스트가 소유한 현재 Q&A 방 정보 조회
         const fetchRoomInfo = async () => {
-            const data = await getHostQnaRoom(no);
+            const data = await getHostQnaRoom(roomNo);
             setRoomInfo(data);
         }
 
         fetchRoomInfo();
 
 
-    }, [no])
+    }, [roomNo])
 
 
     return (<>

@@ -25,7 +25,7 @@ const QnaParticipantPage = () => {
 
     const nav = useNavigate();
 
-    const { no } = useParams();
+    const { roomNo } = useParams();
 
     //참여자 본인 1명의 info
     const [participantInfo, setParticipantInfo] = useState({
@@ -78,7 +78,7 @@ const QnaParticipantPage = () => {
         }
 
         publishQuestion(client, {
-            roomNo: Number(no),
+            roomNo: Number(roomNo),
             question: question
         });
     }
@@ -115,7 +115,7 @@ const QnaParticipantPage = () => {
     useEffect(() => {
 
         const token = sessionStorage.getItem(
-            `malmoim:participant-session:${no}`
+            `malmoim:participant-session:${roomNo}`
         );
 
         const client = connectQnaSocket(token, async (connectedClient) => {
@@ -123,7 +123,7 @@ const QnaParticipantPage = () => {
 
 
             // 방 상태와 타이머 구독
-            connectedClient.subscribe(`/topic/qna/${no}/phase`,
+            connectedClient.subscribe(`/topic/qna/${roomNo}/phase`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
@@ -137,7 +137,7 @@ const QnaParticipantPage = () => {
             )
 
             // 다른 참여자의 질문 구독
-            connectedClient.subscribe(`/topic/qna/${no}`,
+            connectedClient.subscribe(`/topic/qna/${roomNo}`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
@@ -146,7 +146,7 @@ const QnaParticipantPage = () => {
             )
 
             // 참여자 리스트 구독
-            connectedClient.subscribe(`/topic/qna/${no}/participants`,
+            connectedClient.subscribe(`/topic/qna/${roomNo}/participants`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
@@ -155,10 +155,10 @@ const QnaParticipantPage = () => {
             )
 
 
-            const questionListSnapshot = await getQuestionList(no);
+            const questionListSnapshot = await getQuestionList(roomNo);
             setQuestions(prev => mergeQuestionLists(questionListSnapshot,prev));
 
-            const particiapantListSnapshot = await getParticipantList(no);
+            const particiapantListSnapshot = await getParticipantList(roomNo);
             setParticipantList(particiapantListSnapshot);
 
             
@@ -167,7 +167,7 @@ const QnaParticipantPage = () => {
 
         return () => client.deactivate();
 
-    }, [no])
+    }, [roomNo])
 
 
     // roomInfo 받아오는 useEffect
@@ -177,26 +177,26 @@ const QnaParticipantPage = () => {
         // 여기선 question시작/종료 시간을 안 줌
         const fetchRoomInfo = async () => {
 
-            const data = await getParticipantQnaRoom(no);
+            const data = await getParticipantQnaRoom(roomNo);
             setRoomInfo(data);
         }
 
         fetchRoomInfo();
 
-    }, [no])
+    }, [roomNo])
 
 
     //참여자 정보(참여자 본인1명)를 받아오는 useEffect(http스냅샷)
     useEffect(() => {
 
         const fetchParticipantInfo = async () => {
-            const data = await getParticipantInfo(no);
+            const data = await getParticipantInfo(roomNo);
             setParticipantInfo(data);
         }
 
         fetchParticipantInfo();
 
-    }, [])
+    }, [roomNo])
 
 
     // 말모임 로고 클릭 시 메인 페이지 이동

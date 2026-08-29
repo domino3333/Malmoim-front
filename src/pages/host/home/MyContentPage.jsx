@@ -45,8 +45,8 @@ const MyContentPage = () => {
 
 
     // 선택한 방의 호스트 Q&A 페이지 이동
-    const handleRoomRowClick = (no)=>{
-        nav(`/qna/${no}/host`);
+    const handleRoomRowClick = (roomNo)=>{
+        nav(`/qna/${roomNo}/host`);
 
     }
     // 이전 페이지 block의 첫 페이지 이동

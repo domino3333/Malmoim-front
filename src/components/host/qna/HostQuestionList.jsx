@@ -32,7 +32,7 @@ const HostQuestionList = ({questions}) => {
             </div>
 
             <div className="qnaList-main-div">
-                {questions.map((item)=><HostQuestionCard key={item.no} question={item} />)}
+                {questions.map((question)=><HostQuestionCard key={question.questionNo} question={question} />)}
 
             </div>
 

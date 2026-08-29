@@ -19,6 +19,7 @@ const MyRoomsTable = ({ rooms, onRoomClick }) => {
             </thead>
 
             <tbody>
+                {/* room.no는 room 테이블 PK */}
                 {rooms.map((room) =>
                     <tr key={room.no} className="div-myRoomsTable-tr"
                         onClick={()=>onRoomClick(room.no)}>
