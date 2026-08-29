@@ -1,12 +1,13 @@
 
+import { voteQuestion } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/ParticipantVotingOpenView.css"
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
-const ParticipantVotingOpenView = ({ questions }) => {
+const ParticipantVotingOpenView = ({ questions, roomInfo }) => {
 
 
 
-    const handleVote = async (questionNo) => {
-        await voteQuestion(questionNo);
+    const handleVote = async (questionNo,roomNo) => {
+        await voteQuestion(questionNo,roomNo);
 
     }
 
@@ -21,6 +22,7 @@ const ParticipantVotingOpenView = ({ questions }) => {
             </div>
             <div className="ParticipantVotingOpenView-bottom-panel">
                 <ParticipantQuestionCard
+                    roomInfo={roomInfo}
                     questions={questions}
                     canVote={true}
                     onVote={handleVote}
