@@ -4,4 +4,6 @@
 .ParticipantQuestionCard {
     border: 1px solid rgb(242, 237, 237);
     border-bottom: none;
+    display: flex;
+    justify-content: space-between;
 }
