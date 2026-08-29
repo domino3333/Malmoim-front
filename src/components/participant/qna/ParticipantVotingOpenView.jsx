@@ -13,7 +13,7 @@ const ParticipantVotingOpenView = ({ questions }) => {
                     공감하는 질문에 좋아요를 눌러주세요.
                 </div>
                 <div className="ParticipantVotingOpenView-bottom-panel">
-                    <ParticipantQuestionCard questions={questions}/>
+                    <ParticipantQuestionCard questions={questions} canVote={true}/>
                 </div>
             </div>
     </>)
