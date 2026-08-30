@@ -1,0 +1,32 @@
+
+/*투표 오픈 뷰의 자식 div*/
+.ParticipantAnsweringView-left-panel{
+
+    border: 1px solid green;
+    width: 700px;
+    height: 90vh;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 질문 종료 view 최상위 부모 */
+.ParticipantAnsweringView-parent-panel {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid green;
+    width: 700px;
+    margin-top: 20px;
+}
+
+/* 상단 텍스트 div */
+.ParticipantAnsweringView-top-panel {
+    text-align: center;
+}
+
+/* 질문 목록 감싸는 div */
+.ParticipantAnsweringView-bottom-panel {
+    max-height: 500px;
+    overflow-y: auto;
+}
