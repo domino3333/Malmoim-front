@@ -1,6 +1,6 @@
 
 
-/*투표 오픈 뷰의 자식 div*/
+/*투표 closed 뷰의 자식 div*/
 .ParticipantVotingClosedView-left-panel{
 
     border: 1px solid green;
@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-/* 질문 종료 view 최상위 부모 */
+/* 투표 closed view 최상위 부모 */
 .ParticipantVotingClosedView-parent-panel {
     display: flex;
     flex-direction: column;
