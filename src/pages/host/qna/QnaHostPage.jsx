@@ -8,7 +8,7 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, getQuestionList, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/upsertQuestions";
 
@@ -76,6 +76,11 @@ const QnaHostPage = () => {
             ...prev,
             status: data.status
         }))
+    }
+
+    //결과 공개 화면 phase로 바꾸도록 요청
+    const handleAnsweringPhase = async () => {
+        const data = await startAnsweringPhase();
     }
 
 

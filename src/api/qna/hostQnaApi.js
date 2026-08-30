@@ -81,7 +81,7 @@ export const getParticipantList = async (roomNo) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/participant-list`,{
+    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/participant-list`, {
         headers: {
             Authorization: `Bearer ${token}`
 
@@ -89,7 +89,7 @@ export const getParticipantList = async (roomNo) => {
     })
 
     return response.data;
-    
+
 }
 
 
@@ -98,7 +98,7 @@ export const getQuestionList = async (roomNo) => {
 
     const token = sessionStorage.getItem('accessToken');
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/question-list`,{
+    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/question-list`, {
         headers: {
             Authorization: `Bearer ${token}`
 
@@ -106,5 +106,21 @@ export const getQuestionList = async (roomNo) => {
     })
 
     return response.data;
-    
+
+}
+
+// 답변 phase로 진입
+export const startAnsweringPhase = async (roomNo) => {
+
+    const token = sessionStorage.getItem('accessToken');
+
+    const response = await axios.post(`${API_BASE_URL}${prefix}/${roomNo}/start-answering`, null, {
+        headers: {
+            Authorization: `Bearer ${token}`
+
+        }
+    })
+
+    return response.data;
+
 }

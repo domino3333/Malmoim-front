@@ -11,6 +11,7 @@ const ParticipantAnsweringView = () => {
                 호스트가 질문에 답변할 차례예요.
             </div>
             <div className="ParticipantAnsweringView-bottom-panel">
+                바텀패널
             </div>
         </div>
 
