@@ -80,7 +80,12 @@ const QnaHostPage = () => {
 
     //결과 공개 화면 phase로 바꾸도록 요청
     const handleAnsweringPhase = async () => {
-        const data = await startAnsweringPhase();
+        const data = await startAnsweringPhase(roomInfo.roomNo);
+        setRoomInfo(prev => ({
+            ...prev,
+            status: data.status
+
+        }))
     }
 
 
@@ -142,7 +147,7 @@ const QnaHostPage = () => {
                 <QnaControlPanel
                     onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
                     onOpenVotingTimerModal={() => setIsVotingTimerOpen(true)}
-                    onClickResultRealizing={()=> handleAnsweringPhase()}
+                    onClickResultRealizing={() => handleAnsweringPhase()}
 
                 />
                 <div className="qna-host-body-top">
