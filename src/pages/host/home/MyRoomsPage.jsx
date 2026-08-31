@@ -2,13 +2,13 @@
 import { useNavigate } from "react-router-dom";
 import HostHomeHeader from "../../../components/host/home/HostHomeHeader";
 import HostHomeSidebar from "../../../components/host/home/HostHomeSidebar";
-import "../../../css/host/home/MyContentPage.css";
+import "../../../css/host/home/MyRoomsPage.css";
 import { useEffect, useState } from "react";
 import { getMyRooms } from "../../../api/room/roomApi";
 import { Plus, Search, X } from "lucide-react";
 import MyRoomsTable from "../../../components/host/home/table/MyRoomsTable";
 
-const MyContentPage = () => {
+const MyRoomsPage = () => {
 
 
 
@@ -91,9 +91,9 @@ const MyContentPage = () => {
         <HostHomeHeader />
 
         {/*대쉬보드 전체를 감싸는 body div*/}
-        <div className="div-MyContentPage-body">
+        <div className="div-MyRoomsPage-body">
             <HostHomeSidebar/>
-            <div className="div-MyContentPage-content-list">
+            <div className="div-MyRoomsPage-content-list">
                 <div className="div-content">
 
                     <div className="div-content-head-main">
@@ -168,4 +168,4 @@ const MyContentPage = () => {
     </>)
 }
 
-export default MyContentPage;
+export default MyRoomsPage;

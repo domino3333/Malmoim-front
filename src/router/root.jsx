@@ -1,11 +1,11 @@
 ﻿import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import Loading from '../pages/public/Loading'
+import LoadingFallback from '../pages/public/LoadingFallback'
 import LoginPage from '../pages/public/LoginPage'
 import SignUpPage from '../pages/public/SignUpPage'
 import HostHomePage from '../pages/host/home/HostHomePage'
 import CreatePage from '../pages/host/home/CreatePage'
-import MyContentPage from '../pages/host/home/MyContentPage'
+import MyRoomsPage from '../pages/host/home/MyRoomsPage'
 import CreateDetailPage from '../pages/host/home/CreateDetailPage'
 import QnaHostPage from '../pages/host/qna/QnaHostPage'
 import QnaParticipantPage from '../pages/participant/qna/QnaParticipantPage'
@@ -16,7 +16,7 @@ const root = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <MainPage />
       </Suspense>
     ),
@@ -24,7 +24,7 @@ const root = createBrowserRouter([
   {
     path: '/login',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <LoginPage />
       </Suspense>
     ),
@@ -32,7 +32,7 @@ const root = createBrowserRouter([
   {
     path: '/signUp',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <SignUpPage />
       </Suspense>
     ),
@@ -40,7 +40,7 @@ const root = createBrowserRouter([
   {
     path: '/dashboard',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <HostHomePage />
       </Suspense>
     ),
@@ -48,7 +48,7 @@ const root = createBrowserRouter([
   {
     path: '/create',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <CreatePage/>
       </Suspense>
     ),
@@ -56,15 +56,15 @@ const root = createBrowserRouter([
   {
     path: '/myContent',
     element: (
-      <Suspense fallback={<Loading />}>
-        <MyContentPage/>
+      <Suspense fallback={<LoadingFallback />}>
+        <MyRoomsPage/>
       </Suspense>
     ),
   },
   {
     path: '/createDetail',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <CreateDetailPage/>
       </Suspense>
     ),
@@ -72,7 +72,7 @@ const root = createBrowserRouter([
   {
     path: '/qna/:roomNo/host',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <QnaHostPage/>
       </Suspense>
     ),
@@ -80,7 +80,7 @@ const root = createBrowserRouter([
   {
     path: '/qna/:roomNo',
     element: (
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingFallback />}>
         <QnaParticipantPage/>
       </Suspense>
     ),

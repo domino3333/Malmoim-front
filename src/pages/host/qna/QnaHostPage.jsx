@@ -6,11 +6,11 @@ import RoomSubheader from "../../../components/common/room/RoomSubheader";
 import "../../../css/host/qna/QnaHostPage.css"
 import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPanel";
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
-import QnaParticipantPanel from "../../../components/host/qna/QnaParticipantPanel";
+import HostParticipantPanel from "../../../components/host/qna/HostParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
 import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
-import { mergeQuestionLists } from "../../../utils/qna/upsertQuestions";
+import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 
 const QnaHostPage = () => {
 
@@ -152,7 +152,7 @@ const QnaHostPage = () => {
                 />
                 <div className="qna-host-body-top">
                     <HostQuestionList questions={questions} />
-                    <QnaParticipantPanel participantList={participantList} />
+                    <HostParticipantPanel participantList={participantList} />
                 </div>
 
             </div>

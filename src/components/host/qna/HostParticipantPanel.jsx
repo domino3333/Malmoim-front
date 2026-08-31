@@ -1,16 +1,16 @@
 
 
-import "../../../css/host/qna/QnaParticipantPanel.css"
+import "../../../css/host/qna/HostParticipantPanel.css"
 
-const QnaParticipantPanel = ({participantList})=>{
+const HostParticipantPanel = ({participantList})=>{
 
     return(<>
 
-        <div className="QnaParticipantPanel-main-div">
-            <div className="QnaParticipantPanel-header">
+        <div className="HostParticipantPanel-main-div">
+            <div className="HostParticipantPanel-header">
                 참여자 수 {participantList.participantCount}
             </div>
-            <div className="QnaParticipantPanel-body">
+            <div className="HostParticipantPanel-body">
                 {participantList.participants.map((participant)=>
                     <p key={participant.participantNo}>{participant.nickname}</p>
                 )}
@@ -22,4 +22,4 @@ const QnaParticipantPanel = ({participantList})=>{
     </>)
 }
 
-export default QnaParticipantPanel;
+export default HostParticipantPanel;

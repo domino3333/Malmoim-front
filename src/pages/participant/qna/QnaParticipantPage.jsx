@@ -11,12 +11,12 @@ import ParticipantQuestionOpenView from "../../../components/participant/qna/Par
 import ParticipantVotingOpenView from "../../../components/participant/qna/ParticipantVotingOpenView";
 import ParticipantAnsweringView from "../../../components/participant/qna/ParticipantAnsweringView";
 import ParticipantFinishedView from "../../../components/participant/qna/ParticipantFinishedView";
-import MyInfoPanel from "../../../components/participant/qna/MyInfoPanel";
+import ParticipantInfoPanel from "../../../components/participant/qna/ParticipantInfoPanel";
 import ParticipantListPanel from "../../../components/participant/qna/ParticipantListPanel";
 import TimerPanel from "../../../components/participant/qna/TimerPanel";
 import StatusPanel from "../../../components/participant/qna/StatusPanel";
 import { useTimer } from "react-timer-hook";
-import { mergeQuestionLists } from "../../../utils/qna/upsertQuestions";
+import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import ParticipantQuestionClosedView from "../../../components/participant/qna/ParticipantQuestionClosedView";
 import ParticipantVotingClosedView from "../../../components/participant/qna/ParticipantVotingClosedView";
 
@@ -224,7 +224,7 @@ const QnaParticipantPage = () => {
                     {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} onQuestionSubmit={handleQuestionSubmit} />}
                 </div>
                 <div className="phaseComponent-right-panel">
-                    <MyInfoPanel participantInfo={participantInfo} />
+                    <ParticipantInfoPanel participantInfo={participantInfo} />
                     <ParticipantListPanel participantList={participantList}/>
                 </div>
 

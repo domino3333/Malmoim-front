@@ -1,10 +1,10 @@
 /*전체를 아우르는 main div*/
-.QnaParticipantPanel-main-div {
+.HostParticipantPanel-main-div {
     width: 30%;
     border: 1px solid red;
 }
 
-.QnaParticipantPanel-header{
+.HostParticipantPanel-header{
     border: 1px solid green;
     background-color: rgb(242, 237, 237);
 }
