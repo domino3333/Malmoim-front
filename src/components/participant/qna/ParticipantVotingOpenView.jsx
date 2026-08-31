@@ -1,5 +1,5 @@
 
-import { voteQuestion } from "../../../api/qna/participantQnaApi";
+import { castVote } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/ParticipantVotingOpenView.css"
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
 const ParticipantVotingOpenView = ({ questions, roomInfo }) => {
@@ -7,7 +7,7 @@ const ParticipantVotingOpenView = ({ questions, roomInfo }) => {
 
 
     const handleVote = async (questionNo,roomNo) => {
-        await voteQuestion(questionNo,roomNo);
+        await castVote(questionNo,roomNo);
 
     }
 

@@ -57,7 +57,7 @@ export const getQuestionList = async (roomNo) =>{
 }
 
 // 질문 리스트를 받아오는 api
-export const voteQuestion = async (questionNo,roomNo) =>{
+export const castVote = async (questionNo,roomNo) =>{
 
     const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
 
