@@ -2,7 +2,7 @@
 import { useTimer } from "react-timer-hook";
 import "../../../css/host/qna/QnaRoomOverviewPanel.css"
 import { useEffect } from "react";
-import { updateRoomStatus } from "../../../api/qna/hostQnaApi";
+import { updateQnaPhase } from "../../../api/qna/hostQnaApi";
 
 
 const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
@@ -31,7 +31,7 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
                 return;
             }
 
-            const data = await updateRoomStatus(roomInfo.roomNo, nextStatus);
+            const data = await updateQnaPhase(roomInfo.roomNo, nextStatus);
             setRoomInfo(prev => ({
                 ...prev,
                 status: data.status

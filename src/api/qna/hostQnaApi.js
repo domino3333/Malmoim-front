@@ -61,7 +61,7 @@ export const startVotingPhase = async (roomNo, durationSeconds) => {
 }
 
 // 방 상태 업데이트 api
-export const updateRoomStatus = async (roomNo, status) => {
+export const updateQnaPhase = async (roomNo, status) => {
 
     const token = sessionStorage.getItem('accessToken');
 
