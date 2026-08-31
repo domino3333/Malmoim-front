@@ -147,7 +147,7 @@ const QnaHostPage = () => {
                 <QnaControlPanel
                     onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
                     onOpenVotingTimerModal={() => setIsVotingTimerOpen(true)}
-                    onClickResultRealizing={() => handleAnsweringPhase()}
+                    onRevealResults={() => handleAnsweringPhase()}
 
                 />
                 <div className="qna-host-body-top">
