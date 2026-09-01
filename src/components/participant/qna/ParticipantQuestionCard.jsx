@@ -1,6 +1,6 @@
 import "../../../css/participant/qna/ParticipantQuestionCard.css";
 
-const ParticipantQuestionCard = ({ canVote = false, isVisibleText = false, questions,onVote,roomInfo }) => {
+const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, questions,onVote,roomInfo }) => {
 
     return (<>
 
@@ -16,7 +16,7 @@ const ParticipantQuestionCard = ({ canVote = false, isVisibleText = false, quest
                     {canVote && <button onClick={()=>onVote(question.questionNo,roomInfo.roomNo)}>
                         좋아요
                     </button>}
-                    {isVisibleText && <p>좋아요:{question.voteCount}</p>}
+                    {showVoteCount && <p>좋아요:{question.voteCount}</p>}
                     
                 </div>
 
