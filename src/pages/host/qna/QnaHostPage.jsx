@@ -86,7 +86,7 @@ const QnaHostPage = () => {
             status: data.qnaPhaseResponse.status
 
         }))
-        setQuestions(data.voteResultResponseList);
+        setQuestions(data.questions);
     }
 
 
