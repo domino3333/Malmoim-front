@@ -1,7 +1,8 @@
 
 import "../../../css/participant/qna/ParticipantAnsweringView.css"
+import ParticipantQuestionCard from "./ParticipantQuestionCard";
 
-const ParticipantAnsweringView = () => {
+const ParticipantAnsweringView = ({questions}) => {
 
     return (<>
         <div className="ParticipantAnsweringView-parent-panel">
@@ -11,7 +12,7 @@ const ParticipantAnsweringView = () => {
                 호스트가 질문에 답변할 차례예요.
             </div>
             <div className="ParticipantAnsweringView-bottom-panel">
-                바텀패널
+                <ParticipantQuestionCard questions={questions}/>
             </div>
         </div>
 
