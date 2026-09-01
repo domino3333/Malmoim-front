@@ -83,7 +83,7 @@ const QnaHostPage = () => {
         const data = await startAnsweringPhase(roomInfo.roomNo);
         setRoomInfo(prev => ({
             ...prev,
-            status: data.status
+            status: data.qnaPhaseResponse.status
 
         }))
     }
