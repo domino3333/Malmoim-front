@@ -13,7 +13,7 @@ const ParticipantVotingClosedView = ({questions}) => {
                     호스트가 여러분들의 질문에 대답할 차례예요
                 </div>
                 <div className="ParticipantVotingClosedView-bottom-panel">
-                    <ParticipantQuestionCard questions={questions}/>
+                    <ParticipantQuestionCard questions={questions} isVisibleText={true}/>
                 </div>
             </div>
     </>)
