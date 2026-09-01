@@ -154,6 +154,15 @@ const QnaParticipantPage = () => {
                 }
             )
 
+            // 참여자 리스트 구독
+            connectedClient.subscribe(`/topic/qna/${roomNo}/result`,
+                (frame) => {
+                    const data = JSON.parse(frame.body);
+
+                    setQuestions(data);
+                }
+            )
+
 
             const questionListSnapshot = await getQuestionList(roomNo);
             setQuestions(prev => mergeQuestionLists(questionListSnapshot,prev));
