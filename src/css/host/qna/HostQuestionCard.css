@@ -1,7 +1,6 @@
 /* 전체를 아우르는 main div*/
 .HostQuestionCard-main-div {
 
-    border: 1px solid #90653E;
     border-radius: 5px;
     margin: 7px;
 }
@@ -13,6 +12,8 @@
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 /*닉네임 div*/
@@ -22,11 +23,19 @@
     
 }
 
+/*투표 div*/
+.HostQuestionCard-vote-div {
+    font-size: 0.88em;
+    color:white;
+    
+}
+
 /*질문과 시간을 감싸는 div*/
 .HostQuestionCard-body-div {
     background-color: white;
-    border: 1px solid green;
-    border-radius: 5px;
+    border: 1px solid #90653E;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /* 질문 텍스트 div */
