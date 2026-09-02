@@ -10,7 +10,7 @@ const ParticipantVotingClosedView = ({questions}) => {
                 <div className="ParticipantVotingClosedView-top-panel">
                     투표가 종료되었어요.
                     <br />
-                    호스트가 결과를 공개하는 것을 기다려주세요.
+                    호스트가 결과를 공개하기까지 기다려주세요.
                 </div>
                 <div className="ParticipantVotingClosedView-bottom-panel">
                     <ParticipantQuestionCard questions={questions}/>
