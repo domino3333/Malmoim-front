@@ -9,15 +9,23 @@
 /*닉네임과 추천수를 감싸는 div*/
 .HostQuestionCard-header-div {
 
+    background-color: #90653E;
     display: flex;
     justify-content: space-between;
     padding: 5px;
 }
 
+/*닉네임 div*/
+.HostQuestionCard-nickname-div {
+    font-size: 0.88em;
+    color:white;
+    
+}
+
 /*질문과 시간을 감싸는 div*/
-.HostQuestionCard-body-div{
+.HostQuestionCard-body-div {
     background-color: white;
-    border:1px solid green;
+    border: 1px solid green;
     border-radius: 5px;
 }
 
