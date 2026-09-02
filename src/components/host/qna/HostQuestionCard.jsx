@@ -20,7 +20,7 @@ const HostQuestionCard = ({question})=>{
                     질문: {question.content}
                 </div>
                 <div className="HostQuestionCard-body-time">
-                    시간: {question.createdAt}
+                    {question.createdAt}
                 </div>
             </div>
 
