@@ -5,6 +5,8 @@
 .HostQuestionCard-main-div{
 
     border:1px solid #90653E;
+    border-radius: 5px;
+    margin:7px;
 }
 
 /*닉네임과 추천수를 감싸는 div*/
