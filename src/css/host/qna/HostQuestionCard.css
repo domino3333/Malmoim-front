@@ -8,7 +8,7 @@
 /*닉네임과 추천수를 감싸는 div*/
 .HostQuestionCard-header-div {
 
-    background-color: #90653E;
+    background-color: #926e4c;
     display: flex;
     justify-content: space-between;
     padding: 5px;
@@ -47,4 +47,5 @@
 /* 시간 텍스트 div */
 .HostQuestionCard-body-time {
     padding: 5px;
+    font-size: 0.8em;
 }
