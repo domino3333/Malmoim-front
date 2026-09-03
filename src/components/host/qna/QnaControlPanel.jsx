@@ -6,18 +6,29 @@ const QnaControlPanel = ({ onOpenQuestionTimerModal, onOpenVotingTimerModal, onR
 
     return (<>
 
-        <button onClick={onOpenQuestionTimerModal}>
-            질문 시작
-        </button>
-        <button onClick={onOpenVotingTimerModal}>
-            추천 시작
-        </button>
-        <button onClick={onRevealResults}>
-            결과 공개
-        </button>
-        <button>
-            질문 종료
-        </button>
+
+        <div className="QnaControlPanel-parent-div">
+            <button
+                className="QnaControlPanel-btn-1"
+                onClick={onOpenQuestionTimerModal}>
+                질문 시작
+            </button >
+            <button
+                className="QnaControlPanel-btn-1"
+                onClick={onOpenVotingTimerModal}>
+                추천 시작
+            </button>
+            <button
+                className="QnaControlPanel-btn-1"
+                onClick={onRevealResults}>
+                결과 공개
+            </button>
+            <button
+                className="QnaControlPanel-btn-1">
+                질문 종료
+            </button>
+
+        </div>
     </>)
 }
 
