@@ -129,7 +129,7 @@ const QnaParticipantPage = () => {
 
                     setRoomInfo(prev => ({
                         ...prev,
-                        status: data.status
+                        status: data.qnaPhaseResponse.status
                     }))
 
                     setTimerInfo(data);
