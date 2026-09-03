@@ -1,3 +1,5 @@
+
+/*네 개의 버튼을 감싸는 div*/
 .QnaControlPanel-parent-div {
     display: flex;
     flex-direction: row;
@@ -6,15 +8,19 @@
 
 }
 
+/* 네 개의 버튼*/
 .QnaControlPanel-btn-1 {
     background-color: #90653E;
     padding:10px;
     border: none;
     border-radius: 5px;
     color: white;
+    transition: transform 0.08s, box-shadow 0.08s;
     
 }
 
+/* 버튼에 마우스 올릴 시 효과*/
 .QnaControlPanel-btn-1:hover{
     transform: translateY(-2px);
 }
+
