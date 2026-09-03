@@ -1,2 +1,15 @@
+.QnaControlPanel-parent-div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px;
 
+}
 
+.QnaControlPanel-btn-1 {
+    background-color: #90653E;
+    padding:10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
