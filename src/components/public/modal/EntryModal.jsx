@@ -3,11 +3,11 @@ import "../../../css/public/modal/EntryModal.css"
 import { useState } from "react";
 
 
-const EntryModal = ({ onNext,roomInfo, show, onHide }) => {
+const EntryModal = ({ onNext,roomInfo, show, onHide,setPassword }) => {
 
     //roominfo에 roomNo, title, code ,hasPassword 내려옴
 
-    const [password,setPassword] =useState("");
+    
 
     // 사용자가 입력한 방 비밀번호의 상태 반영
     const handlePasswordChange = (e)=>{
