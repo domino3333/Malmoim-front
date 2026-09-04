@@ -60,7 +60,7 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
                     입장 가능 인원: {roomInfo.capacity}
                 </div>
                 <div className="room-info-2">
-                    비밀번호: {roomInfo.password || "없음"}
+                    비밀번호: {/*roomInfo.password || "없음"*/}
                 </div>
                 <div className="room-info-3">
                     상태: {roomInfo.status}

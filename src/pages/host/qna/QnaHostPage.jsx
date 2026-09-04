@@ -25,7 +25,6 @@ const QnaHostPage = () => {
         title: "",
         code: "",
         capacity: 0,
-        password: "",
         createdAt: "",
         type: "",
         visibility: "",
