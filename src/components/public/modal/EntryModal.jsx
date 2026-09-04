@@ -3,7 +3,7 @@ import "../../../css/public/modal/EntryModal.css"
 import { useState } from "react";
 
 
-const EntryModal = ({ onNext,roomInfo, show, onHide,setPassword }) => {
+const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword }) => {
 
     //roominfo에 roomNo, title, code ,hasPassword 내려옴
 
