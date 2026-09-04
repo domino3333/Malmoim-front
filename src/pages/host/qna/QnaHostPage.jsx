@@ -27,10 +27,11 @@ const QnaHostPage = () => {
         capacity: 0,
         password: "",
         createdAt: "",
+        type: "",
         visibility: "",
         status: "",
-        type: ""
-
+        phaseStartedAt:"",
+        phaseEndedAt:"",
     });
 
     const [participantList, setParticipantList] = useState({
