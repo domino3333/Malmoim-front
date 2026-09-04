@@ -30,14 +30,14 @@ export const checkRoomPassword = async (roomNo, password) => {
 
 // 입장하기 클릭 시 닉네임을 보내는 함수
 // 참가자 정보 저장 및 방 입장 결과 반환
-export const joinRoom = async (roomNo, nickname) => {
+export const joinRoom = async (roomNo, nickname, password) => {
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/insert-participant`, { roomNo, nickname },
+    const response = await axios.post(`${API_BASE_URL}${prefix}/insert-participant`, { roomNo, nickname, password },
         null
     )
 
     // 서버로부터 받는 참여자 토큰 저장
-    sessionStorage.setItem(`malmoim:participant-session:${roomNo}`,response.data.participantToken);
+    sessionStorage.setItem(`malmoim:participant-session:${roomNo}`, response.data.participantToken);
 
 
     return response.data;
