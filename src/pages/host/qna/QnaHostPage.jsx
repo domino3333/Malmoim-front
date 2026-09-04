@@ -130,6 +130,11 @@ const QnaHostPage = () => {
         const fetchRoomInfo = async () => {
             const data = await getHostQnaRoom(roomNo);
             setRoomInfo(data);
+            setTimerInfo(prev=>({...prev,
+                phaseStartedAt:data.phaseStartedAt,
+                phaseEndedAt:data.phaseEndedAt
+
+            }));
         }
 
         fetchRoomInfo();
