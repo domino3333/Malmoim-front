@@ -12,6 +12,7 @@ const HomeEntryPanel = () => {
 
     const [code, setCode] = useState("");
     const [roomInfo, setRoomInfo] = useState(null);
+    const [password,setPassword] =useState("");
 
     const [entryModalShow, setEntryModalShow] = useState(false);
     const [nicknameModalShow, setNicknameModalShow] = useState(false);
@@ -60,7 +61,7 @@ const HomeEntryPanel = () => {
     // 참가자 저장 및 Q&A 참여자 페이지 이동
     const handleJoinRoom = async (roomNo,nickname)=>{
         
-        const data = await joinRoom(roomNo,nickname);
+        const data = await joinRoom(roomNo,nickname,password);
         //todo 참여자 토큰 받기
         
         nav(`/qna/${roomNo}`);
@@ -98,7 +99,7 @@ const HomeEntryPanel = () => {
         </div>
 
 
-        {roomInfo && <EntryModal onNext={handleEntryNext} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
+        {roomInfo && <EntryModal onNext={handleEntryNext} setPassword={setPassword}roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
 
         {roomInfo && <NicknameModal onJoin={handleJoinRoom} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
     </>)
