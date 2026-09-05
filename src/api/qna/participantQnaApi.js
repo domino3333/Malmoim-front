@@ -7,8 +7,13 @@ const prefix = "/api/participant/qna";
 // 참가자 화면에 필요한 Q&A 방 정보 조회
 export const getParticipantQnaRoom = async (roomNo) => {
 
+    const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/participant`, null)
+    const response = await axios.get(`${API_BASE_URL}${prefix}/${roomNo}/participant`, {
+        headers:{
+            Authorization:`Bearer ${token}`
+        }
+    })
 
     return response.data;
 }
@@ -29,7 +34,7 @@ export const getParticipantInfo = async (roomNo) => {
 
 
 // 참여자 리스트를 받아오는 api
-export const getParticipantList = async (roomNo) =>{
+export const getParticipantList = async (roomNo) => {
 
     const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
 
@@ -43,7 +48,7 @@ export const getParticipantList = async (roomNo) =>{
 }
 
 // 질문 리스트를 받아오는 api
-export const getQuestionList = async (roomNo) =>{
+export const getQuestionList = async (roomNo) => {
 
     const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
 
@@ -57,11 +62,11 @@ export const getQuestionList = async (roomNo) =>{
 }
 
 // 질문 리스트를 받아오는 api
-export const castVote = async (questionNo,roomNo) =>{
+export const castVote = async (questionNo, roomNo) => {
 
     const token = sessionStorage.getItem(`malmoim:participant-session:${roomNo}`);
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/${questionNo}/vote-question`,null, {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/${questionNo}/vote-question`, null, {
         headers: {
             Authorization: `Bearer ${token}`
         }
