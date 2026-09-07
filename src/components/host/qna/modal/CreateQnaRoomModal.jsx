@@ -48,7 +48,8 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
             ...input,
             isPrivate: isPrivate
         });
-
+        onHide();
+        setIsPrivate(false)
     }
 
 
@@ -75,11 +76,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
                     : null}
 
                 <button className="create-modal-create-button"
-                    onClick={async () => {
-                        await handleCreateRoom()
-                        onHide()
-                        setIsPrivate(false)
-                    }}>
+                    onClick={handleCreateRoom}>
                     만들기
                 </button>
             </div>
