@@ -5,7 +5,7 @@ import { useState } from "react"
 import { checkRoomCode, checkRoomPassword, joinRoom } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
 import NicknameModal from "./modal/NicknameModal"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const HomeEntryPanel = () => {
 
@@ -89,7 +89,7 @@ const HomeEntryPanel = () => {
                 <img src={home} alt="" />
                 <h2>방을 직접 만들기</h2>
                 <p className="panel-guide-text">로그인 후 방을 만들고 진행할 수 있어요</p>
-                <button className="host-start-button">
+                <button className="host-start-button" onClick={()=>nav("/login")}>
                     호스트로 시작
                 </button>
                 <div className="right-panel-advice-div">
