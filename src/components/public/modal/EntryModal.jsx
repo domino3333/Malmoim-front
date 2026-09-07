@@ -16,6 +16,9 @@ const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword }) =>
         
     }
 
+
+    
+
     return (<>
         <Modal show={show} contentClassName="Entry-modal">
                 <button className="entry-modal-x-button"

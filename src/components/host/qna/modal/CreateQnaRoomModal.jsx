@@ -34,6 +34,16 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
     // 입력한 방 정보 기반 Q&A 방 생성 요청
     const handleCreateRoom = async () => {
 
+        if (!input.title.trim()) {
+            window.alert('제목을 입력해주세요');
+            return;
+        }
+
+        if (!input.capacity.trim()) {
+            window.alert('정원을 입력해주세요');
+            return;
+        }
+
         await createQnaRoom({
             ...input,
             isPrivate: isPrivate

@@ -58,11 +58,10 @@ const HomeEntryPanel = () => {
     }
 
     // "입장하기" 버튼 클릭
-    // 참가자 저장 및 Q&A 참여자 페이지 이동
+    // 참가자 저장 및 Q&A 참여자 페이지 이동, 토큰 저장
     const handleJoinRoom = async (roomNo, nickname) => {
 
         const data = await joinRoom(roomNo, nickname, password);
-        //todo 참여자 토큰 받기
 
         nav(`/qna/${roomNo}`);
     }
