@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 import ParticipantQuestionToolbar from "./ParticipantQuestionToolbar";
-import ParticipantQuestionCard from "./ParticipantQuestionCard";
+import ParticipantQuestionList from "./ParticipantQuestionList";
 
 const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions }) => {
 
@@ -25,7 +25,7 @@ const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions }) => {
         <div className="Question-open-view-body">
             <div className="question-left-panel">
                 <ParticipantQuestionToolbar onOpenQuestionModal={() => setQuestionSubmitModalShow(true)} />
-                <ParticipantQuestionCard questions={questions}/>
+                <ParticipantQuestionList questions={questions}/>
             </div>
         </div>
 

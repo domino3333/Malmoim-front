@@ -1,13 +1,13 @@
 
 import { castVote } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/ParticipantVotingOpenView.css"
-import ParticipantQuestionCard from "./ParticipantQuestionCard";
+import ParticipantQuestionList from "./ParticipantQuestionList";
 const ParticipantVotingOpenView = ({ questions, roomInfo }) => {
 
 
 
-    const handleVote = async (questionNo,roomNo) => {
-        await castVote(questionNo,roomNo);
+    const handleVote = async (questionNo) => {
+        await castVote(questionNo, roomInfo.roomNo);
 
     }
 
@@ -21,8 +21,7 @@ const ParticipantVotingOpenView = ({ questions, roomInfo }) => {
                 공감하는 질문에 좋아요를 눌러주세요.
             </div>
             <div className="ParticipantVotingOpenView-bottom-panel">
-                <ParticipantQuestionCard
-                    roomInfo={roomInfo}
+                <ParticipantQuestionList
                     questions={questions}
                     canVote={true}
                     onVote={handleVote}

@@ -1,0 +1,11 @@
+.ParticipantQuestionList {
+    min-height: 0;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.ParticipantQuestionList-empty {
+    margin: 0;
+    padding: 24px 16px;
+    text-align: center;
+}
