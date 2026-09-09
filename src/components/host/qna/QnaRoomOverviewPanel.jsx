@@ -2,10 +2,9 @@
 import { useTimer } from "react-timer-hook";
 import "../../../css/host/qna/QnaRoomOverviewPanel.css"
 import { useEffect } from "react";
-import { updateQnaPhase } from "../../../api/qna/hostQnaApi";
 
 
-const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
+const QnaRoomOverviewPanel = ({ roomInfo, timerInfo, onExpire }) => {
 
 
     const defaultTime = new Date();
@@ -20,23 +19,7 @@ const QnaRoomOverviewPanel = ({ setRoomInfo, roomInfo, timerInfo }) => {
     } = useTimer({
         expiryTimestamp: defaultTime,
         autoStart: false,
-        onExpire: async () => {
-            let nextStatus;
-
-            if (roomInfo.status === "QUESTION_OPEN") {
-                nextStatus = "QUESTION_CLOSED"
-            } else if (roomInfo.status === "VOTING_OPEN") {
-                nextStatus = "VOTING_CLOSED"
-            } else {
-                return;
-            }
-
-            const data = await updateQnaPhase(roomInfo.roomNo, nextStatus);
-            setRoomInfo(prev => ({
-                ...prev,
-                status: data.status
-            }))
-        },
+        onExpire: onExpire,
         interval: 1000
     });
 

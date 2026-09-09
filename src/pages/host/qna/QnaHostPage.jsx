@@ -8,7 +8,7 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import HostParticipantPanel from "../../../components/host/qna/HostParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase, updateQnaPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 
@@ -77,6 +77,31 @@ const QnaHostPage = () => {
             status: data.status
         }))
     }
+
+    // 질문·투표 시간 종료에 따른 페이즈 변경
+    const handlePhaseExpire = async () => {
+        let nextStatus;
+
+        if (roomInfo.status === "QUESTION_OPEN") {
+            nextStatus = "QUESTION_CLOSED";
+        } else if (roomInfo.status === "VOTING_OPEN") {
+            nextStatus = "VOTING_CLOSED";
+        } else {
+            return;
+        }
+
+        try {
+            const data = await updateQnaPhase(roomInfo.roomNo, nextStatus);
+
+            setRoomInfo(prev => ({
+                ...prev,
+                status: data.status
+            }));
+        } catch (error) {
+            console.error("페이즈 종료 요청 실패:", error);
+            window.alert("시간은 종료되었지만 방 상태 변경에 실패했습니다.");
+        }
+    };
 
     //결과 공개 화면 phase로 바꾸도록 요청
     const handleRevealResults = async () => {
@@ -148,7 +173,7 @@ const QnaHostPage = () => {
         <div className="qna-host-main-div">
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
             <RoomSubheader roomInfo={roomInfo} />
-            <QnaRoomOverviewPanel setRoomInfo={setRoomInfo} roomInfo={roomInfo} timerInfo={timerInfo} />
+            <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} onExpire={handlePhaseExpire} />
             <div className="qna-host-body">
                 <QnaControlPanel
                     onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
