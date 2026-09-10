@@ -17,6 +17,7 @@ import TimerPanel from "../../../components/participant/qna/TimerPanel";
 import StatusPanel from "../../../components/participant/qna/StatusPanel";
 import { useTimer } from "react-timer-hook";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
+import { getParticipantToken } from "../../../utils/auth/tokenStorage";
 import ParticipantQuestionClosedView from "../../../components/participant/qna/ParticipantQuestionClosedView";
 import ParticipantVotingClosedView from "../../../components/participant/qna/ParticipantVotingClosedView";
 
@@ -114,9 +115,7 @@ const QnaParticipantPage = () => {
     // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {
 
-        const token = sessionStorage.getItem(
-            `malmoim:participant-session:${roomNo}`
-        );
+        const token = getParticipantToken(roomNo);
 
         const client = connectQnaSocket(token, async (connectedClient) => {
             clientRef.current = connectedClient;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_BASE_URL } from "../ApiHost";
+import { setParticipantToken } from "../../utils/auth/tokenStorage";
 
 
 const prefix = "/api/entry"
@@ -37,7 +38,7 @@ export const joinRoom = async (roomNo, nickname, password) => {
     )
 
     // 서버로부터 받는 참여자 토큰 저장
-    sessionStorage.setItem(`malmoim:participant-session:${roomNo}`, response.data.participantToken);
+    setParticipantToken(roomNo, response.data.participantToken);
 
 
     return response.data;

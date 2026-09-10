@@ -11,6 +11,7 @@ import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
 import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase, updateQnaPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
+import { getAccessToken } from "../../../utils/auth/tokenStorage";
 
 const QnaHostPage = () => {
 
@@ -117,7 +118,7 @@ const QnaHostPage = () => {
 
     // 웹소켓 구독
     useEffect(() => {
-        const token = sessionStorage.getItem('accessToken');
+        const token = getAccessToken();
 
         const client = connectQnaSocket(token, async (connectedClient) => {
 
