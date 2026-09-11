@@ -30,7 +30,7 @@ const QnaParticipantPage = () => {
 
     //참여자 본인 1명의 info
     const [participantInfo, setParticipantInfo] = useState({
-        nickname:""
+        nickname: ""
     });
 
     //참여자 리스트 info
@@ -40,8 +40,8 @@ const QnaParticipantPage = () => {
         private List<ActiveParticipantResponse> participants; // 현재 접속 중인 참여자 리스트
      */
     const [participantList, setParticipantList] = useState({
-        participantCount:0,
-        participants:[]
+        participantCount: 0,
+        participants: []
     });
 
     const [questions, setQuestions] = useState([]);
@@ -140,7 +140,7 @@ const QnaParticipantPage = () => {
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
-                    setQuestions(prev => mergeQuestionLists(prev,[data]));
+                    setQuestions(prev => mergeQuestionLists(prev, [data]));
                 }
             )
 
@@ -164,12 +164,12 @@ const QnaParticipantPage = () => {
 
 
             const questionListSnapshot = await getQuestionList(roomNo);
-            setQuestions(prev => mergeQuestionLists(questionListSnapshot,prev));
+            setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
 
             const participantListSnapshot = await getParticipantList(roomNo);
             setParticipantList(participantListSnapshot);
 
-            
+
 
         })
 
@@ -187,6 +187,13 @@ const QnaParticipantPage = () => {
 
             const data = await getParticipantQnaRoom(roomNo);
             setRoomInfo(data);
+
+            setTimerInfo(prev => ({
+                ...prev,
+                status: data.status,
+                phaseStartedAt: data.phaseStartedAt,
+                phaseEndedAt: data.phaseEndedAt
+            }))
         }
 
         fetchRoomInfo();
@@ -233,7 +240,7 @@ const QnaParticipantPage = () => {
                 </div>
                 <div className="phaseComponent-right-panel">
                     <ParticipantInfoPanel participantInfo={participantInfo} />
-                    <ParticipantListPanel participantList={participantList}/>
+                    <ParticipantListPanel participantList={participantList} />
                 </div>
 
             </div>
