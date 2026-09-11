@@ -1,7 +1,6 @@
-
 /* 전체를 아우르는 main div*/
-.HostQuestionList-main-div{
-    width:70%;
+.HostQuestionList-main-div {
+    width: 70%;
 }
 
 /* 전체,대기,답변완료 버튼과 select박스를 감싸는 div*/
@@ -14,7 +13,8 @@
 /* 전체,대기,답변완료 버튼을 감싸는 div*/
 .qna-toolbar-left-div {
     display: flex;
-    margin:10px;
+    margin: 10px;
+    gap: 10px;
 }
 
 /* select 박스를 감싸는 div*/
@@ -23,8 +23,20 @@
 }
 
 /* 질문 리스트카드를 감싸는 div - 스크롤 적용*/
-.qnaList-main-div{
+.qnaList-main-div {
     max-height: 500px;
     overflow-y: auto;
 }
 
+/*전체 대기 답변 완료 << 버튼*/
+.qna-toolbar-left-btn {
+    border:none;
+    background-color: #a08c79;
+    color:white;
+    border-radius: 5px;
+}
+
+/* 질문 리스트 h3 텍스트 */
+.HostQuestionList-main-div h3{
+    margin-left: 10px;
+}
