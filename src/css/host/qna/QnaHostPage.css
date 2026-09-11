@@ -2,15 +2,13 @@
 /* qnaHost 전체를 아우르는 div*/
 .qna-host-main-div{
     width:1000px;
-    border: 1px solid red;
+    border:1px solid #90653E;
     margin: 0 auto;
 }
 
 
 /* 질문리스트, 참여자 패널을 감싸는 div*/
 .qna-host-body-top{
-
     display: flex;
     width:100%;
-
 }

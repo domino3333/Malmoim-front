@@ -1,10 +1,20 @@
 /*전체를 아우르는 main div*/
 .HostParticipantPanel-main-div {
     width: 30%;
-    border: 1px solid red;
+    border: 1px solid rgb(242, 237, 237);
+    box-shadow: 0 0 2px;
 }
 
-.HostParticipantPanel-header{
-    border: 1px solid green;
+/*참여자 수 N div*/
+.HostParticipantPanel-header {
+    border: 1px solid rgb(242, 237, 237);;
     background-color: rgb(242, 237, 237);
+
+    padding: 10px;
+}
+
+
+/* 참여자들 닉네임이 보이는 div*/
+.HostParticipantPanel-body {
+    padding: 10px;
 }
