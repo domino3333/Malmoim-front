@@ -12,13 +12,13 @@ const HostQuestionList = ({questions}) => {
             <h3>질문 리스트</h3>
             <div className="qna-toolbar-main-div">
                 <div className="qna-toolbar-left-div">
-                    <button>
+                    <button className="qna-toolbar-left-btn">
                         전체
                     </button>
-                    <button>
+                    <button className="qna-toolbar-left-btn">
                         대기
                     </button>
-                    <button>
+                    <button className="qna-toolbar-left-btn">
                         답변 완료
                     </button>
                 </div>
