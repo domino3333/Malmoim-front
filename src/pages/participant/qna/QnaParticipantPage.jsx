@@ -110,7 +110,7 @@ const QnaParticipantPage = () => {
 
         restart(expiryTime, true);
 
-    }, [timerInfo?.phaseEndedAt]);
+    }, [timerInfo?.phaseEndedAt,restart]);
 
     // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {
