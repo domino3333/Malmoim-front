@@ -1,9 +1,8 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/qna/qnaSocket";
-import { publishQuestion } from "../../../api/qna/qnaMessageApi";
 import RoomSubheader from "../../../components/common/room/RoomSubheader";
-import { getParticipantInfo, getParticipantList, getParticipantQnaRoom, getQuestionList } from "../../../api/qna/participantQnaApi";
+import { createQuestion, getParticipantInfo, getParticipantList, getParticipantQnaRoom, getQuestionList } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/common/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
@@ -69,19 +68,9 @@ const QnaParticipantPage = () => {
     const PhaseComponent = roomInfo ? phaseComponents[roomInfo.status] : null;
 
 
-    // 현재 질문을 같은 방의 WebSocket 구독자에게 발행
-    const handleQuestionSubmit = (question) => {
-
-        const client = clientRef.current;
-
-        if (!client || !client.connected) {
-            return;
-        }
-
-        publishQuestion(client, {
-            roomNo: Number(roomNo),
-            question: question
-        });
+    // HTTP 질문 등록 요청 및 완료 대기
+    const handleQuestionSubmit = async (question) => {
+        await createQuestion(roomNo, question);
     }
 
     // useTimer 라이브러리 사용

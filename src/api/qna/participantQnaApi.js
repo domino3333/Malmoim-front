@@ -61,6 +61,17 @@ export const getQuestionList = async (roomNo) => {
     return response.data;
 }
 
+// 질문 등록 요청
+export const createQuestion = async (roomNo, question) => {
+    const response = await axios.post(
+        `${API_BASE_URL}${prefix}/questions`,
+        { question },
+        { headers: { Authorization: `Bearer ${getParticipantToken(roomNo)}` } }
+    );
+
+    return response.data;
+};
+
 // 질문 리스트를 받아오는 api
 export const castVote = async (questionNo, roomNo) => {
 
