@@ -61,22 +61,6 @@ export const startVotingPhase = async (roomNo, durationSeconds) => {
     return response.data;
 }
 
-// 방 상태 업데이트 api
-export const updateQnaPhase = async (roomNo, status) => {
-
-    const token = getAccessToken();
-
-    const response = await axios.post(`${API_BASE_URL}${prefix}/${roomNo}/update-status`, { status: status }, {
-        headers: {
-            Authorization: `Bearer ${token}`
-
-        }
-    })
-
-    return response.data;
-
-}
-
 // 참여자리스트 http api
 export const getParticipantList = async (roomNo) => {
 
