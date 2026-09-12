@@ -8,7 +8,7 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import HostParticipantPanel from "../../../components/host/qna/HostParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase, updateQnaPhase } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase} from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";

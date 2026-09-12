@@ -93,7 +93,6 @@ const QnaParticipantPage = () => {
         restart
     } = useTimer({
         expiryTimestamp: new Date(timerInfo.phaseEndedAt),
-        onExpire: () => console.log("질문 시간 종료"),
         autoStart: false,
     });
 
