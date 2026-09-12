@@ -159,7 +159,7 @@ const QnaHostPage = () => {
         <div className="qna-host-main-div">
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
             <RoomSubheader roomInfo={roomInfo} />
-            <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} onExpire={handlePhaseExpire} />
+            <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} />
             <div className="qna-host-body">
                 <QnaControlPanel
                     onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}

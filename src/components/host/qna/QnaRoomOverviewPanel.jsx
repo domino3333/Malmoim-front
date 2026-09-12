@@ -4,7 +4,7 @@ import "../../../css/host/qna/QnaRoomOverviewPanel.css"
 import { useEffect } from "react";
 
 
-const QnaRoomOverviewPanel = ({ roomInfo, timerInfo, onExpire }) => {
+const QnaRoomOverviewPanel = ({ roomInfo, timerInfo }) => {
 
 
     const defaultTime = new Date();
@@ -19,7 +19,6 @@ const QnaRoomOverviewPanel = ({ roomInfo, timerInfo, onExpire }) => {
     } = useTimer({
         expiryTimestamp: defaultTime,
         autoStart: false,
-        onExpire: onExpire,
         interval: 1000
     });
 
