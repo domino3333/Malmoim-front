@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/TimerModal.css"
 
 
-const TimerModal = ({ title, description, show, onHide, startTimer }) => {
+const TimerModal = ({ title, description, show, onHide, onStart }) => {
 
 
 
@@ -20,7 +20,7 @@ const TimerModal = ({ title, description, show, onHide, startTimer }) => {
         const secondNumber = Number(second);
 
         const totalSeconds = minuteNumber * 60 + secondNumber;
-        await startTimer(totalSeconds);
+        await onStart(totalSeconds);
         onHide();
 
     }

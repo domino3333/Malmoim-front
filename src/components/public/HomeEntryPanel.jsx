@@ -2,7 +2,7 @@ import "../../css/public/HomeEntryPanel.css"
 import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
-import { checkRoomCode, checkRoomPassword, joinRoom } from "../../api/entry/entryApi"
+import { getRoomEntryInfo, verifyRoomPassword, joinRoom } from "../../api/entry/entryApi"
 import EntryModal from "./modal/EntryModal"
 import NicknameModal from "./modal/NicknameModal"
 import { Link, useNavigate } from "react-router-dom"
@@ -29,7 +29,7 @@ const HomeEntryPanel = () => {
     // 입장 코드 기반 방 정보 조회 및 입장 모달 표시
     const handleCodeSubmit = async () => {
         try {
-            const data = await checkRoomCode(code.trim().toUpperCase());
+            const data = await getRoomEntryInfo(code.trim().toUpperCase());
             setRoomInfo(data);
             setEntryModalShow(true);
 
@@ -45,7 +45,7 @@ const HomeEntryPanel = () => {
 
         try {
             if (hasPassword) {
-                const response = await checkRoomPassword(roomNo, password);
+                const response = await verifyRoomPassword(roomNo, password);
                 setPasswordCheckResponse(response);
             }
             setEntryModalShow(false);

@@ -14,7 +14,7 @@ import ParticipantFinishedView from "../../../components/participant/qna/Partici
 import ParticipantInfoPanel from "../../../components/participant/qna/ParticipantInfoPanel";
 import ParticipantListPanel from "../../../components/participant/qna/ParticipantListPanel";
 import TimerPanel from "../../../components/participant/qna/TimerPanel";
-import StatusPanel from "../../../components/participant/qna/StatusPanel";
+import TimerStatusPanel from "../../../components/participant/qna/TimerStatusPanel";
 import { useTimer } from "react-timer-hook";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getParticipantToken } from "../../../utils/auth/tokenStorage";
@@ -229,7 +229,7 @@ const QnaParticipantPage = () => {
 
             <div className="qna-participant-timer-status-parent">
                 <TimerPanel remainingTime={remainingTime} />
-                <StatusPanel isRunning={isRunning} />
+                <TimerStatusPanel isRunning={isRunning} />
 
             </div>
 

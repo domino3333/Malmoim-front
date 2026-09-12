@@ -179,14 +179,14 @@ const QnaHostPage = () => {
         <TimerModal
             title={"질문 시간 설정"}
             description={"참여자가 질문을 작성할 수 있는 제한 시간을 정해주세요."}
-            startTimer={handleStartQuestionPhase}
+            onStart={handleStartQuestionPhase}
             show={isQuestionTimerOpen}
             onHide={() => setIsQuestionTimerOpen(false)} />
 
         <TimerModal
             title={"투표 시간 설정"}
             description={"참여자가 투표할 수 있는 제한 시간을 정해주세요."}
-            startTimer={handleStartVotingPhase}
+            onStart={handleStartVotingPhase}
             show={isVotingTimerOpen}
             onHide={() => setIsVotingTimerOpen(false)} />
 

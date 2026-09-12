@@ -1,7 +1,7 @@
 
-import "./../../../css/participant/qna/StatusPanel.css"
+import "./../../../css/participant/qna/TimerStatusPanel.css"
 
-const StatusPanel = ({isRunning})=>{
+const TimerStatusPanel = ({isRunning})=>{
 
     return(<>
         <div className="status-panel-parent-div">
@@ -10,4 +10,4 @@ const StatusPanel = ({isRunning})=>{
     </>)
 }
 
-export default StatusPanel; 
+export default TimerStatusPanel; 

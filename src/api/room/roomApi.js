@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_BASE_URL } from "../ApiHost";
+import { API_BASE_URL } from "../apiConfig";
 import { getAccessToken } from "../../utils/auth/tokenStorage";
 
 

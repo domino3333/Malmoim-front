@@ -13,7 +13,7 @@ const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions }) => {
     //todo 참여자의 정보 받아오기
 
 
-    const [questionSubmitModalShow, setQuestionSubmitModalShow] = useState(false);
+    const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
 
 
 
@@ -24,13 +24,13 @@ const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions }) => {
 
         <div className="Question-open-view-body">
             <div className="question-left-panel">
-                <ParticipantQuestionToolbar onOpenQuestionModal={() => setQuestionSubmitModalShow(true)} />
+                <ParticipantQuestionToolbar onOpenQuestionModal={() => setIsQuestionModalOpen(true)} />
                 <ParticipantQuestionList questions={questions}/>
             </div>
         </div>
 
-        {questionSubmitModalShow &&
-            <QuestionSubmitModal show={questionSubmitModalShow} onHide={() => setQuestionSubmitModalShow(false)} onSubmit={onQuestionSubmit} />
+        {isQuestionModalOpen &&
+            <QuestionSubmitModal show={isQuestionModalOpen} onHide={() => setIsQuestionModalOpen(false)} onSubmit={onQuestionSubmit} />
         }
 
 

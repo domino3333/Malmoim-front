@@ -6,7 +6,7 @@ import SignUpPage from '../pages/public/SignUpPage'
 import HostHomePage from '../pages/host/home/HostHomePage'
 import CreatePage from '../pages/host/home/CreatePage'
 import MyRoomsPage from '../pages/host/home/MyRoomsPage'
-import CreateDetailPage from '../pages/host/home/CreateDetailPage'
+import RoomTypeSelectionPage from '../pages/host/home/RoomTypeSelectionPage'
 import QnaHostPage from '../pages/host/qna/QnaHostPage'
 import QnaParticipantPage from '../pages/participant/qna/QnaParticipantPage'
 
@@ -65,7 +65,7 @@ const root = createBrowserRouter([
     path: '/createDetail',
     element: (
       <Suspense fallback={<LoadingFallback />}>
-        <CreateDetailPage/>
+        <RoomTypeSelectionPage/>
       </Suspense>
     ),
   },
