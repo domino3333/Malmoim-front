@@ -135,6 +135,14 @@ const QnaHostPage = () => {
                 setParticipantList(data);
             });
 
+            connectedClient.subscribe(`/topic/qna/${roomNo}/phase`, (frame) => {
+                const data = JSON.parse(frame.body);
+                setRoomInfo(prev=>({...prev,
+                    status:data.status
+                }))
+                setTimerInfo(data);
+            });
+
             const questionListSnapshot = await getQuestionList(roomNo);
             setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
 
