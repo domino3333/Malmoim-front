@@ -1,6 +1,6 @@
 ﻿import { Suspense, lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import LoadingFallback from '../pages/public/LoadingFallback'
+import LoadingFallback from '../components/common/LoadingFallback'
 import LoginPage from '../pages/public/LoginPage'
 import SignUpPage from '../pages/public/SignUpPage'
 import HostHomePage from '../pages/host/home/HostHomePage'

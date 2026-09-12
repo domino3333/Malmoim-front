@@ -6,7 +6,7 @@ import "../../../css/host/home/MyRoomsPage.css";
 import { useEffect, useState } from "react";
 import { getMyRooms } from "../../../api/room/roomApi";
 import { Plus, Search, X } from "lucide-react";
-import MyRoomsTable from "../../../components/host/home/table/MyRoomsTable";
+import MyRoomsTable from "../../../components/host/home/MyRoomsTable";
 
 const MyRoomsPage = () => {
 

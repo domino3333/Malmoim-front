@@ -1,5 +1,5 @@
 
-import "../../../../css/host/home/MyRoomsTable.css"
+import "../../../css/host/home/MyRoomsTable.css"
 
 
 
