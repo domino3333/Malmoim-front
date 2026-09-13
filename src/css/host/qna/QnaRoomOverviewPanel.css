@@ -5,16 +5,24 @@
 }
 
 
-/* 타이머 div */
-.timer-div {
-
+.timer-parent-div {
     width: 50%;
     height: 200px;
-    border: 1px solid #90653E;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* 타이머 div */
+.timer-div {
+    border:1px solid #90653E;
+    border-radius: 10px;
+    width:90%;
+    height:90%;
     font-size: 2.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 방 정보 div들을 감싸는 div*/
@@ -29,7 +37,7 @@
 .room-info-2,
 .room-info-3,
 .room-info-4 {
-    border: 1px solid #90653E;
+    border: 1px solid rgb(158, 126, 126);
     width: 600px;
-    padding:10px;
+    padding: 10px;
 }

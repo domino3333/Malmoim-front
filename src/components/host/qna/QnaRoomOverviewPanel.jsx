@@ -33,9 +33,12 @@ const QnaRoomOverviewPanel = ({ roomInfo, timerInfo }) => {
     return (<>
 
         <div className="RoomInfo-main-div">
-            <div className="timer-div">
-                {String(minutes).padStart(2, "0")}:
-                {String(seconds).padStart(2, "0")}
+            <div className="timer-parent-div">
+                <div className="timer-div">
+                    {String(minutes).padStart(2, "0")}:
+                    {String(seconds).padStart(2, "0")}
+
+                </div>
             </div>
             <div className="room-info-div">
                 <div className="room-info-1">
