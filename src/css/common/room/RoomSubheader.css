@@ -1,6 +1,7 @@
 /* RoomSubheader의 div를 감싸는 main div*/
 .RoomSubheader-main-div {
-    padding: 10px 0;
+    padding: 10px 20px;
+    
 }
 
 /* 90%만 그리는 직선을 위한 div*/
@@ -15,14 +16,20 @@
 /* 방 타이틀 div */
 .RoomSubheader-title {
     border: 1px solid #90653E;
+    border-radius: 5px;
+    padding:5px;
 }
 
 /* 방 code div */
 .RoomSubheader-code {
     border: 1px solid #90653E;
+    border-radius: 5px;
+    padding:5px;
 }
 
 /* 방 상태 div */
 .RoomSubheader-status {
     border: 1px solid #90653E;
+    border-radius: 5px;
+    padding:5px;
 }
