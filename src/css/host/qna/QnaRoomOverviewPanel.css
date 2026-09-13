@@ -21,6 +21,7 @@
 .room-info-div {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 /* 방 정보 div*/
@@ -30,4 +31,5 @@
 .room-info-4 {
     border: 1px solid #90653E;
     width: 600px;
+    padding:10px;
 }
