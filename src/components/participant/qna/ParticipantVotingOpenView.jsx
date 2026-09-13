@@ -2,12 +2,23 @@
 import { castVote } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/ParticipantVotingOpenView.css"
 import ParticipantQuestionList from "./ParticipantQuestionList";
+import { useState } from "react";
 const ParticipantVotingOpenView = ({ questions, roomInfo }) => {
-
+    const [isVoting, setIsVoting] = useState(false);
 
 
     const handleVote = async (questionNo) => {
-        await castVote(questionNo, roomInfo.roomNo);
+        if (isVoting) return;
+        setIsVoting(true);
+        try {
+            await castVote(questionNo, roomInfo.roomNo);
+        } catch (e) {
+            const message = e.response?.data;
+            alert(e.response?.status < 500 && typeof message === "string" && message.trim()
+                ? message : "투표 결과를 확인하지 못했습니다. 연결 상태를 확인한 뒤 다시 시도해주세요.");
+        } finally {
+            setIsVoting(false);
+        }
 
     }
 
@@ -24,6 +35,7 @@ const ParticipantVotingOpenView = ({ questions, roomInfo }) => {
                 <ParticipantQuestionList
                     questions={questions}
                     canVote={true}
+                    isVoting={isVoting}
                     onVote={handleVote}
                 />
             </div>

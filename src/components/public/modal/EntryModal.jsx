@@ -3,7 +3,7 @@ import "../../../css/public/modal/EntryModal.css"
 import { useState } from "react";
 
 
-const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword }) => {
+const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword, isVerifyingPassword = false }) => {
 
     //roominfo에 roomNo, title, code ,hasPassword 내려옴
 
@@ -20,8 +20,10 @@ const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword }) =>
     
 
     return (<>
-        <Modal show={show} contentClassName="Entry-modal">
+        <Modal show={show} onHide={isVerifyingPassword ? undefined : onHide}
+            backdrop={isVerifyingPassword ? "static" : true} keyboard={!isVerifyingPassword} contentClassName="Entry-modal">
                 <button className="entry-modal-x-button"
+                    disabled={isVerifyingPassword}
                     onClick={onHide}
                 >X</button>
                 <h3>{roomInfo.title}</h3>
@@ -29,11 +31,11 @@ const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword }) =>
                 <p className="entry-modal-capacity-p">정원: (현재정원표기 구현예정)/{roomInfo.capacity}</p>
 
                 {roomInfo.hasPassword &&
-                    <input className="entry-modal-password-input" onChange={handlePasswordChange} type="password" placeholder="비밀번호.." />
+                    <input disabled={isVerifyingPassword} className="entry-modal-password-input" onChange={handlePasswordChange} type="password" placeholder="비밀번호.." />
                 }
 
-                <button onClick={()=>onNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
-                    {roomInfo.hasPassword ? "다음" : "입장"}
+                <button disabled={isVerifyingPassword} onClick={()=>onNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
+                    {isVerifyingPassword ? "확인 중..." : roomInfo.hasPassword ? "다음" : "입장"}
                 </button>
 
         </Modal>

@@ -3,7 +3,7 @@ import "../../../css/public/modal/NicknameModal.css"
 import { useState } from "react";
 
 
-const NicknameModal = ({ onJoin, roomInfo, show, onHide }) => {
+const NicknameModal = ({ onJoin, roomInfo, show, onHide, isJoining = false }) => {
 
 
     const [nickname, setNickname] = useState("");
@@ -20,8 +20,10 @@ const NicknameModal = ({ onJoin, roomInfo, show, onHide }) => {
 
 
     return (<>
-        <Modal show={show} contentClassName="Nickname-modal">
+        <Modal show={show} onHide={isJoining ? undefined : onHide}
+            backdrop={isJoining ? "static" : true} keyboard={!isJoining} contentClassName="Nickname-modal">
             <button className="nickname-modal-x-button"
+                disabled={isJoining}
                 onClick={onHide}
             >X</button>
             <h3>{roomInfo.title}</h3>
@@ -29,6 +31,7 @@ const NicknameModal = ({ onJoin, roomInfo, show, onHide }) => {
             <p className="nickname-modal-capacity-p">정원: (현재정원표기 구현예정)/{roomInfo.capacity}</p>
 
             <input
+                disabled={isJoining}
                 onChange={handleNicknameChange}
                 className="nickname-input"
                 type="text"
@@ -37,9 +40,10 @@ const NicknameModal = ({ onJoin, roomInfo, show, onHide }) => {
 
 
             <button
+                disabled={isJoining}
                 onClick={()=>onJoin(roomInfo.roomNo,nickname)}
                 className={roomInfo.hasPassword ? "nickname-modal-enter-button-v1" : "nickname-modal-enter-button-v2"}>
-                입장하기
+                {isJoining ? "입장 중..." : "입장하기"}
             </button>
 
         </Modal>

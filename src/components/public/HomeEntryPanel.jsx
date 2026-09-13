@@ -16,6 +16,9 @@ const HomeEntryPanel = () => {
 
     const [entryModalShow, setEntryModalShow] = useState(false);
     const [nicknameModalShow, setNicknameModalShow] = useState(false);
+    const [isCheckingCode, setIsCheckingCode] = useState(false);
+    const [isVerifyingPassword, setIsVerifyingPassword] = useState(false);
+    const [isJoining, setIsJoining] = useState(false);
 
     const [passwordCheckResponse, setPasswordCheckResponse] = useState(null);
 
@@ -28,21 +31,27 @@ const HomeEntryPanel = () => {
 
     // 입장 코드 기반 방 정보 조회 및 입장 모달 표시
     const handleCodeSubmit = async () => {
+        if (isCheckingCode) return;
+        setIsCheckingCode(true);
         try {
             const data = await getRoomEntryInfo(code.trim().toUpperCase());
             setRoomInfo(data);
             setEntryModalShow(true);
 
         } catch (e) {
-            console.log(e);
-            alert("존재하지 않는 입장 코드입니다.");
+            const message = e.response?.data;
+            alert(e.response?.status < 500 && typeof message === "string" && message.trim()
+                ? message : "방 정보를 확인하지 못했습니다. 잠시 후 다시 시도해주세요.");
+        } finally {
+            setIsCheckingCode(false);
         }
     }
 
     // "다음" 버튼 클릭
     // 방 비밀번호 검증 및 닉네임 입력 단계 이동
     const handleEntryNext = async (roomNo, password, hasPassword) => {
-
+        if (isVerifyingPassword) return;
+        setIsVerifyingPassword(true);
         try {
             if (hasPassword) {
                 const response = await verifyRoomPassword(roomNo, password);
@@ -51,7 +60,11 @@ const HomeEntryPanel = () => {
             setEntryModalShow(false);
             setNicknameModalShow(true);
         } catch (e) {
-            alert("비밀번호 불일치");
+            const message = e.response?.data;
+            alert(e.response?.status < 500 && typeof message === "string" && message.trim()
+                ? message : "비밀번호를 확인하지 못했습니다. 잠시 후 다시 시도해주세요.");
+        } finally {
+            setIsVerifyingPassword(false);
         }
 
 
@@ -60,10 +73,18 @@ const HomeEntryPanel = () => {
     // "입장하기" 버튼 클릭
     // 참가자 저장 및 Q&A 참여자 페이지 이동, 토큰 저장
     const handleJoinRoom = async (roomNo, nickname) => {
-
-        const data = await joinRoom(roomNo, nickname, password);
-
-        nav(`/qna/${roomNo}`);
+        if (isJoining) return;
+        setIsJoining(true);
+        try {
+            const data = await joinRoom(roomNo, nickname, password);
+            nav(`/qna/${roomNo}`);
+        } catch (e) {
+            const message = e.response?.data;
+            alert(e.response?.status < 500 && typeof message === "string" && message.trim()
+                ? message : "입장 결과를 확인하지 못했습니다. 연결 상태를 확인한 뒤 다시 시도해주세요.");
+        } finally {
+            setIsJoining(false);
+        }
     }
 
 
@@ -77,8 +98,8 @@ const HomeEntryPanel = () => {
                 <h2>참여자이신가요?</h2>
                 <p className="panel-guide-text">입장코드를 입력하고 실시간 Q&A에 참여하세요</p>
                 <div className="left-panel-input-div">
-                    <input onChange={handleCodeChange} type="text" name="code" className="code-input" />
-                    <button onClick={handleCodeSubmit} className="code-input-arrow-button">→</button>
+                    <input disabled={isCheckingCode} onChange={handleCodeChange} type="text" name="code" className="code-input" />
+                    <button disabled={isCheckingCode} aria-busy={isCheckingCode} onClick={handleCodeSubmit} className="code-input-arrow-button">→</button>
                 </div>
                 <div className="left-panel-advice-div">
                     입장코드는 호스트가 제공한 코드를 입력해주세요
@@ -98,9 +119,9 @@ const HomeEntryPanel = () => {
         </div>
 
 
-        {roomInfo && <EntryModal onNext={handleEntryNext} password={password} setPassword={setPassword} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
+        {roomInfo && <EntryModal onNext={handleEntryNext} isVerifyingPassword={isVerifyingPassword} password={password} setPassword={setPassword} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
 
-        {roomInfo && <NicknameModal onJoin={handleJoinRoom} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
+        {roomInfo && <NicknameModal onJoin={handleJoinRoom} isJoining={isJoining} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
     </>)
 }
 export default HomeEntryPanel;

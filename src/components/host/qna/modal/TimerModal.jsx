@@ -11,17 +11,28 @@ const TimerModal = ({ title, description, show, onHide, onStart }) => {
     const [second, setSecond] = useState("00");
 
     const [selectedPreset, setSelectedPreset] = useState(5);
+    const [isStarting, setIsStarting] = useState(false);
 
 
     // 시작 버튼 누르면 호출되는 함수
     // 입력한 분과 초를 전체 초로 변환 후 질문 타이머 시작
     const handleStart = async () => {
+        if (isStarting) return;
         const minuteNumber = Number(minute);
         const secondNumber = Number(second);
 
         const totalSeconds = minuteNumber * 60 + secondNumber;
-        await onStart(totalSeconds);
-        onHide();
+        setIsStarting(true);
+        try {
+            await onStart(totalSeconds);
+            onHide();
+        } catch (e) {
+            const message = e.response?.data;
+            alert(e.response?.status < 500 && typeof message === "string" && message.trim()
+                ? message : "시작 결과를 확인하지 못했습니다. 방 상태를 확인한 뒤 다시 시도해주세요.");
+        } finally {
+            setIsStarting(false);
+        }
 
     }
 
@@ -93,7 +104,8 @@ const TimerModal = ({ title, description, show, onHide, onStart }) => {
 
     return (<>
 
-        <Modal show={show} onHide={onHide}>
+        <Modal show={show} onHide={isStarting ? undefined : onHide}
+            backdrop={isStarting ? "static" : true} keyboard={!isStarting}>
 
             <div className="timer-modal-body">
 
@@ -101,34 +113,34 @@ const TimerModal = ({ title, description, show, onHide, onStart }) => {
                 <p>{description}</p>
                 <div className="timer-main-div">
                     <div className="minute-main-div">
-                        <button className="timer-arrow-top" onClick={() => adjustTime("minute", 1)}>△</button>
-                        <input value={minute} type="text" onChange={handleMinuteChange} inputMode="numeric" className="minute-input" />
-                        <button className="timer-arrow-bottom" onClick={() => adjustTime("minute", -1)} >▽</button>
+                        <button disabled={isStarting} className="timer-arrow-top" onClick={() => adjustTime("minute", 1)}>△</button>
+                        <input disabled={isStarting} value={minute} type="text" onChange={handleMinuteChange} inputMode="numeric" className="minute-input" />
+                        <button disabled={isStarting} className="timer-arrow-bottom" onClick={() => adjustTime("minute", -1)} >▽</button>
                         <p>분</p>
                     </div>
                     <div className="colon-div">
                         :
                     </div>
                     <div className="second-main-div">
-                        <button className="timer-arrow-top" onClick={() => adjustTime("second", 1)}>△</button>
-                        <input value={second} type="text" onChange={handleSecondChange} inputMode="numeric" className="second-input" />
-                        <button className="timer-arrow-bottom" onClick={() => adjustTime("second", -1)}>▽</button>
+                        <button disabled={isStarting} className="timer-arrow-top" onClick={() => adjustTime("second", 1)}>△</button>
+                        <input disabled={isStarting} value={second} type="text" onChange={handleSecondChange} inputMode="numeric" className="second-input" />
+                        <button disabled={isStarting} className="timer-arrow-bottom" onClick={() => adjustTime("second", -1)}>▽</button>
                         <p>초</p>
                     </div>
                 </div>
 
                 <div className="minute-preset-parent-div">
 
-                    <button className={selectedPreset === 1 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(1)}>
+                    <button disabled={isStarting} className={selectedPreset === 1 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(1)}>
                         1분
                     </button>
-                    <button className={selectedPreset === 3 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(3)}>
+                    <button disabled={isStarting} className={selectedPreset === 3 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(3)}>
                         3분
                     </button>
-                    <button className={selectedPreset === 5 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(5)}>
+                    <button disabled={isStarting} className={selectedPreset === 5 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(5)}>
                         5분
                     </button>
-                    <button className={selectedPreset === 10 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(10)}>
+                    <button disabled={isStarting} className={selectedPreset === 10 ? "minute-preset-active" : "minute-preset"} onClick={() => applyTimePreset(10)}>
                         10분
                     </button>
                 </div>
@@ -136,11 +148,11 @@ const TimerModal = ({ title, description, show, onHide, onStart }) => {
 
                 <div className="cancel-start-main-div">
                     <div className="cancel-start-border-div">
-                        <button onClick={() => onHide()} className="timer-modal-cancel-button">
+                        <button disabled={isStarting} onClick={() => onHide()} className="timer-modal-cancel-button">
                             취소
                         </button>
-                        <button className="timer-modal-start-button" onClick={handleStart}>
-                            시작
+                        <button disabled={isStarting} className="timer-modal-start-button" onClick={handleStart}>
+                            {isStarting ? "시작 중..." : "시작"}
                         </button>
                     </div>
                 </div>

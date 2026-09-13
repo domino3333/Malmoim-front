@@ -10,6 +10,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
 
 
     const [isPrivate, setIsPrivate] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     // 비공개 체크 여부의 상태 반영
     const handlePrivateChange = (e) => {
@@ -33,6 +34,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
 
     // 입력한 방 정보 기반 Q&A 방 생성 요청
     const handleCreateRoom = async () => {
+        if (isSubmitting) return;
 
         if (!input.title.trim()) {
             window.alert('제목을 입력해주세요');
@@ -44,40 +46,55 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
             return;
         }
 
-        await createQnaRoom({
-            ...input,
-            isPrivate: isPrivate
-        });
+        setIsSubmitting(true);
+        try {
+            await createQnaRoom({
+                ...input,
+                isPrivate: isPrivate
+            });
+            onHide();
+            setIsPrivate(false);
+        } catch (e) {
+            const message = e.response?.data;
+            alert(e.response?.status < 500 && typeof message === "string" && message.trim()
+                ? message
+                : "방 생성 결과를 확인하지 못했습니다. 내 방 목록을 확인한 뒤 다시 시도해주세요.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
+
+    const handleClose = () => {
+        if (isSubmitting) return;
         onHide();
-        setIsPrivate(false)
+        setIsPrivate(false);
     }
 
 
     return (<>
-        <Modal show={show} contentClassName="create-modal">
+        <Modal show={show} onHide={handleClose} backdrop={isSubmitting ? "static" : true}
+            keyboard={!isSubmitting} contentClassName="create-modal">
             <div className="create-modal-body">
-                <button onClick={() => {
-                    onHide()
-                    setIsPrivate(false)
-                }} className="create-modal-x-button">
+                <button onClick={handleClose} disabled={isSubmitting} className="create-modal-x-button">
                     X
                 </button>
                 <h4 className="create-modal-title-h4">{title}</h4>
-                <input className="create-modal-title-input" name="title" onChange={handleInputChange} type="text" placeholder="제목" />
-                <input className="create-modal-capacity-input" name="capacity" onChange={handleInputChange} type="number" placeholder="정원" />
+                <input disabled={isSubmitting} className="create-modal-title-input" name="title" onChange={handleInputChange} type="text" placeholder="제목" />
+                <input disabled={isSubmitting} className="create-modal-capacity-input" name="capacity" onChange={handleInputChange} type="number" placeholder="정원" />
 
                 <label htmlFor="checkBoxTitle">
                     비공개
-                    <input className="create-modal-private-checkbox" type="checkbox" onChange={handlePrivateChange} />
+                    <input disabled={isSubmitting} className="create-modal-private-checkbox" type="checkbox" onChange={handlePrivateChange} />
                 </label>
 
                 {isPrivate ?
-                    <input className="create-modal-password-input" name="password" onChange={handleInputChange} type="password" placeholder="비밀번호" />
+                    <input disabled={isSubmitting} className="create-modal-password-input" name="password" onChange={handleInputChange} type="password" placeholder="비밀번호" />
                     : null}
 
                 <button className="create-modal-create-button"
+                    disabled={isSubmitting}
                     onClick={handleCreateRoom}>
-                    만들기
+                    {isSubmitting ? "생성 중..." : "만들기"}
                 </button>
             </div>
         </Modal>
