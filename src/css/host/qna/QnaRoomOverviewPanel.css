@@ -11,6 +11,10 @@
     width: 50%;
     height: 200px;
     border: 1px solid #90653E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2em;
 }
 
 /* 방 정보 div들을 감싸는 div*/
