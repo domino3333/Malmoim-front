@@ -152,7 +152,7 @@ const QnaParticipantPage = () => {
 
 
             const questionListSnapshot = await getQuestionList(roomNo);
-            setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
+            setQuestions(prev => mergeQuestionLists(prev,questionListSnapshot));
 
             const participantListSnapshot = await getParticipantList(roomNo);
             setParticipantList(participantListSnapshot);
