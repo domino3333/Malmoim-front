@@ -141,7 +141,7 @@ const QnaParticipantPage = () => {
                 }
             )
 
-            // 참여자 리스트 구독
+            // 결과 공개 구독
             connectedClient.subscribe(`/topic/qna/${roomNo}/result`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
