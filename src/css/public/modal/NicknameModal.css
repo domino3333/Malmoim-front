@@ -1,6 +1,6 @@
 
 /* 모달 자체 */
-.Nickname-modal{
+.nickname-modal{
     width:400px;
     height:300px;
     display: flex;
@@ -23,7 +23,7 @@
 
 
 /* 방 제목 h3 텍스트*/
-.Nickname-modal h3 {
+.nickname-modal h3 {
     align-self: center;
     font-weight: 600;
 }
@@ -33,8 +33,8 @@
     text-align: center;
 }
 
-/*비밀번호 인풋 */
-.nickname-modal-password-input {
+/* 닉네임 입력란 */
+.nickname-input {
     height:40px;
     padding:10px;
     align-self: center;

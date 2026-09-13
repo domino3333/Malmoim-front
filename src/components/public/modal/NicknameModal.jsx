@@ -21,7 +21,7 @@ const NicknameModal = ({ onJoin, roomInfo, show, onHide, isJoining = false }) =>
 
     return (<>
         <Modal show={show} onHide={isJoining ? undefined : onHide}
-            backdrop={isJoining ? "static" : true} keyboard={!isJoining} contentClassName="Nickname-modal">
+            backdrop={isJoining ? "static" : true} keyboard={!isJoining} contentClassName="nickname-modal">
             <button className="nickname-modal-x-button"
                 disabled={isJoining}
                 onClick={onHide}

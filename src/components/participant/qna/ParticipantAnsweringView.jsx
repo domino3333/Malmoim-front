@@ -3,7 +3,7 @@ import "../../../css/participant/qna/ParticipantAnsweringView.css"
 import ParticipantQuestionList from "./ParticipantQuestionList";
 
 
-const sortQuestionByVoteCount = (questions) => {
+const sortQuestionsByVoteCount = (questions) => {
     return [...questions].sort((a, b) => {
         const voteDifference = b.voteCount - a.voteCount;
 
@@ -23,7 +23,7 @@ const sortQuestionByVoteCount = (questions) => {
 
 const ParticipantAnsweringView = ({ questions }) => {
 
-    const sortedQuestions = sortQuestionByVoteCount(questions);
+    const sortedQuestions = sortQuestionsByVoteCount(questions);
 
     return (<>
         <div className="ParticipantAnsweringView-parent-panel">
