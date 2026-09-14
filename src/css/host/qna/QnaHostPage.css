@@ -2,8 +2,8 @@
 /* qnaHost 전체를 아우르는 div*/
 .qna-host-main-div{
     width:1000px;
-    border:1px solid #90653E;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
 
@@ -13,5 +13,8 @@
     width:100%;
 }
 
-
     
+.qna-host-main-border-div{
+    border: 1px solid #90653E;
+    border-radius: 5px;
+}

@@ -8,7 +8,7 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import HostParticipantPanel from "../../../components/host/qna/HostParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase} from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
@@ -30,8 +30,8 @@ const QnaHostPage = () => {
         type: "",
         visibility: "",
         status: "",
-        phaseStartedAt:"",
-        phaseEndedAt:"",
+        phaseStartedAt: "",
+        phaseEndedAt: "",
     });
 
     const [participantList, setParticipantList] = useState({
@@ -114,8 +114,9 @@ const QnaHostPage = () => {
 
             connectedClient.subscribe(`/topic/qna/${roomNo}/phase`, (frame) => {
                 const data = JSON.parse(frame.body);
-                setRoomInfo(prev=>({...prev,
-                    status:data.status
+                setRoomInfo(prev => ({
+                    ...prev,
+                    status: data.status
                 }))
                 setTimerInfo(data);
             });
@@ -140,9 +141,10 @@ const QnaHostPage = () => {
         const fetchRoomInfo = async () => {
             const data = await getHostQnaRoom(roomNo);
             setRoomInfo(data);
-            setTimerInfo(prev=>({...prev,
-                phaseStartedAt:data.phaseStartedAt,
-                phaseEndedAt:data.phaseEndedAt
+            setTimerInfo(prev => ({
+                ...prev,
+                phaseStartedAt: data.phaseStartedAt,
+                phaseEndedAt: data.phaseEndedAt
 
             }));
         }
@@ -158,18 +160,21 @@ const QnaHostPage = () => {
 
         <div className="qna-host-main-div">
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
-            <RoomSubheader roomInfo={roomInfo} />
-            <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} />
-            <div className="qna-host-body">
-                <QnaControlPanel
-                    onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
-                    onOpenVotingTimerModal={() => setIsVotingTimerOpen(true)}
-                    onRevealResults={() => handleRevealResults()}
+            <div className="qna-host-main-border-div">
+                <RoomSubheader roomInfo={roomInfo} />
+                <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} />
+                <div className="qna-host-body">
+                    <QnaControlPanel
+                        onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
+                        onOpenVotingTimerModal={() => setIsVotingTimerOpen(true)}
+                        onRevealResults={() => handleRevealResults()}
 
-                />
-                <div className="qna-host-body-top">
-                    <HostQuestionList questions={questions} />
-                    <HostParticipantPanel participantList={participantList} />
+                    />
+                    <div className="qna-host-body-top">
+                        <HostQuestionList questions={questions} />
+                        <HostParticipantPanel participantList={participantList} />
+                    </div>
+
                 </div>
 
             </div>

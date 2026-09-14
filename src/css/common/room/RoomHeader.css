@@ -2,6 +2,7 @@
 .RoomHeader-main-div {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 /*로고와 메인title을 묶는 div*/
