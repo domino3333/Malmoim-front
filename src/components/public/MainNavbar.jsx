@@ -22,8 +22,8 @@ const MainNavbar = () => {
         </nav>
 
         {hasAccessToken ? <>
-          <div className="navbar-auth">
-            내 말모임
+          <div className="navbar-my-malmoim">
+            <Link to="/dashboard">내 말모임</Link>
           </div>
         </> : <>
           <div className="navbar-auth">
