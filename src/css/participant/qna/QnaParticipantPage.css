@@ -23,7 +23,8 @@
 /* 페이즈컴포넌트 + 오른쪽패널 감싸는 div */
 .phaseComponent-parent-div{
     display: flex;
-    gap:10px;
+    gap:40px;
+    padding:0 20px;
     
 
 }
