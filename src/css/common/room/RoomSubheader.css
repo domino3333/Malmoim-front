@@ -9,6 +9,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
+    padding-top: 5px;
 }
 
 /* 방 타이틀 div */
@@ -16,6 +17,7 @@
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;
+    background-color: rgb(242, 237, 237);
 }
 
 /* 방 code div */
@@ -23,6 +25,7 @@
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;
+    background-color: rgb(242, 237, 237);
 }
 
 /* 방 상태 div */
@@ -30,4 +33,5 @@
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;
+    background-color: rgb(242, 237, 237);
 }

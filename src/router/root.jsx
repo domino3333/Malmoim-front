@@ -4,7 +4,6 @@ import LoadingFallback from '../components/common/LoadingFallback'
 import LoginPage from '../pages/public/LoginPage'
 import SignUpPage from '../pages/public/SignUpPage'
 import HostHomePage from '../pages/host/home/HostHomePage'
-import CreatePage from '../pages/host/home/CreatePage'
 import MyRoomsPage from '../pages/host/home/MyRoomsPage'
 import RoomTypeSelectionPage from '../pages/host/home/RoomTypeSelectionPage'
 import QnaHostPage from '../pages/host/qna/QnaHostPage'
@@ -42,14 +41,6 @@ const root = createBrowserRouter([
     element: (
       <Suspense fallback={<LoadingFallback />}>
         <HostHomePage />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/create',
-    element: (
-      <Suspense fallback={<LoadingFallback />}>
-        <CreatePage/>
       </Suspense>
     ),
   },

@@ -14,7 +14,7 @@ const HostHomeSidebar = () => {
   return (
     <>
       <div className="div-dashboard-sidebar">
-        <button onClick={() => nav('/create')} className="button-dashboard-create-malmoim">
+        <button onClick={() => nav('/createDetail')} className="button-dashboard-create-malmoim">
           <img src={plusIcon} alt="만들기" />
           <span>말모임 만들기</span>
         </button>
