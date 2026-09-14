@@ -1,6 +1,7 @@
 import '../../../css/host/home/HostHomeSidebar.css'
 import personIcon from '../../../assets/person.png'
 import plusIcon from '../../../assets/plus.png'
+import dashboardIcon from '../../../assets/dashboard-icon.png'
 import { useNavigate } from 'react-router-dom'
 
 const HostHomeSidebar = () => {
@@ -15,7 +16,7 @@ const HostHomeSidebar = () => {
     <>
       <div className="div-dashboard-sidebar">
         <button onClick={() => nav('/dashboard')} className="button-dashboard-create-malmoim">
-          <img src={plusIcon} alt="만들기" />
+          <img src={dashboardIcon} alt="만들기" />
           <span>대시보드</span>
         </button>
 
