@@ -2,8 +2,14 @@
 .qna-participant-main-div {
     width: 1000px;
     margin: 0 auto;
+    margin-top: 20px;
 }
 
+.qna-participant-main-border-div{
+
+    border:1px solid #90653E;
+    border-radius: 5px;
+}
 
 /* 타이머 패널, 방 상태 패널을 감싸는 div*/
 .qna-participant-timer-status-parent {
@@ -11,12 +17,14 @@
     display: flex;
     gap: 30px;
     height: 100px;
+    padding:0 20px;
 }
 
 /* 페이즈컴포넌트 + 오른쪽패널 감싸는 div */
 .phaseComponent-parent-div{
     display: flex;
     gap:10px;
+    
 
 }
 

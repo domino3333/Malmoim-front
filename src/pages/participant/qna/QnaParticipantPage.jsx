@@ -98,7 +98,7 @@ const QnaParticipantPage = () => {
 
         restart(expiryTime, true);
 
-    }, [timerInfo?.phaseEndedAt,restart]);
+    }, [timerInfo?.phaseEndedAt, restart]);
 
     // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {
@@ -152,7 +152,7 @@ const QnaParticipantPage = () => {
 
 
             const questionListSnapshot = await getQuestionList(roomNo);
-            setQuestions(prev => mergeQuestionLists(prev,questionListSnapshot));
+            setQuestions(prev => mergeQuestionLists(prev, questionListSnapshot));
 
             const participantListSnapshot = await getParticipantList(roomNo);
             setParticipantList(participantListSnapshot);
@@ -213,23 +213,24 @@ const QnaParticipantPage = () => {
 
         <div className="qna-participant-main-div">
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
-            {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
+            <div className="qna-participant-main-border-div">
+                {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
+                <div className="qna-participant-timer-status-parent">
+                    <TimerPanel remainingTime={remainingTime} />
+                    <TimerStatusPanel isRunning={isRunning} />
 
-            <div className="qna-participant-timer-status-parent">
-                <TimerPanel remainingTime={remainingTime} />
-                <TimerStatusPanel isRunning={isRunning} />
-
-            </div>
-
-            <div className="phaseComponent-parent-div">
-                <div className="phaseComponent-left-panel">
-                    {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} onQuestionSubmit={handleQuestionSubmit} />}
-                </div>
-                <div className="phaseComponent-right-panel">
-                    <ParticipantInfoPanel participantInfo={participantInfo} />
-                    <ParticipantListPanel participantList={participantList} />
                 </div>
 
+                <div className="phaseComponent-parent-div">
+                    <div className="phaseComponent-left-panel">
+                        {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} onQuestionSubmit={handleQuestionSubmit} />}
+                    </div>
+                    <div className="phaseComponent-right-panel">
+                        <ParticipantInfoPanel participantInfo={participantInfo} />
+                        <ParticipantListPanel participantList={participantList} />
+                    </div>
+
+                </div>
             </div>
         </div>
 
