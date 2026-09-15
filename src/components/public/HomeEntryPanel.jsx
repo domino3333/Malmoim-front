@@ -14,8 +14,8 @@ const HomeEntryPanel = () => {
     const [roomInfo, setRoomInfo] = useState(null);
     const [password, setPassword] = useState("");
 
-    const [entryModalShow, setEntryModalShow] = useState(false);
-    const [nicknameModalShow, setNicknameModalShow] = useState(false);
+    const [isEntryModalOpen, setIsEntryModalOpen] = useState(false);
+    const [isNicknameModalOpen, setIsNicknameModalOpen] = useState(false);
     const [isCheckingCode, setIsCheckingCode] = useState(false);
     const [isVerifyingPassword, setIsVerifyingPassword] = useState(false);
     const [isJoining, setIsJoining] = useState(false);
@@ -36,7 +36,7 @@ const HomeEntryPanel = () => {
         try {
             const data = await getRoomEntryInfo(code.trim().toUpperCase());
             setRoomInfo(data);
-            setEntryModalShow(true);
+            setIsEntryModalOpen(true);
 
         } catch (e) {
             const message = e.response?.data;
@@ -57,8 +57,8 @@ const HomeEntryPanel = () => {
                 const response = await verifyRoomPassword(roomNo, password);
                 setPasswordCheckResponse(response);
             }
-            setEntryModalShow(false);
-            setNicknameModalShow(true);
+            setIsEntryModalOpen(false);
+            setIsNicknameModalOpen(true);
         } catch (e) {
             const message = e.response?.data;
             alert(e.response?.status < 500 && typeof message === "string" && message.trim()
@@ -119,9 +119,9 @@ const HomeEntryPanel = () => {
         </div>
 
 
-        {roomInfo && <EntryModal onNext={handleEntryNext} isVerifyingPassword={isVerifyingPassword} password={password} setPassword={setPassword} roomInfo={roomInfo} show={entryModalShow} onHide={() => setEntryModalShow(false)} />}
+        {roomInfo && <EntryModal onNext={handleEntryNext} isVerifyingPassword={isVerifyingPassword} password={password} setPassword={setPassword} roomInfo={roomInfo} show={isEntryModalOpen} onHide={() => setIsEntryModalOpen(false)} />}
 
-        {roomInfo && <NicknameModal onJoin={handleJoinRoom} isJoining={isJoining} roomInfo={roomInfo} show={nicknameModalShow} onHide={() => setNicknameModalShow(false)} />}
+        {roomInfo && <NicknameModal onJoin={handleJoinRoom} isJoining={isJoining} roomInfo={roomInfo} show={isNicknameModalOpen} onHide={() => setIsNicknameModalOpen(false)} />}
     </>)
 }
 export default HomeEntryPanel;
