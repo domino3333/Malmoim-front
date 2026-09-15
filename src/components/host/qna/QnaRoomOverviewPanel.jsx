@@ -32,7 +32,7 @@ const QnaRoomOverviewPanel = ({ roomInfo, timerInfo }) => {
 
     return (<>
 
-        <div className="RoomInfo-main-div">
+        <div className="qna-room-overview-panel">
             <div className="timer-parent-div">
                 <div className="timer-div">
                     {String(minutes).padStart(2, "0")}:
