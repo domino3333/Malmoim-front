@@ -1,10 +1,34 @@
 
 
+import { useState } from "react";
 import "../../../css/host/qna/HostQuestionList.css"
 import HostQuestionCard from "./HostQuestionCard";
 
-const HostQuestionList = ({questions}) => {
+const HostQuestionList = ({ questions }) => {
 
+
+
+    const [sortedQuestions, setSortedQuestions] = useState([]);
+
+
+
+    const handleSort = (e) => {
+
+        const value = e.target.value;
+
+        let list = [];
+
+        if (value === "latest") {
+
+            list = [...questions].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+        } else {
+
+            list = [...questions].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        }
+        
+        setSortedQuestions(list);
+    }
     return (<>
 
 
@@ -23,8 +47,8 @@ const HostQuestionList = ({questions}) => {
                     </button>
                 </div>
                 <div className="qna-toolbar-right-div">
-                    <select name="selectBox" id="order">
-                        <option value="latest">최신순</option>
+                    <select onChange={handleSort} name="selectBox" id="order">
+                        <option value="latest" >최신순</option>
                         <option value="oldest">오래된 순</option>
                     </select>
                 </div>
@@ -32,7 +56,7 @@ const HostQuestionList = ({questions}) => {
             </div>
 
             <div className="qnaList-main-div">
-                {questions.map((question)=><HostQuestionCard key={question.questionNo} question={question} />)}
+                {sortedQuestions.map((question) => <HostQuestionCard key={question.questionNo} question={question} />)}
 
             </div>
 
