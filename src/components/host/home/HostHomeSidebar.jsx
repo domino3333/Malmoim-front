@@ -26,25 +26,28 @@ const HostHomeSidebar = () => {
       <nav className="host-home-sidebar-menu">
 
         <NavLink to="/dashboard"
-          className={({isActive})=>`host-home-sidebar-menu-button ${isActive ? "active":""}`}
+          className={({ isActive }) => `host-home-sidebar-menu-button ${isActive ? "active" : ""}`}
         >
           <img src={dashboardIcon} alt="대시보드" />
           <span>대시보드</span>
 
         </NavLink>
 
-
-        <button type="button" onClick={() => nav('/createDetail')} className="host-home-sidebar-menu-button">
+        <NavLink to="/createDetail"
+          className={({ isActive }) => `host-home-sidebar-menu-button ${isActive ? "active" : ""}`}
+        >
           <img src={plusIcon} alt="만들기" />
           <span>말모임 만들기</span>
-        </button>
+        </NavLink>
 
-        <button type="button" onClick={() => nav('/myContent')} className="host-home-sidebar-menu-button">
+        <NavLink to="/myContent"
+          className={({ isActive }) => `host-home-sidebar-menu-button ${isActive ? "active" : ""}`}
+        >
           <img src={personIcon} alt="내 말모임" />
           <span>내 말모임</span>
-        </button>
+        </NavLink>
       </nav>
-    </aside>
+    </aside >
   )
 }
 
