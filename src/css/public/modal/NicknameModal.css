@@ -42,9 +42,10 @@
 
 /* 비밀번호가 있을 때 입장하기 버튼*/
 .nickname-modal-enter-button-v1{
-    margin-top: 70px;
+    margin-top: 40px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 10px;
     background-color: #90653E;
     color: white;
     border-radius: 5px;
