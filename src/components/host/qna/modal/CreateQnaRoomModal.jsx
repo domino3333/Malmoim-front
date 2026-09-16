@@ -2,6 +2,7 @@ import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/CreateQnaRoomModal.css"
 import { useState } from "react";
 import { createQnaRoom } from "../../../../api/qna/hostQnaApi";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -11,6 +12,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
 
     const [isPrivate, setIsPrivate] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const nav = useNavigate();
 
     // 비공개 체크 여부의 상태 반영
     const handlePrivateChange = (e) => {
@@ -54,6 +56,8 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
             });
             onHide();
             setIsPrivate(false);
+            nav("/myContent");
+            
         } catch (e) {
             const message = e.response?.data;
             alert(e.response?.status < 500 && typeof message === "string" && message.trim()
