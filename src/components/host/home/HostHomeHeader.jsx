@@ -1,6 +1,7 @@
 
 import { useNavigate } from "react-router-dom"
 import logo from "../../../assets/logo.png"
+import person from "../../../assets/person.png"
 import "../../../css/host/home/HostHomeHeader.css"
 
 //host 페이지의 상단 바
@@ -10,10 +11,8 @@ const HostHomeHeader = () => {
 
     return (<>
         <header className="host-home-header">
-            <img src={logo} alt="로고" onClick={()=>nav("/")} />
-            <div>
-                내 정보버튼
-            </div>
+            <img className="host-home-header-logo" src={logo} alt="로고" onClick={()=>nav("/")} />
+            <img className="host-home-header-person-icon" src={person} alt="my" onClick={()=>nav("/")} />
         </header>
 
     </>)

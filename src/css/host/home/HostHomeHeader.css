@@ -1,5 +1,5 @@
 /*헤더 로고 이미지*/
-.host-home-header img {
+.host-home-header-logo{
 
     width: 180px;
     height: 70px;
@@ -12,4 +12,16 @@
 .host-home-header {
     display: flex;
     justify-content: space-between;
+}
+
+/* person 아이콘 */
+.host-home-header-person-icon{
+
+    width:50px;
+    height:50px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 100%;
+    padding:5px;
 }
