@@ -57,14 +57,15 @@
 
 /* 비밀번호 없을 경우 입장하기 버튼*/
 .nickname-modal-enter-button-v2{
-    margin-top: 60px;
+    margin-top: 40px;
     margin-left: 20px;
     margin-right: 20px;
     background-color: #90653E;
     color: white;
     border-radius: 5px;
     border: none;
-    height: 50px;
+    height: 100px;
+    margin-bottom: 10px;
     
 }
 
