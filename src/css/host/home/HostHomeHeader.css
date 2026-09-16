@@ -8,10 +8,12 @@
 }
 
 
-/*헤더*/
+/*헤더 전체*/
 .host-home-header {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 /* person 아이콘 */
@@ -21,7 +23,13 @@
     height:50px;
     margin-top: 20px;
     margin-right: 20px;
-    border: 1px solid black;
+    color:#90653E;
+    border: 2px solid #90653E;
     border-radius: 100%;
     padding:5px;
+    
+}
+
+.host-home-header-person-icon:hover{
+
 }
