@@ -1,22 +1,9 @@
-
-
-
-/*바디 전체*/
-.div-dashboard-body {
-    margin-top: 30px;
-    display: flex;
-
-}
-
-
-
-/*content-list 전체 div*/
-.div-dashboard-content-list {
+/* 호스트 대시보드 본문 */
+.host-dashboard-page {
     flex: 1;
+    margin-top: 30px;
     border-top: 1px solid rgb(192, 183, 183);
     border-left: 1px solid rgb(192, 183, 183);
     border-radius: 10px;
-    height: 100vh;
-    margin-left: 20px;
-
+    min-height: 100%;
 }

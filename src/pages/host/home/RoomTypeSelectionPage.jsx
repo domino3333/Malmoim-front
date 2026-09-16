@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import HostHomeHeader from "../../../components/host/home/HostHomeHeader";
-import HostHomeSidebar from "../../../components/host/home/HostHomeSidebar";
+import HostHomeLayout from "../../../components/host/home/HostHomeLayout";
 import "../../../css/host/home/RoomTypeSelectionPage.css";
 import audience from "../../../assets/audience.png"
 import { useState } from "react";
@@ -10,18 +8,11 @@ import CreateQnaRoomModal from "../../../components/host/qna/modal/CreateQnaRoom
 
 const RoomTypeSelectionPage = () => {
 
-    const nav = useNavigate();
-
-
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
-    return (<>
-        <HostHomeHeader/>
-
-        {/*대쉬보드 전체를 감싸는 body div*/}
-        <div className="div-RoomTypeSelectionPage-body">
-            <HostHomeSidebar/>
-            <div className="div-RoomTypeSelectionPage-content-list">
+    return (
+        <HostHomeLayout>
+            <div className="room-type-selection-page">
                 <div className="btn-box">
                     <button className="btn1" onClick={() => setIsCreateModalOpen(true)}>
                         <img src={audience} alt="청중이미지" />
@@ -32,13 +23,10 @@ const RoomTypeSelectionPage = () => {
 
                 </div>
             </div>
-        </div>
 
-        <CreateQnaRoomModal show={isCreateModalOpen} onHide={()=>setIsCreateModalOpen(false)} title={"청중Q&A"}/>
-
-        
-
-    </>)
+            <CreateQnaRoomModal show={isCreateModalOpen} onHide={()=>setIsCreateModalOpen(false)} title={"청중Q&A"}/>
+        </HostHomeLayout>
+    )
 }
 
 export default RoomTypeSelectionPage;

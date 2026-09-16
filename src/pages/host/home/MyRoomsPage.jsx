@@ -1,7 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import HostHomeHeader from "../../../components/host/home/HostHomeHeader";
-import HostHomeSidebar from "../../../components/host/home/HostHomeSidebar";
+import HostHomeLayout from "../../../components/host/home/HostHomeLayout";
 import "../../../css/host/home/MyRoomsPage.css";
 import { useEffect, useState } from "react";
 import { getMyRooms } from "../../../api/room/roomApi";
@@ -87,13 +86,9 @@ const MyRoomsPage = () => {
 
     }, [currentPage])
 
-    return (<>
-        <HostHomeHeader />
-
-        {/*대쉬보드 전체를 감싸는 body div*/}
-        <div className="div-MyRoomsPage-body">
-            <HostHomeSidebar/>
-            <div className="div-MyRoomsPage-content-list">
+    return (
+        <HostHomeLayout>
+            <div className="my-rooms-page">
                 <div className="div-content">
 
                     <div className="div-content-head-main">
@@ -163,9 +158,8 @@ const MyRoomsPage = () => {
 
                 </div>
             </div>
-        </div>
-
-    </>)
+        </HostHomeLayout>
+    )
 }
 
 export default MyRoomsPage;

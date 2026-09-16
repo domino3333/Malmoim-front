@@ -1,17 +1,7 @@
-/*헤더 로고 이미지*/
-.host-home-header-logo{
-
-    width: 180px;
-    height: 70px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-
-/*헤더 전체*/
+/* 호스트 홈 상단 헤더 */
 .host-home-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-top: 10px;
     margin-left: 10px;
 }

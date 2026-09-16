@@ -1,54 +1,38 @@
-
-
-/*sidebar 전체 div*/
-.div-dashboard-sidebar {
-
+/* 호스트 홈 왼쪽 사이드바 */
+.host-home-sidebar {
     width: 200px;
+    min-height: 100vh;
+    flex-shrink: 0;
+    background-color: rgb(242, 237, 237);
 }
 
-
-/*내 말모임 탭 버튼*/
-.button-dashboard-my-malmoim {
-    padding: 10px;
-    padding-left: 20px;
+/* 사이드바 상단 로고 버튼 */
+.host-home-sidebar-logo-button {
     width: 100%;
-    color: black;
+    box-sizing: border-box;
     background: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-align: left;
     border: none;
-    
+    padding: 10px;
+    cursor: pointer;
 }
 
-/* 내 말모임 < 텍스트*/
-.button-dashboard-my-malmoim span{
-    font-weight: 600;
-    font-size: 0.95em;
-}
-
-/*말모임 만들기 < 텍스트*/
-.button-dashboard-create-malmoim span{
-    font-weight: 600;
-    font-size: 0.95em;
-}
-
-/*plusIcon 이미지*/
-.button-dashboard-create-malmoim img {
-    width: 20px;
-    height: 20px;
-}
-
-/*personIcon 이미지*/
-.button-dashboard-my-malmoim img {
-    width: 20px;
-    height: 20px;
-}
-
-/*말모임 만들기 탭 버튼*/
-.button-dashboard-create-malmoim {
+/* 사이드바 상단 로고 이미지 */
+.host-home-sidebar-logo {
+    display: block;
     width: 100%;
+    border-radius: 10px;
+}
+
+/* 사이드바 메뉴 영역 */
+.host-home-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 사이드바 메뉴 버튼 */
+.host-home-sidebar-menu-button {
+    width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     padding-left: 20px;
     color: black;
@@ -58,4 +42,16 @@
     gap: 10px;
     text-align: left;
     border: none;
+}
+
+/* 사이드바 메뉴 아이콘 */
+.host-home-sidebar-menu-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 사이드바 메뉴 텍스트 */
+.host-home-sidebar-menu-button span {
+    font-weight: 600;
+    font-size: 0.95em;
 }

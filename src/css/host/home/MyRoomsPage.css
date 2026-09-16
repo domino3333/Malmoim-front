@@ -1,30 +1,19 @@
-/*바디 전체*/
-.div-MyRoomsPage-body {
-    margin-top: 30px;
-    display: flex;
-}
-
-
-/* body 안의 전체 컴포넌트를 아우르는 div*/
-.div-content {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 20px;
-
-}
-
-
-
-/*content-list 전체 div*/
-.div-MyRoomsPage-content-list {
+/* 내 말모임 페이지 본문 */
+.my-rooms-page {
     flex: 1;
+    margin-top: 30px;
     border-top: 1px solid rgb(192, 183, 183);
     border-left: 1px solid rgb(192, 183, 183);
     border-radius: 10px;
-    height: 100vh;
-    margin-left: 20px;
+    min-height: 100%;
     background-color: rgb(242, 237, 237);
+}
+
+/* 본문 안의 전체 콘텐츠 영역 */
+.div-content {
+    width: 85%;
+    max-width: 1200px;
+    margin: 20px auto 0;
 
 }
 

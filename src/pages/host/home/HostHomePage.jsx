@@ -1,34 +1,30 @@
 
 import "../../../css/host/home/HostHomePage.css"
-import HostHomeHeader from "../../../components/host/home/HostHomeHeader"
-import HostHomeSidebar from "../../../components/host/home/HostHomeSidebar"
+import HostHomeLayout from "../../../components/host/home/HostHomeLayout"
 
 
 
 const HostHomePage = () => {
 
-    return (<>
-
-        <HostHomeHeader/>
-
-        {/*대쉬보드 전체를 감싸는 body div*/}
-        <div className="div-dashboard-body">
-            <HostHomeSidebar/>
-            <div className="div-dashboard-content-list">
+    return (
+        <HostHomeLayout>
+            <div className="host-dashboard-page">
                 <table>
-                    <tr>
-                        <td>임시1</td>
-                    </tr>
-                    <tr>
-                        <td>임시2</td>
-                    </tr>
-                    <tr>
-                        <td>임시3</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>임시1</td>
+                        </tr>
+                        <tr>
+                            <td>임시2</td>
+                        </tr>
+                        <tr>
+                            <td>임시3</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
-        </div>
-    </>)
+        </HostHomeLayout>
+    )
 
 }
 
