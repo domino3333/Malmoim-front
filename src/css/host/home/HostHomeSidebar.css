@@ -14,6 +14,7 @@
     border: none;
     padding: 10px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 /* 사이드바 상단 로고 이미지 */
@@ -33,16 +34,23 @@
 .host-home-sidebar-menu-button {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
-    padding-left: 20px;
+    padding: 10px 10px 10px 16px;
     color: black;
     background: none;
+    text-decoration: none;
+    border-left: 4px solid transparent;
     display: flex;
     align-items: center;
     gap: 10px;
     text-align: left;
-    border: none;
 }
+
+/*현재 선택된 탭의 배경 색 변경*/
+.host-home-sidebar-menu-button.active {
+    background-color: #E9D8C4;
+    border-left-color: #90653E;
+}
+
 
 /* 사이드바 메뉴 아이콘 */
 .host-home-sidebar-menu-button img {

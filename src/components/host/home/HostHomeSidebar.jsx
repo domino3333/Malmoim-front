@@ -3,7 +3,7 @@ import personIcon from '../../../assets/person.png'
 import plusIcon from '../../../assets/plus.png'
 import dashboardIcon from '../../../assets/dashboard-icon.png'
 import logo from '../../../assets/logo.png'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const HostHomeSidebar = () => {
 
@@ -24,10 +24,15 @@ const HostHomeSidebar = () => {
       </button>
 
       <nav className="host-home-sidebar-menu">
-        <button type="button" onClick={() => nav('/dashboard')} className="host-home-sidebar-menu-button">
+
+        <NavLink to="/dashboard"
+          className={({isActive})=>`host-home-sidebar-menu-button ${isActive ? "active":""}`}
+        >
           <img src={dashboardIcon} alt="대시보드" />
           <span>대시보드</span>
-        </button>
+
+        </NavLink>
+
 
         <button type="button" onClick={() => nav('/createDetail')} className="host-home-sidebar-menu-button">
           <img src={plusIcon} alt="만들기" />
