@@ -39,3 +39,20 @@
 .host-home-header-person-button:hover img {
     filter: brightness(0) invert(1);
 }
+
+/* person 아이콘 옆 기본 드롭다운 화살표 제거 */
+.host-home-header-person-button.dropdown-toggle::after {
+    display: none;
+}
+/* Bootstrap link 버튼의 기본 스타일 제거 */
+.host-home-header-person-button.btn-link {
+    padding: 5px;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 드롭다운 메뉴 */
+.host-account-dropdown .dropdown-menu {
+    min-width: 170px;
+    margin-top: 8px;
+}
