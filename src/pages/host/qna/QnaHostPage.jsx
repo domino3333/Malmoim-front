@@ -12,6 +12,7 @@ import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhas
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
+import QuestionCardModal from "../../../components/host/qna/modal/questionCardModal";
 
 const QnaHostPage = () => {
 
@@ -51,6 +52,9 @@ const QnaHostPage = () => {
     // TimerModal 표시 상태
     const [isQuestionTimerOpen, setIsQuestionTimerOpen] = useState(false);
     const [isVotingTimerOpen, setIsVotingTimerOpen] = useState(false);
+
+    // 질문카드 모달 표시 상태
+    const [isQuestionCardOpen, setIsQuestionCardOpen] = useState(false);
 
     // 말모임 로고 클릭 시 메인 페이지 이동
     const handleLogoClick = () => {
@@ -194,6 +198,10 @@ const QnaHostPage = () => {
             onStart={handleStartVotingPhase}
             show={isVotingTimerOpen}
             onHide={() => setIsVotingTimerOpen(false)} />
+
+        <QuestionCardModal
+            show={isQuestionCardOpen}
+            onHide={()=>setIsQuestionCardOpen(false)} />
 
     </>)
 }
