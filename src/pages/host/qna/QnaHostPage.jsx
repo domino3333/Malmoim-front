@@ -61,6 +61,12 @@ const QnaHostPage = () => {
         nav("/");
     }
 
+
+    // 하나의 질문 카드 클릭 시
+    const handleQuestionSelect = ()=>{
+        setIsQuestionCardOpen(true);
+    }
+
     // 질문 접수 시작 요청 및 타이머·방 상태 갱신
     const handleStartQuestionPhase = async (seconds) => {
         // timer start api 호출
@@ -175,7 +181,7 @@ const QnaHostPage = () => {
 
                     />
                     <div className="qna-host-body-top">
-                        <HostQuestionList questions={questions} />
+                        <HostQuestionList questions={questions} onClickCard={handleQuestionSelect} />
                         <HostParticipantPanel participantList={participantList} />
                     </div>
 
