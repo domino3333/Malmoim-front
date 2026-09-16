@@ -76,11 +76,20 @@
     text-decoration: none;
 }
 
-/* "내 말모임" Link*/
-.navbar-my-malmoim a{
-    color:black;
+/* "내 말모임" 버튼 */
+.navbar-my-malmoim-button {
+    justify-self: end;
     margin-right: 150px;
-    border:3px solid #90653E;
+    border: 2px solid #90653E;
     border-radius: 10px;
-    padding:10px;
+    padding: 10px;
+    background-color: transparent;
+    color: rgba(131, 62, 62, 0.93);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.navbar-my-malmoim-button:hover {
+    background-color: #90653E;
+    color: white;
 }

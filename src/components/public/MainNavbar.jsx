@@ -22,9 +22,12 @@ const MainNavbar = () => {
         </nav>
 
         {hasAccessToken ? <>
-          <div className="navbar-my-malmoim">
-            <Link to="/dashboard">내 말모임</Link>
-          </div>
+          <Link
+            to="/dashboard"
+            className="navbar-my-malmoim-button"
+          >
+            내 말모임
+          </Link>
         </> : <>
           <div className="navbar-auth">
             <div className="div-login">
@@ -45,4 +48,3 @@ const MainNavbar = () => {
 }
 
 export default MainNavbar
-
