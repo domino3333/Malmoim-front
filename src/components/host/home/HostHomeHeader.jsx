@@ -11,8 +11,14 @@ const HostHomeHeader = () => {
 
     return (<>
         <header className="host-home-header">
-            <img className="host-home-header-logo" src={logo} alt="로고" onClick={()=>nav("/")} />
-            <img className="host-home-header-person-icon" src={person} alt="my" onClick={()=>nav("/")} />
+            <img className="host-home-header-logo" src={logo} alt="로고" onClick={() => nav("/")} />
+            <button
+                type="button"
+                className="host-home-header-person-button"
+                onClick={() => nav("/")}
+            >
+                <img src={person} alt="내 정보" />
+            </button>
         </header>
 
     </>)

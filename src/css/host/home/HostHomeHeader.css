@@ -16,20 +16,36 @@
     margin-left: 10px;
 }
 
-/* person 아이콘 */
-.host-home-header-person-icon{
-
-    width:50px;
-    height:50px;
+/* person 아이콘 버튼 */
+.host-home-header-person-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
     margin-top: 20px;
     margin-right: 20px;
-    color:#90653E;
     border: 2px solid #90653E;
-    border-radius: 100%;
-    padding:5px;
-    
+    border-radius: 50%;
+    padding: 5px;
+    background-color: transparent;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
-.host-home-header-person-icon:hover{
+/* 버튼 안 person 이미지 */
+.host-home-header-person-button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
+/* person 아이콘에 마우스 올릴 시 */
+.host-home-header-person-button:hover {
+    background-color: #90653E;
+}
+
+/*마우스 올릴 시 색 변경*/
+.host-home-header-person-button:hover img {
+    filter: brightness(0) invert(1);
 }
