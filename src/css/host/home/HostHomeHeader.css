@@ -30,13 +30,16 @@
     height: 100%;
 }
 
-/* person 아이콘에 마우스 올릴 시 */
-.host-home-header-person-button:hover {
+/* person 아이콘에 마우스를 올리거나 메뉴가 열렸을 때 */
+.host-home-header-person-button:hover,
+.host-home-header-person-button.show {
     background-color: #90653E;
+    border-color: #90653E;
 }
 
-/*마우스 올릴 시 색 변경*/
-.host-home-header-person-button:hover img {
+/* 마우스를 올리거나 메뉴가 열렸을 때 아이콘 색 변경 */
+.host-home-header-person-button:hover img,
+.host-home-header-person-button.show img {
     filter: brightness(0) invert(1);
 }
 
@@ -44,6 +47,7 @@
 .host-home-header-person-button.dropdown-toggle::after {
     display: none;
 }
+
 /* Bootstrap link 버튼의 기본 스타일 제거 */
 .host-home-header-person-button.btn-link {
     padding: 5px;
