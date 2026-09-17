@@ -4,6 +4,7 @@
     border: none;
     border: 3px solid #90653E;
     border-radius: 20px;
+
 }
 
 
@@ -16,6 +17,7 @@
     font-weight: 600;
     align-self: flex-end;
     color: white;
+    margin: 10px;
 }
 
 /* 시간 텍스트 */
@@ -23,12 +25,14 @@
     color: rgb(135, 127, 117);
     font-size: 0.9em;
     margin: 0;
+    padding-left: 5px;
 }
 
 /*닉네임 텍스트*/
 .QuestionCardModal-nickname {
     color: black;
     margin: 0;
+    padding-left: 5px;
 }
 
 /*질문 내용 div를 감싸는 div*/
@@ -39,8 +43,10 @@
 /* 질문 내용 div */
 .QuestionCardModal-content {
 
-    border-top: 1px solid rgb(135, 127, 117);
-    padding-top: 10px;
+    border: 1px solid rgb(135, 127, 117);
+    border-radius: 10px;
+    padding: 10px;
+    height: 200px;
 }
 
 /* 시간과 닉네임 div를 감싸는 div*/
@@ -57,11 +63,13 @@
 .QuestionCardModal-button-parent {
     display: flex;
     gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
 
 }
 
-/*각 버튼*/
-.QuestionCardModal-button {
+/* 취소 버튼*/
+.QuestionCardModal-btn-cancel {
     width: 45%;
     background-color: #90653E;
     border: none;
@@ -69,4 +77,16 @@
     border-radius: 10px;
     color: white;
     font-weight: 600;
+}
+
+/* 답변완료로 표시 버튼*/
+.QuestionCardModal-btn-complete {
+    width: 45%;
+    background-color: #90653E;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+
 }

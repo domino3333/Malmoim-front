@@ -19,8 +19,8 @@ const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
 
 
             <div className="QuestionCardModal-button-parent">
-                <button className="QuestionCardModal-button">취소</button>
-                <button className="QuestionCardModal-button">답변완료로 표시</button>
+                <button className="QuestionCardModal-btn-cancel">취소</button>
+                <button className="QuestionCardModal-btn-complete">답변완료로 표시</button>
             </div>
 
 
