@@ -9,14 +9,14 @@ const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
 
         <Modal show={show} onHide={onHide}>
             <div className="QuestionCardModal-top">
-                <p>{selectedQuestion.createdAt}</p>
-                <p>닉네임</p>
-                <p>{selectedQuestion.nickname}</p>
+                <p className="QuestionCardModal-time">{selectedQuestion.createdAt}</p>
+                <p className="QuestionCardModal-nickname-text">닉네임</p>
+                <p className="QuestionCardModal-nickname">{selectedQuestion.nickname}</p>
             </div>
 
             <div className="QuestionCardModal-bottom">
-                <p>질문</p>
-                <p>{selectedQuestion.content}</p>
+                <p className="QuestionCardModal-content-text">질문</p>
+                <p className="QuestionCardModal-content">{selectedQuestion.content}</p>
             </div >
 
 
