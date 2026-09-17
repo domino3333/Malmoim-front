@@ -8,6 +8,7 @@ const QuestionCardModal = ({show, onHide})=>{
 
         <Modal show={show} onHide={onHide}>
             <h4>질문 카드 모달</h4>
+            {/* 질문 넘겨받아야함 */}
         </Modal>
     </>)
 }
