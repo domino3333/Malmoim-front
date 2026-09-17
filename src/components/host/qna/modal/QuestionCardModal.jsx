@@ -1,4 +1,5 @@
 import { Modal } from "react-bootstrap";
+import "../../../../css/host/qna/modal/QuestionCardModal.css"
 
 
 const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
