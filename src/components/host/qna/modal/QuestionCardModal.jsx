@@ -1,14 +1,15 @@
 import { Modal } from "react-bootstrap";
 
 
-const QuestionCardModal = ({show, onHide})=>{
+const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
 
 
-    return(<>
+    return (<>
 
         <Modal show={show} onHide={onHide}>
             <h4>질문 카드 모달</h4>
-            {/* 질문 넘겨받아야함 */}
+            <p>ddd</p>
+            닉네임:{selectedQuestion.content}
         </Modal>
     </>)
 }

@@ -6,7 +6,7 @@ import "../../../css/host/qna/HostQuestionCard.css"
 const HostQuestionCard = ({ question, onClickCard }) => {
 
     return (<>
-        <div className="HostQuestionCard-main-div" onClick={onClickCard}>
+        <div className="HostQuestionCard-main-div" onClick={()=>onClickCard(question)}>
             <div className="HostQuestionCard-header-div">
                 <div className="HostQuestionCard-nickname-div">
                     닉네임: {question.nickname}

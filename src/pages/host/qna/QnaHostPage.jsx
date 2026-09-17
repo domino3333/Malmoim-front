@@ -56,6 +56,8 @@ const QnaHostPage = () => {
     // 질문카드 모달 표시 상태
     const [isQuestionCardOpen, setIsQuestionCardOpen] = useState(false);
 
+    const [selectedQuestion, setSelectedQuestion] = useState({});
+
     // 말모임 로고 클릭 시 메인 페이지 이동
     const handleLogoClick = () => {
         nav("/");
@@ -63,8 +65,9 @@ const QnaHostPage = () => {
 
 
     // 하나의 질문 카드 클릭 시
-    const handleQuestionSelect = ()=>{
+    const handleQuestionSelect = ({ question }) => {
         setIsQuestionCardOpen(true);
+        setSelectedQuestion(question);
     }
 
     // 질문 접수 시작 요청 및 타이머·방 상태 갱신
@@ -206,8 +209,9 @@ const QnaHostPage = () => {
             onHide={() => setIsVotingTimerOpen(false)} />
 
         <QuestionCardModal
+            selectedQuestion={selectedQuestion}
             show={isQuestionCardOpen}
-            onHide={()=>setIsQuestionCardOpen(false)} />
+            onHide={() => setIsQuestionCardOpen(false)} />
 
     </>)
 }
