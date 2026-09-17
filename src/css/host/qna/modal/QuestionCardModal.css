@@ -20,35 +20,53 @@
 
 /* 시간 텍스트 */
 .QuestionCardModal-time {
-    color:rgb(135, 127, 117);
+    color: rgb(135, 127, 117);
     font-size: 0.9em;
     margin: 0;
 }
 
 /*닉네임 텍스트*/
-.QuestionCardModal-nickname{
-    color:black;
-    margin:0;
+.QuestionCardModal-nickname {
+    color: black;
+    margin: 0;
 }
 
 /*질문 내용 div를 감싸는 div*/
-.QuestionCardModal-bottom{
-    padding:15px;
+.QuestionCardModal-bottom {
+    padding: 15px;
 }
 
 /* 질문 내용 div */
-.QuestionCardModal-content{
+.QuestionCardModal-content {
 
     border-top: 1px solid rgb(135, 127, 117);
     padding-top: 10px;
 }
 
 /* 시간과 닉네임 div를 감싸는 div*/
-.QuestionCardModal-top{
+.QuestionCardModal-top {
     padding-left: 15px;
     padding-top: 15px;
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 
+}
+
+/*버튼 두개를 감싸는 div*/
+.QuestionCardModal-button-parent {
+    display: flex;
+    gap: 10px;
+
+}
+
+/*각 버튼*/
+.QuestionCardModal-button {
+    width: 45%;
+    background-color: #90653E;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
 }
