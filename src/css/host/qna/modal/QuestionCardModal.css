@@ -17,3 +17,15 @@
     align-self: flex-end;
     color: white;
 }
+
+/* 시간 텍스트 */
+.QuestionCardModal-time {
+    color:rgb(135, 127, 117);
+    font-size: 0.9em;
+}
+
+/*닉네임 텍스트*/
+.QuestionCardModal-nickname{
+    color:black;
+    font-size: 1.2em;
+}

@@ -13,7 +13,6 @@ const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
                 <p className="QuestionCardModal-time">{selectedQuestion.createdAt}</p>
                 <p className="QuestionCardModal-nickname">{selectedQuestion.nickname}</p>
             </div>
-            <hr />
             <div className="QuestionCardModal-bottom">
                 <p className="QuestionCardModal-content">{selectedQuestion.content}</p>
             </div >
