@@ -8,7 +8,9 @@ const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
     return (<>
 
         <Modal show={show} onHide={onHide} contentClassName="question-card-modal">
-            <button className="QuestionCardModal-x-button">X</button>
+            <button
+                className="QuestionCardModal-x-button"
+                onClick={onHide}>X</button>
             <div className="QuestionCardModal-top">
                 <p className="QuestionCardModal-time">{selectedQuestion.createdAt}</p>
                 <p className="QuestionCardModal-nickname">{selectedQuestion.nickname}</p>
@@ -19,7 +21,10 @@ const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
 
 
             <div className="QuestionCardModal-button-parent">
-                <button className="QuestionCardModal-btn-cancel">취소</button>
+                <button
+                    className="QuestionCardModal-btn-cancel"
+                    onClick={onHide}
+                >취소</button>
                 <button className="QuestionCardModal-btn-complete">답변완료로 표시</button>
             </div>
 
