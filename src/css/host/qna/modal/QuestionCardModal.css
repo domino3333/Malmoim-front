@@ -79,14 +79,24 @@
     font-weight: 600;
 }
 
-/* 답변완료로 표시 버튼*/
+/* '답변완료로 표시' 버튼*/
 .QuestionCardModal-btn-complete {
     width: 45%;
+    background-color: white;
+    border: 1px solid #90653E;
+    padding: 10px;
+    border-radius: 10px;
+    color: #90653E;
+    font-weight: 600;
+}
+
+.QuestionCardModal-btn-complete:hover{
+
+    width: 45%;
     background-color: #90653E;
-    border: none;
+    border: 1px solid #90653E;
     padding: 10px;
     border-radius: 10px;
     color: white;
     font-weight: 600;
-
 }
