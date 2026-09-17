@@ -9,7 +9,7 @@ const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
         <Modal show={show} onHide={onHide}>
             <h4>질문 카드 모달</h4>
             <p>ddd</p>
-            닉네임:{selectedQuestion.content}
+            닉네임:{selectedQuestion.nickname}
         </Modal>
     </>)
 }

@@ -65,7 +65,7 @@ const QnaHostPage = () => {
 
 
     // 하나의 질문 카드 클릭 시
-    const handleQuestionSelect = ({ question }) => {
+    const handleQuestionSelect = (question) => {
         setIsQuestionCardOpen(true);
         setSelectedQuestion(question);
     }
