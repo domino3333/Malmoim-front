@@ -27,5 +27,16 @@
 /*닉네임 텍스트*/
 .QuestionCardModal-nickname{
     color:black;
-    font-size: 1.2em;
+    font-size: 1.0em;
+}
+
+/*질문 내용 div를 감싸는 div*/
+.QuestionCardModal-bottom{
+    padding:10px;
+}
+
+/* 질문 내용 div */
+.QuestionCardModal-content{
+
+    border-top: 1px solid rgb(135, 127, 117);
 }
