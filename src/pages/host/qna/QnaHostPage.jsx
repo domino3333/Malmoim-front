@@ -68,7 +68,7 @@ const QnaHostPage = () => {
         //답변 완료를 누르면 상태를 변경함과 동시에 이걸 웹소켓으로 내려줘야함
         // http 로 응답은 받지만 http응답은 필요 없고 웹소켓으로 구독하고 데이터를 변경할거임
         const data = await completeAnswer(roomNo, questionNo);
-        
+
 
     }
 
@@ -151,7 +151,7 @@ const QnaHostPage = () => {
                     { ...question, status: data.status } : question
                 ))
 
-                setSelectedQuestion(prev=>prev.questionNo === data.questionNo ? {...prev,stats:data.status}:prev);
+                setSelectedQuestion(prev=>prev.questionNo === data.questionNo ? {...prev,status:data.status}:prev);
 
         });
 
