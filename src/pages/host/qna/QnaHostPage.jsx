@@ -64,11 +64,11 @@ const QnaHostPage = () => {
     }
 
     // 질문 모달에서 '답변 완료로 표시 클릭'
-    const handleQuestionAnswering = async (roomNo,questionNo)=>{
+    const handleQuestionAnswering = async (roomNo, questionNo) => {
         //답변 완료를 누르면 상태를 변경함과 동시에 이걸 웹소켓으로 내려줘야함
         // http 로 응답은 받지만 http응답은 필요 없고 웹소켓으로 구독하고 데이터를 변경할거임
-        const data = await completeAnswer(roomNo,questionNo);
-        
+        const data = await completeAnswer(roomNo, questionNo);
+
 
     }
 
@@ -142,25 +142,29 @@ const QnaHostPage = () => {
                 }))
                 setTimerInfo(data);
             });
-            
+
             connectedClient.subscribe(`/topic/qna/${roomNo}/complete`, (frame) => {
                 const data = JSON.parse(frame.body);
 
-                [...questions].find((item)=>item.no === data.questionNo).status = data.status;
-            });
+                setQuestions(prev => prev.map((question) =>
+                    question.questionNo === data.questionNo ?
+                    { ...question, status: data.status } : question
+                ))
 
-            const questionListSnapshot = await getQuestionList(roomNo);
-            setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
+        });
 
-            const participantListSnapshot = await getParticipantList(roomNo);
-            setParticipantList(participantListSnapshot);
+        const questionListSnapshot = await getQuestionList(roomNo);
+        setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
+
+        const participantListSnapshot = await getParticipantList(roomNo);
+        setParticipantList(participantListSnapshot);
 
 
-        })
+    })
 
-        return () => client.deactivate();
+    return () => client.deactivate();
 
-    }, [roomNo])
+}, [roomNo])
 
     // 방 하나의 정보를 불러오는 http useEffect
     useEffect(() => {
@@ -183,53 +187,53 @@ const QnaHostPage = () => {
     }, [roomNo])
 
 
-    return (<>
+return (<>
 
 
-        <div className="qna-host-main-div">
-            <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
-            <div className="qna-host-main-border-div">
-                <RoomSubheader roomInfo={roomInfo} />
-                <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} />
-                <div className="qna-host-body">
-                    <QnaControlPanel
-                        onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
-                        onOpenVotingTimerModal={() => setIsVotingTimerOpen(true)}
-                        onRevealResults={() => handleRevealResults()}
+    <div className="qna-host-main-div">
+        <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
+        <div className="qna-host-main-border-div">
+            <RoomSubheader roomInfo={roomInfo} />
+            <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} />
+            <div className="qna-host-body">
+                <QnaControlPanel
+                    onOpenQuestionTimerModal={() => setIsQuestionTimerOpen(true)}
+                    onOpenVotingTimerModal={() => setIsVotingTimerOpen(true)}
+                    onRevealResults={() => handleRevealResults()}
 
-                    />
-                    <div className="qna-host-body-top">
-                        <HostQuestionList questions={questions} onClickCard={handleQuestionSelect} />
-                        <HostParticipantPanel participantList={participantList} />
-                    </div>
-
+                />
+                <div className="qna-host-body-top">
+                    <HostQuestionList questions={questions} onClickCard={handleQuestionSelect} />
+                    <HostParticipantPanel participantList={participantList} />
                 </div>
 
             </div>
+
         </div>
+    </div>
 
 
-        <TimerModal
-            title={"질문 시간 설정"}
-            description={"참여자가 질문을 작성할 수 있는 제한 시간을 정해주세요."}
-            onStart={handleStartQuestionPhase}
-            show={isQuestionTimerOpen}
-            onHide={() => setIsQuestionTimerOpen(false)} />
+    <TimerModal
+        title={"질문 시간 설정"}
+        description={"참여자가 질문을 작성할 수 있는 제한 시간을 정해주세요."}
+        onStart={handleStartQuestionPhase}
+        show={isQuestionTimerOpen}
+        onHide={() => setIsQuestionTimerOpen(false)} />
 
-        <TimerModal
-            title={"투표 시간 설정"}
-            description={"참여자가 투표할 수 있는 제한 시간을 정해주세요."}
-            onStart={handleStartVotingPhase}
-            show={isVotingTimerOpen}
-            onHide={() => setIsVotingTimerOpen(false)} />
+    <TimerModal
+        title={"투표 시간 설정"}
+        description={"참여자가 투표할 수 있는 제한 시간을 정해주세요."}
+        onStart={handleStartVotingPhase}
+        show={isVotingTimerOpen}
+        onHide={() => setIsVotingTimerOpen(false)} />
 
-        <QuestionCardModal
-            onClickComplete={handleQuestionAnswering}
-            selectedQuestion={selectedQuestion}
-            show={isQuestionCardOpen}
-            onHide={() => setIsQuestionCardOpen(false)} />
+    <QuestionCardModal
+        onClickComplete={handleQuestionAnswering}
+        selectedQuestion={selectedQuestion}
+        show={isQuestionCardOpen}
+        onHide={() => setIsQuestionCardOpen(false)} />
 
-    </>)
+</>)
 }
 
 export default QnaHostPage;
