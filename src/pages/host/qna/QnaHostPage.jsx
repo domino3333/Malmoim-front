@@ -8,7 +8,7 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import HostParticipantPanel from "../../../components/host/qna/HostParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
+import { completeAnswer, getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
@@ -61,6 +61,14 @@ const QnaHostPage = () => {
     // 말모임 로고 클릭 시 메인 페이지 이동
     const handleLogoClick = () => {
         nav("/");
+    }
+
+    // 질문 모달에서 '답변 완료로 표시 클릭'
+    const handleQuestionAnswering = async (roomNo,questionNo)=>{
+        //답변 완료를 누르면 상태를 변경함과 동시에 이걸 웹소켓으로 내려줘야함
+        const data = await completeAnswer(roomNo,questionNo);
+
+        
     }
 
 
