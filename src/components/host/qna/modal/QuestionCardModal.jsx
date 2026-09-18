@@ -24,6 +24,8 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
                 className="QuestionCardModal-x-button"
                 onClick={onHide}>X</button>
             <div className="QuestionCardModal-top">
+
+                <p className="QuestionCardModal-status">{selectedQuestion.status}</p>
                 <p className="QuestionCardModal-time">{selectedQuestion.createdAt}</p>
                 <p className="QuestionCardModal-nickname">{selectedQuestion.nickname}</p>
             </div>
