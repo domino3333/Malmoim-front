@@ -9,7 +9,7 @@ const HostQuestionCard = ({ question, onClickCard }) => {
         <div className="HostQuestionCard-main-div" onClick={()=>onClickCard(question)}>
             <div className="HostQuestionCard-header-div">
                 <div className="HostQuestionCard-nickname-div">
-                    닉네임: {question.nickname}
+                    답변상태: {question.status}
                 </div>
                 <div className="HostQuestionCard-vote-div">
                     추천수: {question.voteCount}

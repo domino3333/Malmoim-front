@@ -28,7 +28,10 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
                 </button>
                 <button
                     className="QuestionCardModal-btn-complete"
-                    onClick={() => onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo)}>
+                    onClick={() =>{
+                    onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo)
+                    onHide()}
+                    }>
                     답변완료로 표시
                 </button>
             </div>
