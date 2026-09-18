@@ -109,3 +109,19 @@ export const startAnsweringPhase = async (roomNo) => {
     return response.data;
 
 }
+
+// 질문 상태를 답변 완료로 변경
+export const completeAnswer = async (roomNo, questionNo) => {
+
+    const token = getAccessToken();
+
+    const response = await axios.post(`${API_BASE_URL}${prefix}/complete-answer`, { roomNo, questionNo }, {
+        headers: {
+            Authorization: `Bearer ${token}`
+
+        }
+    })
+
+    return response.data;
+
+}
