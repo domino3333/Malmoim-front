@@ -1,7 +1,7 @@
 
 
 import "../../../css/host/qna/HostQuestionCard.css"
-import { QuestionStatus } from "../../../utils/qna/QuestionStatus";
+import { QuestionStatus } from "../../../utils/qna/ColumnStatus";
 
 // 질문 내용과 작성자·추천 정보를 표시하는 카드 컴포넌트
 const HostQuestionCard = ({ question, onClickCard }) => {
