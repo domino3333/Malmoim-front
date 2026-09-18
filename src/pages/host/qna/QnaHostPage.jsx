@@ -66,8 +66,8 @@ const QnaHostPage = () => {
     // 질문 모달에서 '답변 완료로 표시 클릭'
     const handleQuestionAnswering = async (roomNo,questionNo)=>{
         //답변 완료를 누르면 상태를 변경함과 동시에 이걸 웹소켓으로 내려줘야함
+        // http 로 응답은 받지만 http응답은 필요 없고 웹소켓으로 구독하고 데이터를 변경할거임
         const data = await completeAnswer(roomNo,questionNo);
-
 
     }
 
@@ -140,6 +140,12 @@ const QnaHostPage = () => {
                     status: data.status
                 }))
                 setTimerInfo(data);
+            });
+            
+            connectedClient.subscribe(`/topic/qna/${roomNo}/complete`, (frame) => {
+                const data = JSON.parse(frame.body);
+
+                [...questions].find((item)=>item.no === data.questionNo).status = data.status;
             });
 
             const questionListSnapshot = await getQuestionList(roomNo);
