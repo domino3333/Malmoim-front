@@ -2,6 +2,7 @@
 import { useTimer } from "react-timer-hook";
 import "../../../css/host/qna/QnaRoomOverviewPanel.css"
 import { useEffect } from "react";
+import { QnaPhaseStatus } from "../../../utils/qna/ColumnStatus";
 
 
 const QnaRoomOverviewPanel = ({ roomInfo, timerInfo }) => {
@@ -48,7 +49,7 @@ const QnaRoomOverviewPanel = ({ roomInfo, timerInfo }) => {
                     비밀번호: {/*roomInfo.password || "없음"*/}
                 </div>
                 <div className="room-info-3">
-                    상태: {roomInfo.status}
+                    상태: {QnaPhaseStatus[roomInfo.status] ?? roomInfo.status}
                 </div>
                 <div className="room-info-4">
                     타입: {roomInfo.type}
