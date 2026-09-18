@@ -68,7 +68,7 @@ const QnaHostPage = () => {
         //답변 완료를 누르면 상태를 변경함과 동시에 이걸 웹소켓으로 내려줘야함
         const data = await completeAnswer(roomNo,questionNo);
 
-        
+
     }
 
 
@@ -217,6 +217,7 @@ const QnaHostPage = () => {
             onHide={() => setIsVotingTimerOpen(false)} />
 
         <QuestionCardModal
+            onClickComplete={handleQuestionAnswering}
             selectedQuestion={selectedQuestion}
             show={isQuestionCardOpen}
             onHide={() => setIsQuestionCardOpen(false)} />

@@ -2,7 +2,7 @@ import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/QuestionCardModal.css"
 
 
-const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
+const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) => {
 
 
     return (<>
@@ -23,9 +23,14 @@ const QuestionCardModal = ({ selectedQuestion, show, onHide }) => {
             <div className="QuestionCardModal-button-parent">
                 <button
                     className="QuestionCardModal-btn-cancel"
-                    onClick={onHide}
-                >취소</button>
-                <button className="QuestionCardModal-btn-complete">답변완료로 표시</button>
+                    onClick={onHide}>
+                        취소
+                </button>
+                <button
+                    className="QuestionCardModal-btn-complete"
+                    onClick={() => onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo)}>
+                    답변완료로 표시
+                </button>
             </div>
 
 
