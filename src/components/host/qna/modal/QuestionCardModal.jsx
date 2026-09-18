@@ -5,6 +5,12 @@ import "../../../../css/host/qna/modal/QuestionCardModal.css"
 const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) => {
 
 
+    const handleComplete = async ()=>{
+
+        await onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo);
+        onHide();
+    }
+
     return (<>
 
         <Modal show={show} onHide={onHide} contentClassName="question-card-modal">
@@ -28,10 +34,7 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
                 </button>
                 <button
                     className="QuestionCardModal-btn-complete"
-                    onClick={() =>{
-                    onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo)
-                    onHide()}
-                    }>
+                    onClick={handleComplete}>
                     답변완료로 표시
                 </button>
             </div>
