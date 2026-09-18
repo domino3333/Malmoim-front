@@ -76,12 +76,6 @@ const QnaHostPage = () => {
             )
         );
 
-        setSelectedQuestion(prev =>
-            prev.questionNo === data.questionNo
-                ? { ...prev, status: data.status }
-                : prev
-        );
-
     }
 
 
@@ -153,18 +147,6 @@ const QnaHostPage = () => {
                     status: data.status
                 }))
                 setTimerInfo(data);
-            });
-
-            connectedClient.subscribe(`/topic/qna/${roomNo}/complete`, (frame) => {
-                const data = JSON.parse(frame.body);
-
-                setQuestions(prev => prev.map((question) =>
-                    question.questionNo === data.questionNo ?
-                        { ...question, status: data.status } : question
-                ))
-
-                setSelectedQuestion(prev => prev.questionNo === data.questionNo ? { ...prev, status: data.status } : prev);
-
             });
 
             const questionListSnapshot = await getQuestionList(roomNo);
