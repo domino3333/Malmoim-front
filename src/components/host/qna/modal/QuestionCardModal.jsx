@@ -1,5 +1,6 @@
 import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/QuestionCardModal.css"
+import { QuestionStatus } from "../../../../utils/qna/QuestionStatus";
 
 
 const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) => {
@@ -24,8 +25,10 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
                 className="QuestionCardModal-x-button"
                 onClick={onHide}>X</button>
             <div className="QuestionCardModal-top">
-
-                <p className="QuestionCardModal-status">{selectedQuestion.status}</p>
+                
+                <p className="QuestionCardModal-status">
+                    {QuestionStatus[selectedQuestion.status] ?? selectedQuestion.status}
+                </p>
                 <p className="QuestionCardModal-time">{selectedQuestion.createdAt}</p>
                 <p className="QuestionCardModal-nickname">{selectedQuestion.nickname}</p>
             </div>
