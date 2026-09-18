@@ -5,10 +5,16 @@ import "../../../../css/host/qna/modal/QuestionCardModal.css"
 const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) => {
 
 
-    const handleComplete = async ()=>{
+    const handleComplete = async () => {
 
-        await onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo);
-        onHide();
+        try {
+            await onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo);
+            onHide();
+        }catch(e){
+            const message = e.response?.data;
+
+            alert(typeof message === "string" ? message : "답변 상태를 변경하지 못했습니다.")
+        }
     }
 
     return (<>
@@ -30,7 +36,7 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
                 <button
                     className="QuestionCardModal-btn-cancel"
                     onClick={onHide}>
-                        취소
+                    취소
                 </button>
                 <button
                     className="QuestionCardModal-btn-complete"
