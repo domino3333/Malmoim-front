@@ -23,12 +23,12 @@
 
 
 
-/*카드를 감싸는 parent div*/
+/* 질문 카드를 감싸는 parent div*/
 .HostQuestionCard-main-div {
     flex:1;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin:7px;
 }
 
 /*닉네임과 추천수를 감싸는 div*/

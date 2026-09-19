@@ -13,6 +13,7 @@ import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
 import QuestionCardModal from "../../../components/host/qna/modal/questionCardModal";
+import { questionListUiByPhase } from "../../../utils/qna/questionListUiByPhase";
 
 const QnaHostPage = () => {
 
@@ -121,6 +122,11 @@ const QnaHostPage = () => {
     }
 
 
+    // 페이즈에 따라 다른 ui를 보여주도록
+    const questionListUi = questionListUiByPhase[roomInfo.status]
+                            ?? questionListUiByPhase.READY;
+
+
     // 웹소켓 구독
     useEffect(() => {
         const token = getAccessToken();
@@ -199,7 +205,7 @@ const QnaHostPage = () => {
 
                     />
                     <div className="qna-host-body-top">
-                        <HostQuestionList questions={questions} onClickCard={handleQuestionSelect} />
+                        <HostQuestionList questions={questions} onClickCard={handleQuestionSelect} ui={questionListUi} />
                         <HostParticipantPanel participantList={participantList} />
                     </div>
 
