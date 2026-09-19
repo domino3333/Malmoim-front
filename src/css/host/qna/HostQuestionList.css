@@ -31,7 +31,15 @@
 /*전체 대기 답변 완료 << 버튼*/
 .qna-toolbar-left-btn {
     border:none;
-    background-color: #a08c79;
+    color:black;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* 전체 대기 답변 완료 << 버튼(활성화된)*/
+.qna-toolbar-left-btn.isActive{
+    border:none;
+    background-color: #9c8671;
     color:white;
     border-radius: 5px;
 }

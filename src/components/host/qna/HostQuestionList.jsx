@@ -30,18 +30,18 @@ const HostQuestionList = ({ questions, onClickCard }) => {
             <div className="qna-toolbar-main-div">
                 <div className="qna-toolbar-left-div">
                     <button
-                        className={`qna-toolbar-left-btn${statusFilter === "ALL" ? "isActive" : ""}`}
+                        className={`qna-toolbar-left-btn ${statusFilter === "ALL" ? "isActive" : ""}`}
                         onClick={() => setStatusFilter("ALL")}
                     >
                         전체
                     </button>
                     <button
-                        className={`qna-toolbar-left-btn${statusFilter === "WAITING" ? "isActive" : ""}`}
+                        className={`qna-toolbar-left-btn ${statusFilter === "WAITING" ? "isActive" : ""}`}
                         onClick={() => setStatusFilter("WAITING")}>
                         대기
                     </button>
                     <button
-                        className={`qna-toolbar-left-btn${statusFilter === "ANSWERED" ? "isActive" : ""}`}
+                        className={`qna-toolbar-left-btn ${statusFilter === "ANSWERED" ? "isActive" : ""}`}
                         onClick={() => setStatusFilter("ANSWERED")}>
                         답변 완료
                     </button>
