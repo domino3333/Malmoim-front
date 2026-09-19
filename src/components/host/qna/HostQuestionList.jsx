@@ -8,18 +8,40 @@ const HostQuestionList = ({ questions, onClickCard }) => {
 
 
 
-    const [sortOrder, setSortOrder] = useState("latest");
-
+    //const [sortOrder, setSortOrder] = useState("latest");
     const [statusFilter, setStatusFilter] = useState("ALL");
 
 
 
-    const sortedQuestions = [...questions].sort((a, b) => {
-        const aTime = new Date(a.createdAt).getTime();
-        const bTime = new Date(b.createdAt).getTime();
+    // const sortedQuestions = [...questions].sort((a, b) => {
+    //     const aTime = new Date(a.createdAt).getTime();
+    //     const bTime = new Date(b.createdAt).getTime();
 
-        return sortOrder === "latest" ? bTime - aTime : aTime - bTime;
-    })
+
+
+    //     return sortOrder === "latest" ? bTime - aTime : aTime - bTime;
+    // })
+
+
+    const waitingQuestions = [...questions].find((question)=>question.status ==="WAITING");
+    const answerdQuestions = [...questions].find((question)=>question.status ==="ANSWERED");
+
+
+
+    const filteringQuestions = ()=>{
+
+
+        if(statusFilter === "WAITING"){
+            return [...questions].filter((question)=>question.status ==="WAITING")
+        }else if(statusFilter === "ANSWERED"){
+            return [...questions].filter((question)=>question.status ==="ANSWERED")
+        }else{
+            return questions;
+        }
+
+    }
+
+    const filteredQuestions = filteringQuestions();
 
 
     return (<>
@@ -56,7 +78,7 @@ const HostQuestionList = ({ questions, onClickCard }) => {
             </div>
 
             <div className="qnaList-main-div">
-                {sortedQuestions.map((question) => <HostQuestionCard onClickCard={onClickCard} key={question.questionNo} question={question} />)}
+                {filteredQuestions.map((question) => <HostQuestionCard onClickCard={onClickCard} key={question.questionNo} question={question} />)}
 
             </div>
 
