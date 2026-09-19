@@ -9,15 +9,16 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
     const handleComplete = async () => {
 
         try {
-            await onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo);
+            await onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo, selectedQuestion.status);
             onHide();
-        }catch(e){
+        } catch (e) {
             const message = e.response?.data;
 
             alert(typeof message === "string" ? message : "답변 상태를 변경하지 못했습니다.")
         }
     }
 
+    // 이미 답변 완료 상태라면 대기중으로 변경 < 이라는 버튼을 표시하기
     return (<>
 
         <Modal show={show} onHide={onHide} contentClassName="question-card-modal">
@@ -25,7 +26,7 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
                 className="QuestionCardModal-x-button"
                 onClick={onHide}>X</button>
             <div className="QuestionCardModal-top">
-                
+
                 <p className="QuestionCardModal-status">
                     {QuestionStatus[selectedQuestion.status] ?? selectedQuestion.status}
                 </p>
@@ -46,7 +47,7 @@ const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) 
                 <button
                     className="QuestionCardModal-btn-complete"
                     onClick={handleComplete}>
-                    답변완료로 표시
+                    {selectedQuestion.status === "WAITING" ? "답변 완료로 표시" : "대기 중으로 표시"}
                 </button>
             </div>
 

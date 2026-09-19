@@ -111,11 +111,11 @@ export const startAnsweringPhase = async (roomNo) => {
 }
 
 // 질문 상태를 답변 완료로 변경
-export const completeAnswer = async (roomNo, questionNo) => {
+export const completeAnswer = async (roomNo, questionNo, status) => {
 
     const token = getAccessToken();
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/complete-answer`, { roomNo, questionNo }, {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/complete-answer`, { roomNo, questionNo, status }, {
         headers: {
             Authorization: `Bearer ${token}`
 
