@@ -20,7 +20,7 @@ export const questionListUiByPhase = {
         defaultSort: "latest"
     },
     VOTING_CLOSED: {
-        showRank: true,
+        showRank: false,
         showStatusFilter: false,
         defaultSort: "votes"
     },
