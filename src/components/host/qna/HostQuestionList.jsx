@@ -16,9 +16,6 @@ const HostQuestionList = ({ questions, onClickCard }) => {
     // const sortedQuestions = [...questions].sort((a, b) => {
     //     const aTime = new Date(a.createdAt).getTime();
     //     const bTime = new Date(b.createdAt).getTime();
-
-
-
     //     return sortOrder === "latest" ? bTime - aTime : aTime - bTime;
     // })
 
@@ -69,10 +66,10 @@ const HostQuestionList = ({ questions, onClickCard }) => {
                     </button>
                 </div>
                 <div className="qna-toolbar-right-div">
-                    <select onChange={(e) => setSortOrder(e.target.value)} name="selectBox" id="order">
+                    {/* <select onChange={(e) => setSortOrder(e.target.value)} name="selectBox" id="order">
                         <option value="latest" >최신순</option>
                         <option value="oldest">오래된 순</option>
-                    </select>
+                    </select> */}
                 </div>
 
             </div>
