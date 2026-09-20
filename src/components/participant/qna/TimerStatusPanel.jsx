@@ -1,11 +1,12 @@
 
+import { QnaPhaseStatus } from "../../../utils/qna/ColumnStatus";
 import "./../../../css/participant/qna/TimerStatusPanel.css"
 
-const TimerStatusPanel = ({isRunning})=>{
+const TimerStatusPanel = ({status})=>{
 
     return(<>
         <div className="status-panel-parent-div">
-            {isRunning ? "진행 중" : "대기 중"}
+            {QnaPhaseStatus[status]}
         </div>
     </>)
 }
