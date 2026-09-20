@@ -1,13 +1,71 @@
-/*카드들을 감싸는 list div*/
-
-/* 카드 전체를 감싸는 div*/
-.ParticipantQuestionCard {
-    border: 1px solid rgb(242, 237, 237);
-    border-bottom: none;
+/* 순위와 질문 카드를 감싸는 div */
+.ParticipantQuestionCard-main-parent {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
 }
 
-.ParticipantQuestionCard-right{
+/* 순위를 나타내는 div */
+.ParticipantQuestionCard-rank-div {
+    display: flex;
     align-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 70px;
+    font-size: 1.5em;
+    border: 3px solid rgb(218, 216, 216);
+    border-radius: 100%;
+    margin: 5px;
+}
+
+/* 질문 카드를 감싸는 div */
+.ParticipantQuestionCard-main-div {
+    flex: 1;
+    border-radius: 5px;
+    margin: 7px;
+}
+
+/* 닉네임과 투표 정보를 감싸는 div */
+.ParticipantQuestionCard-header-div {
+    background-color: #926e4c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* 닉네임 div */
+.ParticipantQuestionCard-nickname-div {
+    font-size: 0.88em;
+    color: white;
+}
+
+/* 투표 버튼과 추천 수 div */
+.ParticipantQuestionCard-vote-div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88em;
+    color: white;
+}
+
+/* 질문과 시간을 감싸는 div */
+.ParticipantQuestionCard-body-div {
+    background-color: white;
+    border: 1px solid #90653E;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* 질문 텍스트 div */
+.ParticipantQuestionCard-content {
+    padding: 5px;
+}
+
+/* 작성 시간 div */
+.ParticipantQuestionCard-time {
+    padding: 5px;
+    font-size: 0.8em;
 }

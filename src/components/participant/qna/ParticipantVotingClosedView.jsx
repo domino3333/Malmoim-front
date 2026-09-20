@@ -2,7 +2,7 @@ import ParticipantQuestionList from "./ParticipantQuestionList";
 import "../../../css/participant/qna/ParticipantVotingClosedView.css"
 
 
-const ParticipantVotingClosedView = ({questions}) => {
+const ParticipantVotingClosedView = ({questions, showRank}) => {
 
 
     return (<>
@@ -13,7 +13,7 @@ const ParticipantVotingClosedView = ({questions}) => {
                     호스트가 결과를 공개하기까지 기다려주세요.
                 </div>
                 <div className="ParticipantVotingClosedView-bottom-panel">
-                    <ParticipantQuestionList questions={questions}/>
+                    <ParticipantQuestionList questions={questions} showRank={showRank}/>
                 </div>
             </div>
     </>)

@@ -19,6 +19,7 @@ import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getParticipantToken } from "../../../utils/auth/tokenStorage";
 import ParticipantQuestionClosedView from "../../../components/participant/qna/ParticipantQuestionClosedView";
 import ParticipantVotingClosedView from "../../../components/participant/qna/ParticipantVotingClosedView";
+import { questionListUiByPhase } from "../../../utils/qna/questionListUiByPhase";
 
 const QnaParticipantPage = () => {
 
@@ -66,6 +67,9 @@ const QnaParticipantPage = () => {
     }
 
     const PhaseComponent = roomInfo ? phaseComponents[roomInfo.status] : null;
+    const questionListUi = roomInfo
+        ? questionListUiByPhase[roomInfo.status] ?? questionListUiByPhase.READY
+        : questionListUiByPhase.READY;
 
 
     // HTTP 질문 등록 요청 및 완료 대기
@@ -223,7 +227,12 @@ const QnaParticipantPage = () => {
 
                 <div className="phaseComponent-parent-div">
                     <div className="phaseComponent-left-panel">
-                        {PhaseComponent && <PhaseComponent questions={questions} roomInfo={roomInfo} onQuestionSubmit={handleQuestionSubmit} />}
+                        {PhaseComponent && <PhaseComponent
+                            questions={questions}
+                            roomInfo={roomInfo}
+                            onQuestionSubmit={handleQuestionSubmit}
+                            showRank={questionListUi.showRank}
+                        />}
                     </div>
                     <div className="phaseComponent-right-panel">
                         <ParticipantInfoPanel participantInfo={participantInfo} />

@@ -2,7 +2,7 @@ import ParticipantQuestionList from "./ParticipantQuestionList";
 import "../../../css/participant/qna/ParticipantQuestionClosedView.css";
 
 
-const ParticipantQuestionClosedView = ({questions}) => {
+const ParticipantQuestionClosedView = ({questions, showRank}) => {
 
 
     return (<>
@@ -15,7 +15,7 @@ const ParticipantQuestionClosedView = ({questions}) => {
                     투표가 시작되면 공감하는 질문에 좋아요를 눌러주세요.
                 </div>
                 <div className="ParticipantQuestionClosedView-bottom-panel">
-                    <ParticipantQuestionList questions={questions}/>
+                    <ParticipantQuestionList questions={questions} showRank={showRank}/>
                 </div>
             </div>
 
