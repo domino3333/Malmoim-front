@@ -23,10 +23,10 @@ const QnaControlPanel = ({ onOpenQuestionTimerModal, onOpenVotingTimerModal, onR
                 onClick={onRevealResults}>
                 결과 공개
             </button>
-            <button
+            {/* <button
                 className="QnaControlPanel-btn-1">
                 질문 종료
-            </button>
+            </button> */}
 
         </div>
     </>)
