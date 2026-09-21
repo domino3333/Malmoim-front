@@ -1,11 +1,11 @@
-export const QuestionStatus = {
+export const QUESTION_STATUS_LABELS = {
     WAITING: "대기 중",
     ANSWERED: "답변 완료",
     REJECTED: "거절됨",
     HIDDEN: "숨겨진 답변"
 }
 
-export const QnaPhaseStatus = {
+export const QNA_PHASE_LABELS = {
     READY: "준비 중",
     QUESTION_OPEN: "질문 접수 중",
     QUESTION_CLOSED: "질문 접수 종료",

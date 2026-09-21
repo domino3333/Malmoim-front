@@ -11,11 +11,6 @@ const HostQuestionList = ({ questions, onClickCard, ui }) => {
     const [statusFilter, setStatusFilter] = useState("ALL");
 
 
-    const waitingQuestions = [...questions].find((question) => question.status === "WAITING");
-    const answeredQuestions = [...questions].find((question) => question.status === "ANSWERED");
-
-
-
     const filterQuestions = () => {
 
 

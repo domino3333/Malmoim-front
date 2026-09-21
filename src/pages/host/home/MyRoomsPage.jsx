@@ -79,7 +79,7 @@ const MyRoomsPage = () => {
         const fetchRooms = async () => {
             const data = await getMyRooms(currentPage, pageSize);
             setRooms(data.rooms);
-            setTotalRoomCount(data.totalCount);
+            setTotalRoomCount(data.totalRoomCount);
         }
 
         fetchRooms();

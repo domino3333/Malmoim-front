@@ -1,12 +1,12 @@
 import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/QuestionCardModal.css"
-import { QuestionStatus } from "../../../../constants/qna/statusLabels";
+import { QUESTION_STATUS_LABELS } from "../../../../constants/qna/statusLabels";
 
 
 const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide }) => {
 
 
-    const handleComplete = async () => {
+    const handleToggleAnswerStatus = async () => {
 
         try {
             await onToggleAnswerStatus(selectedQuestion.roomNo, selectedQuestion.questionNo, selectedQuestion.status);
@@ -28,7 +28,7 @@ const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHid
             <div className="QuestionCardModal-top">
 
                 <p className="QuestionCardModal-status">
-                    {QuestionStatus[selectedQuestion.status] ?? selectedQuestion.status}
+                    {QUESTION_STATUS_LABELS[selectedQuestion.status] ?? selectedQuestion.status}
                 </p>
                 <p className="QuestionCardModal-time">{selectedQuestion.createdAt}</p>
                 <p className="QuestionCardModal-nickname">{selectedQuestion.nickname}</p>
@@ -46,7 +46,7 @@ const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHid
                 </button>
                 <button
                     className="QuestionCardModal-btn-complete"
-                    onClick={handleComplete}>
+                    onClick={handleToggleAnswerStatus}>
                     {selectedQuestion.status === "WAITING" ? "답변 완료로 표시" : "대기 중으로 표시"}
                 </button>
             </div>

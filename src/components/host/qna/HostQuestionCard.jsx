@@ -1,7 +1,7 @@
 
 
 import "../../../css/host/qna/HostQuestionCard.css"
-import { QuestionStatus } from "../../../constants/qna/statusLabels";
+import { QUESTION_STATUS_LABELS } from "../../../constants/qna/statusLabels";
 
 // 질문 내용과 작성자·추천 정보를 표시하는 카드 컴포넌트
 const HostQuestionCard = ({ question, onClickCard, showRank,showVoteCount }) => {
@@ -19,7 +19,7 @@ const HostQuestionCard = ({ question, onClickCard, showRank,showVoteCount }) => 
             <div className="HostQuestionCard-main-div" onClick={() => onClickCard(question)}>
                 <div className="HostQuestionCard-header-div">
                     <div className="HostQuestionCard-nickname-div">
-                        답변상태: {QuestionStatus[question.status] ?? question.status}
+                        답변상태: {QUESTION_STATUS_LABELS[question.status] ?? question.status}
                     </div>
                     {showVoteCount &&
                     <div className="HostQuestionCard-vote-div">
