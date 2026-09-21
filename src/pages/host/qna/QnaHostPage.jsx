@@ -13,7 +13,7 @@ import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
 import QuestionCardModal from "../../../components/host/qna/modal/questionCardModal";
-import { questionListUiByPhase } from "../../../utils/qna/questionListUiByPhase";
+import { questionListUiByPhase } from "../../../constants/qna/questionListUiByPhase";
 
 const QnaHostPage = () => {
 

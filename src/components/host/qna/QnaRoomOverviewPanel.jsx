@@ -2,7 +2,7 @@
 import { useTimer } from "react-timer-hook";
 import "../../../css/host/qna/QnaRoomOverviewPanel.css"
 import { useEffect } from "react";
-import { QnaPhaseStatus } from "../../../utils/qna/ColumnStatus";
+import { QnaPhaseStatus } from "../../../constants/qna/statusLabels";
 
 
 const QnaRoomOverviewPanel = ({ roomInfo, timerInfo }) => {

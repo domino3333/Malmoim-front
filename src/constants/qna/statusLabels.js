@@ -1,10 +1,8 @@
-
-
 export const QuestionStatus = {
-    WAITING:"대기 중",
-    ANSWERED:"답변 완료",
-    REJECTED:"거절됨",
-    HIDDEN:"숨겨진 답변"
+    WAITING: "대기 중",
+    ANSWERED: "답변 완료",
+    REJECTED: "거절됨",
+    HIDDEN: "숨겨진 답변"
 }
 
 export const QnaPhaseStatus = {
@@ -16,4 +14,3 @@ export const QnaPhaseStatus = {
     ANSWERING: "결과 공개",
     FINISHED: "종료"
 };
-

@@ -19,7 +19,7 @@ import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getParticipantToken } from "../../../utils/auth/tokenStorage";
 import ParticipantQuestionClosedView from "../../../components/participant/qna/ParticipantQuestionClosedView";
 import ParticipantVotingClosedView from "../../../components/participant/qna/ParticipantVotingClosedView";
-import { questionListUiByPhase } from "../../../utils/qna/questionListUiByPhase";
+import { questionListUiByPhase } from "../../../constants/qna/questionListUiByPhase";
 
 const QnaParticipantPage = () => {
 

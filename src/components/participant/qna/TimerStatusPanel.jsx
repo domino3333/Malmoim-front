@@ -1,5 +1,5 @@
 
-import { QnaPhaseStatus } from "../../../utils/qna/ColumnStatus";
+import { QnaPhaseStatus } from "../../../constants/qna/statusLabels";
 import "./../../../css/participant/qna/TimerStatusPanel.css"
 
 const TimerStatusPanel = ({status})=>{

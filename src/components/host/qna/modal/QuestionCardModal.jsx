@@ -1,6 +1,6 @@
 import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/QuestionCardModal.css"
-import { QuestionStatus } from "../../../../utils/qna/ColumnStatus";
+import { QuestionStatus } from "../../../../constants/qna/statusLabels";
 
 
 const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) => {
