@@ -8,11 +8,11 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import HostParticipantPanel from "../../../components/host/qna/HostParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { completeAnswer, getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase, toggleAnswerStatus } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
-import QuestionCardModal from "../../../components/host/qna/modal/questionCardModal";
+import QuestionCardModal from "../../../components/host/qna/modal/QuestionCardModal";
 import { questionListUiByPhase } from "../../../constants/qna/questionListUiByPhase";
 
 const QnaHostPage = () => {
@@ -65,10 +65,10 @@ const QnaHostPage = () => {
     }
 
     // 질문 모달에서 '답변 완료로 표시 클릭'
-    const handleQuestionAnswering = async (roomNo, questionNo,status) => {
+    const handleToggleAnswerStatus = async (roomNo, questionNo,status) => {
         //답변 완료를 누르면 상태를 변경함과 동시에 이걸 웹소켓으로 내려줘야함
         // http 로 응답은 받지만 http응답은 필요 없고 웹소켓으로 구독하고 데이터를 변경할거임
-        const data = await completeAnswer(roomNo, questionNo,status);
+        const data = await toggleAnswerStatus(roomNo, questionNo,status);
         setQuestions(prev =>
             prev.map(question =>
                 question.questionNo === data.questionNo
@@ -230,7 +230,7 @@ const QnaHostPage = () => {
             onHide={() => setIsVotingTimerOpen(false)} />
 
         <QuestionCardModal
-            onClickComplete={handleQuestionAnswering}
+            onToggleAnswerStatus={handleToggleAnswerStatus}
             selectedQuestion={selectedQuestion}
             show={isQuestionCardOpen}
             onHide={() => setIsQuestionCardOpen(false)} />

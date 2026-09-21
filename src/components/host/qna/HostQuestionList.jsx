@@ -12,11 +12,11 @@ const HostQuestionList = ({ questions, onClickCard, ui }) => {
 
 
     const waitingQuestions = [...questions].find((question) => question.status === "WAITING");
-    const answerdQuestions = [...questions].find((question) => question.status === "ANSWERED");
+    const answeredQuestions = [...questions].find((question) => question.status === "ANSWERED");
 
 
 
-    const filteringQuestions = () => {
+    const filterQuestions = () => {
 
 
         if (statusFilter === "WAITING") {
@@ -29,7 +29,7 @@ const HostQuestionList = ({ questions, onClickCard, ui }) => {
 
     }
 
-    const filteredQuestions = filteringQuestions();
+    const filteredQuestions = filterQuestions();
 
 
     return (<>

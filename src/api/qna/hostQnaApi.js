@@ -110,8 +110,8 @@ export const startAnsweringPhase = async (roomNo) => {
 
 }
 
-// 질문 상태를 답변 완료로 변경
-export const completeAnswer = async (roomNo, questionNo, status) => {
+// 질문의 답변 상태 토글
+export const toggleAnswerStatus = async (roomNo, questionNo, status) => {
 
     const token = getAccessToken();
 

@@ -3,13 +3,13 @@ import "../../../../css/host/qna/modal/QuestionCardModal.css"
 import { QuestionStatus } from "../../../../constants/qna/statusLabels";
 
 
-const QuestionCardModal = ({ onClickComplete, selectedQuestion, show, onHide }) => {
+const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide }) => {
 
 
     const handleComplete = async () => {
 
         try {
-            await onClickComplete(selectedQuestion.roomNo, selectedQuestion.questionNo, selectedQuestion.status);
+            await onToggleAnswerStatus(selectedQuestion.roomNo, selectedQuestion.questionNo, selectedQuestion.status);
             onHide();
         } catch (e) {
             const message = e.response?.data;
