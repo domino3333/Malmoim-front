@@ -9,7 +9,7 @@ const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHid
     const handleToggleAnswerStatus = async () => {
 
         try {
-            await onToggleAnswerStatus(selectedQuestion.roomNo, selectedQuestion.questionNo, selectedQuestion.status);
+            await onToggleAnswerStatus(selectedQuestion.roomNo, selectedQuestion.questionNo);
             onHide();
         } catch (e) {
             const message = e.response?.data;

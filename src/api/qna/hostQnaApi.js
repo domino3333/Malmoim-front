@@ -111,11 +111,11 @@ export const startAnsweringPhase = async (roomNo) => {
 }
 
 // 질문의 답변 상태 토글
-export const toggleAnswerStatus = async (roomNo, questionNo, status) => {
+export const toggleAnswerStatus = async (roomNo, questionNo) => {
 
     const token = getAccessToken();
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/toggle-answer-status`, { roomNo, questionNo, status }, {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/toggle-answer-status`, { roomNo, questionNo }, {
         headers: {
             Authorization: `Bearer ${token}`
 
