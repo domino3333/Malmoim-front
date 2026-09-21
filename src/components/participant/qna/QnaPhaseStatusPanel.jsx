@@ -1,8 +1,7 @@
-
 import { QnaPhaseStatus } from "../../../constants/qna/statusLabels";
-import "./../../../css/participant/qna/TimerStatusPanel.css"
+import "./../../../css/participant/qna/QnaPhaseStatusPanel.css"
 
-const TimerStatusPanel = ({status})=>{
+const QnaPhaseStatusPanel = ({status})=>{
 
     return(<>
         <div className="status-panel-parent-div">
@@ -11,4 +10,4 @@ const TimerStatusPanel = ({status})=>{
     </>)
 }
 
-export default TimerStatusPanel; 
+export default QnaPhaseStatusPanel;

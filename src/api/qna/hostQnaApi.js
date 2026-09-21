@@ -115,7 +115,7 @@ export const toggleAnswerStatus = async (roomNo, questionNo, status) => {
 
     const token = getAccessToken();
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/complete-answer`, { roomNo, questionNo, status }, {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/toggle-answer-status`, { roomNo, questionNo, status }, {
         headers: {
             Authorization: `Bearer ${token}`
 

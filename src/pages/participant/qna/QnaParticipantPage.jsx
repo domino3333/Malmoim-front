@@ -13,7 +13,7 @@ import ParticipantFinishedView from "../../../components/participant/qna/Partici
 import ParticipantInfoPanel from "../../../components/participant/qna/ParticipantInfoPanel";
 import ParticipantListPanel from "../../../components/participant/qna/ParticipantListPanel";
 import TimerPanel from "../../../components/participant/qna/TimerPanel";
-import TimerStatusPanel from "../../../components/participant/qna/TimerStatusPanel";
+import QnaPhaseStatusPanel from "../../../components/participant/qna/QnaPhaseStatusPanel";
 import { useTimer } from "react-timer-hook";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getParticipantToken } from "../../../utils/auth/tokenStorage";
@@ -221,7 +221,7 @@ const QnaParticipantPage = () => {
                 {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
                 <div className="qna-participant-timer-status-parent">
                     <TimerPanel remainingTime={remainingTime} />
-                    <TimerStatusPanel status={roomInfo?.status} />
+                    <QnaPhaseStatusPanel status={roomInfo?.status} />
 
                 </div>
 
