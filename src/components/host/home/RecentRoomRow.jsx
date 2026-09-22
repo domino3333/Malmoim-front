@@ -13,10 +13,10 @@ const RecentRoomRow = ({ room }) => {
                     {room.type}
                 </td>
                 <td>
-                    {room.createdAt}
+                    {room.code}
                 </td>
                 <td>
-                    {room.code}
+                    {room.createdAt}
                 </td>
                 <td>
                 </td>

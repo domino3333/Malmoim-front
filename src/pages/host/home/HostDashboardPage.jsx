@@ -40,22 +40,16 @@ const HostDashboardPage = () => {
                 </div>
                 <table>
                     <thead>
-                        <th>
-                            <td>방 제목</td>
-                            <td>유형</td>
-                            <td>입장 코드</td>
-                            <td>생성일</td>
-                            <td></td>
-                        </th>
+                        <tr>
+                            <th>방 제목</th>
+                            <th>유형</th>
+                            <th>입장 코드</th>
+                            <th>생성일</th>
+                            <th></th>
+                        </tr>
                     </thead>
-                    <tbody>
-                        {rooms.map((room) => <RecentRoomRow key={room.roomNo} room={room} />)}
-                    </tbody>
+                    {rooms.map((room) => <RecentRoomRow key={room.roomNo} room={room} />)}
                 </table>
-
-
-                
-
             </div>
         </HostHomeLayout>
     )
