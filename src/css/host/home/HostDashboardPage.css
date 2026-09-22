@@ -15,7 +15,7 @@
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     margin-top: 20px;
 }
 
@@ -32,21 +32,31 @@
 /* '대시보드' 타이틀 텍스트 */
 .host-dashboard-title-text {
     font-size: 2.0em;
+    font-weight: 700;
 }
 
-/* 만들기 버튼 */
+/* 말모임 만들기 버튼 */
 .host-dashboard-create-button {
     border: none;
     background-color: #90653E;
     width: 200px;
-    height: 50px
+    height: 50px;
+    color:white;
+    font-weight: 700;
+    border-radius: 5px;
 }
 
 /* 전체보기 버튼*/
 .host-dashboard-all-button{
     cursor: pointer;
+    align-self: center;
 }
 
+.host-dashboard-bottom h2{
+
+    font-size: 1.5em;
+    font-weight: 600;
+}
 
 /* 테이블 자체 */
 .host-dashboard-table{
@@ -54,16 +64,22 @@
     border:none;
     margin:0 auto;
     width:90%;
-
 }
 
 /* 테이블 헤더 */
 .host-dashboard-table #host-dashboard-table-th{
-
-    background-color: rgb(223, 215, 215);
+    background-color: rgb(233, 233, 233);
 }
 
 /* 테이블 한줄의 row */
 .host-dashboard-table tr{
     height:40px;
+    
+}
+
+/* 각 셀 */
+.host-dashboard-table th,
+.host-dashboard-table td
+{
+    padding:10px;
 }
