@@ -39,7 +39,8 @@
 /* 최근 다섯 개 테이블을 감싸는 parent div*/
 .host-dashboard-content-list-table{
 
-
+    width:90%;
+    margin: 0 auto;
 
 }
 
@@ -51,3 +52,8 @@
 
 }
 
+/* 테이블의 본문 parent div*/
+.host-dashboard-content-list-body{
+
+    
+}
