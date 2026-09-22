@@ -10,50 +10,54 @@
 
 
 /* 대시보드 상단 부분 */
-.host-dashboard-top{
+.host-dashboard-top {
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* 대시보드 하단(본문) 부분 */
-.host-dashboard-bottom{
+.host-dashboard-bottom {
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 
 /* '대시보드' 타이틀 텍스트 */
-.host-dashboard-title-text{
+.host-dashboard-title-text {
     font-size: 2.0em;
 }
 
 /* 만들기 버튼 */
-.host-dashboard-create-button{
+.host-dashboard-create-button {
     border: none;
     background-color: #90653E;
-    width:200px;
-    height:50px
+    width: 200px;
+    height: 50px
 }
 
 
 /* 최근 다섯 개 테이블을 감싸는 parent div*/
-.host-dashboard-content-list-table{
+.host-dashboard-content-list-table {
 
-    width:90%;
+    width: 90%;
     margin: 0 auto;
 
 }
 
 /* 테이블의 헤더 parent div*/
-.host-dashboard-content-list-header{
+.host-dashboard-content-list-header {
     display: flex;
-    border:none;
+    border: none;
     background-color: grey;
 
 }
 
 /* 테이블의 본문 parent div*/
-.host-dashboard-content-list-body{
-
-    
-}
+.host-dashboard-content-list-body {}
