@@ -15,6 +15,7 @@ const HostHomePage = () => {
         const fetchRooms = async ()=>{
             
             const data = await getRecentRooms();
+            setRooms(data);
             
         }
 
