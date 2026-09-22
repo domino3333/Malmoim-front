@@ -7,3 +7,15 @@
     border-radius: 10px;
     min-height: 100%;
 }
+
+
+/* 대시보드 상단 부분 */
+.host-dashboard-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 대시보드 하단(본문) 부분 */
+.host-dashboard-bottom{
+
+}
