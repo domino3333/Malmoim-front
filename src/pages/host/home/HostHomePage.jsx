@@ -16,7 +16,7 @@ const HostHomePage = () => {
                 </div>
                 <div className="host-dashboard-bottom">
                     <h2>최근 만든 말모임</h2>
-                    <div>전체보기 → </div>
+                    <div className="host-dashboard-all-button">전체보기 → </div>
                 </div>
                 <div className="host-dashboard-content-list-table">
                     <div className="host-dashboard-content-list-header">

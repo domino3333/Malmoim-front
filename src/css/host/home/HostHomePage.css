@@ -56,8 +56,17 @@
     display: flex;
     border: none;
     background-color: grey;
+    justify-content: space-between;
 
 }
 
 /* 테이블의 본문 parent div*/
-.host-dashboard-content-list-body {}
+.host-dashboard-content-list-body {
+    
+}
+
+
+/* 전체보기 버튼*/
+.host-dashboard-all-button{
+    cursor: pointer;
+}
