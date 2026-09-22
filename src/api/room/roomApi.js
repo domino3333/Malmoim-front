@@ -22,4 +22,16 @@ export const getMyRooms = async (currentPage,pageSize) => {
     return response.data;
 }
 
+export const getRecentRooms = async () => {
+    const token = getAccessToken();
+
+    const response = await axios.get(`${API_BASE_URL}${prefix}/recent-rooms`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+
+    return response.data;
+}
+
 
