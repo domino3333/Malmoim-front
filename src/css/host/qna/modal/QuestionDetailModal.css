@@ -1,5 +1,5 @@
 /*모달 창 자체*/
-.question-card-modal {
+.question-detail-modal {
 
     border: none;
     border: 3px solid #90653E;
@@ -9,7 +9,7 @@
 
 
 /* x 버튼 */
-.QuestionCardModal-x-button {
+.question-detail-modal-close-button {
     border-radius: 10px;
     width: 10%;
     border: none;
@@ -20,13 +20,13 @@
     margin: 10px;
 }
 /* 상태 텍스트 */
-.QuestionCardModal-status{
+.question-detail-modal-status{
     margin-bottom: 0;
     padding-left: 5px;
 }
 
 /* 시간 텍스트 */
-.QuestionCardModal-time {
+.question-detail-modal-time {
     color: rgb(135, 127, 117);
     font-size: 0.9em;
     margin: 0;
@@ -34,19 +34,19 @@
 }
 
 /*닉네임 텍스트*/
-.QuestionCardModal-nickname {
+.question-detail-modal-nickname {
     color: black;
     margin: 0;
     padding-left: 5px;
 }
 
 /*질문 내용 div를 감싸는 div*/
-.QuestionCardModal-bottom {
+.question-detail-modal-bottom {
     padding: 15px;
 }
 
 /* 질문 내용 div */
-.QuestionCardModal-content {
+.question-detail-modal-content {
 
     border: 1px solid rgb(135, 127, 117);
     border-radius: 10px;
@@ -55,7 +55,7 @@
 }
 
 /* 시간과 닉네임 div를 감싸는 div*/
-.QuestionCardModal-top {
+.question-detail-modal-top {
     padding-left: 15px;
     padding-top: 15px;
     display: flex;
@@ -65,7 +65,7 @@
 }
 
 /*버튼 두개를 감싸는 div*/
-.QuestionCardModal-button-parent {
+.question-detail-modal-button-group {
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -74,7 +74,7 @@
 }
 
 /* 취소 버튼*/
-.QuestionCardModal-btn-cancel {
+.question-detail-modal-cancel-button {
     width: 45%;
     background-color: #90653E;
     border: none;
@@ -85,7 +85,7 @@
 }
 
 /* '답변완료로 표시' 버튼*/
-.QuestionCardModal-btn-complete {
+.question-detail-modal-toggle-button {
     width: 45%;
     background-color: white;
     border: 1px solid #90653E;
@@ -96,7 +96,7 @@
 }
 
 /* '답변완료로 표시' 버튼 hover 반응*/
-.QuestionCardModal-btn-complete:hover{
+.question-detail-modal-toggle-button:hover{
 
     width: 45%;
     background-color: #90653E;

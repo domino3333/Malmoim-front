@@ -8,11 +8,11 @@ import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPa
 import HostQuestionList from "../../../components/host/qna/HostQuestionList";
 import HostParticipantPanel from "../../../components/host/qna/HostParticipantPanel";
 import QnaControlPanel from "../../../components/host/qna/QnaControlPanel";
-import { getHostQnaRoom, getParticipantList, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase, toggleAnswerStatus } from "../../../api/qna/hostQnaApi";
+import { getHostQnaRoom, getParticipantPresence, getQuestionList, startAnsweringPhase, startQuestionPhase, startVotingPhase, toggleAnswerStatus } from "../../../api/qna/hostQnaApi";
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
-import QuestionCardModal from "../../../components/host/qna/modal/QuestionCardModal";
+import QuestionDetailModal from "../../../components/host/qna/modal/QuestionDetailModal";
 import { questionListUiByPhase } from "../../../constants/qna/questionListUiByPhase";
 
 const QnaHostPage = () => {
@@ -36,7 +36,7 @@ const QnaHostPage = () => {
         phaseEndedAt: "",
     });
 
-    const [participantList, setParticipantList] = useState({
+    const [participantPresence, setParticipantPresence] = useState({
         participantCount: 0,
         participants: []
     });
@@ -54,8 +54,8 @@ const QnaHostPage = () => {
     const [isQuestionTimerOpen, setIsQuestionTimerOpen] = useState(false);
     const [isVotingTimerOpen, setIsVotingTimerOpen] = useState(false);
 
-    // 질문카드 모달 표시 상태
-    const [isQuestionCardOpen, setIsQuestionCardOpen] = useState(false);
+    // 질문 상세 모달 표시 상태
+    const [isQuestionDetailModalOpen, setIsQuestionDetailModalOpen] = useState(false);
 
     const [selectedQuestion, setSelectedQuestion] = useState({});
 
@@ -81,7 +81,7 @@ const QnaHostPage = () => {
 
     // 하나의 질문 카드 클릭 시
     const handleQuestionSelect = (question) => {
-        setIsQuestionCardOpen(true);
+        setIsQuestionDetailModalOpen(true);
         setSelectedQuestion(question);
     }
 
@@ -142,7 +142,7 @@ const QnaHostPage = () => {
 
             connectedClient.subscribe(`/topic/qna/${roomNo}/participants`, (frame) => {
                 const data = JSON.parse(frame.body);
-                setParticipantList(data);
+                setParticipantPresence(data);
             });
 
             connectedClient.subscribe(`/topic/qna/${roomNo}/phase`, (frame) => {
@@ -157,8 +157,8 @@ const QnaHostPage = () => {
             const questionListSnapshot = await getQuestionList(roomNo);
             setQuestions(prev => mergeQuestionLists(questionListSnapshot, prev));
 
-            const participantListSnapshot = await getParticipantList(roomNo);
-            setParticipantList(participantListSnapshot);
+            const participantPresenceSnapshot = await getParticipantPresence(roomNo);
+            setParticipantPresence(participantPresenceSnapshot);
 
 
         })
@@ -204,8 +204,8 @@ const QnaHostPage = () => {
 
                     />
                     <div className="qna-host-body-top">
-                        <HostQuestionList questions={questions} onClickCard={handleQuestionSelect} ui={questionListUi} />
-                        <HostParticipantPanel participantList={participantList} />
+                        <HostQuestionList questions={questions} onQuestionSelect={handleQuestionSelect} ui={questionListUi} />
+                        <HostParticipantPanel participantPresence={participantPresence} />
                     </div>
 
                 </div>
@@ -228,11 +228,11 @@ const QnaHostPage = () => {
             show={isVotingTimerOpen}
             onHide={() => setIsVotingTimerOpen(false)} />
 
-        <QuestionCardModal
+        <QuestionDetailModal
             onToggleAnswerStatus={handleToggleAnswerStatus}
             selectedQuestion={selectedQuestion}
-            show={isQuestionCardOpen}
-            onHide={() => setIsQuestionCardOpen(false)} />
+            show={isQuestionDetailModalOpen}
+            onHide={() => setIsQuestionDetailModalOpen(false)} />
 
     </>)
 }

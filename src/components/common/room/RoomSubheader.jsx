@@ -13,7 +13,7 @@ const RoomSubheader = ({ roomInfo }) => {
                 <div className="RoomSubheader-code">
                     입장 코드: {roomInfo.code}
                 </div>
-                <div className="RoomSubheader-status">
+                <div className="room-subheader-visibility">
                     공개 여부: {roomInfo.visibility === "PUBLIC" ? "공개방" : "비밀방"}
                 </div>
             </div>

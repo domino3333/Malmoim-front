@@ -2,16 +2,16 @@
 
 import "../../../css/host/qna/HostParticipantPanel.css"
 
-const HostParticipantPanel = ({participantList})=>{
+const HostParticipantPanel = ({participantPresence})=>{
 
     return(<>
 
         <div className="HostParticipantPanel-main-div">
             <div className="HostParticipantPanel-header">
-                참여자 수 {participantList.participantCount}
+                참여자 수 {participantPresence.participantCount}
             </div>
             <div className="HostParticipantPanel-body">
-                {participantList.participants.map((participant)=>
+                {participantPresence.participants.map((participant)=>
                     <p key={participant.participantNo}>{participant.nickname}</p>
                 )}
             </div>

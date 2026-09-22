@@ -2,7 +2,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/qna/qnaSocket";
 import RoomSubheader from "../../../components/common/room/RoomSubheader";
-import { createQuestion, getParticipantInfo, getParticipantList, getParticipantQnaRoom, getQuestionList } from "../../../api/qna/participantQnaApi";
+import { createQuestion, getParticipantInfo, getParticipantPresence, getParticipantQnaRoom, getQuestionList } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/QnaParticipantPage.css"
 import RoomHeader from "../../../components/common/room/RoomHeader";
 import ParticipantReadyView from "../../../components/participant/qna/ParticipantReadyView";
@@ -33,13 +33,13 @@ const QnaParticipantPage = () => {
         nickname: ""
     });
 
-    //참여자 리스트 info
+    // 현재 접속 중인 참여자 현황
     /*
     형태:
         private Integer participantCount;
         private List<ActiveParticipantResponse> participants; // 현재 접속 중인 참여자 리스트
      */
-    const [participantList, setParticipantList] = useState({
+    const [participantPresence, setParticipantPresence] = useState({
         participantCount: 0,
         participants: []
     });
@@ -141,7 +141,7 @@ const QnaParticipantPage = () => {
                 (frame) => {
                     const data = JSON.parse(frame.body);
 
-                    setParticipantList(data);
+                    setParticipantPresence(data);
                 }
             )
 
@@ -158,8 +158,8 @@ const QnaParticipantPage = () => {
             const questionListSnapshot = await getQuestionList(roomNo);
             setQuestions(prev => mergeQuestionLists(prev, questionListSnapshot));
 
-            const participantListSnapshot = await getParticipantList(roomNo);
-            setParticipantList(participantListSnapshot);
+            const participantPresenceSnapshot = await getParticipantPresence(roomNo);
+            setParticipantPresence(participantPresenceSnapshot);
 
 
 
@@ -236,7 +236,7 @@ const QnaParticipantPage = () => {
                     </div>
                     <div className="phaseComponent-right-panel">
                         <ParticipantInfoPanel participantInfo={participantInfo} />
-                        <ParticipantListPanel participantList={participantList} />
+                        <ParticipantListPanel participantPresence={participantPresence} />
                     </div>
 
                 </div>

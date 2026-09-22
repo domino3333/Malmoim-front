@@ -1,9 +1,9 @@
 import { Modal } from "react-bootstrap";
-import "../../../../css/host/qna/modal/QuestionCardModal.css"
+import "../../../../css/host/qna/modal/QuestionDetailModal.css"
 import { QUESTION_STATUS_LABELS } from "../../../../constants/qna/statusLabels";
 
 
-const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide }) => {
+const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide }) => {
 
 
     const handleToggleAnswerStatus = async () => {
@@ -21,31 +21,31 @@ const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHid
     // 이미 답변 완료 상태라면 대기중으로 변경 < 이라는 버튼을 표시하기
     return (<>
 
-        <Modal show={show} onHide={onHide} contentClassName="question-card-modal">
+        <Modal show={show} onHide={onHide} contentClassName="question-detail-modal">
             <button
-                className="QuestionCardModal-x-button"
+                className="question-detail-modal-close-button"
                 onClick={onHide}>X</button>
-            <div className="QuestionCardModal-top">
+            <div className="question-detail-modal-top">
 
-                <p className="QuestionCardModal-status">
+                <p className="question-detail-modal-status">
                     {QUESTION_STATUS_LABELS[selectedQuestion.status] ?? selectedQuestion.status}
                 </p>
-                <p className="QuestionCardModal-time">{selectedQuestion.createdAt}</p>
-                <p className="QuestionCardModal-nickname">{selectedQuestion.nickname}</p>
+                <p className="question-detail-modal-time">{selectedQuestion.createdAt}</p>
+                <p className="question-detail-modal-nickname">{selectedQuestion.nickname}</p>
             </div>
-            <div className="QuestionCardModal-bottom">
-                <p className="QuestionCardModal-content">{selectedQuestion.content}</p>
+            <div className="question-detail-modal-bottom">
+                <p className="question-detail-modal-content">{selectedQuestion.content}</p>
             </div >
 
 
-            <div className="QuestionCardModal-button-parent">
+            <div className="question-detail-modal-button-group">
                 <button
-                    className="QuestionCardModal-btn-cancel"
+                    className="question-detail-modal-cancel-button"
                     onClick={onHide}>
                     취소
                 </button>
                 <button
-                    className="QuestionCardModal-btn-complete"
+                    className="question-detail-modal-toggle-button"
                     onClick={handleToggleAnswerStatus}>
                     {selectedQuestion.status === "WAITING" ? "답변 완료로 표시" : "대기 중으로 표시"}
                 </button>
@@ -58,4 +58,4 @@ const QuestionCardModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHid
     </>)
 }
 
-export default QuestionCardModal;
+export default QuestionDetailModal;

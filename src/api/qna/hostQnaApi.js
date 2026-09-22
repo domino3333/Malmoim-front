@@ -61,8 +61,8 @@ export const startVotingPhase = async (roomNo, durationSeconds) => {
     return response.data;
 }
 
-// 참여자리스트 http api
-export const getParticipantList = async (roomNo) => {
+// 현재 접속 중인 참여자 현황 조회
+export const getParticipantPresence = async (roomNo) => {
 
     const token = getAccessToken();
 

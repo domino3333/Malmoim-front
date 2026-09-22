@@ -28,8 +28,8 @@
     background-color: rgb(242, 237, 237);
 }
 
-/* 방 상태 div */
-.RoomSubheader-status {
+/* 방 공개 여부 div */
+.room-subheader-visibility {
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;

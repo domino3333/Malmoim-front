@@ -2,7 +2,7 @@ import "../../../css/participant/qna/ParticipantListPanel.css"
 
 
 
-const ParticipantListPanel = ({participantList}) => {
+const ParticipantListPanel = ({participantPresence}) => {
 
 
 
@@ -10,11 +10,11 @@ const ParticipantListPanel = ({participantList}) => {
     return (<>
         <div className="ParticipantListPanel-parent-div">
             <div className="participant-list-count">
-                참여자 수 {participantList.participantCount}
+                참여자 수 {participantPresence.participantCount}
             </div>
 
             <div className="participant-list-info">
-                {participantList.participants.map((participant)=><p key={participant.participantNo}>{participant.nickname}</p>)}
+                {participantPresence.participants.map((participant)=><p key={participant.participantNo}>{participant.nickname}</p>)}
             </div>
         </div>
 

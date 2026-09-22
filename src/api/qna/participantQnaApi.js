@@ -33,8 +33,8 @@ export const getParticipantInfo = async (roomNo) => {
 }
 
 
-// 참여자 리스트를 받아오는 api
-export const getParticipantList = async (roomNo) => {
+// 현재 접속 중인 참여자 현황 조회
+export const getParticipantPresence = async (roomNo) => {
 
     const token = getParticipantToken(roomNo);
 

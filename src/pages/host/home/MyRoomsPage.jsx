@@ -33,13 +33,13 @@ const MyRoomsPage = () => {
 
     // 블럭 사이즈
     const blockSize = 5;
-    const startBlock = Math.floor((currentPage - 1) / blockSize) * blockSize + 1;
-    const endBlock = Math.min(startBlock + blockSize - 1, totalPages);
+    const blockStartPage = Math.floor((currentPage - 1) / blockSize) * blockSize + 1;
+    const blockEndPage = Math.min(blockStartPage + blockSize - 1, totalPages);
 
     //첫블럭과 마지막 블럭의 숫자를 이용하여 페이지들 넘버 배열 만들기
     const pages = Array.from(
-        { length: endBlock - startBlock + 1 }
-        , (_, i) => startBlock + i
+        { length: blockEndPage - blockStartPage + 1 }
+        , (_, i) => blockStartPage + i
     );
 
 
@@ -55,18 +55,18 @@ const MyRoomsPage = () => {
         //이전 버튼을 눌렀을 때 첫블럭1로 가면서 1페이지로 바꾸면됨
         //그러면 현재 블럭으로 이전과 이후의 블럭을 구해야 하는 게 관건
 
-        if (startBlock === 1) return;
+        if (blockStartPage === 1) return;
 
-        const newStartBlock = startBlock - blockSize;
+        const newStartBlock = blockStartPage - blockSize;
 
         setCurrentPage(newStartBlock);
 
     }
     // 다음 페이지 block의 첫 페이지 이동
     const handleNextBlock = () => {
-        if (endBlock === totalPages) return;
+        if (blockEndPage === totalPages) return;
 
-        const newStartBlock = startBlock + blockSize;
+        const newStartBlock = blockStartPage + blockSize;
 
         setCurrentPage(newStartBlock);
 
@@ -132,7 +132,7 @@ const MyRoomsPage = () => {
                         <button
                             className="button-prev"
                             onClick={handlePreviousBlock}
-                            disabled={startBlock === 1}
+                            disabled={blockStartPage === 1}
                         >
                             &lt; 이전
                         </button>
@@ -146,7 +146,7 @@ const MyRoomsPage = () => {
                         <button 
                             className="button-next" 
                             onClick={handleNextBlock}
-                            disabled={(totalPages <= endBlock)}
+                            disabled={(totalPages <= blockEndPage)}
                         >
                             이후 &gt;
                         </button>

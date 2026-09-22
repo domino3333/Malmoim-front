@@ -4,7 +4,7 @@ import { useState } from "react";
 import "../../../css/host/qna/HostQuestionList.css"
 import HostQuestionCard from "./HostQuestionCard";
 
-const HostQuestionList = ({ questions, onClickCard, ui }) => {
+const HostQuestionList = ({ questions, onQuestionSelect, ui }) => {
 
 
 
@@ -62,7 +62,7 @@ const HostQuestionList = ({ questions, onClickCard, ui }) => {
 
 
             <div className="qnaList-main-div">
-                {filteredQuestions.map((question) => <HostQuestionCard onClickCard={onClickCard} key={question.questionNo} question={question} showRank={ui.showRank} showVoteCount={ui.showVoteCount} />)}
+                {filteredQuestions.map((question) => <HostQuestionCard onQuestionSelect={onQuestionSelect} key={question.questionNo} question={question} showRank={ui.showRank} showVoteCount={ui.showVoteCount} />)}
 
             </div>
 
