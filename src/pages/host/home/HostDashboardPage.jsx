@@ -1,5 +1,5 @@
 
-import "../../../css/host/home/HostHomePage.css"
+import "../../../css/host/home/HostDashboardPage.css"
 import HostHomeLayout from "../../../components/host/home/HostHomeLayout"
 import { useEffect, useState } from "react"
 import { getRecentRooms } from "../../../api/room/roomApi";
@@ -7,7 +7,7 @@ import RecentRoomRow from "../../../components/host/home/RecentRoomRow";
 
 
 
-const HostHomePage = () => {
+const HostDashboardPage = () => {
 
     const [rooms,setRooms] = useState([]);
 
@@ -56,4 +56,4 @@ const HostHomePage = () => {
 
 }
 
-export default HostHomePage;
+export default HostDashboardPage;
