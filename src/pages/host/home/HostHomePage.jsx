@@ -1,10 +1,25 @@
 
 import "../../../css/host/home/HostHomePage.css"
 import HostHomeLayout from "../../../components/host/home/HostHomeLayout"
+import { useEffect } from "react"
 
 
 
 const HostHomePage = () => {
+
+
+
+    useEffect(()=>{
+        
+        const fetchRooms = async ()=>{
+            
+            const data = await getRecentRooms();
+        }
+
+        fetchRooms();
+
+    },[])
+
 
     return (
         <HostHomeLayout>
