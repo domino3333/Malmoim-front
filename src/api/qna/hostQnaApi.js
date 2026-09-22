@@ -127,11 +127,11 @@ export const toggleAnswerStatus = async (roomNo, questionNo) => {
 }
 
 // 최근 5개 방 가져오기
-export const getRecentRooms = async (roomNo, questionNo) => {
+export const getRecentRooms = async () => {
 
     const token = getAccessToken();
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/toggle-answer-status`, { roomNo, questionNo }, {
+    const response = await axios.get(`${API_BASE_URL}${prefix}/recent-rooms`, {
         headers: {
             Authorization: `Bearer ${token}`
 
