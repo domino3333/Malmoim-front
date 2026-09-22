@@ -1,12 +1,27 @@
+import "../../../css/host/home/RecentRoomRow.css"
 
+const RecentRoomRow = ({ room }) => {
 
-const RecentRoomRow = ({room})=>{
+    return (<>
 
-    return(<>
-
-        <p>타이틀:{room.title}</p>
-        <p>타이틀:{room.createdAt}</p>
-        <p>타이틀:{room.code}</p>
+        <tbody>
+            <tr>
+                <td>
+                    {room.title}
+                </td>
+                <td>
+                    {room.type}
+                </td>
+                <td>
+                    {room.createdAt}
+                </td>
+                <td>
+                    {room.code}
+                </td>
+                <td>
+                </td>
+            </tr>
+        </tbody>
     </>)
 }
 

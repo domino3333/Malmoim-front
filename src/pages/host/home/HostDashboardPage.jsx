@@ -9,21 +9,21 @@ import RecentRoomRow from "../../../components/host/home/RecentRoomRow";
 
 const HostDashboardPage = () => {
 
-    const [rooms,setRooms] = useState([]);
+    const [rooms, setRooms] = useState([]);
 
 
-    useEffect(()=>{
-        
-        const fetchRooms = async ()=>{
-            
+    useEffect(() => {
+
+        const fetchRooms = async () => {
+
             const data = await getRecentRooms();
             setRooms(data);
-            
+
         }
 
         fetchRooms();
 
-    },[])
+    }, [])
 
 
     return (
@@ -38,18 +38,24 @@ const HostDashboardPage = () => {
                     <h2>최근 만든 말모임</h2>
                     <div className="host-dashboard-all-button">전체보기 → </div>
                 </div>
-                <div className="host-dashboard-content-list-table">
-                    <div className="host-dashboard-content-list-header">
-                        <p>방 제목</p>
-                        <p>유형</p>
-                        <p>입장 코드</p>
-                        <p>생성일</p>
-                    </div>
-                    <div className="host-dashboard-content-list-body">
-                        {rooms.map((room)=> <RecentRoomRow key={room.roomNo} room={room}/>)}
-                    </div>
+                <table>
+                    <thead>
+                        <th>
+                            <td>방 제목</td>
+                            <td>유형</td>
+                            <td>입장 코드</td>
+                            <td>생성일</td>
+                            <td></td>
+                        </th>
+                    </thead>
+                    <tbody>
+                        {rooms.map((room) => <RecentRoomRow key={room.roomNo} room={room} />)}
+                    </tbody>
+                </table>
 
-                </div>
+
+                
+
             </div>
         </HostHomeLayout>
     )
