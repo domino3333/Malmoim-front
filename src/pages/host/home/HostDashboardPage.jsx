@@ -38,9 +38,9 @@ const HostDashboardPage = () => {
                     <h2>최근 만든 말모임</h2>
                     <div className="host-dashboard-all-button">전체보기 → </div>
                 </div>
-                <table>
+                <table className="host-dashboard-table">
                     <thead>
-                        <tr>
+                        <tr id="host-dashboard-table-th">
                             <th>방 제목</th>
                             <th>유형</th>
                             <th>입장 코드</th>

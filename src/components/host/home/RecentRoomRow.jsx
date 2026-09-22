@@ -19,6 +19,7 @@ const RecentRoomRow = ({ room }) => {
                     {room.createdAt}
                 </td>
                 <td>
+                    입장 →
                 </td>
             </tr>
         </tbody>

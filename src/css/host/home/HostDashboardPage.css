@@ -42,31 +42,28 @@
     height: 50px
 }
 
-
-/* 최근 다섯 개 테이블을 감싸는 parent div*/
-.host-dashboard-content-list-table {
-
-    width: 90%;
-    margin: 0 auto;
-
-}
-
-/* 테이블의 헤더 parent div*/
-.host-dashboard-content-list-header {
-    display: flex;
-    border: none;
-    background-color: grey;
-    justify-content: space-between;
-
-}
-
-/* 테이블의 본문 parent div*/
-.host-dashboard-content-list-body {
-    
-}
-
-
 /* 전체보기 버튼*/
 .host-dashboard-all-button{
     cursor: pointer;
+}
+
+
+/* 테이블 자체 */
+.host-dashboard-table{
+    
+    border:none;
+    margin:0 auto;
+    width:90%;
+
+}
+
+/* 테이블 헤더 */
+.host-dashboard-table #host-dashboard-table-th{
+
+    background-color: rgb(223, 215, 215);
+}
+
+/* 테이블 한줄의 row */
+.host-dashboard-table tr{
+    height:40px;
 }
