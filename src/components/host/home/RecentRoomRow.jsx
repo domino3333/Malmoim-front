@@ -1,6 +1,6 @@
 
 
-const RoomsTableRow = ({room})=>{
+const RecentRoomRow = ({room})=>{
 
     return(<>
 
@@ -10,4 +10,4 @@ const RoomsTableRow = ({room})=>{
     </>)
 }
 
-export default RoomsTableRow;
+export default RecentRoomRow;

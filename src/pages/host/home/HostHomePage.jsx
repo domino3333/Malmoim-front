@@ -1,8 +1,9 @@
 
 import "../../../css/host/home/HostHomePage.css"
 import HostHomeLayout from "../../../components/host/home/HostHomeLayout"
-import { useEffect } from "react"
-import RoomsTableRow from "../../../components/dashboard/room/RoomsTableRow";
+import { useEffect, useState } from "react"
+import { getRecentRooms } from "../../../api/room/roomApi";
+import RecentRoomRow from "../../../components/host/home/RecentRoomRow";
 
 
 
@@ -45,7 +46,7 @@ const HostHomePage = () => {
                         <p>생성일</p>
                     </div>
                     <div className="host-dashboard-content-list-body">
-                        {rooms.map((room)=> <RoomsTableRow key={room.no} roomInfo={room}/>)}
+                        {rooms.map((room)=> <RecentRoomRow key={room.roomNo} room={room}/>)}
                     </div>
 
                 </div>
