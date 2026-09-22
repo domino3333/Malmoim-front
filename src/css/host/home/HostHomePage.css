@@ -17,7 +17,8 @@
 
 /* 대시보드 하단(본문) 부분 */
 .host-dashboard-bottom{
-
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -39,6 +40,7 @@
 .host-dashboard-content-list-table{
 
 
+
 }
 
 /* 테이블의 헤더 parent div*/
@@ -48,3 +50,4 @@
     background-color: grey;
 
 }
+
