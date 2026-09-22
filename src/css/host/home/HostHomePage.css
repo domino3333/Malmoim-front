@@ -19,3 +19,17 @@
 .host-dashboard-bottom{
 
 }
+
+
+/* '대시보드' 타이틀 텍스트 */
+.host-dashboard-title-text{
+    font-size: 2.0em;
+}
+
+/* 만들기 버튼 */
+.host-dashboard-create-button{
+    border: none;
+    background-color: #90653E;
+    width:200px;
+    height:50px
+}
