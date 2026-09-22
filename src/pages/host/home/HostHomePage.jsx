@@ -2,6 +2,7 @@
 import "../../../css/host/home/HostHomePage.css"
 import HostHomeLayout from "../../../components/host/home/HostHomeLayout"
 import { useEffect } from "react"
+import RoomsTableRow from "../../../components/dashboard/room/RoomsTableRow";
 
 
 
@@ -44,7 +45,7 @@ const HostHomePage = () => {
                         <p>생성일</p>
                     </div>
                     <div className="host-dashboard-content-list-body">
-                        {/* map으로 돌려서 다섯 줄 만들기 */}
+                        {rooms.map((room)=> <RoomsTableRow key={room.no} roomInfo={room}/>)}
                     </div>
 
                 </div>
