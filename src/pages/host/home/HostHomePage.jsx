@@ -9,19 +9,13 @@ const HostHomePage = () => {
     return (
         <HostHomeLayout>
             <div className="host-dashboard-page">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>임시1</td>
-                        </tr>
-                        <tr>
-                            <td>임시2</td>
-                        </tr>
-                        <tr>
-                            <td>임시3</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div className="host-dashboard-top">
+                    <button>만들기</button>
+                </div>
+                <div className="host-dashboard-bottom">
+                    <h2>최근 만든 말모임</h2>
+                </div>
             </div>
         </HostHomeLayout>
     )
