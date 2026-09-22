@@ -33,3 +33,18 @@
     width:200px;
     height:50px
 }
+
+
+/* 최근 다섯 개 테이블을 감싸는 parent div*/
+.host-dashboard-content-list-table{
+
+
+}
+
+/* 테이블의 헤더 parent div*/
+.host-dashboard-content-list-header{
+    display: flex;
+    border:none;
+    background-color: grey;
+
+}
