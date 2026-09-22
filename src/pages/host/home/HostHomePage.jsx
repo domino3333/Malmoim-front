@@ -7,6 +7,7 @@ import { useEffect } from "react"
 
 const HostHomePage = () => {
 
+    const [rooms,setRooms] = useState([]);
 
 
     useEffect(()=>{
@@ -14,6 +15,7 @@ const HostHomePage = () => {
         const fetchRooms = async ()=>{
             
             const data = await getRecentRooms();
+            
         }
 
         fetchRooms();
