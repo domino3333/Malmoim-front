@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../../../css/host/home/RecentRoomRow.css"
 import { Check, Copy } from "lucide-react";
 
-const RecentRoomRow = ({ room }) => {
+const RecentRoomRow = ({ room,onEnter }) => {
 
 
     const [copied, setCopied] = useState(false);
@@ -46,8 +46,8 @@ const RecentRoomRow = ({ room }) => {
                     {room.createdAt}
                 </td>
                 <td>
-                    <button>
-                        입장 →
+                    <button className="RecentRoomRow-enter-button" onClick={()=>onEnter(room.roomNo)}>
+                        입장하기
                     </button>
 
                 </td>

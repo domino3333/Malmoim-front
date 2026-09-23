@@ -16,6 +16,11 @@ const HostDashboardPage = () => {
     const nav = useNavigate();
 
 
+    const handleEnterRoom = (roomNo)=>{
+        nav(`/qna/${roomNo}/host`);
+
+    }
+
     useEffect(() => {
 
         const fetchRooms = async () => {
@@ -59,7 +64,7 @@ const HostDashboardPage = () => {
                             <th></th>
                         </tr>
                     </thead>
-                    {rooms.map((room) => <RecentRoomRow key={room.roomNo} room={room} />)}
+                    {rooms.map((room) => <RecentRoomRow key={room.roomNo} room={room} onEnter={handleEnterRoom}/>)}
                 </table>
             </div>
         </HostHomeLayout>
