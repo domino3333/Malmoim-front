@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../../../css/host/home/RecentRoomRow.css"
-import { Check, Copy, Section } from "lucide-react";
+import { Check, Copy } from "lucide-react";
 
 const RecentRoomRow = ({ room }) => {
 
@@ -33,11 +33,12 @@ const RecentRoomRow = ({ room }) => {
                         <span>{room.code}</span>
                         <button
                             type="button"
+                            className="copy-code-button"
                             onClick={handleCopyCode}
-                            aria-label="입장 코드 복사"
-                            title="입장 코드 복사"
                         >
-                            {copied ? <Check size={16} /> : <Copy size={16} />}
+                            {copied ? 
+                            <Check size={16} className="code-check-icon"/>
+                            : <Copy size={16} className="code-copy-icon" />}
                         </button>
                     </div>
                 </td>
