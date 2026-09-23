@@ -1,103 +1,152 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, MessageSquareText, ThumbsUp, UsersRound } from 'lucide-react'
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Hash,
+  MessageSquareText,
+  MessagesSquare,
+  PenLine,
+  UsersRound,
+} from 'lucide-react'
 import MainNavbar from '../../components/public/MainNavbar'
-import hostQnaImage from '../../assets/guide/host-qna.png'
-import homeEntryImage from '../../assets/guide/home-entry.png'
-import hostDashboardImage from '../../assets/guide/host-dashboard.png'
+import qnaResultImage from '../../assets/guide/host-qna-results-guide.png'
+import homeEntryImage from '../../assets/guide/home-entry-guide.png'
 import '../../css/public/ServiceIntroPage.css'
 
-const ServiceIntroPage = () => {
-  return (
-    <div className="service-intro-page">
-      <MainNavbar />
-      <main>
-        <section className="service-intro-lead">
-          <div className="service-intro-container">
-            <p className="service-intro-eyebrow">서비스 소개</p>
-            <h1>말모임 실시간 Q&amp;A</h1>
-            <p className="service-intro-summary">
-              한 방에 모여 질문을 받고, 공감하는 질문을 추천하고, 결과를 함께 확인하세요.
-            </p>
-            <div className="service-intro-actions">
-              <Link className="service-intro-primary-link" to="/how-to-use">
-                사용 방법 보기 <ArrowRight size={18} aria-hidden="true" />
-              </Link>
-              <Link className="service-intro-text-link" to="/">
-                입장 코드 입력하기 <ArrowRight size={17} aria-hidden="true" />
-              </Link>
-            </div>
-            <figure className="service-intro-main-figure">
-              <img src={hostQnaImage} alt="질문 목록과 참여자 수, 진행 버튼이 보이는 실제 호스트 Q&A 화면" />
-              <figcaption>질문부터 결과 공개까지 진행하는 호스트 화면</figcaption>
-            </figure>
-          </div>
-        </section>
+const meetingTypes = [
+  {
+    number: '01',
+    icon: MessageSquareText,
+    title: '질문이 모이는 Q&A',
+    description: '발표를 듣는 동안 질문을 남기고, 함께 듣고 싶은 질문에 추천을 보냅니다. 호스트는 흐름에 맞춰 질문과 추천 시간을 열고 결과를 공개합니다.',
+    status: '지금 이용 가능',
+    available: true,
+  },
+  {
+    number: '02',
+    icon: PenLine,
+    title: '그림으로 함께하는 모임',
+    description: '같은 공간에서 그리고 맞히며 참여하는 그림판 모임을 준비하고 있습니다.',
+    status: '준비 중',
+    available: false,
+  },
+  {
+    number: '03',
+    icon: MessagesSquare,
+    title: '대화가 이어지는 채팅방',
+    description: '발표가 끝난 뒤에도 이야기를 나눌 수 있는 채팅방을 준비하고 있습니다.',
+    status: '준비 중',
+    available: false,
+  },
+]
 
-        <section className="service-intro-flow" aria-labelledby="service-intro-flow-title">
-          <div className="service-intro-container">
-            <div className="service-intro-section-heading">
-              <p className="service-intro-eyebrow">진행 흐름</p>
-              <h2 id="service-intro-flow-title">모이고, 묻고, 함께 고릅니다</h2>
+const meetingFlow = [
+  { number: '01', title: '방을 열고', description: '호스트가 모임에 맞는 방을 만듭니다.' },
+  { number: '02', title: '코드를 나누고', description: '참여자는 입장 코드와 닉네임으로 들어옵니다.' },
+  { number: '03', title: '함께 참여합니다', description: '질문하고, 공감하고, 결과를 함께 확인합니다.' },
+]
+
+const ServiceIntroPage = () => (
+  <div className="service-intro-page">
+    <MainNavbar />
+    <main>
+      <section className="intro-hero" aria-labelledby="intro-title">
+        <div className="intro-container intro-hero-grid">
+          <div className="intro-hero-copy">
+            <span className="intro-kicker"><span aria-hidden="true" /> ONLINE GATHERING SPACE</span>
+            <h1 id="intro-title">사람이 모이면,<br /><em>이야기가 시작됩니다.</em></h1>
+            <p className="intro-lead">말모임은 온라인 모임과 세미나에서 모두가 가볍게 들어와 함께 참여하는 공간입니다. 지금은 실시간 Q&A로 시작하고, 앞으로 그림판 모임과 채팅방으로 만나는 방식을 넓혀갑니다.</p>
+            <div className="intro-actions">
+              <Link className="intro-button intro-button-primary" to="/how-to-use">사용 방법 보기 <ArrowRight size={18} aria-hidden="true" /></Link>
+              <Link className="intro-button intro-button-text" to="/">입장 코드 입력하기 <ArrowUpRight size={18} aria-hidden="true" /></Link>
             </div>
-            <ol className="service-intro-flow-list">
-              <li>
-                <UsersRound size={22} strokeWidth={1.7} aria-hidden="true" />
-                <span className="service-intro-flow-number">01</span>
-                <h3>입장 코드로 모이기</h3>
-                <p>호스트가 만든 방의 코드를 입력하고 닉네임으로 참여합니다.</p>
-              </li>
-              <li>
-                <MessageSquareText size={22} strokeWidth={1.7} aria-hidden="true" />
-                <span className="service-intro-flow-number">02</span>
-                <h3>질문 받기</h3>
-                <p>질문 시간이 열리면 참여자가 질문을 등록하고 호스트 화면에 바로 나타납니다.</p>
-              </li>
-              <li>
-                <ThumbsUp size={22} strokeWidth={1.7} aria-hidden="true" />
-                <span className="service-intro-flow-number">03</span>
-                <h3>추천하고 결과 보기</h3>
-                <p>공감하는 질문을 추천한 뒤, 결과 공개 단계에서 추천 순위를 확인합니다.</p>
-              </li>
+            <p className="intro-hero-note">하나의 코드로 입장하는 온라인 모임</p>
+          </div>
+          <div className="intro-hero-art" aria-label="하나의 모임에서 질문, 그림, 대화로 이어지는 말모임의 방향">
+            <div className="intro-art-orbit intro-art-orbit-one" aria-hidden="true" />
+            <div className="intro-art-orbit intro-art-orbit-two" aria-hidden="true" />
+            <div className="intro-art-center">
+              <span className="intro-art-eyebrow">OUR SPACE</span>
+              <strong>말모임</strong>
+              <span>함께 머무는 온라인 모임</span>
+            </div>
+            <div className="intro-art-chip intro-art-chip-qna"><MessageSquareText size={20} aria-hidden="true" /><span>Q&A <small>NOW</small></span></div>
+            <div className="intro-art-chip intro-art-chip-draw"><PenLine size={20} aria-hidden="true" /><span>그림판 <small>SOON</small></span></div>
+            <div className="intro-art-chip intro-art-chip-chat"><MessagesSquare size={20} aria-hidden="true" /><span>채팅방 <small>SOON</small></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="intro-statement" aria-labelledby="intro-statement-title">
+        <div className="intro-container intro-statement-grid">
+          <p className="intro-section-label">WHY MALMOIM <span>01 / 04</span></p>
+          <div>
+            <h2 id="intro-statement-title">보고 듣는 자리에서<br /><em>함께 만드는 자리로.</em></h2>
+            <p>온라인 세미나에서는 말하고 싶은 순간이 지나가기도 합니다. 말모임은 진행자와 참여자가 같은 방에 모여 질문을 꺼내고, 관심을 나누고, 다음 대화로 이어질 수 있도록 돕습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="intro-types" aria-labelledby="intro-types-title">
+        <div className="intro-container">
+          <div className="intro-section-heading">
+            <div><p className="intro-section-label">WAYS TO GATHER <span>02 / 04</span></p><h2 id="intro-types-title">한 공간, 여러 가지 모임</h2></div>
+            <p>모임의 목적은 달라도, 사람을 모으고 함께 참여한다는 시작은 같습니다.</p>
+          </div>
+          <div className="intro-type-grid">
+            {meetingTypes.map(({ number, icon: Icon, title, description, status, available }) => (
+              <article className={`intro-type-card${available ? ' intro-type-card-current' : ''}`} key={number}>
+                <div className="intro-type-top"><span>{number}</span><span className={`intro-status${available ? ' intro-status-current' : ''}`}>{status}</span></div>
+                <Icon className="intro-type-icon" size={34} strokeWidth={1.5} aria-hidden="true" />
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="intro-flow" aria-labelledby="intro-flow-title">
+        <div className="intro-container">
+          <div className="intro-section-heading">
+            <div><p className="intro-section-label">HOW WE MEET <span>03 / 04</span></p><h2 id="intro-flow-title">시작은 간단하게, 참여는 자연스럽게</h2></div>
+            <p>복잡한 준비 없이 방을 만들고, 코드를 나누고, 같은 공간에서 참여합니다.</p>
+          </div>
+          <div className="intro-flow-layout">
+            <ol className="intro-flow-list">
+              {meetingFlow.map((step) => <li key={step.number}><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.description}</p></div></li>)}
             </ol>
+            <figure className="intro-flow-image"><img src={homeEntryImage} alt="참여자 입장 코드 입력칸과 화살표 버튼이 보이는 말모임 예시 화면" loading="lazy" /><figcaption>참여자 입장 예시 화면</figcaption></figure>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="service-intro-screens" aria-label="말모임 실제 화면">
-          <div className="service-intro-container">
-            <div className="service-intro-screen-row">
-              <div className="service-intro-screen-copy">
-                <span className="service-intro-index">01 / 입장</span>
-                <h2>참여자는 코드로 바로 입장</h2>
-                <p>메인 화면에서 입장 코드를 입력합니다. 비공개 방이라면 비밀번호를 확인하고, 닉네임을 정한 뒤 Q&amp;A에 참여합니다.</p>
-              </div>
-              <figure>
-                <img src={homeEntryImage} alt="입장 코드 입력칸과 호스트 시작 버튼이 보이는 실제 메인 화면" loading="lazy" />
-                <figcaption>실제 메인 화면</figcaption>
-              </figure>
-            </div>
-            <div className="service-intro-screen-row">
-              <div className="service-intro-screen-copy">
-                <span className="service-intro-index">02 / 호스트</span>
-                <h2>만든 방과 입장 코드를 한곳에서</h2>
-                <p>호스트는 대시보드에서 최근 만든 방과 입장 코드를 확인하고, 코드를 복사해 참여자에게 전달할 수 있습니다.</p>
-              </div>
-              <figure>
-                <img src={hostDashboardImage} alt="최근 만든 방과 입장 코드 복사 버튼이 보이는 실제 호스트 대시보드" loading="lazy" />
-                <figcaption>실제 호스트 대시보드</figcaption>
-              </figure>
-            </div>
+      <section className="intro-qna" aria-labelledby="intro-qna-title">
+        <div className="intro-container intro-qna-grid">
+          <div className="intro-qna-copy">
+            <p className="intro-section-label">AVAILABLE NOW <span>04 / 04</span></p>
+            <span className="intro-qna-tag"><span aria-hidden="true" /> 실시간 Q&A</span>
+            <h2 id="intro-qna-title">좋은 질문이<br />다음 대화를 엽니다.</h2>
+            <p>참여자는 질문을 올리고, 공감하는 질문에 추천을 보냅니다. 호스트는 질문과 추천 시간을 진행하고 결과를 공개해 중요한 질문부터 함께 살펴볼 수 있습니다.</p>
+            <ul>
+              <li><Hash size={18} aria-hidden="true" /> 입장 코드로 함께 모이기</li>
+              <li><UsersRound size={18} aria-hidden="true" /> 질문과 추천에 실시간으로 참여하기</li>
+              <li><MessageSquareText size={18} aria-hidden="true" /> 추천 결과를 보고 답변 이어가기</li>
+            </ul>
+            <Link className="intro-inline-link" to="/how-to-use">Q&A 사용 방법 살펴보기 <ArrowRight size={18} aria-hidden="true" /></Link>
           </div>
-        </section>
+          <figure className="intro-qna-image"><img src={qnaResultImage} alt="질문과 추천 수가 표시된 말모임 Q&A 예시 화면" loading="lazy" /><figcaption>Q&A 예시 화면</figcaption></figure>
+        </div>
+      </section>
 
-        <section className="service-intro-bottom">
-          <div className="service-intro-container">
-            <h2>어떤 순서로 진행되는지 궁금한가요?</h2>
-            <Link to="/how-to-use">호스트·참여자 사용 방법 <ArrowRight size={18} aria-hidden="true" /></Link>
-          </div>
-        </section>
-      </main>
-    </div>
-  )
-}
+      <section className="intro-ending" aria-labelledby="intro-ending-title">
+        <div className="intro-container intro-ending-grid">
+          <div><p className="intro-section-label">LET'S GATHER</p><h2 id="intro-ending-title">다음 모임은<br />말모임에서 시작해보세요.</h2><p>온라인 강의, 소규모 모임, 팀 세미나까지. 참여할 자리를 열어두면 이야기는 더 멀리 갑니다.</p></div>
+          <Link className="intro-ending-link" to="/how-to-use">가이드북 열기 <ArrowRight size={22} aria-hidden="true" /></Link>
+        </div>
+      </section>
+    </main>
+  </div>
+)
 
 export default ServiceIntroPage
