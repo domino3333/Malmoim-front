@@ -1,7 +1,22 @@
-
 /* 카피 아이콘 버튼 */
-.copy-code-button{
+.copy-code-button {
 
     background: none;
-    border:none;
+    border: none;
+
 }
+
+/* span과 버튼을 감싸는 parent div*/
+.room-code {
+    display: grid;
+    grid-template-columns: 72px 20px;
+    align-items: center;
+    column-gap: 8px;
+}
+
+
+.room-code-tr {}
+
+.room-code-span {}
+
+.copy-code-button {}

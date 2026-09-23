@@ -28,17 +28,17 @@ const RecentRoomRow = ({ room }) => {
                 <td>
                     {room.type}
                 </td>
-                <td>
+                <td className="room-code-tr">
                     <div className="room-code">
-                        <span>{room.code}</span>
+                        <span className="room-code-span" >{room.code}</span>
                         <button
                             type="button"
                             className="copy-code-button"
                             onClick={handleCopyCode}
                         >
-                            {copied ? 
-                            <Check size={16} className="code-check-icon"/>
-                            : <Copy size={16} className="code-copy-icon" />}
+                            {copied ?
+                                <Check size={16} className="code-check-icon" />
+                                : <Copy size={16} className="code-copy-icon" />}
                         </button>
                     </div>
                 </td>
@@ -46,7 +46,10 @@ const RecentRoomRow = ({ room }) => {
                     {room.createdAt}
                 </td>
                 <td>
-                    입장 →
+                    <button>
+                        입장 →
+                    </button>
+
                 </td>
             </tr>
         </tbody>
