@@ -20,3 +20,15 @@
 .room-code-span {}
 
 .copy-code-button {}
+
+
+/* 각 row의 입장 버튼 */
+.RecentRoomRow-enter-button {
+    border: none;
+    color:rgb(239, 236, 236);
+    background-color: #90653E;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: 600;
+}
