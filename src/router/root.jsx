@@ -8,6 +8,8 @@ import MyRoomsPage from '../pages/host/home/MyRoomsPage'
 import RoomTypeSelectionPage from '../pages/host/home/RoomTypeSelectionPage'
 import QnaHostPage from '../pages/host/qna/QnaHostPage'
 import QnaParticipantPage from '../pages/participant/qna/QnaParticipantPage'
+import ServiceIntroPage from '../pages/public/ServiceIntroPage'
+import HowToUsePage from '../pages/public/HowToUsePage'
 
 const MainPage = lazy(() => import('../pages/public/MainPage'))
 
@@ -27,6 +29,14 @@ const root = createBrowserRouter([
         <LoginPage />
       </Suspense>
     ),
+  },
+  {
+    path: '/intro',
+    element: <ServiceIntroPage />,
+  },
+  {
+    path: '/how-to-use',
+    element: <HowToUsePage />,
   },
   {
     path: '/signUp',

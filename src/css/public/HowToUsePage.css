@@ -1,0 +1,268 @@
+.how-to-use-page {
+  min-height: 100vh;
+  background: #fff;
+  color: #1d2630;
+}
+
+.how-to-use-page * {
+  box-sizing: border-box;
+}
+
+.how-to-use-main {
+  width: min(100% - 48px, 1120px);
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+
+.how-to-use-eyebrow {
+  display: block;
+  margin: 0 0 13px;
+  color: #805d3f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.how-to-use-heading h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.how-to-use-heading > p:last-child {
+  margin: 16px 0 0;
+  color: #555e66;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.how-to-use-roles {
+  display: inline-flex;
+  gap: 2px;
+  margin: 32px 0 44px;
+  padding: 4px;
+  border: 1px solid #d9dedf;
+  border-radius: 7px;
+  background: #f4f6f5;
+}
+
+.how-to-use-roles button {
+  min-width: 112px;
+  min-height: 42px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #52606a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.how-to-use-roles button[aria-pressed='true'] {
+  background: #fff;
+  color: #1d2630;
+  box-shadow: 0 1px 5px #1d263016;
+}
+
+.how-to-use-roles button:focus-visible,
+.how-to-use-next a:focus-visible {
+  outline: 2px solid #805d3f;
+  outline-offset: 3px;
+}
+
+.how-to-use-guide-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #303b40;
+}
+
+.how-to-use-guide-intro h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.how-to-use-guide-intro p {
+  margin: 12px 0 0;
+  color: #59636c;
+  line-height: 1.7;
+}
+
+.how-to-use-step-count {
+  flex: none;
+  color: #59636c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.how-to-use-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how-to-use-step {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: 50px;
+  align-items: center;
+  padding: 44px 0;
+  border-bottom: 1px solid #e0e4e5;
+}
+
+.how-to-use-step-text-only {
+  grid-template-columns: 1fr;
+  padding: 30px 0;
+}
+
+.how-to-use-step-copy {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.how-to-use-step-number {
+  flex: none;
+  width: 36px;
+  padding-top: 2px;
+  color: #805d3f;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.how-to-use-step-copy h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.how-to-use-step-copy p {
+  max-width: 610px;
+  margin: 0;
+  color: #555e66;
+  line-height: 1.85;
+}
+
+.how-to-use-step figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.how-to-use-step img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border: 1px solid #dde0e3;
+  background: #f6f7f8;
+}
+
+.how-to-use-step figcaption {
+  margin-top: 9px;
+  color: #6b747b;
+  font-size: 12px;
+  text-align: right;
+}
+
+.how-to-use-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 54px 0 0;
+}
+
+.how-to-use-next h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.how-to-use-next a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 6px;
+  background: #805d3f;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.how-to-use-next a:hover {
+  background: #65462e;
+  color: #fff;
+}
+
+@media (max-width: 760px) {
+  .how-to-use-page .navbar-header {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+
+  .how-to-use-page .navbar-logo,
+  .how-to-use-page .navbar-menu,
+  .how-to-use-page .navbar-auth,
+  .how-to-use-page .navbar-my-malmoim-button {
+    margin: 0;
+  }
+
+  .how-to-use-page .navbar-logo img {
+    width: 110px;
+    height: auto;
+  }
+
+  .how-to-use-page .navbar-menu {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .how-to-use-page .navbar-auth {
+    gap: 3px;
+  }
+
+  .how-to-use-page .div-login,
+  .how-to-use-page .div-signUp {
+    padding: 9px;
+  }
+
+  .how-to-use-main {
+    width: min(100% - 32px, 1120px);
+    padding-top: 34px;
+  }
+
+  .how-to-use-heading h1 {
+    font-size: 32px;
+  }
+
+  .how-to-use-guide-intro h2 {
+    font-size: 23px;
+  }
+
+  .how-to-use-roles {
+    margin: 26px 0 34px;
+  }
+
+  .how-to-use-step {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 34px 0;
+  }
+
+  .how-to-use-step-copy h3 {
+    font-size: 19px;
+  }
+
+  .how-to-use-next {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
