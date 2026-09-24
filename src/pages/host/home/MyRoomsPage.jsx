@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getMyRooms } from "../../../api/room/roomApi";
 import { Plus, Search, X } from "lucide-react";
 import MyRoomsTable from "../../../components/host/home/MyRoomsTable";
+import { searchRoom } from "../../../api/qna/hostQnaApi";
 
 const MyRoomsPage = () => {
 
@@ -18,6 +19,8 @@ const MyRoomsPage = () => {
 
     //활성화된 탭 디폴트: "모두"
     const [activeTab, setActiveTab] = useState("all");
+
+    const [searchKeyword, setSearchKeyword] = useState();
 
 
     // 현재 페이지 넘버 디폴트:1페이지
@@ -44,7 +47,7 @@ const MyRoomsPage = () => {
 
 
     // 선택한 방의 호스트 Q&A 페이지 이동
-    const handleRoomRowClick = (roomNo)=>{
+    const handleRoomRowClick = (roomNo) => {
         nav(`/qna/${roomNo}/host`);
 
     }
@@ -70,6 +73,20 @@ const MyRoomsPage = () => {
 
         setCurrentPage(newStartBlock);
 
+    }
+
+
+    const observeSearchInput = (e) => {
+
+        const value = e.target.value;
+        setSearchKeyword(value);
+
+    }
+
+    //방 제목으로 검색하기
+    const handleSearchRoom = async () => {
+
+        const data = await searchRoom();
     }
 
 
@@ -106,7 +123,7 @@ const MyRoomsPage = () => {
                         </div>
 
                         <div className="div-content-head-right">
-                            <button className="button-head-create" onClick={()=>nav("/createDetail")}>
+                            <button className="button-head-create" onClick={() => nav("/createDetail")}>
                                 + 방 만들기
                             </button>
                         </div>
@@ -116,6 +133,7 @@ const MyRoomsPage = () => {
                         <input
                             type="text"
                             name="search-box"
+                            onChange={observeSearchInput}
                             placeholder="방 제목"
                         />
                         <button type="button" className="search-button">
@@ -124,7 +142,7 @@ const MyRoomsPage = () => {
                     </div>
 
 
-                    <MyRoomsTable rooms={rooms} onRoomClick={handleRoomRowClick}/>
+                    <MyRoomsTable rooms={rooms} onRoomClick={handleRoomRowClick} />
 
 
                     <div className="div-paging-button-box">
@@ -143,8 +161,8 @@ const MyRoomsPage = () => {
                         )}
 
 
-                        <button 
-                            className="button-next" 
+                        <button
+                            className="button-next"
                             onClick={handleNextBlock}
                             disabled={(totalPages <= blockEndPage)}
                         >
