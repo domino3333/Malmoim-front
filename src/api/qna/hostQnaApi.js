@@ -126,12 +126,14 @@ export const toggleAnswerStatus = async (roomNo, questionNo) => {
 
 }
 
-// 질문의 답변 상태 토글
+// myContent 페이지에서의 검색창 api 호출 메서드
 export const searchRoom = async (keyword) => {
 
     const token = getAccessToken();
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/`, { keyword }, {
+    const response = await axios.get(`${API_BASE_URL}${prefix}/`, {
+
+        params: { keyword },
         headers: {
             Authorization: `Bearer ${token}`
 

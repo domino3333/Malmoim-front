@@ -90,7 +90,6 @@ const MyRoomsPage = () => {
         setRooms(data.rooms);
         setTotalRoomCount(data.totalRoomCount);
 
-
     }
 
 
