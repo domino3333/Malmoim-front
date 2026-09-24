@@ -83,9 +83,9 @@ const MyRoomsPage = () => {
     }
 
     //방 제목으로 검색하기
-    const handleSearchRoom = async () => {
+    const handleSearchRoom = async (searchKeyword) => {
 
-        const data = await searchRoom(searchKeyword);
+        const data = await searchRoom(searchKeyword.trim(),currentPage,pageSize);
         setRooms(data.rooms);
         setTotalRoomCount(data.totalRoomCount);
 
@@ -138,7 +138,7 @@ const MyRoomsPage = () => {
                             onChange={observeSearchInput}
                             placeholder="방 제목"
                         />
-                        <button onClick={handleSearchRoom} type="button" className="search-button">
+                        <button onClick={()=>handleSearchRoom(searchKeyword)} type="button" className="search-button">
                             <Search size={20} className="search-icon" />
                         </button>
                     </div>

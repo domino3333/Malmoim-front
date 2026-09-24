@@ -37,11 +37,11 @@ export const getRecentRooms = async () => {
 
 
 // myContent 페이지에서의 검색창 api 호출 메서드
-export const searchRoom = async (keyword) => {
+export const searchRoom = async (keyword,currentPage,pageSize) => {
 
     const token = getAccessToken();
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/search?keyword=${keyword}`, {
+    const response = await axios.get(`${API_BASE_URL}${prefix}/search?keyword=${keyword}?page=${currentPage}&size=${pageSize}`, {
 
         headers: {
             Authorization: `Bearer ${token}`
