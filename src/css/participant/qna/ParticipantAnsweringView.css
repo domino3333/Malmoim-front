@@ -2,7 +2,6 @@
 /*투표 오픈 뷰의 자식 div*/
 .ParticipantAnsweringView-left-panel{
 
-    border: 1px solid green;
     width: 700px;
     height: 90vh;
     margin-top: 20px;
@@ -15,7 +14,6 @@
 .ParticipantAnsweringView-parent-panel {
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
     width: 700px;
     margin-top: 20px;
 }

@@ -2,7 +2,6 @@
 .ParticipantQuestionClosedView-parent-panel {
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
     width: 700px;
     margin-top: 20px;
 }

@@ -4,7 +4,6 @@
 /*투표 오픈 뷰의 자식 div*/
 .ParticipantVotingOpenView-left-panel{
 
-    border: 1px solid green;
     width: 700px;
     height: 90vh;
     margin-top: 20px;
@@ -17,7 +16,6 @@
 .ParticipantVotingOpenView-parent-panel {
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
     width: 700px;
     margin-top: 20px;
 }

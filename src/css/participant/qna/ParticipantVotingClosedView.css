@@ -3,7 +3,6 @@
 /*투표 closed 뷰의 자식 div*/
 .ParticipantVotingClosedView-left-panel{
 
-    border: 1px solid green;
     width: 700px;
     height: 90vh;
     margin-top: 20px;
@@ -16,7 +15,6 @@
 .ParticipantVotingClosedView-parent-panel {
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
     width: 700px;
     margin-top: 20px;
 }
