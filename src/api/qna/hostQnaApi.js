@@ -125,3 +125,19 @@ export const toggleAnswerStatus = async (roomNo, questionNo) => {
     return response.data;
 
 }
+
+// 질문의 답변 상태 토글
+export const searchRoom = async (keyword) => {
+
+    const token = getAccessToken();
+
+    const response = await axios.get(`${API_BASE_URL}${prefix}/`, { keyword }, {
+        headers: {
+            Authorization: `Bearer ${token}`
+
+        }
+    })
+
+    return response.data;
+
+}
