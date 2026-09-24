@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 import HostHomeLayout from "../../../components/host/home/HostHomeLayout";
 import "../../../css/host/home/MyRoomsPage.css";
 import { useEffect, useState } from "react";
-import { getMyRooms } from "../../../api/room/roomApi";
+import { getMyRooms, searchRoom } from "../../../api/room/roomApi";
 import { Plus, Search, X } from "lucide-react";
 import MyRoomsTable from "../../../components/host/home/MyRoomsTable";
-import { searchRoom } from "../../../api/qna/hostQnaApi";
 
 const MyRoomsPage = () => {
 
