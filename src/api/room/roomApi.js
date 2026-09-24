@@ -41,11 +41,10 @@ export const searchRoom = async (keyword,currentPage,pageSize) => {
 
     const token = getAccessToken();
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/search?keyword=${keyword}&page=${currentPage}&size=${pageSize}`, {
-
+    const response = await axios.get(`${API_BASE_URL}${prefix}/search`, {
+        params: { keyword, page: currentPage, size: pageSize },
         headers: {
             Authorization: `Bearer ${token}`
-
         }
     })
 

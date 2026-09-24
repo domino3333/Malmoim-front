@@ -19,7 +19,8 @@ const MyRoomsPage = () => {
     //활성화된 탭 디폴트: "모두"
     const [activeTab, setActiveTab] = useState("all");
 
-    const [searchKeyword, setSearchKeyword] = useState();
+    const [searchKeyword, setSearchKeyword] = useState("");
+    const [appliedKeyword, setAppliedKeyword] = useState("");
 
 
     // 현재 페이지 넘버 디폴트:1페이지
@@ -83,27 +84,29 @@ const MyRoomsPage = () => {
     }
 
     //방 제목으로 검색하기
-    const handleSearchRoom = async (searchKeyword) => {
-
-        const data = await searchRoom(searchKeyword.trim(),currentPage,pageSize);
-        setRooms(data.rooms);
-        setTotalRoomCount(data.totalRoomCount);
-
+    const handleSearchRoom = () => {
+        setCurrentPage(1);
+        setAppliedKeyword(searchKeyword.trim());
     }
 
 
     useEffect(() => {
+        let ignore = false;
 
         // 현재 페이지에 표시할 호스트의 방 목록 조회
         const fetchRooms = async () => {
-            const data = await getMyRooms(currentPage, pageSize);
+            const data = appliedKeyword
+                ? await searchRoom(appliedKeyword, currentPage, pageSize)
+                : await getMyRooms(currentPage, pageSize);
+            if (ignore) return;
             setRooms(data.rooms);
             setTotalRoomCount(data.totalRoomCount);
         }
 
         fetchRooms();
 
-    }, [currentPage])
+        return () => { ignore = true; };
+    }, [currentPage, appliedKeyword])
 
     return (
         <HostHomeLayout>
@@ -135,10 +138,11 @@ const MyRoomsPage = () => {
                         <input
                             type="text"
                             name="search-box"
+                            value={searchKeyword}
                             onChange={observeSearchInput}
                             placeholder="방 제목"
                         />
-                        <button onClick={()=>handleSearchRoom(searchKeyword)} type="button" className="search-button">
+                        <button onClick={handleSearchRoom} type="button" className="search-button">
                             <Search size={20} className="search-icon" />
                         </button>
                     </div>
