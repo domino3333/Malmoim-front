@@ -131,7 +131,7 @@ export const searchRoom = async (keyword) => {
 
     const token = getAccessToken();
 
-    const response = await axios.get(`${API_BASE_URL}${prefix}/`, {
+    const response = await axios.get(`${API_BASE_URL}${prefix}/search`, {
 
         params: { keyword },
         headers: {
