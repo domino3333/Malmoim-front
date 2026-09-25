@@ -45,6 +45,11 @@
     flex-direction: column;
 }
 
+/* 사람 아이콘 */
+.author-avatar-icon{
+    align-self: center;
+}
+
 /* 질문 작성자 텍스트 */
 .question-detail-modal-writer{
     font-size: 0.8em;

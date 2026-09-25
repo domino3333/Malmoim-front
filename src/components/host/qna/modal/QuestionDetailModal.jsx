@@ -32,7 +32,7 @@ const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onH
                 </p>
                 <p className="question-detail-modal-time">{selectedQuestion.createdAt}</p>
                 <div className="question-detail-writer-div">
-                    <PersonAvatarIcon size={36} color="#90653E" />
+                    <PersonAvatarIcon size={36} color="#90653E" className="author-avatar-icon"/>
                     <div className="question-detail-modal-nickname-title">
                         <p className="question-detail-modal-writer">질문 작성자</p>
                         <p className="question-detail-modal-nickname">{selectedQuestion.nickname}</p>
