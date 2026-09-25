@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../../css/host/home/RecentRoomRow.css"
 import { Check, Copy } from "lucide-react";
+import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 
 const RecentRoomRow = ({ room,onEnter }) => {
 
@@ -43,7 +44,7 @@ const RecentRoomRow = ({ room,onEnter }) => {
                     </div>
                 </td>
                 <td>
-                    {room.createdAt}
+                    {formatLocalDateTime(room.createdAt)}
                 </td>
                 <td>
                     <button className="RecentRoomRow-enter-button" onClick={()=>onEnter(room.roomNo)}>

@@ -1,4 +1,5 @@
 import "../../../css/participant/qna/ParticipantQuestionCard.css";
+import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 
 const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, question, onVote, isVoting = false }) => {
 
@@ -29,7 +30,7 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                             질문: {question.content}
                         </div>
                         <div className="ParticipantQuestionCard-time">
-                            {question.createdAt}
+                            {formatLocalDateTime(question.createdAt)}
                         </div>
                     </div>
                 </div>

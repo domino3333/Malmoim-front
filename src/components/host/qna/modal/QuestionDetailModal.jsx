@@ -1,6 +1,7 @@
 import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/QuestionDetailModal.css"
 import { QUESTION_STATUS_LABELS } from "../../../../constants/qna/statusLabels";
+import { formatLocalDateTime } from "../../../../utils/date/formatLocalDateTime";
 import PersonAvatarIcon from "../../../common/PersonAvatarIcon"
 
 const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide }) => {
@@ -30,7 +31,7 @@ const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onH
                 <p className="question-detail-modal-status">
                     {QUESTION_STATUS_LABELS[selectedQuestion.status] ?? selectedQuestion.status}
                 </p>
-                <p className="question-detail-modal-time">{selectedQuestion.createdAt}</p>
+                <p className="question-detail-modal-time">{formatLocalDateTime(selectedQuestion.createdAt)}</p>
                 <div className="question-detail-writer-div">
                     <PersonAvatarIcon size={36} color="#90653E" className="author-avatar-icon"/>
                     <div className="question-detail-modal-nickname-title">
