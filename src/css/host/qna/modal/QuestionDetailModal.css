@@ -9,7 +9,7 @@
 
 
 /* x 버튼 */
-.question-detail-modal-close-button {
+.question-detail-modal__close-button {
     border-radius: 10px;
     width: 10%;
     border: none;
@@ -20,38 +20,38 @@
     margin: 10px;
 }
 /* 상태 텍스트 */
-.question-detail-modal-status{
+.question-detail-modal__status{
     margin-bottom: 0;
     padding-left: 5px;
 }
 
 /* 시간 텍스트 */
-.question-detail-modal-time {
+.question-detail-modal__timestamp {
     color: rgb(135, 127, 117);
     font-size: 0.9em;
     margin: 0;
     padding-left: 5px;
 }
 
-/* 질문 작성자 관련 세개의 div를 감싸는 parent*/
-.question-detail-writer-div{
+/* 질문 작성자 아이콘과 정보를 감싸는 영역 */
+.question-detail-modal__author{
     display: flex;
     gap:5px;
 }
 
-/*질문 작성자와 실제 닉네임을 감싸는 parent*/
-.question-detail-modal-nickname-title{
+/* 작성자 안내와 닉네임을 감싸는 영역 */
+.question-detail-modal__author-info{
     display: flex;
     flex-direction: column;
 }
 
 /* 사람 아이콘 */
-.author-avatar-icon{
+.question-detail-modal__author-icon{
     align-self: center;
 }
 
 /* 질문 작성자 텍스트 */
-.question-detail-modal-writer{
+.question-detail-modal__author-label{
     font-size: 0.8em;
     padding-left: 5px;
     margin:0;
@@ -59,19 +59,19 @@
 }
 
 /*닉네임 텍스트*/
-.question-detail-modal-nickname {
+.question-detail-modal__author-name {
     color: black;
     margin: 0;
     padding-left: 8px;
 }
 
 /*질문 내용 div를 감싸는 div*/
-.question-detail-modal-bottom {
+.question-detail-modal__body {
     padding: 15px;
 }
 
 /* 질문 내용 div */
-.question-detail-modal-content {
+.question-detail-modal__question-content {
 
     border: 1px solid rgb(135, 127, 117);
     border-radius: 10px;
@@ -80,7 +80,7 @@
 }
 
 /* 시간과 닉네임 div를 감싸는 div*/
-.question-detail-modal-top {
+.question-detail-modal__header {
     padding-left: 15px;
     padding-top: 15px;
     display: flex;
@@ -90,7 +90,7 @@
 }
 
 /*버튼 두개를 감싸는 div*/
-.question-detail-modal-button-group {
+.question-detail-modal__actions {
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -99,7 +99,7 @@
 }
 
 /* 취소 버튼*/
-.question-detail-modal-cancel-button {
+.question-detail-modal__cancel-button {
     width: 45%;
     background-color: #90653E;
     border: none;
@@ -110,7 +110,7 @@
 }
 
 /* '답변완료로 표시' 버튼*/
-.question-detail-modal-toggle-button {
+.question-detail-modal__status-toggle-button {
     width: 45%;
     background-color: white;
     border: 1px solid #90653E;
@@ -121,7 +121,7 @@
 }
 
 /* '답변완료로 표시' 버튼 hover 반응*/
-.question-detail-modal-toggle-button:hover{
+.question-detail-modal__status-toggle-button:hover{
 
     width: 45%;
     background-color: #90653E;
