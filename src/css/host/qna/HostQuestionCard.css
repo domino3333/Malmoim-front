@@ -1,14 +1,11 @@
-
-
-
 /* 전체를 아우르는 main div*/
-.HostQuestionCard-main-parent{
+.HostQuestionCard-main-parent {
     display: flex;
     flex-direction: row;
 }
 
 /* rank를 나타내는 div */
-.HostQuestionCard-rank-div{
+.HostQuestionCard-rank-div {
     display: flex;
     align-self: center;
     justify-content: center;
@@ -16,19 +13,19 @@
     width: 10%;
     height: 70px;
     font-size: 1.5em;
-    border:3px solid rgb(218, 216, 216);
+    border: 3px solid rgb(218, 216, 216);
     border-radius: 100%;
-    margin:5px;
+    margin: 5px;
 }
 
 
 
 /* 질문 카드를 감싸는 parent div*/
 .HostQuestionCard-main-div {
-    flex:1;
+    flex: 1;
     border-radius: 5px;
     cursor: pointer;
-    margin:7px;
+    margin: 7px;
 }
 
 /*닉네임과 추천수를 감싸는 div*/
@@ -45,15 +42,15 @@
 /*닉네임 div*/
 .HostQuestionCard-nickname-div {
     font-size: 0.88em;
-    color:white;
-    
+    color: white;
+
 }
 
 /*투표 div*/
 .HostQuestionCard-vote-div {
     font-size: 0.88em;
-    color:white;
-    
+    color: white;
+
 }
 
 /*질문과 시간을 감싸는 div*/
@@ -72,6 +69,20 @@
 
 /* 시간 텍스트 div */
 .HostQuestionCard-body-time {
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+/* 시간과 답변상태를 감싸는 parent div */
+.HostQuestionCard-body-sub {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 답변 상태 텍스트*/
+.HostQuestionCard-status-div {
+
     padding: 5px;
     font-size: 0.8em;
 }

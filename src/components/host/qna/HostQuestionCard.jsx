@@ -31,7 +31,7 @@ const HostQuestionCard = ({ question, onQuestionSelect, showRank, showVoteCount 
                     <div className="HostQuestionCard-body-question">
                         질문: {question.content}
                     </div>
-                    <div>
+                    <div className="HostQuestionCard-body-sub">
                         <div className="HostQuestionCard-body-time">
                             {question.createdAt}
                         </div>
