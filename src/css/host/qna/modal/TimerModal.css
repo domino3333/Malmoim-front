@@ -52,7 +52,7 @@
 
 
 /* 분 입력 input*/
-.minute-input {
+.timer-modal-body .minute-input {
     height: 80px;
     border: 1px solid #90653E;
     text-align: center;
@@ -61,7 +61,7 @@
 }
 
 /* 초 입력 input*/
-.second-input {
+.timer-modal-body .second-input {
     height: 80px;
     border: 1px solid #90653E;
     text-align: center;
@@ -92,17 +92,6 @@
     border-top: none;
 }
 
-
-/* input number 박스에서 화살표 박스 없애기*/
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-}
 
 /*------------------------------------------*/
 
