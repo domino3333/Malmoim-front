@@ -1,5 +1,6 @@
 
 import "../../../css/participant/qna/ParticipantReadyView.css"
+import guideImage from '../../../assets/participant-ready-view-guide.png'
 
 const ParticipantReadyView = () => {
 
@@ -8,7 +9,7 @@ const ParticipantReadyView = () => {
         
             <div className="ParticipantReadyView-parent-div">
                 <div className="readyView-left-panel">
-                    호스트가 질문 시간을 준비 중이에요...{/*가이드 이미지 추가 예정*/}
+                    <img src={guideImage} alt="준비 화면 가이드 이미지" />
                 </div>
                 
             </div>
