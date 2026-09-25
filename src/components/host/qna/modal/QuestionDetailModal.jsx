@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
 import "../../../../css/host/qna/modal/QuestionDetailModal.css"
 import { QUESTION_STATUS_LABELS } from "../../../../constants/qna/statusLabels";
-
+import PersonAvatarIcon from "../../../common/PersonAvatarIcon"
 
 const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide }) => {
 
@@ -31,7 +31,14 @@ const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onH
                     {QUESTION_STATUS_LABELS[selectedQuestion.status] ?? selectedQuestion.status}
                 </p>
                 <p className="question-detail-modal-time">{selectedQuestion.createdAt}</p>
-                <p className="question-detail-modal-nickname">{selectedQuestion.nickname}</p>
+                <div className="question-detail-writer-div">
+                    <PersonAvatarIcon size={36} color="#90653E" />
+                    <div className="question-detail-modal-nickname-title">
+                        <p className="question-detail-modal-writer">질문 작성자</p>
+                        <p className="question-detail-modal-nickname">{selectedQuestion.nickname}</p>
+
+                    </div>
+                </div>
             </div>
             <div className="question-detail-modal-bottom">
                 <p className="question-detail-modal-content">{selectedQuestion.content}</p>
