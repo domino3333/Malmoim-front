@@ -1,18 +1,18 @@
 /* 모든 방 상단 헤더 */
-.RoomHeader-main-div {
+.room-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
 /*로고와 메인title을 묶는 div*/
-.RoomHeader-left-div{
+.room-header__brand{
     display: flex;
     gap:20px;
 }
 
 /* 헤더의 로고 */
-.RoomHeader-logo {
+.room-header__logo {
     cursor: pointer;
     width: 100px;
     height: 40px;
@@ -20,8 +20,8 @@
 }
 
 /*방 헤더의 가장 상단*/
-.RoomHeader-title,
-.RoomHeader-my-info{
+.room-header__title,
+.room-header__info{
     align-self: center;
 }
 

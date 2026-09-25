@@ -1,5 +1,5 @@
 /* 호스트 홈 왼쪽 사이드바 */
-.host-home-sidebar {
+.host-sidebar {
     width: 200px;
     min-height: 100vh;
     flex-shrink: 0;
@@ -7,7 +7,7 @@
 }
 
 /* 사이드바 상단 로고 버튼 */
-.host-home-sidebar-logo-button {
+.host-sidebar__logo-button {
     width: 100%;
     box-sizing: border-box;
     background: none;
@@ -18,20 +18,20 @@
 }
 
 /* 사이드바 상단 로고 이미지 */
-.host-home-sidebar-logo {
+.host-sidebar__logo {
     display: block;
     width: 100%;
     border-radius: 10px;
 }
 
 /* 사이드바 메뉴 영역 */
-.host-home-sidebar-menu {
+.host-sidebar__menu {
     display: flex;
     flex-direction: column;
 }
 
 /* 사이드바 메뉴 버튼 */
-.host-home-sidebar-menu-button {
+.host-sidebar__menu-button {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 10px 10px 16px;
@@ -46,20 +46,20 @@
 }
 
 /*현재 선택된 탭의 배경 색 변경*/
-.host-home-sidebar-menu-button.active {
+.host-sidebar__menu-button.active {
     background-color: #cebebe;
     border-left-color: #90653E;
 }
 
 
 /* 사이드바 메뉴 아이콘 */
-.host-home-sidebar-menu-button img {
+.host-sidebar__menu-button img {
     width: 20px;
     height: 20px;
 }
 
 /* 사이드바 메뉴 텍스트 */
-.host-home-sidebar-menu-button span {
+.host-sidebar__menu-button span {
     font-weight: 600;
     font-size: 0.95em;
 }

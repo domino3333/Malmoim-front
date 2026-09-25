@@ -23,15 +23,15 @@ const ParticipantVotingOpenView = ({ questions, roomInfo, showRank }) => {
     }
 
     return (<>
-        <div className="ParticipantVotingOpenView-parent-panel">
-            <div className="ParticipantVotingOpenView-top-panel">
+        <div className="participant-vote-open">
+            <div className="participant-vote-open__header">
                 투표가 시작되었어요.
                 <br />
                 질문들을 읽고
                 <br />
                 공감하는 질문에 좋아요를 눌러주세요.
             </div>
-            <div className="ParticipantVotingOpenView-bottom-panel">
+            <div className="participant-vote-open__body">
                 <ParticipantQuestionList
                     questions={questions}
                     canVote={true}

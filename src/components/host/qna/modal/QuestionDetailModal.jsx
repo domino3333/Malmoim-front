@@ -22,38 +22,38 @@ const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onH
     // 이미 답변 완료 상태라면 대기중으로 변경 < 이라는 버튼을 표시하기
     return (<>
 
-        <Modal show={show} onHide={onHide} contentClassName="question-detail-modal">
+        <Modal show={show} onHide={onHide} contentClassName="question-detail">
             <button
-                className="question-detail-modal__close-button"
+                className="question-detail__close"
                 onClick={onHide}>X</button>
-            <div className="question-detail-modal__header">
+            <div className="question-detail__header">
 
-                <p className="question-detail-modal__status">
+                <p className="question-detail__status">
                     {QUESTION_STATUS_LABELS[selectedQuestion.status] ?? selectedQuestion.status}
                 </p>
-                <p className="question-detail-modal__timestamp">{formatLocalDateTime(selectedQuestion.createdAt)}</p>
-                <div className="question-detail-modal__author">
-                    <PersonAvatarIcon size={36} color="#90653E" className="question-detail-modal__author-icon"/>
-                    <div className="question-detail-modal__author-info">
-                        <p className="question-detail-modal__author-label">질문 작성자</p>
-                        <p className="question-detail-modal__author-name">{selectedQuestion.nickname}</p>
+                <p className="question-detail__timestamp">{formatLocalDateTime(selectedQuestion.createdAt)}</p>
+                <div className="question-detail__author">
+                    <PersonAvatarIcon size={36} color="#90653E" className="question-detail__author-icon"/>
+                    <div className="question-detail__author-info">
+                        <p className="question-detail__author-label">질문 작성자</p>
+                        <p className="question-detail__author-name">{selectedQuestion.nickname}</p>
 
                     </div>
                 </div>
             </div>
-            <div className="question-detail-modal__body">
-                <p className="question-detail-modal__question-content">{selectedQuestion.content}</p>
+            <div className="question-detail__body">
+                <p className="question-detail__content">{selectedQuestion.content}</p>
             </div >
 
 
-            <div className="question-detail-modal__actions">
+            <div className="question-detail__actions">
                 <button
-                    className="question-detail-modal__cancel-button"
+                    className="question-detail__cancel"
                     onClick={onHide}>
                     취소
                 </button>
                 <button
-                    className="question-detail-modal__status-toggle-button"
+                    className="question-detail__toggle"
                     onClick={handleToggleAnswerStatus}>
                     {selectedQuestion.status === "WAITING" ? "답변 완료로 표시" : "대기 중으로 표시"}
                 </button>

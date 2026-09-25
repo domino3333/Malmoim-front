@@ -1,11 +1,11 @@
 /* 전체를 아우르는 main div*/
-.HostQuestionCard-main-parent {
+.host-question-card {
     display: flex;
     flex-direction: row;
 }
 
 /* rank를 나타내는 div */
-.HostQuestionCard-rank-div {
+.host-question-card__rank {
     display: flex;
     align-self: center;
     justify-content: center;
@@ -21,7 +21,7 @@
 
 
 /* 질문 카드를 감싸는 parent div*/
-.HostQuestionCard-main-div {
+.host-question-card__panel {
     flex: 1;
     border-radius: 5px;
     cursor: pointer;
@@ -29,7 +29,7 @@
 }
 
 /*닉네임과 추천수를 감싸는 div*/
-.HostQuestionCard-header-div {
+.host-question-card__header {
 
     background-color: #926e4c;
     display: flex;
@@ -40,21 +40,21 @@
 }
 
 /*닉네임 div*/
-.HostQuestionCard-nickname-div {
+.host-question-card__nickname {
     font-size: 0.88em;
     color: white;
 
 }
 
 /*투표 div*/
-.HostQuestionCard-vote-div {
+.host-question-card__votes {
     font-size: 0.88em;
     color: white;
 
 }
 
 /*질문과 시간을 감싸는 div*/
-.HostQuestionCard-body-div {
+.host-question-card__body {
     background-color: white;
     border: 1px solid #90653E;
     border-bottom-left-radius: 5px;
@@ -62,26 +62,26 @@
 }
 
 /* 질문 텍스트 div */
-.HostQuestionCard-body-question {
+.host-question-card__question {
     padding: 5px;
 
 }
 
 /* 시간 텍스트 div */
-.HostQuestionCard-body-time {
+.host-question-card__time {
     padding: 5px;
     font-size: 0.8em;
 }
 
 /* 시간과 답변상태를 감싸는 parent div */
-.HostQuestionCard-body-sub {
+.host-question-card__meta {
     display: flex;
     justify-content: space-between;
 }
 
 
 /* 답변 상태 텍스트*/
-.HostQuestionCard-status-div {
+.host-question-card__status {
 
     padding: 5px;
     font-size: 0.8em;

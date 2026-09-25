@@ -6,15 +6,15 @@ const ParticipantQuestionClosedView = ({questions, showRank}) => {
 
 
     return (<>
-            <div className="ParticipantQuestionClosedView-parent-panel">
-                <div className="ParticipantQuestionClosedView-top-panel">
+            <div className="participant-question-closed">
+                <div className="participant-question-closed__header">
                     질문 시간이 종료되었어요.
                     <br />
                     질문들을 미리 읽고
                     <br />
                     투표가 시작되면 공감하는 질문에 좋아요를 눌러주세요.
                 </div>
-                <div className="ParticipantQuestionClosedView-bottom-panel">
+                <div className="participant-question-closed__body">
                     <ParticipantQuestionList questions={questions} showRank={showRank}/>
                 </div>
             </div>

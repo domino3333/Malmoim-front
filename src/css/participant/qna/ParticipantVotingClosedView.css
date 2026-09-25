@@ -1,7 +1,7 @@
 
 
 /*투표 closed 뷰의 자식 div*/
-.ParticipantVotingClosedView-left-panel{
+.participant-vote-closed__left{
 
     width: 700px;
     height: 90vh;
@@ -12,7 +12,7 @@
 }
 
 /* 투표 closed view 최상위 부모 */
-.ParticipantVotingClosedView-parent-panel {
+.participant-vote-closed {
     display: flex;
     flex-direction: column;
     width: 700px;
@@ -20,6 +20,6 @@
 }
 
 /* 상단 텍스트 div */
-.ParticipantVotingClosedView-top-panel {
+.participant-vote-closed__header {
     text-align: center;
 }

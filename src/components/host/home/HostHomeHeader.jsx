@@ -15,12 +15,12 @@ const HostHomeHeader = () => {
     }
 
     return (
-        <header className="host-home-header">
+        <header className="host-header">
 
             <Dropdown align="end" className="host-account-dropdown">
                 <Dropdown.Toggle
                     variant="link"
-                    className="host-home-header-person-button"
+                    className="host-header__account"
                 >
                     <img src={person} alt="내 정보" />
                 </Dropdown.Toggle>

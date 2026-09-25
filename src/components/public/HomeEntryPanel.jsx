@@ -92,27 +92,27 @@ const HomeEntryPanel = () => {
 
     return (<>
 
-        <div className="HomeEntryPanel-main-parent">
-            <div className="HomeEntryPanel-left-panel">
+        <div className="home-entry">
+            <div className="home-entry__participant">
                 <img src={people} alt="people-icon" />
                 <h2>참여자이신가요?</h2>
-                <p className="panel-guide-text">입장코드를 입력하고 실시간 Q&A에 참여하세요</p>
-                <div className="left-panel-input-div">
-                    <input disabled={isCheckingCode} onChange={handleCodeChange} type="text" name="code" className="code-input" />
-                    <button disabled={isCheckingCode} aria-busy={isCheckingCode} onClick={handleCodeSubmit} className="code-input-arrow-button">→</button>
+                <p className="home-entry__guide">입장코드를 입력하고 실시간 Q&A에 참여하세요</p>
+                <div className="home-entry__code-row">
+                    <input disabled={isCheckingCode} onChange={handleCodeChange} type="text" name="code" className="home-entry__code" />
+                    <button disabled={isCheckingCode} aria-busy={isCheckingCode} onClick={handleCodeSubmit} className="home-entry__code-submit">→</button>
                 </div>
-                <div className="left-panel-advice-div">
+                <div className="home-entry__participant-tip">
                     입장코드는 호스트가 제공한 코드를 입력해주세요
                 </div>
             </div>
-            <div className="HomeEntryPanel-right-panel">
+            <div className="home-entry__host">
                 <img src={home} alt="" />
                 <h2>방을 직접 만들기</h2>
-                <p className="panel-guide-text">로그인 후 방을 만들고 진행할 수 있어요</p>
-                <button className="host-start-button" onClick={()=>nav("/login")}>
+                <p className="home-entry__guide">로그인 후 방을 만들고 진행할 수 있어요</p>
+                <button className="home-entry__host-start" onClick={()=>nav("/login")}>
                     호스트로 시작
                 </button>
-                <div className="right-panel-advice-div">
+                <div className="home-entry__host-tip">
                     입장코드는 호스트가 제공한 코드를 입력해주세요
                 </div>
             </div>

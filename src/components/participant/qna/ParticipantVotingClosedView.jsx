@@ -6,13 +6,13 @@ const ParticipantVotingClosedView = ({questions, showRank}) => {
 
 
     return (<>
-        <div className="ParticipantVotingClosedView-parent-panel">
-                <div className="ParticipantVotingClosedView-top-panel">
+        <div className="participant-vote-closed">
+                <div className="participant-vote-closed__header">
                     투표가 종료되었어요.
                     <br />
                     호스트가 결과를 공개하기까지 기다려주세요.
                 </div>
-                <div className="ParticipantVotingClosedView-bottom-panel">
+                <div className="participant-vote-closed__body">
                     <ParticipantQuestionList questions={questions} showRank={showRank}/>
                 </div>
             </div>

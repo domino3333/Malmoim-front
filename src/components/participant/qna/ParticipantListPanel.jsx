@@ -8,7 +8,7 @@ const ParticipantListPanel = ({participantPresence}) => {
 
 
     return (<>
-        <div className="ParticipantListPanel-parent-div">
+        <div className="participant-list">
             <div className="participant-list-count">
                 참여자 수 {participantPresence.participantCount}
             </div>

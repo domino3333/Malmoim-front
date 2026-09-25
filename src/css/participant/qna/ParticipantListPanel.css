@@ -1,7 +1,7 @@
 
 
 /* 내 정보 패널 최상위 div*/
-.ParticipantListPanel-parent-div{
+.participant-list{
     border: 1px solid #90653E;
     padding:10px;
     border-radius: 10px;

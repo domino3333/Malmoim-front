@@ -42,7 +42,7 @@ const NicknameModal = ({ onJoin, roomInfo, show, onHide, isJoining = false }) =>
             <button
                 disabled={isJoining}
                 onClick={()=>onJoin(roomInfo.roomNo,nickname)}
-                className={roomInfo.hasPassword ? "nickname-modal-enter-button-v1" : "nickname-modal-enter-button-v2"}>
+                className={roomInfo.hasPassword ? "nickname-submit--password" : "nickname-submit--direct"}>
                 {isJoining ? "입장 중..." : "입장하기"}
             </button>
 

@@ -34,7 +34,7 @@ const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword, isVe
                     <input disabled={isVerifyingPassword} className="entry-modal-password-input" onChange={handlePasswordChange} type="password" placeholder="비밀번호.." />
                 }
 
-                <button disabled={isVerifyingPassword} onClick={()=>onNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-modal-enter-button-v1": "entry-modal-enter-button-v2"}>
+                <button disabled={isVerifyingPassword} onClick={()=>onNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-submit--password": "entry-submit--direct"}>
                     {isVerifyingPassword ? "확인 중..." : roomInfo.hasPassword ? "다음" : "입장"}
                 </button>
 

@@ -217,9 +217,9 @@ const QnaParticipantPage = () => {
 
         <div className="qna-participant-main-div">
             <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} />
-            <div className="qna-participant-main-border-div">
+            <div className="qna-participant__content">
                 {roomInfo && <RoomSubheader roomInfo={roomInfo} />}
-                <div className="qna-participant-timer-status-parent">
+                <div className="qna-participant__status-row">
                     <TimerPanel remainingTime={remainingTime} />
                     <QnaPhaseStatusPanel status={roomInfo?.status} />
 

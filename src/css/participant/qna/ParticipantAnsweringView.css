@@ -1,6 +1,6 @@
 
 /*투표 오픈 뷰의 자식 div*/
-.ParticipantAnsweringView-left-panel{
+.participant-answering__left{
 
     width: 700px;
     height: 90vh;
@@ -11,7 +11,7 @@
 }
 
 /* 질문 종료 view 최상위 부모 */
-.ParticipantAnsweringView-parent-panel {
+.participant-answering {
     display: flex;
     flex-direction: column;
     width: 700px;
@@ -19,6 +19,6 @@
 }
 
 /* 상단 텍스트 div */
-.ParticipantAnsweringView-top-panel {
+.participant-answering__header {
     text-align: center;
 }

@@ -1,6 +1,6 @@
 
 /* 등록하기 버튼 */
-.ParticipantQuestionToolbar-register-button{
+.participant-toolbar__register{
     width:100px;
     border: none;
     height: 40px;
@@ -11,7 +11,7 @@
 }
 
 /* 왼쪽 패널 parent div*/
-.ParticipantQuestionToolbar-parent-div{
+.participant-toolbar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

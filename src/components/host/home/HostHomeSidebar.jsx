@@ -14,19 +14,19 @@ const HostHomeSidebar = () => {
 
 
   return (
-    <aside className="host-home-sidebar">
+    <aside className="host-sidebar">
       <button
         type="button"
-        className="host-home-sidebar-logo-button"
+        className="host-sidebar__logo-button"
         onClick={() => nav('/')}
       >
-        <img className="host-home-sidebar-logo" src={logo} alt="말모임 로고" />
+        <img className="host-sidebar__logo" src={logo} alt="말모임 로고" />
       </button>
 
-      <nav className="host-home-sidebar-menu">
+      <nav className="host-sidebar__menu">
 
         <NavLink to="/dashboard"
-          className={({ isActive }) => `host-home-sidebar-menu-button ${isActive ? "active" : ""}`}
+          className={({ isActive }) => `host-sidebar__menu-button ${isActive ? "active" : ""}`}
         >
           <img src={dashboardIcon} alt="대시보드" />
           <span>대시보드</span>
@@ -34,14 +34,14 @@ const HostHomeSidebar = () => {
         </NavLink>
 
         <NavLink to="/createDetail"
-          className={({ isActive }) => `host-home-sidebar-menu-button ${isActive ? "active" : ""}`}
+          className={({ isActive }) => `host-sidebar__menu-button ${isActive ? "active" : ""}`}
         >
           <img src={plusIcon} alt="만들기" />
           <span>말모임 만들기</span>
         </NavLink>
 
         <NavLink to="/myContent"
-          className={({ isActive }) => `host-home-sidebar-menu-button ${isActive ? "active" : ""}`}
+          className={({ isActive }) => `host-sidebar__menu-button ${isActive ? "active" : ""}`}
         >
           <img src={personIcon} alt="내 말모임" />
           <span>내 말모임</span>

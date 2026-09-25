@@ -7,8 +7,8 @@ const ParticipantReadyView = () => {
     return (<>
 
         
-            <div className="ParticipantReadyView-parent-div">
-                <div className="readyView-left-panel">
+            <div className="participant-ready">
+                <div className="participant-ready__visual">
                     <img src={guideImage} alt="준비 화면 가이드 이미지" />
                 </div>
                 

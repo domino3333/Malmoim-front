@@ -2,7 +2,7 @@
 
 
 /*투표 오픈 뷰의 자식 div*/
-.ParticipantVotingOpenView-left-panel{
+.participant-vote-open__left{
 
     width: 700px;
     height: 90vh;
@@ -13,7 +13,7 @@
 }
 
 /* 질문 종료 view 최상위 부모 */
-.ParticipantVotingOpenView-parent-panel {
+.participant-vote-open {
     display: flex;
     flex-direction: column;
     width: 700px;
@@ -21,6 +21,6 @@
 }
 
 /* 상단 텍스트 div */
-.ParticipantVotingOpenView-top-panel {
+.participant-vote-open__header {
     text-align: center;
 }

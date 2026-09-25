@@ -1,11 +1,11 @@
 /* RoomSubheader의 div를 감싸는 main div*/
-.RoomSubheader-main-div {
+.room-subheader {
     padding: 10px 20px;
     
 }
 
 /* 90%만 그리는 직선을 위한 div*/
-.RoomSubheader-padding-div {
+.room-subheader__fields {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
@@ -13,7 +13,7 @@
 }
 
 /* 방 타이틀 div */
-.RoomSubheader-title {
+.room-subheader__title {
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;
@@ -21,7 +21,7 @@
 }
 
 /* 방 code div */
-.RoomSubheader-code {
+.room-subheader__code {
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;
@@ -29,7 +29,7 @@
 }
 
 /* 방 공개 여부 div */
-.room-subheader-visibility {
+.room-subheader__visibility {
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;

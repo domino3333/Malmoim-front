@@ -1,5 +1,5 @@
 /* 모달 창의 전체를 아우르는 클래스*/
-.modal-content.question-submit-modal {
+.modal-content.question-submit {
 
     width: 500px;
     height: 500px;
@@ -9,14 +9,14 @@
 }
 
 /* 질문 등록 < 텍스트*/
-.question-submit-modal h3 {
+.question-submit h3 {
     text-align: center;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 /* x버튼 */
-.question-submit-modal-x-button {
+.question-submit__close {
     border: none;
     width: 30px;
     height: 30px;
@@ -28,7 +28,7 @@
 }
 
 /* 질문 등록 textarea*/
-.question-submit-modal-textarea {
+.question-submit__input {
 
     resize: none;
     width: 90%;
@@ -44,7 +44,7 @@
 }
 
 /* 취소, 완료 버튼을 감싸는 div*/
-.question-submit-modal-button-box {
+.question-submit__actions {
     display: flex;
     gap: 10px;
     width:90%;
@@ -57,7 +57,7 @@
 }
 
 /* 취소 버튼*/
-.question-submit-modal-cancel-button {
+.question-submit__cancel {
     background-color: white;
     color: #90653E;
     border: 1px solid #90653E;
@@ -67,7 +67,7 @@
 }
 
 /* 완료 버튼*/
-.question-submit-modal-submit-button {
+.question-submit__submit {
     background-color: #90653E;
     color: white;
     border: 1px solid #90653E;
@@ -77,13 +77,13 @@
 }
 
 /* textarea 클릭 시 border 효과 적용*/
-.question-submit-modal-textarea:focus {
+.question-submit__input:focus {
     outline: none;
     border: 2px solid #90653E;
 }
 
 /* 버튼 클릭 시 애니메이션 효과*/
-.question-submit-modal-submit-button:active,
-.question-submit-modal-cancel-button:active {
+.question-submit__submit:active,
+.question-submit__cancel:active {
     transform: translateY(2px);
 }

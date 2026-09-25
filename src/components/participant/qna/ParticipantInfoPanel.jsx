@@ -4,7 +4,7 @@ const ParticipantInfoPanel = ({participantInfo})=>{
 
     return(<>
         
-        <div className="ParticipantInfoPanel-parent-div">
+        <div className="participant-info">
             <p>닉네임 : {participantInfo.nickname}</p>
             <p>내 질문 수:</p>
             <p>추천한 질문 수:</p>

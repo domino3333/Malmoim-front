@@ -1,5 +1,5 @@
 /* 두개 패널을 감싸는 main div */
-.HomeEntryPanel-main-parent {
+.home-entry {
     display: flex;
     justify-content: center;
     padding: 50px 50px;
@@ -8,7 +8,7 @@
 }
 
 /* 왼쪽 대문 패널 */
-.HomeEntryPanel-left-panel {
+.home-entry__participant {
     border: 1px solid #90653E;
     height: 500px;
     width: 35%;
@@ -19,7 +19,7 @@
 }
 
 /* 오른쪽 대문 패널 */
-.HomeEntryPanel-right-panel {
+.home-entry__host {
     padding-top: 60px;
     border: 1px solid #90653E;
     height: 500px;
@@ -30,25 +30,25 @@
 }
 
 /* 참여자이신가요, 방을직접만들기 <- h2 텍스트 */
-.HomeEntryPanel-main-parent h2 {
+.home-entry h2 {
     font-weight: 900;
     margin-top: 10px;
 }
 
 /* 코드 입력과 버튼을 감싸는 div*/
-.left-panel-input-div {
+.home-entry__code-row {
     display: flex;
     margin: 0 auto;
     width: min(80%, 360px);
 }
 
 /* 가이드 텍스트 */
-.panel-guide-text {
+.home-entry__guide {
     font-size: 1.0em;
 }
 
 /* 코드 입력하는 input 태그 */
-.code-input {
+.home-entry__code {
     flex: 1;
     width: 260px;
     height: 60px;
@@ -60,7 +60,7 @@
 }
 
 /* 코드 input 오른쪽의 화살표 버튼*/
-.code-input-arrow-button {
+.home-entry__code-submit {
     width: 100px;
     height: 60px;
     border: 1px solid #90653E;
@@ -72,15 +72,15 @@
 }
 
 /* people 이미지 */
-.HomeEntryPanel-left-panel img,
-.HomeEntryPanel-right-panel img {
+.home-entry__participant img,
+.home-entry__host img {
     width: 100px;
     height: 100px;
     border-radius: 100%;
 }
 
 /*왼쪽 패널 advice 텍스트*/
-.left-panel-advice-div {
+.home-entry__participant-tip {
     border: none;
     background-color: #cab6a4;
     width: 360px;
@@ -90,7 +90,7 @@
 }
 
 /* 호스트로 시작하기 버튼*/
-.host-start-button {
+.home-entry__host-start {
     border: 1px solid #90653E;
     background-color: #90653E;
     color: white;
@@ -101,7 +101,7 @@
 }
 
 /* 오른쪽 패널 advice 텍스트*/
-.right-panel-advice-div {
+.home-entry__host-tip {
     border: none;
     background-color: #cab6a4;
     width: 360px;

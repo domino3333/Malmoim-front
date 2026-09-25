@@ -1,5 +1,5 @@
 /* 질문 종료 view 최상위 부모 */
-.ParticipantQuestionClosedView-parent-panel {
+.participant-question-closed {
     display: flex;
     flex-direction: column;
     width: 700px;
@@ -7,6 +7,6 @@
 }
 
 /* 상단 텍스트 div */
-.ParticipantQuestionClosedView-top-panel {
+.participant-question-closed__header {
     text-align: center;
 }
