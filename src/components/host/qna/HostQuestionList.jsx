@@ -72,7 +72,7 @@ const HostQuestionList = ({ questions, onQuestionSelect, ui }) => {
 
 
             <div className="qnaList-main-div">
-                {displayedQuestions.map((question) => <HostQuestionCard onQuestionSelect={onQuestionSelect} key={question.questionNo} question={question} showRank={ui.showRank} showVoteCount={ui.showVoteCount} />)}
+                {displayedQuestions.map((question) => <HostQuestionCard onQuestionSelect={onQuestionSelect} key={question.questionNo} question={question} showRank={ui.showRank} showVoteCount={ui.showVoteCount} showAnswerStatus={ui.showAnswerStatus} />)}
 
             </div>
 

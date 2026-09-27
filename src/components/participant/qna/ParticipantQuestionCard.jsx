@@ -2,7 +2,7 @@ import "../../../css/participant/qna/ParticipantQuestionCard.css";
 import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 import { QUESTION_STATUS_LABELS } from "../../../constants/qna/statusLabels";
 
-const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, question, onVote, isVoting = false }) => {
+const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, question, onVote, isVoting = false }) => {
 
     return (<>
 
@@ -34,9 +34,10 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                             <div className="participant-card__time">
                                 {formatLocalDateTime(question.createdAt)}
                             </div>
-                            <div className="participant-card__status">
-                                답변상태: {QUESTION_STATUS_LABELS[question.status] ?? question.status}
-                            </div>
+                            {showAnswerStatus &&
+                                <div className="participant-card__status">
+                                    답변상태: {QUESTION_STATUS_LABELS[question.status] ?? question.status}
+                                </div>}
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ const sortQuestionsByVoteCount = (questions) => {
 
 
 
-const ParticipantAnsweringView = ({ questions, showRank }) => {
+const ParticipantAnsweringView = ({ questions, showRank, showAnswerStatus }) => {
 
     const sortedQuestions = sortQuestionsByVoteCount(questions);
 
@@ -33,7 +33,7 @@ const ParticipantAnsweringView = ({ questions, showRank }) => {
                 호스트가 질문에 답변할 차례예요.
             </div>
             <div className="participant-answering__body">
-                <ParticipantQuestionList questions={sortedQuestions} showVoteCount showRank={showRank} />
+                <ParticipantQuestionList questions={sortedQuestions} showVoteCount showRank={showRank} showAnswerStatus={showAnswerStatus} />
             </div>
         </div>
 

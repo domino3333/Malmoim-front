@@ -240,6 +240,7 @@ const QnaParticipantPage = () => {
                             roomInfo={roomInfo}
                             onQuestionSubmit={handleQuestionSubmit}
                             showRank={questionListUi.showRank}
+                            showAnswerStatus={questionListUi.showAnswerStatus}
                         />}
                     </div>
                     <div className="phaseComponent-right-panel">

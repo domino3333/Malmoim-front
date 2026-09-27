@@ -5,7 +5,7 @@ import { QUESTION_STATUS_LABELS } from "../../../constants/qna/statusLabels";
 import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 
 // 질문 내용과 작성자·추천 정보를 표시하는 카드 컴포넌트
-const HostQuestionCard = ({ question, onQuestionSelect, showRank, showVoteCount }) => {
+const HostQuestionCard = ({ question, onQuestionSelect, showRank, showVoteCount, showAnswerStatus }) => {
 
     return (<>
 
@@ -36,9 +36,10 @@ const HostQuestionCard = ({ question, onQuestionSelect, showRank, showVoteCount 
                         <div className="host-question-card__time">
                             {formatLocalDateTime(question.createdAt)}
                         </div>
-                        <div className="host-question-card__status">
-                            답변상태: {QUESTION_STATUS_LABELS[question.status] ?? question.status}
-                        </div>
+                        {showAnswerStatus &&
+                            <div className="host-question-card__status">
+                                답변상태: {QUESTION_STATUS_LABELS[question.status] ?? question.status}
+                            </div>}
                     </div>
                 </div>
 
