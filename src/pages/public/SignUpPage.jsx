@@ -11,6 +11,7 @@ const SignUpPage = () => {
   const [input, setInput] = useState({
     email: '',
     password: '',
+    passwordCheck:'',
     name: '',
   })
 
@@ -21,6 +22,10 @@ const SignUpPage = () => {
       [e.target.name]: e.target.value,
     })
   }
+
+  const passwordMessage = !input.passwordCheck ? "":
+    (input.password === input.passwordCheck ? "비밀번호가 일치합니다":"비밀번호가 일치하지 않습니다." )
+
 
   const handleCheckEmailAvailability = async () => {
 
@@ -88,8 +93,9 @@ const SignUpPage = () => {
             <input type="password" onChange={handleInputChange} id="password" name="password" />
           </div>
           <div className="div-signUp-password">
-            <label htmlFor="password">비밀번호 확인</label>
-            <input type="password" onChange={handleInputChange} id="password" name="password" />
+            <label htmlFor="passwordCheck">비밀번호 확인</label>
+            <input type="password" onChange={handleInputChange} id="passwordCheck" name="passwordCheck" />
+            <p>{passwordMessage}</p>
           </div>
           <div className="div-signUp-name">
             <label htmlFor="name">이름</label>

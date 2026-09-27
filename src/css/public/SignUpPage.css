@@ -60,7 +60,7 @@
 /* "이름" 텍스트 */
 .div-signUp-name label {
     font-weight: 600;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 /*이름 input*/
@@ -149,6 +149,10 @@
     margin-bottom: 10px;
 }
 
+/* 비밀번호 검증 메시지 */
+.div-signUp-password p {
+    margin-bottom: 0px;
+}
 
 
 /*패스워드 input*/
