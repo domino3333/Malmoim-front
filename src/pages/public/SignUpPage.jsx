@@ -52,6 +52,7 @@ const SignUpPage = () => {
     try {
       const data = await checkEmailAvailability(input.email);
       setCheckMessage(data);
+      setEmailAvailabilityCheck(true);
 
     } catch (e) {
       setCheckMessage(e.response?.status === 409 ?
@@ -81,6 +82,12 @@ const SignUpPage = () => {
 
     if(passwordMessage.flag === false){
       alert("비밀번호를 확인해주세요.");
+      return;
+    }
+
+    if(emailAvailabilityCheck===false){
+      alert('이메일 중복확인을 해주세요.');
+      return;
     }
 
     await signUp(input);
