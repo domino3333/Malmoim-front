@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import MainNavbar from '../../components/public/MainNavbar'
 import '../../css/public/SignUpPage.css'
 import { checkEmailAvailability, signUp } from '../../api/auth/authApi'
+import { useNavigate } from 'react-router-dom'
 
 const SignUpPage = () => {
 
+  const emailInputRef = useRef(null);
 
   const [checkMessage, setCheckMessage] = useState("");
   const [emailAvailabilityCheck,setEmailAvailabilityCheck] = useState(false);
 
+  const nav = useNavigate();
   const passwordCheckMap = {
 
     SUCCESS: {
@@ -48,6 +51,11 @@ const SignUpPage = () => {
       return;
     }
 
+    if (emailInputRef.current.validity.typeMismatch) {
+      alert('이메일 형식에 맞지 않습니다.');
+      return;
+    }
+
 
     try {
       const data = await checkEmailAvailability(input.email);
@@ -71,6 +79,11 @@ const SignUpPage = () => {
       return;
     }
 
+    if (emailInputRef.current.validity.typeMismatch) {
+      alert('이메일 형식에 맞지 않습니다.');
+      return;
+    }
+
     if (input.password === "") {
       alert('비밀번호를 입력해주세요');
       return;
@@ -90,7 +103,13 @@ const SignUpPage = () => {
       return;
     }
 
-    await signUp(input);
+    try{
+      await signUp(input);
+      nav("/");
+
+    }catch(e){
+      alert("회원 가입 중 오류가 발생했습니다.");
+    }
   }
 
   return (
@@ -104,7 +123,7 @@ const SignUpPage = () => {
           </div>
           <div className="div-signUp-email">
             <label htmlFor="email">이메일</label>
-            <input type="email" onChange={handleInputChange} id="email" name="email" />
+            <input ref={emailInputRef} type="email" onChange={handleInputChange} id="email" name="email" />
           </div>
           <div className='div-signUp-check-Duplicate'>
             <button onClick={handleCheckEmailAvailability}>중복확인</button>
