@@ -37,6 +37,27 @@ const SignUpPage = () => {
 
   }
 
+
+
+  const handleSignUp = async () => {
+
+    if (input.email === "") {
+      alert('이메일을 입력해주세요');
+      return;
+    }
+
+    if (input.password === "") {
+      alert('비밀번호를 입력해주세요');
+      return;
+    }
+    if (input.name === "") {
+      alert('이름을 입력해주세요');
+      return;
+    }
+
+    await signUp(input)
+  }
+
   return (
     <>
       <MainNavbar />
@@ -70,7 +91,7 @@ const SignUpPage = () => {
             <input type="text" onChange={handleInputChange} id="name" name="name" />
           </div>
           <div className="div-signUp-button">
-            <button type="button" onClick={async () => await signUp(input)}>가입하기</button>
+            <button type="button" onClick={handleSignUp}>가입하기</button>
           </div>
         </div>
       </div>
