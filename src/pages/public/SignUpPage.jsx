@@ -24,6 +24,11 @@ const SignUpPage = () => {
 
   const handleCheckEmailAvailability = async () => {
 
+    if (input.email === "") {
+      alert('이메일을 입력해주세요');
+      return;
+    }
+
 
     try {
       const data = await checkEmailAvailability(input.email);
