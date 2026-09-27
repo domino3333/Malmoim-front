@@ -30,8 +30,8 @@ const SignUpPage = () => {
       setCheckMessage(data);
 
     } catch (e) {
-      setCheckMessage(""); // 이전 성공 메시지가 남지 않게
-      alert(`${e.response?.data}`);
+      setCheckMessage(e.response?.status === 409 ?
+        e.response.data : "중복 확인 중 오류가 발생했습니다.");
     }
 
 
@@ -52,6 +52,7 @@ const SignUpPage = () => {
           </div>
           <div className='div-signUp-check-Duplicate'>
             <button onClick={handleCheckDuplicate}>중복확인</button>
+            {checkMessage && <p>{checkMessage}</p>}
 
           </div>
 
