@@ -105,6 +105,7 @@ const SignUpPage = () => {
 
     try{
       await signUp(input);
+      alert('회원가입에 성공했습니다.');
       nav("/");
 
     }catch(e){
