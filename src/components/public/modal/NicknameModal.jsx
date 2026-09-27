@@ -28,7 +28,7 @@ const NicknameModal = ({ onJoin, roomInfo, show, onHide, isJoining = false }) =>
             >X</button>
             <h3>{roomInfo.title}</h3>
             <p className="nickname-modal-code-p">코드: {roomInfo.code}</p>
-            <p className="nickname-modal-capacity-p">정원: (현재정원표기 구현예정)/{roomInfo.capacity}</p>
+            <p className="nickname-modal-capacity-p">정원: {roomInfo.activeParticipantCount}/{roomInfo.capacity}</p>
 
             <input
                 disabled={isJoining}

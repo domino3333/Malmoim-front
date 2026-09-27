@@ -28,7 +28,7 @@ const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword, isVe
                 >X</button>
                 <h3>{roomInfo.title}</h3>
                 <p className="entry-modal-code-p">코드: {roomInfo.code}</p>
-                <p className="entry-modal-capacity-p">정원: (현재정원표기 구현예정)/{roomInfo.capacity}</p>
+                <p className="entry-modal-capacity-p">정원: {roomInfo.activeParticipantCount}/{roomInfo.capacity}</p>
 
                 {roomInfo.hasPassword &&
                     <input disabled={isVerifyingPassword} className="entry-modal-password-input" onChange={handlePasswordChange} type="password" placeholder="비밀번호.." />
