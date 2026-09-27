@@ -20,7 +20,7 @@ export const signUp = async (data) => {
 }
 
 export const checkDuplicate = async (data) => {
-    const response = await axios.post(`${API_BASE_URL}${prefix}/chekc-duplicate`, data, null);
+    const response = await axios.post(`${API_BASE_URL}${prefix}/check-duplicate`, data, null);
 
 
     return response.data;
