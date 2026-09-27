@@ -7,11 +7,24 @@ const SignUpPage = () => {
 
 
   const [checkMessage, setCheckMessage] = useState("");
+  const [emailAvailabilityCheck,setEmailAvailabilityCheck] = useState(false);
+
+  const passwordCheckMap = {
+
+    SUCCESS: {
+      message: "비밀번호가 일치합니다",
+      flag: true,
+    },
+    FAIL: {
+      message: "비밀번호가 일치하지 않습니다.",
+      flag: false,
+    }
+  }
 
   const [input, setInput] = useState({
     email: '',
     password: '',
-    passwordCheck:'',
+    passwordCheck: '',
     name: '',
   })
 
@@ -23,8 +36,9 @@ const SignUpPage = () => {
     })
   }
 
-  const passwordMessage = !input.passwordCheck ? "":
-    (input.password === input.passwordCheck ? "비밀번호가 일치합니다":"비밀번호가 일치하지 않습니다." )
+  const passwordMessage = !input.passwordCheck ? "" :
+    (input.password === input.passwordCheck ? passwordCheckMap["SUCCESS"] : passwordCheckMap["FAIL"])
+
 
 
   const handleCheckEmailAvailability = async () => {
@@ -65,7 +79,11 @@ const SignUpPage = () => {
       return;
     }
 
-    await signUp(input)
+    if(passwordMessage.flag === false){
+      alert("비밀번호를 확인해주세요.");
+    }
+
+    await signUp(input);
   }
 
   return (
@@ -95,7 +113,7 @@ const SignUpPage = () => {
           <div className="div-signUp-password">
             <label htmlFor="passwordCheck">비밀번호 확인</label>
             <input type="password" onChange={handleInputChange} id="passwordCheck" name="passwordCheck" />
-            <p>{passwordMessage}</p>
+            <p>{passwordMessage.message}</p>
           </div>
           <div className="div-signUp-name">
             <label htmlFor="name">이름</label>
