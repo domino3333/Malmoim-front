@@ -43,7 +43,7 @@ const SignUpPage = () => {
             <input type="text" onChange={handleInputChange} id="name" name="name" />
           </div>
           <div className="div-signUp-button">
-            <button type="button" onClick={() => signUp(input)}>가입하기</button>
+            <button type="button" onClick={async () => await signUp(input)}>가입하기</button>
           </div>
         </div>
       </div>
