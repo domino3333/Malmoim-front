@@ -69,3 +69,15 @@
     padding: 5px;
     font-size: 0.8em;
 }
+
+/* time과 status를 감싸는 parent */
+.participant-card__meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 답변 상태 */
+.participant-card__status {
+    padding: 5px;
+    font-size: 0.8em;
+}
