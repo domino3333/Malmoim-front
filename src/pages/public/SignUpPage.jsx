@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import MainNavbar from '../../components/public/MainNavbar'
 import '../../css/public/SignUpPage.css'
-import { signUp } from '../../api/auth/authApi'
+import { checkDuplicate, signUp } from '../../api/auth/authApi'
 
 const SignUpPage = () => {
 
 
-  
+
   const [input, setInput] = useState({
     email: '',
     password: '',
@@ -19,6 +19,10 @@ const SignUpPage = () => {
       ...input,
       [e.target.name]: e.target.value,
     })
+  }
+
+  const handleCheckDuplicate = async () => {
+    const data = await checkDuplicate(input.email);
   }
 
   return (
@@ -35,7 +39,7 @@ const SignUpPage = () => {
             <input type="email" onChange={handleInputChange} id="email" name="email" />
           </div>
           <div className='div-signUp-check-Duplicate'>
-            <button>중복확인</button>
+            <button onClick={handleCheckDuplicate}>중복확인</button>
 
           </div>
 
