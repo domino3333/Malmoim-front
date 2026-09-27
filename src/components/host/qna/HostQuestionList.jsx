@@ -11,6 +11,7 @@ const HostQuestionList = ({ questions, onQuestionSelect, ui }) => {
     const [statusFilter, setStatusFilter] = useState("ALL");
 
 
+    // 보여줄 질문리스트를 필터로 먼저 걸러내기
     const filterQuestions = () => {
 
 
@@ -26,6 +27,7 @@ const HostQuestionList = ({ questions, onQuestionSelect, ui }) => {
 
     const filteredQuestions = filterQuestions();
 
+    // 보여줄 리스트를 기준에 따라 정렬
     const displayedQuestions = ui.defaultSort === "votes"
         ? [...filteredQuestions].sort(
             (a, b) =>
