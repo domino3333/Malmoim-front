@@ -26,6 +26,14 @@ const HostQuestionList = ({ questions, onQuestionSelect, ui }) => {
 
     const filteredQuestions = filterQuestions();
 
+    const displayedQuestions = ui.defaultSort === "votes"
+        ? [...filteredQuestions].sort(
+            (a, b) =>
+                b.voteCount - a.voteCount ||
+                new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        )
+        : filteredQuestions;
+
 
     return (<>
 
@@ -62,7 +70,7 @@ const HostQuestionList = ({ questions, onQuestionSelect, ui }) => {
 
 
             <div className="qnaList-main-div">
-                {filteredQuestions.map((question) => <HostQuestionCard onQuestionSelect={onQuestionSelect} key={question.questionNo} question={question} showRank={ui.showRank} showVoteCount={ui.showVoteCount} />)}
+                {displayedQuestions.map((question) => <HostQuestionCard onQuestionSelect={onQuestionSelect} key={question.questionNo} question={question} showRank={ui.showRank} showVoteCount={ui.showVoteCount} />)}
 
             </div>
 
