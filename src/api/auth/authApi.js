@@ -6,15 +6,22 @@ const prefix = "/api/auth"
 
 
 
-export const login = async (data)=>{
-    const response = await axios.post(`${API_BASE_URL}${prefix}/login`,data,null);
+export const login = async (data) => {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/login`, data, null);
 
     //로그인 시 액세스토큰 저장
     setAccessToken(response.data.accessToken);
 }
 
 
-export const signUp = async (data)=>{
-    const response = await axios.post(`${API_BASE_URL}${prefix}/signUp`,data,null);
-    
+export const signUp = async (data) => {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/signUp`, data, null);
+
+}
+
+export const checkDuplicate = async (data) => {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/chekc-duplicate`, data, null);
+
+
+    return response.data;
 }
