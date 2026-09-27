@@ -92,11 +92,28 @@
 
 /* 중복확인 버튼 */
 .div-signUp-check-Duplicate button {
+    border: 1px solid #90653E;
+    background-color: #fff;
+    color: #90653E;
+    border-radius: 8px;
+    height: 38px;
+    padding: 0 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(144, 101, 62, 0.2);
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
 
-    border: none;
-    background-color: #ded9d4;
-    border-radius: 5px;
-    height: 30px;
+/* 중복확인 버튼에 손 올렸을 때 */
+.div-signUp-check-Duplicate button:hover {
+    background-color: #90653E;
+    color: #fff;
+}
+
+/* 중복확인 버튼 눌렀을 때 */
+.div-signUp-check-Duplicate button:active {
+    transform: translateY(2px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* 중복 체크 메세지 */
