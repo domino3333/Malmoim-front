@@ -88,6 +88,10 @@ const SignUpPage = () => {
       alert('비밀번호를 입력해주세요');
       return;
     }
+    if (input.passwordCheck === "") {
+      alert('비밀번호를 입력해주세요');
+      return;
+    }
     if (input.name === "") {
       alert('이름을 입력해주세요');
       return;
