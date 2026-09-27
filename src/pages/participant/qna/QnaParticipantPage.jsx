@@ -158,7 +158,7 @@ const QnaParticipantPage = () => {
             connectedClient.subscribe(`/topic/qna/${roomNo}/toggle`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
-                    setQuestions(prev=>{[...prev].map((question)=> question.no === data.questionNo ? question.status=data.status: question)});
+                    setQuestions(prev=>prev.map((question)=> question.questionNo === data.questionNo ? { ...question, status:data.status } : question ));
                 }
             )
 
