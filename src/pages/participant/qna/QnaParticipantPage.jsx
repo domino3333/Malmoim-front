@@ -154,6 +154,14 @@ const QnaParticipantPage = () => {
                 }
             )
 
+            // 답변 상태 변경 구독
+            connectedClient.subscribe(`/topic/qna/${roomNo}/toggle`,
+                (frame) => {
+                    const data = JSON.parse(frame.body);
+                    setQuestions(prev=>{[...prev].map((question)=> question.no === data.questionNo ? question.status=data.status: question)});
+                }
+            )
+
 
             const questionListSnapshot = await getQuestionList(roomNo);
             setQuestions(prev => mergeQuestionLists(prev, questionListSnapshot));
