@@ -34,6 +34,12 @@ const SignUpPage = () => {
             <label htmlFor="email">이메일</label>
             <input type="email" onChange={handleInputChange} id="email" name="email" />
           </div>
+          <div className='div-signUp-check-Duplicate'>
+            <button>중복확인</button>
+
+          </div>
+
+
           <div className="div-signUp-password">
             <label htmlFor="password">비밀번호</label>
             <input type="password" onChange={handleInputChange} id="password" name="password" />
