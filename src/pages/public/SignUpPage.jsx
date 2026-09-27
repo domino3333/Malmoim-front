@@ -52,7 +52,7 @@ const SignUpPage = () => {
           </div>
           <div className='div-signUp-check-Duplicate'>
             <button onClick={handleCheckDuplicate}>중복확인</button>
-            {checkMessage && <p>{checkMessage}</p>}
+            {checkMessage && <p className='checkMessage'>{checkMessage}</p>}
 
           </div>
 
