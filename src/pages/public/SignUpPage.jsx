@@ -6,6 +6,7 @@ import { checkDuplicate, signUp } from '../../api/auth/authApi'
 const SignUpPage = () => {
 
 
+  const [checkMessage, setCheckMessage] = useState("");
 
   const [input, setInput] = useState({
     email: '',
@@ -22,7 +23,18 @@ const SignUpPage = () => {
   }
 
   const handleCheckDuplicate = async () => {
-    const data = await checkDuplicate(input.email);
+
+
+    try {
+      const data = await checkDuplicate(input.email);
+      setCheckMessage(data);
+
+    } catch (e) {
+      setCheckMessage(""); // 이전 성공 메시지가 남지 않게
+      alert(`${e.response?.data}`);
+    }
+
+
   }
 
   return (
