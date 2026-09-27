@@ -19,8 +19,10 @@ export const signUp = async (data) => {
 
 }
 
-export const checkDuplicate = async (data) => {
-    const response = await axios.post(`${API_BASE_URL}${prefix}/check-duplicate`, data, null);
+export const checkDuplicate = async (email) => {
+    const response = await axios.get(`${API_BASE_URL}${prefix}/check-duplicate`, {
+        params: { email }
+    });
 
 
     return response.data;
