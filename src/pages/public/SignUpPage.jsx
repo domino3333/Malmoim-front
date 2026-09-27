@@ -44,6 +44,10 @@ const SignUpPage = () => {
             <label htmlFor="password">비밀번호</label>
             <input type="password" onChange={handleInputChange} id="password" name="password" />
           </div>
+          <div className="div-signUp-password">
+            <label htmlFor="password">비밀번호 확인</label>
+            <input type="password" onChange={handleInputChange} id="password" name="password" />
+          </div>
           <div className="div-signUp-name">
             <label htmlFor="name">이름</label>
             <input type="text" onChange={handleInputChange} id="name" name="name" />
