@@ -43,14 +43,14 @@ const HostDashboardPage = () => {
                     <div className="host-dashboard-title-text">대시보드</div>
                     <button
                     className="host-dashboard-create-button"
-                    onClick={()=>nav('/createDetail')}
+                    onClick={()=>nav('/select-room-type')}
                     > + 말모임 만들기</button>
                 </div>
                 <div className="host-dashboard-bottom">
                     <h2>최근 만든 말모임</h2>
                     <div 
                     className="host-dashboard-all-button"
-                    onClick={()=>nav('/myContent')}
+                    onClick={()=>nav('/my-rooms')}
                     
                     >전체보기 → </div>
                 </div>

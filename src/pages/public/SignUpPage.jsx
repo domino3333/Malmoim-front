@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import MainNavbar from '../../components/public/MainNavbar'
 import '../../css/public/SignUpPage.css'
-import { checkDuplicate, signUp } from '../../api/auth/authApi'
+import { checkEmailAvailability, signUp } from '../../api/auth/authApi'
 
 const SignUpPage = () => {
 
@@ -22,11 +22,11 @@ const SignUpPage = () => {
     })
   }
 
-  const handleCheckDuplicate = async () => {
+  const handleCheckEmailAvailability = async () => {
 
 
     try {
-      const data = await checkDuplicate(input.email);
+      const data = await checkEmailAvailability(input.email);
       setCheckMessage(data);
 
     } catch (e) {
@@ -51,7 +51,7 @@ const SignUpPage = () => {
             <input type="email" onChange={handleInputChange} id="email" name="email" />
           </div>
           <div className='div-signUp-check-Duplicate'>
-            <button onClick={handleCheckDuplicate}>중복확인</button>
+            <button onClick={handleCheckEmailAvailability}>중복확인</button>
             {checkMessage && <p className='checkMessage'>{checkMessage}</p>}
 
           </div>

@@ -36,8 +36,8 @@ export const getRecentRooms = async () => {
 
 
 
-// myContent 페이지에서의 검색창 api 호출 메서드
-export const searchRoom = async (keyword,currentPage,pageSize) => {
+// 내 방 목록 페이지의 검색 API 호출 함수
+export const searchRooms = async (keyword,currentPage,pageSize) => {
 
     const token = getAccessToken();
 

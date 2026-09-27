@@ -56,7 +56,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
             });
             onHide();
             setIsPrivate(false);
-            nav("/myContent");
+            nav("/my-rooms");
             
         } catch (e) {
             const message = e.response?.data;

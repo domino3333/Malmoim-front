@@ -28,7 +28,7 @@ const HostHomeHeader = () => {
                     <Dropdown.Item onClick={()=>nav("/dashboard")}>
                         대시보드
                     </Dropdown.Item>
-                    <Dropdown.Item onClick={()=>nav("/myContent")}>
+                    <Dropdown.Item onClick={()=>nav("/my-rooms")}>
                         내 말모임
                     </Dropdown.Item>
                     <Dropdown.Item onClick={handleLogout}>

@@ -33,14 +33,14 @@ const HostHomeSidebar = () => {
 
         </NavLink>
 
-        <NavLink to="/createDetail"
+        <NavLink to="/select-room-type"
           className={({ isActive }) => `host-sidebar__menu-button ${isActive ? "active" : ""}`}
         >
           <img src={plusIcon} alt="만들기" />
           <span>말모임 만들기</span>
         </NavLink>
 
-        <NavLink to="/myContent"
+        <NavLink to="/my-rooms"
           className={({ isActive }) => `host-sidebar__menu-button ${isActive ? "active" : ""}`}
         >
           <img src={personIcon} alt="내 말모임" />

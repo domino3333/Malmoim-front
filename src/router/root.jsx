@@ -1,5 +1,5 @@
 ﻿import { Suspense, lazy } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import LoadingFallback from '../components/common/LoadingFallback'
 import LoginPage from '../pages/public/LoginPage'
 import SignUpPage from '../pages/public/SignUpPage'
@@ -55,7 +55,7 @@ const root = createBrowserRouter([
     ),
   },
   {
-    path: '/myContent',
+    path: '/my-rooms',
     element: (
       <Suspense fallback={<LoadingFallback />}>
         <MyRoomsPage/>
@@ -63,12 +63,20 @@ const root = createBrowserRouter([
     ),
   },
   {
-    path: '/createDetail',
+    path: '/myContent',
+    element: <Navigate to='/my-rooms' replace />,
+  },
+  {
+    path: '/select-room-type',
     element: (
       <Suspense fallback={<LoadingFallback />}>
         <RoomTypeSelectionPage/>
       </Suspense>
     ),
+  },
+  {
+    path: '/createDetail',
+    element: <Navigate to='/select-room-type' replace />,
   },
   {
     path: '/qna/:roomNo/host',

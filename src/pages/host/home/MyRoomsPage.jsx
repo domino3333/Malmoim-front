@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import HostHomeLayout from "../../../components/host/home/HostHomeLayout";
 import "../../../css/host/home/MyRoomsPage.css";
 import { useEffect, useState } from "react";
-import { getMyRooms, searchRoom } from "../../../api/room/roomApi";
+import { getMyRooms, searchRooms } from "../../../api/room/roomApi";
 import { Plus, Search, X } from "lucide-react";
 import MyRoomsTable from "../../../components/host/home/MyRoomsTable";
 
@@ -76,7 +76,7 @@ const MyRoomsPage = () => {
     }
 
 
-    const observeSearchInput = (e) => {
+    const handleSearchInputChange = (e) => {
 
         const value = e.target.value;
         setSearchKeyword(value);
@@ -96,7 +96,7 @@ const MyRoomsPage = () => {
         // 현재 페이지에 표시할 호스트의 방 목록 조회
         const fetchRooms = async () => {
             const data = appliedKeyword
-                ? await searchRoom(appliedKeyword, currentPage, pageSize)
+                ? await searchRooms(appliedKeyword, currentPage, pageSize)
                 : await getMyRooms(currentPage, pageSize);
             if (ignore) return;
             setRooms(data.rooms);
@@ -128,7 +128,7 @@ const MyRoomsPage = () => {
                         </div>
 
                         <div className="div-content-head-right">
-                            <button className="button-head-create" onClick={() => nav("/createDetail")}>
+                            <button className="button-head-create" onClick={() => nav("/select-room-type")}>
                                 + 방 만들기
                             </button>
                         </div>
@@ -139,7 +139,7 @@ const MyRoomsPage = () => {
                             type="text"
                             name="search-box"
                             value={searchKeyword}
-                            onChange={observeSearchInput}
+                            onChange={handleSearchInputChange}
                             placeholder="방 제목"
                         />
                         <button onClick={handleSearchRoom} type="button" className="search-button">
