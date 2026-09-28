@@ -4,7 +4,7 @@ import "../../../css/common/room/RoomHeader.css"
 import logo from "../../../assets/logo.png"
 
 
-const RoomHeader = ({ title, onLogoClick }) => {
+const RoomHeader = ({ title, onLogoClick, showInfo = false }) => {
 
     return (<>
         <div className="room-header">
@@ -14,9 +14,7 @@ const RoomHeader = ({ title, onLogoClick }) => {
                     {title}
                 </div>
             </div>
-            <div className="room-header__info">
-                정보
-            </div>
+            {showInfo && <div className="room-header__info">정보</div>}
 
         </div>
     </>)
