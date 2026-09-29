@@ -18,7 +18,7 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                 <div className="participant-card__main">
                     <div className="participant-card__header">
                         <div className="participant-card__author">
-                            <PersonAvatarIcon size={24} color="#dbd5d0" className="question-detail__author-icon"/>
+                            <PersonAvatarIcon size={20} color="#dbd5d0" className="question-detail__author-icon"/>
                             <p>{question.nickname}</p>
                         </div>
                         <div className="participant-card__vote">

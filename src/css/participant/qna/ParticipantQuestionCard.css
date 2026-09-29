@@ -47,7 +47,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     display: flex;
-    gap:10px;
+    gap:8px;
+    padding-left: 5px;
 }
 
 /* {닉네임} 텍스트 */
@@ -75,6 +76,7 @@
 /* 질문 텍스트 div */
 .participant-card__content {
     padding: 5px;
+    padding-left: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
