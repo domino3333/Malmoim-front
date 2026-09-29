@@ -22,6 +22,10 @@
 
 /* 방 code div */
 .room-subheader__code {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     border: 1px solid #90653E;
     border-radius: 5px;
     padding:5px;
@@ -34,4 +38,38 @@
     border-radius: 5px;
     padding:5px;
     background-color: rgb(242, 237, 237);
+}
+
+
+/* 입장 코드 오른쪽의 작은 복사 버튼 */
+.room-subheader__copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    color: #90653E;
+    cursor: pointer;
+}
+
+/* 복사 버튼에 손 올렸을 때 */
+.room-subheader__copy-button:hover:not(:disabled) {
+    background-color: #e6dad0;
+}
+
+/* 키보드로 복사 버튼 선택했을 때 */
+.room-subheader__copy-button:focus-visible {
+    outline: 2px solid #90653E;
+    outline-offset: 2px;
+}
+
+/* 입장 코드를 아직 못 받아왔을 때 */
+.room-subheader__copy-button:disabled {
+    opacity: 0.45;
+    cursor: default;
 }

@@ -19,7 +19,7 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                     <div className="participant-card__header">
                         <div className="participant-card__author">
                             <PersonAvatarIcon
-                                size={26}
+                                size={20}
                                 color="#755235"
                                 backgroundColor="#F5EFE9"
                                 className="question-detail__author-icon"
