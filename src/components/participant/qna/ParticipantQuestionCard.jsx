@@ -7,7 +7,7 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
     return (<>
 
 
-            <div className="participant-card" onClick={onClickQuestionCard}>
+            <div className="participant-card" onClick={()=>onClickQuestionCard(question)}>
                 {showRank && (
                     <div className="participant-card__rank">
                         {question.voteRank}

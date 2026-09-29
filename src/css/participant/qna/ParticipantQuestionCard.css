@@ -2,6 +2,7 @@
 .participant-card {
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 
 /* 순위를 나타내는 div */

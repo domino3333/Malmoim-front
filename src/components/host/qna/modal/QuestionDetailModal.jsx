@@ -52,6 +52,7 @@ const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onH
                     onClick={onHide}>
                     취소
                 </button>
+                {/* 이 버튼은 host 에게만 표시 */}
                 {whoAmI ==="host" ? <button 
                     className="question-detail__toggle"
                     onClick={handleToggleAnswerStatus}>

@@ -58,7 +58,7 @@ const QnaParticipantPage = () => {
 
     // 질문 상세 모달 표시 상태
     const [isQuestionDetailModalOpen, setIsQuestionDetailModalOpen] = useState(false);
-    const [selectedQuestion,setSelectedQuestion] = useState();
+    const [selectedQuestion,setSelectedQuestion] = useState({});
 
     const [whoAmI, setWhoAmI] = useState("");
 
