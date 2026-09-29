@@ -1,23 +1,8 @@
-import { useState } from "react";
 import "../../../css/host/home/RecentRoomRow.css"
-import { Check, Copy } from "lucide-react";
+import CopyCodeButton from "../../common/room/CopyCodeButton";
 import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 
 const RecentRoomRow = ({ room,onEnter }) => {
-
-
-    const [copied, setCopied] = useState(false);
-
-    const handleCopyCode = async () => {
-
-        try {
-            await navigator.clipboard.writeText(room.code);
-            setCopied(true);
-        } catch {
-            window.alert("입장 코드를 복사하지 못했습니다.");
-        }
-    }
-
 
     return (<>
 
@@ -32,15 +17,7 @@ const RecentRoomRow = ({ room,onEnter }) => {
                 <td className="room-code-tr">
                     <div className="room-code">
                         <span className="room-code-span" >{room.code}</span>
-                        <button
-                            type="button"
-                            className="copy-code-button"
-                            onClick={handleCopyCode}
-                        >
-                            {copied ?
-                                <Check size={16} className="code-check-icon" />
-                                : <Copy size={16} className="code-copy-icon" />}
-                        </button>
+                        <CopyCodeButton code={room.code} className="copy-code-button" />
                     </div>
                 </td>
                 <td>

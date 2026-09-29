@@ -1,0 +1,17 @@
+/* 복사하면 화면 오른쪽 아래에 잠깐 뜨는 메시지 */
+.entry-copy-toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1080;
+    max-width: calc(100vw - 48px);
+    padding: 12px 16px;
+    border: 1px solid #755235;
+    border-radius: 8px;
+    background-color: #4b382b;
+    color: #fff8f1;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 16%);
+    pointer-events: none;
+}
