@@ -60,6 +60,8 @@ const QnaHostPage = () => {
 
     const [selectedQuestion, setSelectedQuestion] = useState({});
 
+    const [ImHost, setImHost] = useState(true);
+
     // 말모임 로고 클릭 시 메인 페이지 이동
     const handleLogoClick = () => {
         nav("/");
@@ -124,7 +126,7 @@ const QnaHostPage = () => {
 
     // 페이즈에 따라 다른 ui를 보여주도록
     const questionListUi = questionListUiByPhase[roomInfo.status]
-                            ?? questionListUiByPhase.READY;
+        ?? questionListUiByPhase.READY;
 
 
     // 웹소켓 구독
@@ -233,7 +235,9 @@ const QnaHostPage = () => {
             onToggleAnswerStatus={handleToggleAnswerStatus}
             selectedQuestion={selectedQuestion}
             show={isQuestionDetailModalOpen}
-            onHide={() => setIsQuestionDetailModalOpen(false)} />
+            onHide={() => setIsQuestionDetailModalOpen(false)}
+            ImHost
+            />
 
     </>)
 }
