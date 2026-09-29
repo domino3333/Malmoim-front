@@ -21,6 +21,7 @@
 /* 질문 카드를 감싸는 div */
 .participant-card__main {
     flex: 1;
+    min-width: 0;
     border-radius: 5px;
     margin: 7px;
 }
@@ -40,6 +41,10 @@
 .participant-card__author {
     font-size: 0.88em;
     color: white;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* 투표 버튼과 추천 수 div */
@@ -62,6 +67,9 @@
 /* 질문 텍스트 div */
 .participant-card__content {
     padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* 작성 시간 div */
