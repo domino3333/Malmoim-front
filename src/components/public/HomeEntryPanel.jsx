@@ -3,6 +3,8 @@ import people from "../../assets/people-icon.png"
 import home from "../../assets/home-icon.png"
 import { useState } from "react"
 import { getRoomEntryInfo, verifyRoomPassword, joinRoom } from "../../api/entry/entryApi"
+import { getParticipantQnaRoom } from "../../api/qna/participantQnaApi"
+import { getParticipantToken, removeParticipantToken } from "../../utils/auth/tokenStorage"
 import EntryModal from "./modal/EntryModal"
 import NicknameModal from "./modal/NicknameModal"
 import { Link, useNavigate } from "react-router-dom"
@@ -35,6 +37,20 @@ const HomeEntryPanel = () => {
         setIsCheckingCode(true);
         try {
             const data = await getRoomEntryInfo(code.trim().toUpperCase());
+            if (getParticipantToken(data.roomNo)) {
+                try {
+                    await getParticipantQnaRoom(data.roomNo);
+                    nav(`/qna/${data.roomNo}`);
+                    return;
+                } catch (e) {
+                    if (e.response?.status === 401 || e.response?.status === 403) {
+                        removeParticipantToken(data.roomNo);
+                    } else {
+                        alert("기존 입장 상태를 확인하지 못했습니다. 연결 상태를 확인한 뒤 다시 시도해주세요.");
+                        return;
+                    }
+                }
+            }
             setRoomInfo(data);
             setIsEntryModalOpen(true);
 
