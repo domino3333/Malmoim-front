@@ -4,6 +4,11 @@ import { useState } from "react";
 import { createQnaRoom } from "../../../../api/qna/hostQnaApi";
 import { useNavigate } from "react-router-dom";
 
+const initialInput = {
+    title: "",
+    capacity: "",
+    password: ""
+};
 
 
 // Q&A 방 생성에 필요한 값을 입력받는 모달 컴포넌트
@@ -16,22 +21,26 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
 
     // 비공개 체크 여부의 상태 반영
     const handlePrivateChange = (e) => {
-        setIsPrivate(e.target.checked);
+        const checked = e.target.checked;
+        setIsPrivate(checked);
+        if (!checked) {
+            setInput((prev) => ({ ...prev, password: "" }));
+        }
     }
 
-    const [input, setInput] = useState({
-        title: "",
-        capacity: "",
-        password: null,
-        isPrivate: isPrivate
-    })
+    const [input, setInput] = useState(initialInput);
+
+    const resetForm = () => {
+        setInput(initialInput);
+        setIsPrivate(false);
+    }
 
     // name 속성 기준 방 생성 입력값의 상태 반영
     const handleInputChange = (e) => {
-        setInput({
-            ...input,
+        setInput((prev) => ({
+            ...prev,
             [e.target.name]: e.target.value
-        })
+        }));
     }
 
     // 입력한 방 정보 기반 Q&A 방 생성 요청
@@ -52,10 +61,11 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
         try {
             await createQnaRoom({
                 ...input,
-                isPrivate: isPrivate
+                isPrivate,
+                password: isPrivate ? input.password : null
             });
+            resetForm();
             onHide();
-            setIsPrivate(false);
             nav("/my-rooms");
 
         } catch (e) {
@@ -71,16 +81,8 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
     const handleClose = () => {
         if (isSubmitting) return;
 
-
-        setInput({
-            title: "",
-            capacity: "",
-            password: null,
-            isPrivate: false
-        });
-
+        resetForm();
         onHide();
-        setIsPrivate(false);
     }
 
 
@@ -92,16 +94,16 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
                     X
                 </button>
                 <h4 className="create-modal-title-h4">{title}</h4>
-                <input disabled={isSubmitting} className="create-modal-title-input" name="title" onChange={handleInputChange} type="text" placeholder="제목" />
-                <input disabled={isSubmitting} className="create-modal-capacity-input" name="capacity" onChange={handleInputChange} type="number" placeholder="정원" />
+                <input disabled={isSubmitting} className="create-modal-title-input" name="title" value={input.title} onChange={handleInputChange} type="text" placeholder="제목" />
+                <input disabled={isSubmitting} className="create-modal-capacity-input" name="capacity" value={input.capacity} onChange={handleInputChange} type="number" placeholder="정원" />
 
                 <label htmlFor="checkBoxTitle">
                     비공개
-                    <input disabled={isSubmitting} className="create-modal-private-checkbox" type="checkbox" onChange={handlePrivateChange} />
+                    <input disabled={isSubmitting} className="create-modal-private-checkbox" type="checkbox" checked={isPrivate} onChange={handlePrivateChange} />
                 </label>
 
                 {isPrivate ?
-                    <input disabled={isSubmitting} className="create-modal-password-input" name="password" onChange={handleInputChange} type="password" placeholder="비밀번호" />
+                    <input disabled={isSubmitting} className="create-modal-password-input" name="password" value={input.password} onChange={handleInputChange} type="password" placeholder="비밀번호" />
                     : null}
 
                 <button className="create-modal-create-button"
