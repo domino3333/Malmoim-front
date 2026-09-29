@@ -1,6 +1,7 @@
 import "../../../css/participant/qna/ParticipantQuestionCard.css";
 import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 import { QUESTION_STATUS_LABELS } from "../../../constants/qna/statusLabels";
+import PersonAvatarIcon from "../../common/PersonAvatarIcon";
 
 const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, question, onVote, isVoting = false, onClickQuestionCard }) => {
 
@@ -17,7 +18,8 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                 <div className="participant-card__main">
                     <div className="participant-card__header">
                         <div className="participant-card__author">
-                            닉네임: {question.nickname}
+                            <PersonAvatarIcon size={24} color="#dbd5d0" className="question-detail__author-icon"/>
+                            <p>{question.nickname}</p>
                         </div>
                         <div className="participant-card__vote">
                             {canVote && <button disabled={isVoting} onClick={() => onVote(question.questionNo)}>
@@ -28,7 +30,7 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                     </div>
                     <div className="participant-card__body">
                         <div className="participant-card__content">
-                            질문: {question.content}
+                            {question.content}
                         </div>
                         <div className="participant-card__meta">
                             <div className="participant-card__time">

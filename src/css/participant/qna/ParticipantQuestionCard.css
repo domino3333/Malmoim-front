@@ -38,7 +38,7 @@
     border-top-right-radius: 5px;
 }
 
-/* 닉네임 div */
+/* 사람 아이콘과 닉네임을 감싸는  div */
 .participant-card__author {
     font-size: 0.88em;
     color: white;
@@ -46,8 +46,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    display: flex;
+    gap:10px;
 }
 
+/* {닉네임} 텍스트 */
+.participant-card__author p {
+    margin:0;
+    align-self: center;
+}
 /* 투표 버튼과 추천 수 div */
 .participant-card__vote {
     display: flex;
