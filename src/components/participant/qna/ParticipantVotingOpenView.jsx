@@ -3,7 +3,7 @@ import { castVote } from "../../../api/qna/participantQnaApi";
 import "../../../css/participant/qna/ParticipantVotingOpenView.css"
 import ParticipantQuestionList from "./ParticipantQuestionList";
 import { useState } from "react";
-const ParticipantVotingOpenView = ({ questions, roomInfo, showRank }) => {
+const ParticipantVotingOpenView = ({ questions, roomInfo, showRank,onClickQuestionCard }) => {
     const [isVoting, setIsVoting] = useState(false);
 
 
@@ -38,6 +38,7 @@ const ParticipantVotingOpenView = ({ questions, roomInfo, showRank }) => {
                     isVoting={isVoting}
                     onVote={handleVote}
                     showRank={showRank}
+                    onClickQuestionCard={onClickQuestionCard}
                 />
             </div>
         </div>
