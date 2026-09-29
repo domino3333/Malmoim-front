@@ -23,6 +23,15 @@
     cursor: pointer;
 }
 
+/* 방 헤더에서 쓸 때 대시보드용 바깥 여백 제거 */
+.host-header--compact {
+    margin: 0;
+}
+
+.host-header--compact .host-header__account {
+    margin: 0;
+}
+
 /* 버튼 안 person 이미지 */
 .host-header__account img {
     display: block;

@@ -21,7 +21,7 @@
 
 /*방 헤더의 가장 상단*/
 .room-header__title,
-.room-header__info{
+.room-header__actions{
     align-self: center;
 }
 

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/qna/qnaSocket";
 import RoomHeader from "../../../components/common/room/RoomHeader";
+import HostHomeHeader from "../../../components/host/home/HostHomeHeader";
 import RoomSubheader from "../../../components/common/room/RoomSubheader";
 import "../../../css/host/qna/QnaHostPage.css"
 import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPanel";
@@ -192,7 +193,7 @@ const QnaHostPage = () => {
 
 
         <div className="qna-host-main-div">
-            <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} showInfo />
+            <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} rightContent={<HostHomeHeader compact />} />
             <div className="qna-host-main-border-div">
                 <RoomSubheader roomInfo={roomInfo} />
                 <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} />

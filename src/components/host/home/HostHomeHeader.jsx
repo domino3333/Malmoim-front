@@ -5,7 +5,7 @@ import "../../../css/host/home/HostHomeHeader.css"
 import { Dropdown } from "react-bootstrap";
 
 //host 페이지의 상단 바
-const HostHomeHeader = () => {
+const HostHomeHeader = ({ compact = false }) => {
 
     const nav = useNavigate();
 
@@ -15,7 +15,7 @@ const HostHomeHeader = () => {
     }
 
     return (
-        <header className="host-header">
+        <header className={`host-header${compact ? " host-header--compact" : ""}`}>
 
             <Dropdown align="end" className="host-account-dropdown">
                 <Dropdown.Toggle
