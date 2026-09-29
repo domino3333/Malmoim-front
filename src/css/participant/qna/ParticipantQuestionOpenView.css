@@ -10,6 +10,7 @@
 /* 질문 등록 박스 */
 .question-left-panel{
     flex:1;
+    min-width: 0;
 }
 
 /* 왼쪽 패널 parent div*/
