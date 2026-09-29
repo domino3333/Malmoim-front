@@ -1,4 +1,4 @@
-const PersonAvatarIcon = ({ size = 40, color, className, style, ...props }) => (
+const PersonAvatarIcon = ({ size = 40, color, backgroundColor, className, style, ...props }) => (
     <svg
         width={size}
         height={size}
@@ -11,7 +11,13 @@ const PersonAvatarIcon = ({ size = 40, color, className, style, ...props }) => (
         focusable="false"
         {...props}
     >
-        <circle cx="24" cy="24" r="24" fill="currentColor" fillOpacity="0.14" />
+        <circle
+            cx="24"
+            cy="24"
+            r="24"
+            fill={backgroundColor || "currentColor"}
+            fillOpacity={backgroundColor ? 1 : 0.14}
+        />
         <circle cx="24" cy="18" r="6" fill="currentColor" />
         <path d="M12 37.5c0-6.7 5.4-11 12-11s12 4.3 12 11V39H12v-1.5Z" fill="currentColor" />
     </svg>
