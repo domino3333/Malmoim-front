@@ -107,9 +107,11 @@ const QnaParticipantPage = () => {
     // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {
 
+        let disposed = false;
         const token = getParticipantToken(roomNo);
 
         const client = connectQnaSocket(token, async (connectedClient) => {
+            if (disposed) return;
             clientRef.current = connectedClient;
 
 
@@ -164,18 +166,27 @@ const QnaParticipantPage = () => {
 
 
             const questionListSnapshot = await getQuestionList(roomNo);
+            if (disposed) return;
             setQuestions(prev => mergeQuestionLists(prev, questionListSnapshot));
 
             const participantPresenceSnapshot = await getParticipantPresence(roomNo);
+            if (disposed) return;
             setParticipantPresence(participantPresenceSnapshot);
 
+        }, () => {
+            if (disposed) return;
 
-
+            alert("현재 방의 정원이 가득 찼습니다. 잠시 후 다시 입장해주세요.");
+            nav("/");
         })
 
-        return () => client.deactivate();
+        return () => {
+            disposed = true;
+            if (clientRef.current === client) clientRef.current = null;
+            void client.deactivate();
+        };
 
-    }, [roomNo])
+    }, [roomNo, nav])
 
 
     // roomInfo 받아오는 useEffect
