@@ -4,7 +4,7 @@ import { QUESTION_STATUS_LABELS } from "../../../../constants/qna/statusLabels";
 import { formatLocalDateTime } from "../../../../utils/date/formatLocalDateTime";
 import PersonAvatarIcon from "../../../common/PersonAvatarIcon"
 
-const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide,ImHost }) => {
+const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide,whoAmI }) => {
 
 
     const handleToggleAnswerStatus = async () => {
@@ -52,11 +52,11 @@ const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onH
                     onClick={onHide}>
                     취소
                 </button>
-                {ImHost && <button 
+                {whoAmI ==="host" ? <button 
                     className="question-detail__toggle"
                     onClick={handleToggleAnswerStatus}>
                     {selectedQuestion.status === "WAITING" ? "답변 완료로 표시" : "대기 중으로 표시"}
-                </button>}
+                </button> : "" }
             </div>
 
 
