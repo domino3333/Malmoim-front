@@ -1,6 +1,5 @@
 import { Modal } from "react-bootstrap";
 import "../../../css/public/modal/EntryModal.css"
-import { useState } from "react";
 
 
 const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword, isVerifyingPassword = false }) => {
@@ -31,7 +30,7 @@ const EntryModal = ({ onNext,roomInfo, show, onHide, password, setPassword, isVe
                 <p className="entry-modal-capacity-p">정원: {roomInfo.activeParticipantCount}/{roomInfo.capacity}</p>
 
                 {roomInfo.hasPassword &&
-                    <input disabled={isVerifyingPassword} className="entry-modal-password-input" onChange={handlePasswordChange} type="password" placeholder="비밀번호.." />
+                    <input disabled={isVerifyingPassword} className="entry-modal-password-input" value={password} onChange={handlePasswordChange} type="password" placeholder="비밀번호.." />
                 }
 
                 <button disabled={isVerifyingPassword} onClick={()=>onNext(roomInfo.roomNo,password,roomInfo.hasPassword)} className={roomInfo.hasPassword ?"entry-submit--password": "entry-submit--direct"}>

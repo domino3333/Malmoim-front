@@ -51,6 +51,7 @@ const HomeEntryPanel = () => {
                     }
                 }
             }
+            setPassword("");
             setRoomInfo(data);
             setIsEntryModalOpen(true);
 
@@ -61,6 +62,11 @@ const HomeEntryPanel = () => {
         } finally {
             setIsCheckingCode(false);
         }
+    }
+
+    const handleEntryModalClose = () => {
+        setIsEntryModalOpen(false);
+        setPassword("");
     }
 
     // "다음" 버튼 클릭
@@ -135,7 +141,7 @@ const HomeEntryPanel = () => {
         </div>
 
 
-        {roomInfo && <EntryModal onNext={handleEntryNext} isVerifyingPassword={isVerifyingPassword} password={password} setPassword={setPassword} roomInfo={roomInfo} show={isEntryModalOpen} onHide={() => setIsEntryModalOpen(false)} />}
+        {roomInfo && <EntryModal onNext={handleEntryNext} isVerifyingPassword={isVerifyingPassword} password={password} setPassword={setPassword} roomInfo={roomInfo} show={isEntryModalOpen} onHide={handleEntryModalClose} />}
 
         {roomInfo && <NicknameModal onJoin={handleJoinRoom} isJoining={isJoining} roomInfo={roomInfo} show={isNicknameModalOpen} onHide={() => setIsNicknameModalOpen(false)} />}
     </>)
