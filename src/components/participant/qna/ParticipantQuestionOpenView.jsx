@@ -6,11 +6,8 @@ import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 import ParticipantQuestionToolbar from "./ParticipantQuestionToolbar";
 import ParticipantQuestionList from "./ParticipantQuestionList";
 
-const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions, showRank }) => {
+const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions, showRank, onClickQuestionCard }) => {
 
-
-
-    //todo 참여자의 정보 받아오기
 
 
     const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
@@ -25,7 +22,7 @@ const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions, showRank }) 
         <div className="Question-open-view-body">
             <div className="question-left-panel">
                 <ParticipantQuestionToolbar onOpenQuestionModal={() => setIsQuestionModalOpen(true)} />
-                <ParticipantQuestionList questions={questions} showRank={showRank}/>
+                <ParticipantQuestionList questions={questions} showRank={showRank} onClickQuestionCard={onClickQuestionCard}/>
             </div>
         </div>
 

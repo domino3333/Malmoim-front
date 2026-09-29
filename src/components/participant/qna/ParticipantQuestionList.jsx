@@ -1,7 +1,7 @@
 import "../../../css/participant/qna/ParticipantQuestionList.css";
 import ParticipantQuestionCard from "./ParticipantQuestionCard";
 
-const ParticipantQuestionList = ({ questions, canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, onVote, isVoting = false }) => {
+const ParticipantQuestionList = ({ questions, canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, onVote, isVoting = false,onClickQuestionCard }) => {
     return (
         <div className="ParticipantQuestionList">
             {questions.length === 0 ? (
@@ -17,6 +17,7 @@ const ParticipantQuestionList = ({ questions, canVote = false, showVoteCount = f
                         showAnswerStatus={showAnswerStatus}
                         onVote={onVote}
                         isVoting={isVoting}
+                        onClickQuestionCard={onClickQuestionCard}
                     />
                 ))
             )}

@@ -2,12 +2,12 @@ import "../../../css/participant/qna/ParticipantQuestionCard.css";
 import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 import { QUESTION_STATUS_LABELS } from "../../../constants/qna/statusLabels";
 
-const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, question, onVote, isVoting = false }) => {
+const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, question, onVote, isVoting = false, onClickQuestionCard }) => {
 
     return (<>
 
 
-            <div className="participant-card">
+            <div className="participant-card" onClick={onClickQuestionCard}>
                 {showRank && (
                     <div className="participant-card__rank">
                         {question.voteRank}

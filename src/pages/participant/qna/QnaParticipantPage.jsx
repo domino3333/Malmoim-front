@@ -20,6 +20,7 @@ import { getParticipantToken } from "../../../utils/auth/tokenStorage";
 import ParticipantQuestionClosedView from "../../../components/participant/qna/ParticipantQuestionClosedView";
 import ParticipantVotingClosedView from "../../../components/participant/qna/ParticipantVotingClosedView";
 import { questionListUiByPhase } from "../../../constants/qna/questionListUiByPhase";
+import QuestionDetailModal from "../../../components/host/qna/modal/QuestionDetailModal";
 
 const QnaParticipantPage = () => {
 
@@ -55,6 +56,9 @@ const QnaParticipantPage = () => {
 
     const clientRef = useRef(null);
 
+    // 질문 상세 모달 표시 상태
+    const [isQuestionDetailModalOpen, setIsQuestionDetailModalOpen] = useState(false);
+    const [selectedQuestion,setSelectedQuestion] = useState();
 
     const phaseComponents = {
         READY: ParticipantReadyView,
@@ -90,6 +94,13 @@ const QnaParticipantPage = () => {
     });
 
     const remainingTime = { minutes, seconds }
+
+
+    // 하나의 질문 카드 클릭 시
+    const handleModalOpen = (question) => {
+        setIsQuestionDetailModalOpen(true);
+        setSelectedQuestion(question);
+    }
 
     //타이머 인포 useEffect
     useEffect(() => {
@@ -160,7 +171,7 @@ const QnaParticipantPage = () => {
             connectedClient.subscribe(`/topic/qna/${roomNo}/toggle`,
                 (frame) => {
                     const data = JSON.parse(frame.body);
-                    setQuestions(prev=>prev.map((question)=> question.questionNo === data.questionNo ? { ...question, status:data.status } : question ));
+                    setQuestions(prev => prev.map((question) => question.questionNo === data.questionNo ? { ...question, status: data.status } : question));
                 }
             )
 
@@ -252,6 +263,7 @@ const QnaParticipantPage = () => {
                             onQuestionSubmit={handleQuestionSubmit}
                             showRank={questionListUi.showRank}
                             showAnswerStatus={questionListUi.showAnswerStatus}
+                            onClickQuestionCard={handleModalOpen}
                         />}
                     </div>
                     <div className="phaseComponent-right-panel">
@@ -263,6 +275,12 @@ const QnaParticipantPage = () => {
             </div>
         </div>
 
+        <QuestionDetailModal
+            selectedQuestion={selectedQuestion}
+            show={isQuestionDetailModalOpen}
+            onHide={() => setIsQuestionDetailModalOpen(false)}
+            ImParticipant
+        />
 
 
     </>)
