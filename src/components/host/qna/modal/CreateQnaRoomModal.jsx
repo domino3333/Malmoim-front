@@ -57,7 +57,7 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
             onHide();
             setIsPrivate(false);
             nav("/my-rooms");
-            
+
         } catch (e) {
             const message = e.response?.data;
             alert(e.response?.status < 500 && typeof message === "string" && message.trim()
@@ -70,6 +70,15 @@ const CreateQnaRoomModal = ({ show, onHide, title }) => {
 
     const handleClose = () => {
         if (isSubmitting) return;
+
+
+        setInput({
+            title: "",
+            capacity: "",
+            password: null,
+            isPrivate: false
+        });
+
         onHide();
         setIsPrivate(false);
     }
