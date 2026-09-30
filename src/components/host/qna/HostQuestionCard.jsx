@@ -3,6 +3,7 @@
 import "../../../css/host/qna/HostQuestionCard.css"
 import { QUESTION_STATUS_LABELS } from "../../../constants/qna/statusLabels";
 import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
+import PersonAvatarIcon from "../../common/PersonAvatarIcon";
 
 // 질문 내용과 작성자·추천 정보를 표시하는 카드 컴포넌트
 const HostQuestionCard = ({ question, onQuestionSelect, showRank, showVoteCount, showAnswerStatus }) => {
@@ -20,7 +21,13 @@ const HostQuestionCard = ({ question, onQuestionSelect, showRank, showVoteCount,
             <div className="host-question-card__panel" onClick={() => onQuestionSelect(question)}>
                 <div className="host-question-card__header">
                     <div className="host-question-card__nickname">
-                        닉네임:{question.nickname}
+                        <PersonAvatarIcon
+                            size={20}
+                            color="#755235"
+                            backgroundColor="#F5EFE9"
+                            className="host-question-card__avatar"
+                        />
+                        <p>{question.nickname}</p>
                     </div>
                     {showVoteCount &&
                         <div className="host-question-card__votes">
@@ -30,7 +37,7 @@ const HostQuestionCard = ({ question, onQuestionSelect, showRank, showVoteCount,
                 </div>
                 <div className="host-question-card__body">
                     <div className="host-question-card__question">
-                        질문: {question.content}
+                        {question.content}
                     </div>
                     <div className="host-question-card__meta">
                         <div className="host-question-card__time">
