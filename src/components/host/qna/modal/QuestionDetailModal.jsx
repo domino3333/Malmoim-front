@@ -19,7 +19,6 @@ const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onH
         }
     }
 
-    // 이미 답변 완료 상태라면 대기중으로 변경 < 이라는 버튼을 표시하기
     return (<>
 
         <Modal show={show} onHide={onHide} contentClassName="question-detail">
