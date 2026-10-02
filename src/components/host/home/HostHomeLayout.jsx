@@ -1,5 +1,5 @@
 import "../../../css/host/home/HostHomeLayout.css"
-import HostHomeHeader from "./HostHomeHeader"
+import HostHeader from "../common/HostHeader"
 import HostHomeSidebar from "./HostHomeSidebar"
 
 const HostHomeLayout = ({ children }) => {
@@ -8,7 +8,7 @@ const HostHomeLayout = ({ children }) => {
         <div className="host-home-layout">
             <HostHomeSidebar />
             <div className="host-home-layout-main">
-                <HostHomeHeader />
+                <HostHeader />
                 <main className="host-home-layout-content">
                     {children}
                 </main>

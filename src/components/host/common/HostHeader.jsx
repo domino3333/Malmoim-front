@@ -1,11 +1,11 @@
 
 import { useNavigate } from "react-router-dom"
 import person from "../../../assets/person.png"
-import "../../../css/host/home/HostHomeHeader.css"
+import "../../../css/host/common/HostHeader.css"
 import { Dropdown } from "react-bootstrap";
 
 //host 페이지의 상단 바
-const HostHomeHeader = ({ compact = false }) => {
+const HostHeader = ({ compact = false }) => {
 
     const nav = useNavigate();
 
@@ -43,4 +43,4 @@ const HostHomeHeader = ({ compact = false }) => {
     )
 }
 
-export default HostHomeHeader;
+export default HostHeader;

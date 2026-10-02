@@ -1,8 +1,8 @@
 import { Modal } from "react-bootstrap";
-import "../../../../css/host/qna/modal/QuestionDetailModal.css"
+import "../../../../css/common/qna/modal/QuestionDetailModal.css"
 import { QUESTION_STATUS_LABELS } from "../../../../constants/qna/statusLabels";
 import { formatLocalDateTime } from "../../../../utils/date/formatLocalDateTime";
-import PersonAvatarIcon from "../../../common/PersonAvatarIcon"
+import PersonAvatarIcon from "../../PersonAvatarIcon"
 
 const QuestionDetailModal = ({ onToggleAnswerStatus, selectedQuestion, show, onHide,whoAmI }) => {
 

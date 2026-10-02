@@ -1,0 +1,75 @@
+.guidebook-content *,
+.guidebook-content *::before,
+.guidebook-content *::after { box-sizing: border-box; }
+.guidebook-content button:focus-visible,
+.guidebook-content a:focus-visible { outline: 3px solid #b17b4d; outline-offset: 3px; }
+
+.guidebook-dialog { width: min(96vw, 1220px); max-width: none; margin: 24px auto; }
+.guidebook-content { max-height: calc(100dvh - 48px); overflow-y: auto; border: 1px solid #d8c5b2; border-radius: 14px; background: #fffdfb; color: #24201d; box-shadow: 0 30px 90px #20160c4d; }
+.guidebook-topbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 28px; border-bottom: 1px solid #ece5dd; color: #805d3f; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+.guidebook-topbar-divider { margin-inline: 6px; color: #bca895; }
+.guidebook-close { display: inline-grid; width: 35px; height: 35px; place-items: center; border: 0; border-radius: 50%; background: #f4eee8; color: #56483d; cursor: pointer; }
+.guidebook-close:hover { background: #e7d9ca; }
+.guidebook-role-switch { display: flex; gap: 6px; padding: 16px 28px; }
+.guidebook-role-switch button { min-height: 39px; padding: 0 16px; border: 1px solid transparent; border-radius: 5px; background: transparent; color: #776b60; font-size: 13px; font-weight: 700; cursor: pointer; }
+.guidebook-role-switch button[aria-pressed='true'] { border-color: #dec9b3; background: #f1e6da; color: #6a4628; }
+.guidebook-progress { height: 3px; background: #eee8e1; }
+.guidebook-progress span { display: block; height: 100%; background: #805d3f; transition: width .2s ease; }
+.guidebook-sheet { display: grid; grid-template-columns: minmax(0, .77fr) minmax(0, 1.23fr); min-height: 455px; animation: guidebook-enter .22s ease both; }
+.guidebook-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 38px 43px; }
+.guidebook-step-label { display: flex; gap: 20px; margin-bottom: 25px; color: #956e4d; font-size: 11px; font-weight: 800; letter-spacing: .1em; }
+.guidebook-step-label span { color: #a99a8a; }
+.guidebook-copy h2 { margin: 0; font-size: clamp(27px, 2.8vw, 40px); font-weight: 800; line-height: 1.3; letter-spacing: -.05em; word-break: keep-all; }
+.guidebook-copy > p { margin: 20px 0 0; color: #645b53; font-size: 16px; line-height: 1.85; word-break: keep-all; }
+.guidebook-note { margin-top: 30px; padding: 13px 15px; border-left: 3px solid #ae845d; background: #f8f1e9; color: #775d45; font-size: 13px; line-height: 1.65; }
+.guidebook-media { min-width: 0; display: grid; place-items: center; padding: 25px; border-left: 1px solid #e9e0d7; background: #f5f0ea; }
+.guidebook-media figure { width: 100%; margin: 0; }
+.guidebook-media img { display: block; width: 100%; max-height: 410px; object-fit: contain; border: 1px solid #e2d8cf; border-radius: 6px; background: #fff; box-shadow: 0 15px 35px #553d2815; }
+.guidebook-media figcaption { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 10px; color: #8f8173; font-size: 12px; }
+.guidebook-media figcaption a { display: inline-flex; align-items: center; gap: 4px; flex: none; color: #805d3f; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.guidebook-placeholder { width: 100%; min-height: 350px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; border: 1px dashed #cdb9a6; border-radius: 8px; background: radial-gradient(circle at 50% 42%, #fffaf4, #f2e9df); color: #9a8069; text-align: center; }
+.guidebook-placeholder strong { margin-top: 4px; color: #6f5a49; font-size: 17px; }
+.guidebook-placeholder span { max-width: 240px; color: #9a8d80; font-size: 12px; line-height: 1.6; word-break: keep-all; }
+.guidebook-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 28px; border-top: 1px solid #ece5dd; }
+.guidebook-page-dots { display: flex; gap: 4px; align-items: center; }
+.guidebook-page-dots button { position: relative; width: 29px; height: 31px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.guidebook-page-dots button::after { content: ''; display: block; width: 18px; height: 5px; margin: auto; border-radius: 4px; background: #d6cabe; transition: width .2s ease, background .2s ease; }
+.guidebook-page-dots button.is-current::after { width: 26px; background: #805d3f; }
+.guidebook-navigation { display: flex; gap: 9px; }
+.guidebook-navigation button,
+.guidebook-navigation a { min-height: 43px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 17px; border-radius: 5px; font-size: 13px; font-weight: 750; text-decoration: none; cursor: pointer; }
+.guidebook-prev { border: 1px solid #ddcfc1; background: #fff; color: #6e5844; }
+.guidebook-prev:disabled { opacity: .45; cursor: default; }
+.guidebook-next { border: 1px solid #805d3f; background: #805d3f; color: #fff; }
+.guidebook-next:hover { background: #67482e; color: #fff; }
+
+@keyframes guidebook-enter { from { opacity: .5; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .guidebook-sheet { animation: none; } }
+
+@media (max-width: 850px) {
+  .guidebook-sheet { grid-template-columns: 1fr; }
+  .guidebook-copy { padding: 28px; }
+  .guidebook-media { border-left: 0; border-top: 1px solid #e9e0d7; }
+  .guidebook-media img { max-height: 350px; }
+}
+
+@media (max-width: 550px) {
+  .guidebook-dialog { width: calc(100% - 14px); margin: 7px auto; }
+  .guidebook-content { max-height: calc(100dvh - 14px); }
+  .guidebook-topbar { padding: 12px 16px; }
+  .guidebook-role-switch { padding: 11px 16px; }
+  .guidebook-role-switch button { padding: 0 10px; font-size: 12px; }
+  .guidebook-sheet { overflow-y: auto; }
+  .guidebook-copy { padding: 27px 20px; }
+  .guidebook-copy > p { font-size: 14px; }
+  .guidebook-media { padding: 16px; }
+  .guidebook-media img { max-height: 280px; }
+  .guidebook-placeholder { min-height: 235px; }
+  .guidebook-footer { flex-wrap: wrap; gap: 4px; padding: 14px 16px; }
+  .guidebook-page-dots { width: 100%; justify-content: center; }
+  .guidebook-navigation { width: 100%; }
+  .guidebook-navigation button,
+  .guidebook-navigation a { flex: 1; }
+  .guidebook-navigation button,
+  .guidebook-navigation a { padding: 0 11px; }
+}

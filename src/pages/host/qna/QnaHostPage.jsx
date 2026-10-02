@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { connectQnaSocket } from "../../../api/qna/qnaSocket";
 import RoomHeader from "../../../components/common/room/RoomHeader";
-import HostHomeHeader from "../../../components/host/home/HostHomeHeader";
+import HostHeader from "../../../components/host/common/HostHeader";
 import RoomSubheader from "../../../components/common/room/RoomSubheader";
 import "../../../css/host/qna/QnaHostPage.css"
 import QnaRoomOverviewPanel from "../../../components/host/qna/QnaRoomOverviewPanel";
@@ -13,7 +13,7 @@ import { getHostQnaRoom, getParticipantPresence, getQuestionList, startAnswering
 import TimerModal from "../../../components/host/qna/modal/TimerModal";
 import { mergeQuestionLists } from "../../../utils/qna/mergeQuestions";
 import { getAccessToken } from "../../../utils/auth/tokenStorage";
-import QuestionDetailModal from "../../../components/host/qna/modal/QuestionDetailModal";
+import QuestionDetailModal from "../../../components/common/qna/modal/QuestionDetailModal";
 import { questionListUiByPhase } from "../../../constants/qna/questionListUiByPhase";
 
 const QnaHostPage = () => {
@@ -195,7 +195,7 @@ const QnaHostPage = () => {
 
 
         <div className="qna-host-main-div">
-            <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} rightContent={<HostHomeHeader compact />} />
+            <RoomHeader title={"실시간 Q&A"} onLogoClick={handleLogoClick} rightContent={<HostHeader compact />} />
             <div className="qna-host-main-border-div">
                 <RoomSubheader roomInfo={roomInfo} />
                 <QnaRoomOverviewPanel roomInfo={roomInfo} timerInfo={timerInfo} />

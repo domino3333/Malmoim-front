@@ -1,3 +1,4 @@
+import '../../../css/public/modal/GuideBookModal.css'
 import { Modal } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, ArrowUpRight, Camera, X } from 'lucide-react'

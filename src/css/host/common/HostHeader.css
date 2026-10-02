@@ -1,4 +1,4 @@
-/* 호스트 홈 상단 헤더 */
+/* 호스트 공용 상단 헤더 */
 .host-header {
     display: flex;
     justify-content: flex-end;

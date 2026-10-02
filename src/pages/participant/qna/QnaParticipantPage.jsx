@@ -20,7 +20,7 @@ import { getParticipantToken } from "../../../utils/auth/tokenStorage";
 import ParticipantQuestionClosedView from "../../../components/participant/qna/ParticipantQuestionClosedView";
 import ParticipantVotingClosedView from "../../../components/participant/qna/ParticipantVotingClosedView";
 import { questionListUiByPhase } from "../../../constants/qna/questionListUiByPhase";
-import QuestionDetailModal from "../../../components/host/qna/modal/QuestionDetailModal";
+import QuestionDetailModal from "../../../components/common/qna/modal/QuestionDetailModal";
 
 const QnaParticipantPage = () => {
 
