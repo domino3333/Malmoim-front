@@ -38,7 +38,7 @@ export const startQuestionPhase = async (roomNo, durationSeconds) => {
 
     const token = getAccessToken();
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/${roomNo}/start-timer`, { durationSeconds }, {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/${roomNo}/start-question-phase`, { durationSeconds }, {
         headers: {
             Authorization: `Bearer ${token}`
         }
