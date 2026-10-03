@@ -33,7 +33,7 @@ export const verifyRoomPassword = async (roomNo, password) => {
 // 참가자 정보 저장 및 방 입장 결과 반환
 export const joinRoom = async (roomNo, nickname, password) => {
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/insert-participant`, { roomNo, nickname, password },
+    const response = await axios.post(`${API_BASE_URL}${prefix}/join-room`, { roomNo, nickname, password },
         null
     )
 
