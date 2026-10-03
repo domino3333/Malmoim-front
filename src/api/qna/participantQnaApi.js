@@ -77,7 +77,7 @@ export const castVote = async (questionNo, roomNo) => {
 
     const token = getParticipantToken(roomNo);
 
-    const response = await axios.post(`${API_BASE_URL}${prefix}/${questionNo}/vote-question`, null, {
+    const response = await axios.post(`${API_BASE_URL}${prefix}/${questionNo}/vote`, null, {
         headers: {
             Authorization: `Bearer ${token}`
         }
