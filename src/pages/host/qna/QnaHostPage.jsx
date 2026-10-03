@@ -60,7 +60,7 @@ const QnaHostPage = () => {
 
     const [selectedQuestion, setSelectedQuestion] = useState({});
 
-    const [whoAmI, setWhoAmI] = useState("");
+    const [viewerRole, setViewerRole] = useState("");
 
     // 말모임 로고 클릭 시 메인 페이지 이동
     const handleLogoClick = () => {
@@ -236,7 +236,7 @@ const QnaHostPage = () => {
             selectedQuestion={selectedQuestion}
             show={isQuestionDetailModalOpen}
             onHide={() => setIsQuestionDetailModalOpen(false)}
-            whoAmI={"host"}
+            viewerRole={"host"}
             />
 
     </>)

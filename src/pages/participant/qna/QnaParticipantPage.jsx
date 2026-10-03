@@ -60,7 +60,7 @@ const QnaParticipantPage = () => {
     const [isQuestionDetailModalOpen, setIsQuestionDetailModalOpen] = useState(false);
     const [selectedQuestion,setSelectedQuestion] = useState({});
 
-    const [whoAmI, setWhoAmI] = useState("");
+    const [viewerRole, setViewerRole] = useState("");
 
     const phaseComponents = {
         READY: ParticipantReadyView,
@@ -281,7 +281,7 @@ const QnaParticipantPage = () => {
             selectedQuestion={selectedQuestion}
             show={isQuestionDetailModalOpen}
             onHide={() => setIsQuestionDetailModalOpen(false)}
-            whoAmI={"participant"}
+            viewerRole={"participant"}
         />
 
 

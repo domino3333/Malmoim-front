@@ -27,7 +27,7 @@ const SignUpPage = () => {
   const [input, setInput] = useState({
     email: '',
     password: '',
-    passwordCheck: '',
+    passwordConfirmation: '',
     name: '',
   })
 
@@ -39,8 +39,8 @@ const SignUpPage = () => {
     })
   }
 
-  const passwordMessage = !input.passwordCheck ? "" :
-    (input.password === input.passwordCheck ? passwordCheckMap["SUCCESS"] : passwordCheckMap["FAIL"])
+  const passwordMessage = !input.passwordConfirmation ? "" :
+    (input.password === input.passwordConfirmation ? passwordCheckMap["SUCCESS"] : passwordCheckMap["FAIL"])
 
 
 
@@ -88,7 +88,7 @@ const SignUpPage = () => {
       alert('비밀번호를 입력해주세요');
       return;
     }
-    if (input.passwordCheck === "") {
+    if (input.passwordConfirmation === "") {
       alert('비밀번호를 입력해주세요');
       return;
     }
@@ -142,8 +142,8 @@ const SignUpPage = () => {
             <input type="password" onChange={handleInputChange} id="password" name="password" />
           </div>
           <div className="div-signUp-password">
-            <label htmlFor="passwordCheck">비밀번호 확인</label>
-            <input type="password" onChange={handleInputChange} id="passwordCheck" name="passwordCheck" />
+            <label htmlFor="passwordConfirmation">비밀번호 확인</label>
+            <input type="password" onChange={handleInputChange} id="passwordConfirmation" name="passwordConfirmation" />
             <p>{passwordMessage.message}</p>
           </div>
           <div className="div-signUp-name">
