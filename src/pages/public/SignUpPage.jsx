@@ -130,7 +130,7 @@ const SignUpPage = () => {
             <label htmlFor="email">이메일</label>
             <input ref={emailInputRef} type="email" onChange={handleInputChange} id="email" name="email" />
           </div>
-          <div className='div-signUp-check-Duplicate'>
+          <div className='div-signUp-email-availability-check'>
             <button onClick={handleCheckEmailAvailability}>중복확인</button>
             {checkMessage && <p className='checkMessage'>{checkMessage}</p>}
 
