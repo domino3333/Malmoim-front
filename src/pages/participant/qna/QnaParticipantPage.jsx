@@ -51,7 +51,7 @@ const QnaParticipantPage = () => {
         roomNo: 0,
         status: "",
         phaseStartedAt: "",
-        phaseEndedAt: ""
+        phaseEndsAt: ""
     });
 
     const clientRef = useRef(null);
@@ -91,7 +91,7 @@ const QnaParticipantPage = () => {
         isRunning,
         restart
     } = useTimer({
-        expiryTimestamp: new Date(timerInfo.phaseEndedAt),
+        expiryTimestamp: new Date(timerInfo.phaseEndsAt),
         autoStart: false,
     });
 
@@ -106,16 +106,16 @@ const QnaParticipantPage = () => {
 
     //타이머 인포 useEffect
     useEffect(() => {
-        if (!timerInfo?.phaseEndedAt) {
+        if (!timerInfo?.phaseEndsAt) {
             return;
         }
 
 
-        const expiryTime = new Date(timerInfo.phaseEndedAt);
+        const expiryTime = new Date(timerInfo.phaseEndsAt);
 
         restart(expiryTime, true);
 
-    }, [timerInfo?.phaseEndedAt, restart]);
+    }, [timerInfo?.phaseEndsAt, restart]);
 
     // 웹소켓 연결 및 구독 useEffect
     useEffect(() => {
@@ -215,7 +215,7 @@ const QnaParticipantPage = () => {
                 ...prev,
                 status: data.status,
                 phaseStartedAt: data.phaseStartedAt,
-                phaseEndedAt: data.phaseEndedAt
+                phaseEndsAt: data.phaseEndsAt
             }))
         }
 

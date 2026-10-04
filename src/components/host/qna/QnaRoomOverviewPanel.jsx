@@ -25,11 +25,11 @@ const QnaRoomOverviewPanel = ({ roomInfo, timerInfo }) => {
 
 
     useEffect(() => {
-        if (!timerInfo?.phaseEndedAt) return;
+        if (!timerInfo?.phaseEndsAt) return;
 
-        const expiryTime = new Date(timerInfo.phaseEndedAt);
+        const expiryTime = new Date(timerInfo.phaseEndsAt);
         restart(expiryTime, true);
-    }, [timerInfo.phaseEndedAt])
+    }, [timerInfo.phaseEndsAt])
 
     return (<>
 

@@ -34,7 +34,7 @@ const QnaHostPage = () => {
         visibility: "",
         status: "",
         phaseStartedAt: "",
-        phaseEndedAt: "",
+        phaseEndsAt: "",
     });
 
     const [participantPresence, setParticipantPresence] = useState({
@@ -46,7 +46,7 @@ const QnaHostPage = () => {
         roomNo: 0,
         status: "",
         phaseStartedAt: "",
-        phaseEndedAt: ""
+        phaseEndsAt: ""
     })
 
     const clientRef = useRef(null);
@@ -180,7 +180,7 @@ const QnaHostPage = () => {
             setTimerInfo(prev => ({
                 ...prev,
                 phaseStartedAt: data.phaseStartedAt,
-                phaseEndedAt: data.phaseEndedAt
+                phaseEndsAt: data.phaseEndsAt
 
             }));
         }
