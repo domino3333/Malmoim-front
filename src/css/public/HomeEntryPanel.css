@@ -1,4 +1,5 @@
 /* 두개 패널을 감싸는 main div */
+
 .home-entry {
     display: flex;
     justify-content: center;
@@ -108,4 +109,27 @@
     color: white;
     margin: 0 auto;
     margin-top: 30px;
+}
+
+/* 핸드폰 비율 고려 */
+@media(max-width:1200px) {
+    .home-entry {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 50px;
+        gap: 20px;
+        background-color: rgb(242, 237, 237);
+    }
+
+    .home-entry__participant,
+    .home-entry__host {
+        border: 1px solid #90653E;
+        height: 500px;
+        width: 100%;
+        border-radius: 5px;
+        background-color: white;
+        padding-top: 60px;
+    }
+
 }
