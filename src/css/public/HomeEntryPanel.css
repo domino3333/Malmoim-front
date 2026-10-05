@@ -132,4 +132,39 @@
         padding-top: 60px;
     }
 
+    .home-entry__code-row {
+        width: 80%;
+        display: flex;
+
+    }
+
+    .home-entry__code {
+        width: 70%;
+    }
+
+    .home-entry__code-submit {
+        width: 30%;
+    }
+
+    .home-entry__participant-tip {
+        max-width: 200px;
+        text-align: center;
+    }
+
+    .home-entry__guide {
+        max-width: 200px;
+        margin:0 auto;
+        margin-bottom: 20px;
+    }
+
+
+
+    .home-entry__host-start{
+        width:80%;
+    }
+
+    .home-entry__host-tip{
+        max-width: 200px;
+    }
+
 }
