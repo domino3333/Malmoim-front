@@ -1,6 +1,19 @@
 
 // HTTP API 요청에 사용하는 백엔드 기본 주소
-export const API_BASE_URL = "http://localhost:8080";
+//export const API_BASE_URL = "http://localhost:8080";
 
 // STOMP 클라이언트가 연결할 WebSocket 주소
-export const WEBSOCKET_URL = "ws://localhost:8080/ws"
+//export const WEBSOCKET_URL = "ws://localhost:8080/ws"
+
+
+const isDev = import.meta.env.DEV;
+
+// HTTP API 주소
+export const API_BASE_URL = isDev
+    ? "http://localhost:8080"
+    : window.location.origin;
+
+// WebSocket 주소
+export const WEBSOCKET_URL = isDev
+    ? "ws://localhost:8080/ws"
+    : `wss://${window.location.host}/ws`;
