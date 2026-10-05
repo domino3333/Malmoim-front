@@ -27,7 +27,10 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                             <p>{question.nickname}</p>
                         </div>
                         <div className="participant-card__vote">
-                            {canVote && <button disabled={isVoting} onClick={() => onVote(question.questionNo)}>
+                            {canVote && <button disabled={isVoting} onClick={(event) => {
+                                event.stopPropagation();
+                                onVote(question.questionNo);
+                            }}>
                                 {isVoting ? "처리 중..." : "좋아요"}
                             </button>}
                             {showVoteCount && <span>좋아요: {question.voteCount}</span>}
