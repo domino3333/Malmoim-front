@@ -35,15 +35,23 @@ const LoginPage = () => {
           </div>
           <div className="div-login-password">
             <label htmlFor="password">비밀번호</label>
-            <input type="password" onChange={handleInputChange} name="password" />
+            <input type="password" onChange={handleInputChange} name="password"
+              onKeyDown={async (e) => {
+                if (e.key === 'Enter') {
+                  await login(input)
+                  nav('/dashboard')
+                }
+              }}
+            />
           </div>
           <div className="div-login-button">
             <button
               type="button"
-              onClick={async () => {
+              onClick={async (e) => {
                 await login(input)
                 nav('/dashboard')
-              }}
+              }
+              }
             >
               로그인
             </button>
