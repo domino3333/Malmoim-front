@@ -116,7 +116,7 @@ const MyRoomsPage = () => {
                     <div className="div-content-head-main">
 
                         <div className="div-content-head-left">
-                            <button className={activeTab === "all" ? "activeTab" : "tab"}
+                            {/* <button className={activeTab === "all" ? "activeTab" : "tab"}
                                 onClick={() => setActiveTab("all")}
                             >
                                 모두
@@ -124,7 +124,7 @@ const MyRoomsPage = () => {
                             <button className={activeTab === "private" ? "activeTab" : "tab"}
                                 onClick={() => setActiveTab("private")}>
                                 비공개
-                            </button>
+                            </button> */}
                         </div>
 
                         <div className="div-content-head-right">
