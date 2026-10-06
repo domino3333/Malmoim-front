@@ -18,3 +18,15 @@
     min-height: 0;
     display: flex;
 }
+
+
+@media(max-width:1200px) {
+
+    .host-home-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+}
