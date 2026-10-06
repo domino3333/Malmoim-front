@@ -40,3 +40,25 @@
     border: 1px solid rgb(214, 207, 207);
     background-color: white;
 }
+
+
+@media(max-width:1200px) {
+
+
+    .room-type-selection-page{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn-box{
+        width:90%;
+        margin:10px;
+        height:100px;
+    }
+    /*audience 이미지*/
+    .btn1 img {
+        width:100%;
+        height:auto;
+    }
+
+}
