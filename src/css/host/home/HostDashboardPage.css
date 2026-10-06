@@ -41,46 +41,73 @@
     background-color: #90653E;
     width: 200px;
     height: 50px;
-    color:white;
+    color: white;
     font-weight: 700;
     border-radius: 5px;
 }
 
 /* 전체보기 버튼*/
-.host-dashboard-all-button{
+.host-dashboard-all-button {
     cursor: pointer;
     align-self: center;
 }
 
 /* 최근 만든 말모임 */
-.host-dashboard-bottom h2{
+.host-dashboard-bottom h2 {
 
     font-size: 1.5em;
     font-weight: 600;
 }
 
 /* 테이블 자체 */
-.host-dashboard-table{
-    
-    border:none;
-    margin:0 auto;
-    width:90%;
+.host-dashboard-table {
+
+    border: none;
+    margin: 0 auto;
+    width: 90%;
 }
 
 /* 테이블 헤더 */
-.host-dashboard-table #host-dashboard-table-th{
+.host-dashboard-table #host-dashboard-table-th {
     background-color: rgb(233, 233, 233);
 }
 
 /* 테이블 한줄의 row */
-.host-dashboard-table tr{
-    height:40px;
-    
+.host-dashboard-table tr {
+    height: 40px;
+
 }
 
 /* 각 셀 */
 .host-dashboard-table th,
-.host-dashboard-table td
-{
-    padding:10px;
+.host-dashboard-table td {
+    padding: 10px;
+}
+
+
+
+@media(max-width:1200px) {
+
+    .host-dashboard-top {
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+        margin: 30px 10px 70px 10px;
+    }
+
+    /*화면에 맞춰 본문이 줄어들도록 설정*/
+    .host-dashboard-page {
+        min-width: 0;
+    }
+
+    /* 말모임 만들기 버튼 */
+    .host-dashboard-create-button {
+        border: none;
+        background-color: #90653E;
+        width: 150px;
+        height: 50px;
+        color: white;
+        font-weight: 700;
+        border-radius: 5px;
+    }
 }
