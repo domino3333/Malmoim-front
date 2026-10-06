@@ -25,8 +25,24 @@
     .host-home-layout {
         display: flex;
         flex-direction: column;
+        position: relative;
+        margin-top: 3px;
     }
 
+    /* 이 레이아웃 안의 계정 헤더만 위치 이동 */
+    .host-home-layout-main>.host-header {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        margin: 0;
+        z-index: 10;
+    }
+
+    .host-home-layout-main>.host-header .host-header__account {
+        width: 44px;
+        height: 44px;
+        margin: 0;
+    }
 
 
 }
