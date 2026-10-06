@@ -237,6 +237,7 @@ const QnaHostPage = () => {
             show={isQuestionDetailModalOpen}
             onHide={() => setIsQuestionDetailModalOpen(false)}
             viewerRole={"host"}
+            roomPhase={roomInfo.status}
             />
 
     </>)
