@@ -140,6 +140,12 @@ const MyRoomsPage = () => {
                             name="search-box"
                             value={searchKeyword}
                             onChange={handleSearchInputChange}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter" && !e.nativeEvent.isComposing && e.nativeEvent.keyCode !== 229) {
+                                    e.preventDefault();
+                                    handleSearchRoom();
+                                }
+                            }}
                             placeholder="방 제목"
                         />
                         <button onClick={handleSearchRoom} type="button" className="search-button">
