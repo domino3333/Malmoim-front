@@ -121,10 +121,11 @@
     }
 
     .navbar-menu {
-        grid-column: 1;
+        grid-column: 1 / -1;
         grid-row: 2;
         margin: 0;
-        min-width: 200px;
+        min-width: 0px;
+        justify-content: center;
     }
 
     .div-signUp,
