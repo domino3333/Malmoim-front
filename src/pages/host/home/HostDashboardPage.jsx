@@ -16,7 +16,7 @@ const HostDashboardPage = () => {
     const nav = useNavigate();
 
 
-    const handleEnterRoom = (roomNo)=>{
+    const handleEnterRoom = (roomNo) => {
         nav(`/qna/${roomNo}/host`);
 
     }
@@ -42,30 +42,33 @@ const HostDashboardPage = () => {
                 <div className="host-dashboard-top">
                     <div className="host-dashboard-title-text">대시보드</div>
                     <button
-                    className="host-dashboard-create-button"
-                    onClick={()=>nav('/select-room-type')}
+                        className="host-dashboard-create-button"
+                        onClick={() => nav('/select-room-type')}
                     > + 말모임 만들기</button>
                 </div>
                 <div className="host-dashboard-bottom">
                     <h2>최근 만든 말모임</h2>
-                    <div 
-                    className="host-dashboard-all-button"
-                    onClick={()=>nav('/my-rooms')}
-                    
+                    <div
+                        className="host-dashboard-all-button"
+                        onClick={() => nav('/my-rooms')}
+
                     >전체보기 → </div>
                 </div>
-                <table className="host-dashboard-table">
-                    <thead>
-                        <tr id="host-dashboard-table-th">
-                            <th>방 제목</th>
-                            <th>유형</th>
-                            <th>입장 코드</th>
-                            <th>생성일</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    {rooms.map((room) => <RecentRoomRow key={room.roomNo} room={room} onEnter={handleEnterRoom}/>)}
-                </table>
+                <div className="host-dashboard-table-wrapper">
+
+                    <table className="host-dashboard-table">
+                        <thead>
+                            <tr id="host-dashboard-table-th">
+                                <th>방 제목</th>
+                                <th>유형</th>
+                                <th>입장 코드</th>
+                                <th>생성일</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        {rooms.map((room) => <RecentRoomRow key={room.roomNo} room={room} onEnter={handleEnterRoom} />)}
+                    </table>
+                </div>
             </div>
         </HostHomeLayout>
     )

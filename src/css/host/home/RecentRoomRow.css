@@ -14,14 +14,6 @@
     column-gap: 8px;
 }
 
-
-.room-code-tr {}
-
-.room-code-span {}
-
-.copy-code-button {}
-
-
 /* 각 row의 입장 버튼 */
 .RecentRoomRow-enter-button {
     border: none;
@@ -31,4 +23,9 @@
     height: 30px;
     border-radius: 5px;
     font-weight: 600;
+}
+
+@media(max-width:1200px){
+
+    
 }

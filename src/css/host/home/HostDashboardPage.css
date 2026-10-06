@@ -110,4 +110,15 @@
         font-weight: 700;
         border-radius: 5px;
     }
+
+    .host-dashboard-table-wrapper {
+        width: 90%;
+        overflow-x: auto;
+        margin: 0 auto;
+    }
+
+    .host-dashboard-table {
+        width: 100%;
+        min-width: 600px;
+    }
 }
