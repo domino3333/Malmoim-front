@@ -31,6 +31,8 @@ const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showR
                                 event.stopPropagation();
                                 onVote(question.questionNo);
                             }}>
+
+                                {/* todo 좋아요 ux 처리하기 */}
                                 {isVoting ? "처리 중..." : "좋아요"}
                             </button>}
                             {showVoteCount && <span>좋아요: {question.voteCount}</span>}
