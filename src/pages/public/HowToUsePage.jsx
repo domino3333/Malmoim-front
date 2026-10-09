@@ -8,6 +8,9 @@ import homeEntryImage from '../../assets/guide/home-entry-guide.png'
 import hostDashboardImage from '../../assets/guide/host-dashboard-share-guide.png'
 import hostQnaImage from '../../assets/guide/host-qna-progress-guide.png'
 import hostResultImage from '../../assets/guide/host-qna-results-guide.png'
+import participantNicknameImage from '../../assets/guide/participant-nickname-guide.png'
+import participantQuestionImage from '../../assets/guide/participant-question-guide.png'
+import participantVoteImage from '../../assets/guide/participant-vote-guide.png'
 import { getAccessToken } from '../../utils/auth/tokenStorage'
 import '../../css/public/HowToUsePage.css'
 
@@ -67,14 +70,23 @@ const guides = {
       {
         title: '닉네임을 정해 들어오세요',
         description: '방 정보를 확인하고 사용할 닉네임을 입력하면 모임에 참여할 수 있습니다.',
+        image: participantNicknameImage,
+        imageAlt: '방 제목과 입장 코드, 정원을 확인하고 닉네임을 입력하는 참여자 입장 화면',
+        caption: '닉네임 입력 예시 화면',
       },
       {
         title: '궁금한 점을 질문하세요',
         description: '호스트가 질문 시간을 열면 등록하기를 눌러 질문을 남기세요. 등록된 질문은 모임의 질문 목록에 나타납니다.',
+        image: participantQuestionImage,
+        imageAlt: '질문 내용을 입력하고 완료 버튼으로 등록하는 질문 등록 화면',
+        caption: '질문 등록 예시 화면',
       },
       {
         title: '공감하는 질문을 추천하세요',
         description: '추천 시간이 열리면 함께 듣고 싶은 질문에 좋아요를 누르세요. 결과가 공개되면 추천 수에 따른 질문 순서를 볼 수 있습니다.',
+        image: participantVoteImage,
+        imageAlt: '참여자의 질문과 오른쪽 위 좋아요 버튼이 보이는 질문 카드',
+        caption: '질문 추천 예시 화면',
       },
     ],
   },

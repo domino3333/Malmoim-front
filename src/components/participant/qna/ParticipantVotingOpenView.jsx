@@ -8,10 +8,23 @@ const ParticipantVotingOpenView = ({ questions, roomInfo, showRank,onClickQuesti
 
 
     const handleVote = async (questionNo) => {
+
+        const requests = []; 
+
         if (isVoting) return;
         setIsVoting(true);
         try {
-            await castVote(questionNo, roomInfo.roomNo);
+
+            for(let i=0;i<10;i++){
+
+                requests.push(castVote(questionNo, roomInfo.roomNo))
+
+                //await castVote(questionNo, roomInfo.roomNo);
+            }
+            const results = await Promise.allSettled(requests);
+
+            console.log(results);
+
         } catch (e) {
             const message = e.response?.data;
             alert(e.response?.status < 500 && typeof message === "string" && message.trim()
