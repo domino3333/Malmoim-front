@@ -6,7 +6,7 @@ import QuestionSubmitModal from "./modal/QuestionSubmitModal";
 import ParticipantQuestionToolbar from "./ParticipantQuestionToolbar";
 import ParticipantQuestionList from "./ParticipantQuestionList";
 
-const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions, showRank, onClickQuestionCard }) => {
+const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions, showRank, onQuestionCardClick }) => {
 
 
 
@@ -22,7 +22,7 @@ const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions, showRank, on
         <div className="Question-open-view-body">
             <div className="question-left-panel">
                 <ParticipantQuestionToolbar onOpenQuestionModal={() => setIsQuestionModalOpen(true)} />
-                <ParticipantQuestionList questions={questions} showRank={showRank} onClickQuestionCard={onClickQuestionCard}/>
+                <ParticipantQuestionList questions={questions} showRank={showRank} onQuestionCardClick={onQuestionCardClick}/>
             </div>
         </div>
 

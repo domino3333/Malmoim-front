@@ -3,12 +3,12 @@ import { formatLocalDateTime } from "../../../utils/date/formatLocalDateTime";
 import { QUESTION_STATUS_LABELS } from "../../../constants/qna/statusLabels";
 import PersonAvatarIcon from "../../common/PersonAvatarIcon";
 
-const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, question, onVote, isVoting = false, onClickQuestionCard }) => {
+const ParticipantQuestionCard = ({ canVote = false, showVoteCount = false, showRank = false, showAnswerStatus = false, question, onVote, isVoting = false, onQuestionCardClick }) => {
 
     return (<>
 
 
-            <div className="participant-card" onClick={()=>onClickQuestionCard(question)}>
+            <div className="participant-card" onClick={()=>onQuestionCardClick(question)}>
                 {showRank && (
                     <div className="participant-card__rank">
                         {question.voteRank}

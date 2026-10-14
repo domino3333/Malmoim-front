@@ -265,7 +265,7 @@ const QnaParticipantPage = () => {
                             onQuestionSubmit={handleQuestionSubmit}
                             showRank={questionListUi.showRank}
                             showAnswerStatus={questionListUi.showAnswerStatus}
-                            onClickQuestionCard={handleModalOpen}
+                            onQuestionCardClick={handleModalOpen}
                         />}
                     </div>
                     <div className="phaseComponent-right-panel">

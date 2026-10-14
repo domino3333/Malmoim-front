@@ -2,7 +2,7 @@ import ParticipantQuestionList from "./ParticipantQuestionList";
 import "../../../css/participant/qna/ParticipantVotingClosedView.css"
 
 
-const ParticipantVotingClosedView = ({questions, showRank, onClickQuestionCard}) => {
+const ParticipantVotingClosedView = ({questions, showRank, onQuestionCardClick}) => {
 
 
     return (<>
@@ -13,7 +13,7 @@ const ParticipantVotingClosedView = ({questions, showRank, onClickQuestionCard})
                     호스트가 결과를 공개하기까지 기다려주세요.
                 </div>
                 <div className="participant-vote-closed__body">
-                    <ParticipantQuestionList questions={questions} showRank={showRank} onClickQuestionCard={onClickQuestionCard}/>
+                    <ParticipantQuestionList questions={questions} showRank={showRank} onQuestionCardClick={onQuestionCardClick}/>
                 </div>
             </div>
     </>)
