@@ -2,7 +2,7 @@
 import "../../../css/participant/qna/ParticipantQuestionOpenView.css"
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
-import QuestionSubmitModal from "./modal/QuestionSubmitModal";
+import QuestionSubmissionModal from "./modal/QuestionSubmissionModal";
 import ParticipantQuestionToolbar from "./ParticipantQuestionToolbar";
 import ParticipantQuestionList from "./ParticipantQuestionList";
 
@@ -27,7 +27,7 @@ const ParticipantQuestionOpenView = ({ onQuestionSubmit, questions, showRank, on
         </div>
 
         {isQuestionModalOpen &&
-            <QuestionSubmitModal show={isQuestionModalOpen} onHide={() => setIsQuestionModalOpen(false)} onSubmit={onQuestionSubmit} />
+            <QuestionSubmissionModal show={isQuestionModalOpen} onHide={() => setIsQuestionModalOpen(false)} onSubmit={onQuestionSubmit} />
         }
 
 

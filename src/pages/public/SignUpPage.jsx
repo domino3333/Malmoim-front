@@ -39,7 +39,7 @@ const SignUpPage = () => {
     })
   }
 
-  const passwordMessage = !input.passwordConfirmation ? "" :
+  const passwordMatchResult = !input.passwordConfirmation ? "" :
     (input.password === input.passwordConfirmation ? passwordCheckMap["SUCCESS"] : passwordCheckMap["FAIL"])
 
 
@@ -97,7 +97,7 @@ const SignUpPage = () => {
       return;
     }
 
-    if(passwordMessage.flag === false){
+    if(passwordMatchResult.flag === false){
       alert("비밀번호를 확인해주세요.");
       return;
     }
@@ -144,7 +144,7 @@ const SignUpPage = () => {
           <div className="div-signUp-password">
             <label htmlFor="passwordConfirmation">비밀번호 확인</label>
             <input type="password" onChange={handleInputChange} id="passwordConfirmation" name="passwordConfirmation" />
-            <p>{passwordMessage.message}</p>
+            <p>{passwordMatchResult.message}</p>
           </div>
           <div className="div-signUp-name">
             <label htmlFor="name">이름</label>

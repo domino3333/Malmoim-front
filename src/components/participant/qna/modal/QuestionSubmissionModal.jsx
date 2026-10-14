@@ -1,10 +1,10 @@
 import { Modal } from "react-bootstrap";
-import "../../../../css/participant/qna/modal/QuestionSubmitModal.css"
+import "../../../../css/participant/qna/modal/QuestionSubmissionModal.css"
 import { useState } from "react";
 
 
 
-const QuestionSubmitModal = ({ show, onHide, onSubmit }) => {
+const QuestionSubmissionModal = ({ show, onHide, onSubmit }) => {
 
 
     const [question,setQuestion] = useState("");
@@ -50,4 +50,4 @@ const QuestionSubmitModal = ({ show, onHide, onSubmit }) => {
     </>)
 }
 
-export default QuestionSubmitModal;
+export default QuestionSubmissionModal;
