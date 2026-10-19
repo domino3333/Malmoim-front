@@ -9,7 +9,7 @@ const SignUpPage = () => {
   const emailInputRef = useRef(null);
 
   const [checkMessage, setCheckMessage] = useState("");
-  const [emailAvailabilityCheck,setEmailAvailabilityCheck] = useState(false);
+  const [isEmailAvailabilityConfirmed,setIsEmailAvailabilityConfirmed] = useState(false);
 
   const nav = useNavigate();
   const passwordCheckMap = {
@@ -60,7 +60,7 @@ const SignUpPage = () => {
     try {
       const data = await checkEmailAvailability(input.email);
       setCheckMessage(data);
-      setEmailAvailabilityCheck(true);
+      setIsEmailAvailabilityConfirmed(true);
 
     } catch (e) {
       setCheckMessage(e.response?.status === 409 ?
@@ -102,7 +102,7 @@ const SignUpPage = () => {
       return;
     }
 
-    if(emailAvailabilityCheck===false){
+    if(isEmailAvailabilityConfirmed===false){
       alert('이메일 중복확인을 해주세요.');
       return;
     }
