@@ -31,7 +31,7 @@ const SignUpPage = () => {
     name: '',
   })
 
-  // name 속성 기준 회원가입 입력값의 상태 반영
+  // form의 입력값을 관리하는 change
   const handleInputChange = (e) => {
     setInput({
       ...input,
